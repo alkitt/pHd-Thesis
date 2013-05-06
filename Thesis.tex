@@ -1,0 +1,27 @@
+\documentclass[11pt]{report}
+%To compile, run the following commands in order (you'll need latex and bibtex installed):
+%  pdflatex thesis
+%  bibtex thesis
+%  pdflatex thesis
+%  pdflatex thesis
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   additional packages  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphics,graphicx}         % Figures
+\usepackage{amsmath,amssymb,mathrsfs}  % Math symbols
+\usepackage{tikz}                      % Fancy drawings
+\usepackage{cite,citesort}             % Sorts citations in the order referenced
+\usepackage[toc,page]{appendix}        %needed to add the appendices to the t.o.c.
+
+\begin{document}
+
+\tableofcontents
+
+\include{Friction}
+
+\bibliographystyle{unsrt}
+\bibliography{Friction_chap}
+
+\end{document}
