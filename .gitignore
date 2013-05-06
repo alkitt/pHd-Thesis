@@ -1,0 +1,12 @@
+# List of files to be ignored by git
+# Latex build files:
+*.aux
+*.bbl
+*.blg
+*.log
+*.toc
+*.pdf
+
+# Extra files specific to thesis
+*.zip
+*.db
