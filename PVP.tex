@@ -1,0 +1,265 @@
+\chapter{Lattice-corrected strain-induced vector potentials in graphene}
+
+Many surprising properties of graphene can, and have, been engineered to create novel physical scenarios in a condensed matter setting: the chiral and Dirac-like energy dispersion near the Fermi energy leads to Klein tunneling \cite{Beenakker2008} and Veselago lensing \cite{Cheianov2007}; relativistic Landau level quantization, observable even at room temperature, emerges under applied magnetic fields \cite{Novoselov2007}.
+Graphene is also an extremely strong material, with an effective Young's modulus of 1~TPa, an intrinsic ultimate strength of 130 GPa \cite{Lee2008}, which  has been seen to withstand elastic deformations up to 15-20\% \cite{Cadelano2009}.
+This unusually large range of elastic response, combined with graphene's intrinsic two-dimensionality and the peculiar coupling between electrons and deformations, make graphene an unparalleled condensed matter system in which to explore strain as a tool for tailoring electronic functionality.
+
+A dazzling glimpse of the feasibility and potential of strain-engineered graphene \cite{Pereira2009a,Guinea2009} has recently emerged with experiments reporting that certain strain profiles can induce Landau quantization and effective pseudomagnetic fields in excess of 300\,T \cite{Levy2010,Yan2012,Yeh2011}.
+Such physics strongly encourages the prospect of harnessing this unconventional interplay between graphene's unique electronic and impressive mechanical properties to control electronic transport in graphene devices \cite{Pereira2009a, Fogler2008}.
+
+The key elements underlying these experimental observations and the concept of strain-engineering can be readily captured from a tight-binding description of the electrons in graphene.
+Graphene has a honeycomb lattice (Fig.~\ref{lattice}(a)) which can be decomposed into two triangular Bravais sublattices, the A and B sublattices, with nearest neighbor vectors of $\vec{\delta_1}=a/2 \ \hat{x}+\sqrt{3}a/2 \ \hat{y}$, $\vec{\delta_2}=a/2 \ \hat{x}- \sqrt{3}a/2 \ \hat{y}$, and $\vec{\delta_3}=-a \ \hat{x}$ with $a=1.42$\,\AA.
+The two elementary lattice translation vectors ($\vec{R}_i$) are also shown.
+The associated band structure was first calculated in 1947 by Wallace, considering only the $\pi$ band electrons \cite{Wallace1947}.
+It is characterized by two energy bands touching at the two non-equivalent corners ($\bm{K}$ and $\bm{K'}$) of the hexagonal Brillouin zone (BZ)\cite{Wallace1947}, shown in Fig.~\ref{lattice}(b).
+The positions of the Dirac points can be found by rotating $\bm{K}=\frac{4 \pi}{3 \sqrt{3} a}\ \hat y$ by 60 degree increments about the origin.
+The dispersion is conical near these points,  mimicking the physics of 2D relativistic fermions. 
+In undoped graphene, the Fermi energy lies exactly at the contact point between the two dispersing cones.
+At these so-called Dirac points, an effective low energy Hamiltonian can be derived which coincides with the 2D Dirac Hamiltonian \cite{Semenoff1984,CastroNeto2009,Ando2005}.
+For unstrained graphene, the three $\bm{K}$ points are equivalent, and likewise for the three $\bm{K'}$ points.
+
+\begin{figure}
+\includegraphics{Figs_PVP/figure_1.pdf}
+\caption{\label{lattice} (a) Unstrained graphene's real space lattice with labeled nearest neighbor vectors ($\vec{\delta_i}$), labeled lattice translation vectors, $\vec{R}_i=n\vec{a}_+ + m \vec{a}_-$ with $m$ and $n$ integers, and black and gray dots representing the A and B sublattices, respectively. (b) The Brillouin zone of unstrained graphene with labeled high symmetry points. (c) The positions of the unstrained (black, solid) and strained (brown, dashed) nearest neighbors, and the corresponding $\vec{\delta}_i$ and $\vec{\delta}_i'$ for 20 \% uniaxial strain along the armchair direction.  (d) The unstrained (black, solid) and strained (brown, dashed) Brillouin zone, also for 20 \% armchair uniaxial strain, with labels for the now inequivalent Dirac points. }
+\end{figure}
+
+After accounting for the effects of the distorted lattice, a tight-binding description is equally applicable to strained graphene.
+In Fig.~\ref{lattice}(c), uniaxial strain in the armchair direction is shown.
+The distance between the nearest neighbors is modified, introducing a bond-dependent nearest neighbor hopping amplitude \cite{Hasegawa2006}.
+Additionally, the nearest neighbor vectors have been modified as well.
+The essential consequences of these changes are the following \cite{Pereira2009}:
+(i) for any amount of strain, the Dirac points are displaced from the corners of the unstrained BZ and, furthermore, do not necessarily sit at the corners of the strained BZ;
+(ii) the gapless and conical nature of the energy dispersion remains robust, except when the deformation is so strong that the two inequivalent Dirac points merge in a Lifshitz transition (but that probably requires strains of the order 20\%, where the tight-binding description is not reliable anymore);
+(iii) at any finite density the Fermi line is deformed from the isotropic circle to an elliptical shape, and two Fermi velocities can be defined along the principal directions \cite{Pereira2009,Pereira2010c,Choi2010}.
+All these modifications are significant and happen concurrently, and hence a complete description of the electronic and transport properties of strained graphene requires their combined consideration.
+For example, the local shift of the Dirac point (i) can hinder or completely suppress electronic propagation across regions of different strain states \cite{Pereira2009a,Fogler2008}.
+The anisotropy of the Fermi surface (iii) has direct bearing in measurable quantities such as the anisotropy in electrical resistivity\cite{Kim2009}, optical absorption \cite{Pereira2010c,Pellegrino2010}, and the Raman signature of the 2D peak \cite{Huang2010, Mohr2010a, Frank2011, Yoon2011}.
+
+From the theoretical as well as technical point of view, the effects of strain are frequently considered independently, and one usually isolates the dominant effect for the physical observable of interest.
+Referring to the same examples above, the strain-induced corrections to optical absorption arising from inter-band transitions are insensitive to the absolute position of the Dirac point in the BZ, but strongly depend on the velocity anisotropy\cite{Pereira2010c,Pellegrino2010}.
+Likewise, the dominant effect across a strain barrier will be the relative position of the Fermi surfaces in the two regions (since this essentially determines the phase space available for transmission), and in a first approach the anisotropy is usually neglected \cite{Fogler2008,Pereira2009a}, since the full description would obfuscate the presentation of the problem.
+
+When the strain-induced shift of the Dirac points (i) is considered independently of (ii) and (iii), it can be thought of as a pseudo vector potential \cite{Sasaki2005,Ando2006,Manes2007,CastroNeto2009,Vozmediano2010}.
+This can be done because of the peculiar form of the strain corrections to the electronic dispersion in graphene.
+Electrons in strained graphene are still governed by a Dirac equation, but one in which the strain modifications can be completely absorbed in the replacement $\bm{p} \to \bm{p}-e\bm{A}$ where $\bm{A}$ is the pseudo vector potential.
+This matches the conventional minimal coupling scenario, which means that the electrons respond to the deformation-induced perturbation as they would to an external magnetic field.  
+The pseudo vector potential is related to the shift in the Dirac point, $\Delta \bm{k}_D$, through $\Delta \bm{k}_D=-\frac{e}{\hbar} \bm{A}$.
+This analogy between strain-induced and real magnetic fields means, for example, that the electronic energy levels can be quantized with a relativistic Landau spectrum just as if they were under a real magnetic field given by $\bm{B}=\bm{\nabla}\times\bm{A}$ (as long as this pseudomagnetic field is relatively constant on scales not smaller than the corresponding magnetic length) \cite{CastroNeto2009}.
+
+An omission in earlier work in the context of these pseudo vector potentials is the explicit consideration of the deformation of the lattice when computing the position of the new Dirac points.
+Here we include this effect, and show its importance in describing the absolute position of the Dirac points, and the resulting pseudo vector potentials.
+This yields new leading order terms in the strain-induced pseudo vector potential which are different at the three inequivalent Dirac points.
+Specifically, we shall be interested below only in how strain affects the position of the Dirac point in reciprocal space.
+We also restrict the discussion to planar deformations, and hence ignore effects that might arise in the presence of curvature \cite{CastroNeto2009,Vozmediano2010}.
+We will detail the derivation of these terms in the Theory section, then, in the Discussion section, demonstrate their importance in describing the shift of the Dirac point in graphene, and, finally, illustrate how the inclusion of these terms affects the pseudomagnetic field distribution for particular strain profiles. 
+
+\section{Theory}
+
+Deformation of the lattice necessarily leads to modified hoppings. If this is treated as a slowly varying perturbation to the relaxed nearest-neighbor tight-binding Hamiltonian \cite{CastroNeto2009}, the Hamiltonian can be written as
+\begin{equation}
+  H = - t \sum_{<i,j>}a_i^{\dagger}b_j
+    - \sum_{<i,j>} \delta t_{ij} a_i^{\dagger}b_j
+    + \text{H.c.}
+  \label{eq:H-TB}
+\end{equation}
+Here the sum is over all nearest neighbor pairs, $a_i^{\dagger}$ is the creation operator for an electron on the A sublattice, $b_j$ is the annihilation operator for an electron on the B sublattice, $t$ is the unstrained hopping amplitude, and $\delta t_{ij}$ is the nearest neighbor, bond specific, change in hopping energy due to strain. The bond specificity of $\delta t$ can be made explicit by writing $\delta t_{ij} = \delta t(|\vec{\delta}_{ij}|)$.
+
+The importance of the lattice deformations is hidden in the phase factors that lead to the dispersion relation, and which arise upon writing eq.~\eqref{eq:H-TB} in Fourier space.
+To explicitly show this dependence, we work in the basis in which the phase factors in the Fourier transform are given by the positions of the strained sublattices \cite{Bena2009}.
+The creation/annihilation operators are written as
+
+\begin{subequations}\label{eq:FT}
+\begin{align}
+a_i^{\dagger}&=\frac{1}{\sqrt{N}}\sum_{\vec{k}}e^{i \vec{k}\cdot\vec{R}_i'}a_{\vec{k}}^{\dagger}\,, \\ 
+b_j&=\frac{1}{\sqrt{N}}\sum_{\vec{k}'}e^{-i \vec{k}'\cdot(\vec{R}_i'+\vec{\delta}_j')}b_{\vec{k}'}\,.
+\end{align}
+\end{subequations}
+
+The correct association of a finite pseudo vector potential includes both the actual modification of the relative positions of the atoms, which enters in eq. \eqref{eq:FT}, and the change in the hopping amplitudes, entering in eq. \eqref{eq:H-TB}.
+Clearly, they are not controllable independently in an actual physical system, since the latter is a consequence of the former.
+In the past, the modification of the relative positions of the atoms has been ignored.
+This was done because in theoretical calculations one usually abstracts from the actual underlying lattice when considering the tight-binding Hamiltonian, and frequently works at the level of the hoppings only.
+If the system has spatially uniform strain, the nature of the underlying lattice is indeed irrelevant for the electronic structure, and taking the lattice deformation explicitly into account is equivalent to taking the undeformed lattice with a rescaling of the momenta in the undeformed BZ.
+Thus, for spatially uniform strain it is justified to ignore the lattice deformation, and concentrate only on the hoppings.
+In practice this entails keeping the original $\vec{\delta}_i$ in the phase factor of eq.~\eqref{eq:FT}, and using the deformed $\vec{\delta}_i$ only in the $\delta t_{ij}$.
+
+However, if the system is not uniformly strained, in general one can no longer ignore the effects of lattice deformations.
+In a Thomas-Fermi spirit, the local (but still on scales safely larger than the lattice spacing) vector potential $\bm{A}(\bm{r})$ is responsible for displacing the Fermi surface in reciprocal space: $E(\bm{k})\to E(\bm{k}-\frac{e}{\hbar}\bm{A})$.
+Different regions experience different Fermi surface displacements, and one necessarily needs an absolute frame of reference in reciprocal space to track the position of the Fermi surface throughout the entire system.
+That is where the explicit consideration of the deformed $\vec{\delta}_i$ in the phase factor of eq.~\eqref{eq:FT} is important.
+We now look at that explicitly.
+
+A physically accurate parametrization of the variation of hopping amplitude with inter-carbon distance is $t(\delta_i)=t_0 \exp[-\beta (\delta_i/a-1)]$ with $a=1.42$\,\AA\, being the unstrained nearest neighbor separation, $t_0\simeq 2.7$\,eV, and $\beta\approx 3$ \cite{Pereira2009,Ribeiro2009,CastroNeto2009}.
+The length and direction of the three nearest neighbor vectors $\vec{\delta}_i$ transforms under strain according to $\vec{\delta}_i'=(I+\epsilon)\cdot\vec{\delta}_i$, where $I$ is the 2$\times$2 identity matrix, and $\epsilon$ the two-dimensional Cartesian strain tensor, with the $x$ axis along graphene's armchair direction.
+In reciprocal space, the Hamiltonian, eq.~\eqref{eq:H-TB}, linearized to first order in strain reads:
+\begin{equation}
+  H \simeq -\sum_{\vec{k},j} \bigl(
+  t_0 + \delta t_j - it_0\vec{k}\cdot\epsilon\cdot\vec{\delta}_j
+  \bigr) \, e^{-i\vec{k}\cdot\vec{\delta}_j} \,
+  a_{\vec{k}}^{\dagger}b_{\vec{k}} + \text{H.c.}
+  \label{eq:H-TB-strain}
+\end{equation}
+The new term proportional to $\vec{k}\cdot\epsilon\cdot\vec{\delta}_j$ arises from expanding $\exp(-i\vec{k}\cdot\vec{\delta'}_j)$ to linear order in strain. Consequently, it contributes on \emph{equal footing} with $\delta t_j$, which is also of leading order in strain \cite{CastroNeto2009}.
+
+Using the \emph{undeformed} BZ as global reference, and approximating this Hamiltonian near the $\bm{K}$ points, one recovers the form of the unstrained Hamiltonian but with the substitution ($\bm{k} \to \bm{k}-\frac{e}{\hbar} \bm{A}$), where the vector potentials are now given by:
+\begin{subequations}\label{pvp-all}
+\begin{align}
+\vec{A}_{\bm{K_1}}&=-\vec{A}_{\bm{K_1'}}=\frac{\phi_0}{2a} \left( \begin{array}{c} \frac{4}{3\sqrt{3}}\epsilon_{xy}\\ \frac{4}{3 \sqrt{3}} \epsilon_{yy} \end{array} \right) +\vec{A}_p , \label{pvpK1}\\ 
+\vec{A}_{\bm{K_2}}&=-\vec{A}_{\bm{K_2'}}=\frac{\phi_0}{2a} \left( \begin{array}{c} \frac{2}{3}\epsilon_{xx}-\frac{2\sqrt{3}}{9} \epsilon_{xy} \\ \frac{2}{3} \epsilon_{xy}-\frac{2 \sqrt{3}}{9} \epsilon_{yy} \end{array} \right)+\vec{A}_p  , \label{pvpK2} \\
+\vec{A}_{\bm{K_3}}&=-\vec{A}_{\bm{K_3'}}=\frac{\phi_0}{2a} \left( \begin{array}{c} -\frac{2}{3} \epsilon_{xx}-\frac{2 \sqrt{3}}{9} \epsilon_{xy} \\ -\frac{2}{3} \epsilon_{xy}-\frac{2 \sqrt{3}}{9} \epsilon_{yy} \end{array} \right)+\vec{A}_p  , \label{pvpK3} \\
+\intertext{with}
+&\vec{A}_p=\frac{\phi_0}{2a} \left( \begin{array}{c} \frac{\beta }{\pi} \epsilon_{xy} \\ \frac{\beta }{2 \pi} (\epsilon_{xx}-\epsilon_{yy}) \end{array} \right),
+\label{pvpe}
+\end{align}
+\end{subequations}
+$\phi_0=\frac{h}{e}$, and the various $\bm{K}_i$ points are defined as in Fig.~\ref{lattice}(d).
+The common term $\vec{A}_p$ is proportional to the logarithmic derivative of the hopping, $\beta$, and arises from the hopping perturbations, $\delta t_j$, alone.
+It has the expected dependence on the strain tensor components \cite{CastroNeto2009,Vozmediano2010}. 
+The herein derived additional terms are the corrections due to lattice deformations.
+Since $\beta \approx 3$, the lattice corrections are equally important, not only for being of the same order in strain, but for having similar numerical coefficients.
+It is also worth emphasizing that taking explicit consideration of the lattice deformations leads to a vector potential that is different for all the corners of the BZ.
+This is of course expected because under an arbitrary deformation the equivalence among the three $\bm{K}$ and $\bm{K'}$ points is lost.
+In fact, the expressions above quantify the fact that upon general deformation of the graphene lattice, the Dirac point no longer lies at $\bm{K_i}$, nor at any of the symmetry points of the deformed BZ, a point emphasized early on \cite{Pereira2009}.
+The only remaining constraint is time-reversal symmetry, which forces $\vec{A}_{\bm{K_i}} = - \vec{A}_{\bm{K_i^\prime}}$.
+Finally, it should be noted that the pseudo vector potential depends on the crystallographic orientation relative to the strain and that, unlike a real vector potential, it has no gauge freedom as it is determined by an observable.
+
+\begin{figure*}
+\includegraphics{Figs_PVP/figure_2.pdf}
+\caption{(Color online) Contours of the band structure of graphene under tensile isotropic strain, shear strain, uniaxial armchair strain, and zig-zag strain (rows), for $\epsilon=1\%$ near the three $\bm{K}$ points (columns). The contours are overlaid with the Brillouin zone of unstrained (solid, black)  and strained (dashed, brown) graphene. Vectors mark the displacement of the Dirac points predicted by the traditional ($\vec{A}_p$, dashed/red arrow) and the corrected ($\vec{A}_{\bm{K}_{\!i}}$, solid/orange arrow) form of the pseudo vector potential (eqs.~\ref{pvp-all}), with the green dots marking the positions of the Dirac points for strained graphene. The red vectors appears as a dot for isotropic strain because the traditional form of the vector potential does not predict a shift in the Dirac points.  Each plot is square with an area of $0.12^2$. \label{PVPshifts}}
+\end{figure*}
+
+
+\section{Discussion}
+
+All existing calculations consider only the term $\vec{A}_p$ and, as a result do not properly account for the shift in the Dirac points.
+Consider, for example, the seemingly trivial case of tensile isotropic strain.
+The traditional form of the pseudo vector potential, $\vec{A}_p$, predicts that there should be no shift in the Dirac points ($\epsilon_{xx}=\epsilon_{yy}$ and $\epsilon_{xy}=0$ in equation \ref{pvpe}).
+However, the BZ shrinks isotropically under tensile isotropic strain, and, by symmetry, the Dirac points should follow the corners of the deformed BZ resulting in a Dirac point dependent shift toward the $\Gamma$ point with respect to the unstrained reference state.
+In Fig.~\ref{PVPshifts}, the reciprocal space shifts of the Dirac points predicted by the traditional and herein corrected forms of the pseudo vector potential are compared.
+The contours are the strained band structure calculated using a nearest neighbor tight binding model which accounts for both the strain induced changes in hopping amplitudes and the lattice deformation\cite{Pereira2009}.
+For isotropic tensile strain, the lattice-corrected pseudo vector potential in eqs.~\eqref{pvp-all} properly predicts the displacement of each Dirac point due to strain.
+The less trivial cases of uniaxial or shear strain are also shown in Fig.~\ref{PVPshifts}. The differences between the red (traditional) and orange (corrected) arrows make it clear that the lattice corrections are needed to determine the absolute position of the Dirac point in reciprocal space (they can even reverse the sign of $\vec{A}$).
+
+As discussed above, these corrections are immaterial for systems with spatially uniform strain but must be included for systems with non-uniform strain.
+For example, if there are regions of isotropic tension embedded in regions of different strain states, the relative shifts \emph{are} important, even though deformations are locally isotropic.
+In these cases lattice corrections contribute an extra, Dirac point specific, space dependence which is important when calculating transport across a strain barrier or when considering the spatial distribution of the pseudomagnetic fields: $\vec{B}_{\bm{K_i}} = \nabla \times \vec{A}_{\bm{K_i}}$.
+
+In particular, these corrections are critical when trying to optimize the Landau quantization caused by the strain-induced pseudomagnetic fields.
+Ideally one desires the pseudomagnetic field to be nearly constant throughout the system so that the Landau levels are as narrow and well defined as possible.
+This imposes a delicate and non-trivial constraint on what deformations are compatible with constant pseudomagnetic fields.
+An early suggestion uses the traditional form of the pseudo vector potential to conclude that strain profiles with an overall trigonal symmetry tend to generate smooth effective pseudomagnetic fields \cite{Guinea2009}.
+To show how the lattice correction can quantitatively and qualitatively affect this conclusion, we simulate a situation where graphene is covering an equilateral triangular pit with a uniformly distributed vertical load.
+This geometry was originally proposed by Guinea~\emph{et~al.} as a simple method of generating fairly uniform pseudomagnetic fields \cite{Guinea2009}.
+We calculate the strain fields using finite element analysis, and extract the local pseudomagnetic fields from eqs.~\eqref{pvp-all}.
+The finite element analysis was performed using Comsol Multiphysics, with a two-dimensional thin plate model including geometric non-linearity.
+The edges were fixed and the pressure was applied using a face load.
+Graphene's Young's Modulus of 1 TPa and thickness of 3.5 \AA \cite{Lee2008} were used along with the Poisson ratio of graphite of 0.165 \cite{Blakslee1970}.
+To make the triangles more realistic we include 2 nm radius fillets on the three corners, which smooth down the sharp boundary corners.
+The surface was meshed with triangles with a maximum element size of 1 nm, and strain fields were evaluated in the mid-plane of the plate.
+
+\begin{figure*}
+\includegraphics{Figs_PVP/figure_3.pdf}
+\caption{\label{triholes}The spatial distribution of the pseudomagnetic fields generated when an equilateral triangle with 50 nm sides, 2 nm radius fillets, and the base oriented 30 degrees counterclockwise from the armchair direction is pressurized to 14 MPa. In (a) the calculation is done using the traditional form of the pseudo vector potential, while in (b) it is performed including the corrections derived in this work. Here, the three different colored curves correspond to the pseudomagnetic fields felt by the electrons at the three different $\bm{K}$ points with the magnetic field for the electrons at $\bm{K_1}$ isolated in (c). (Color online)}
+\end{figure*}
+
+The effect of the lattice corrections to the extracted pseudomagnetic field are shown in Fig.~\ref{triholes} for an equilateral triangle with 50 nm sides, and under 14 MPa of pressure.
+At this pressure the graphene sheet has less than 0.26~\% strain.
+The field derived from the traditional form of the pseudo vector potential \eqref{pvpe} results in a fairly uniform pseudomagnetic field [Fig.~\ref{triholes}(a)], in agreement with Guinea et al \cite{Guinea2009}.
+In contrast, Figs.~\ref{triholes}(b,c) show that the new terms cause the electrons near the three different $\bm{K}_{1,2,3}$ points to experience different pseudomagnetic fields, which vary strongly across the system.
+The differences in the pseudomagnetic fields at the different Dirac points may be extremely useful in the context of valleytronics \cite{Rycerz2007}.
+
+\section{Conclusion}
+
+In summary, accounting for explicit lattice deformations in the calculation of the pseudo vector potentials generates new leading order, and $\bm{K}$ point specific terms, that are needed to accurately describe the strain dependent shift of the Dirac points in reciprocal space. These terms are important in situations of non-uniform strain, such as when exploring transmission across strain barriers, or when predicting pseudomagnetic fields arising from particular strain profiles.
+In those situations the precise space dependence of the pseudo vector potentials, $\vec{A}_{\bm{K}_i}$, and the understanding that they are different at each of the three inequivalent Dirac points is important.
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+
+We have discovered that our form for the strained positions of the carbon atoms in the graphene lattice was incomplete. In this \emph{errata} we show how the complete treatment changes our conclusions. In particular, the second of our two conclusions below is not true:
+%
+\begin{enumerate}
+  \item To correctly describe the shift in the positions of the Dirac points from the reference (flat, undeformed) state to the strained state in terms of a strain-induced vector potential, the corrections arising from the deformation of the lattice ($\vec{A}_\text{latt}=\vec{A}_{\bm{K}_i}-\vec{A}_p$, where $\vec{A}_{\bm{K}_i}$ and $\vec{A}_p$ are defined in Eqs.~4 of the original paper) should be taken into consideration in addition to the changes in the nearest-neighbor hoppings (e.g., Eqs.~4 or Figs.~2).
+  \item A non-uniform (yet smooth, so that the effective mass approximation is still meaningful) strain distribution endows $\vec{A}_\text{latt}$ with a position dependence which leads to a correction to the pseudomagnetic field: $\vec{B}_{\bm{K}_i} =\nabla\times\vec{A}_{\bm{K}_i}$. Fig.~3 showed the effect of this correction.
+\end{enumerate}
+
+The second conclusion is incorrect because, although the corrections $\vec{A}_\text{latt}$ are finite and, in general, have a position dependence, their rotational is identically zero and, thus, so is their contribution to the pseudomagnetic field. This has been pointed out recently by de Juan \emph{et al.}~\cite{deJuan:2012}. Below we elaborate on that, and on the reason why Fig.~3 apparently shows a non-zero $\vec{B}_{\bm{K}_i}$, when it should have been zero by construction. We trust the detail will benefit the reader.
+
+Our original form for the strained nearest neighbor vectors was incomplete. Under the Cauchy-Born hypothesis, the position of the $i$-th atom in the deformed configuration, $\bm{R}_i$, is given with reference to the undeformed one, $\bm{r}_i$, in terms of the deformation field $\bm{u}(\bm{r})$:
+%
+\begin{equation}
+  \bm{R}_{i}=\bm{r}_{i}+\bm{u}(\bm{r_i})
+  \label{eq:deformation}.
+\end{equation}
+%
+The electronic dispersion is affected by changes in the nearest-neighbor vectors $\bm{\delta}_{1,2,3}$ which, on account of \eqref{eq:deformation}, are given approximately by
+%
+\begin{equation}
+\bm{\delta}_{i}^{\prime}(\bm{r})\simeq\bm{\delta}_{i}(\bm{r}
+)+\left(\bm{\delta }_{i} \cdot\bm{\nabla}\right)\bm{u}(\bm{r})
+= (\bm{1}+\bm{\nabla u})\cdot\bm{\delta }_{i}
+\label{correct}
+  ,
+\end{equation}
+%
+where $\bm{\nabla}\bm{u}$ is the Jacobian of the displacement field known as the displacement gradient tensor:
+%
+\begin{equation*}
+  [\bm{\nabla u}]_{ij} = u_{i,j}
+  = \frac{u_{i,j}+u_{j,i}}{2} + \frac{u_{i,j}-u_{j,i}}{2}
+  \equiv \tilde{\epsilon}_{ij} + \tilde{\omega}_{ij}
+  \quad\longrightarrow\quad \bm{\nabla u} = \tilde{\bm{\epsilon}} +
+\tilde{\bm{\omega}}
+  ,
+\end{equation*}
+%
+where $\tilde{\bm{\omega}}$ is the rotation tensor and $\tilde{\bm{\epsilon}}$ is the \emph{linear} strain tensor which is only one part of the full (Lagrange) strain tensor given by $\bm{\epsilon} = \tfrac{1}{2}(\bm{\nabla u} + \bm{\nabla u}^\top+\bm{\nabla u}^\top\bm{\nabla u}) = \tilde{\bm{\epsilon}} + \tfrac{1}{2}(\bm{\nabla u}^\top\bm{\nabla u})$.  Instead of using Eq.~\eqref{correct}, in our original paper we mistakenly took the strained nearest-neighbor vector to be $\bm{\delta}_{i}^{\prime}(\bm{r})\simeq (\bm{1}+\bm{\epsilon})\cdot\bm{\delta }_{i}$, a result that is only true in special cases.  In fact, even $\bm{\delta}_{i}^{\prime}(\bm{r})\simeq (\bm{1}+\tilde{\bm{\epsilon}})\cdot\bm{\delta }_{i}$ is only valid if the deformation does not involve local rotation ($\tilde{\bm{\omega}}=0$).
+
+
+When the correct expansion for the strained position of the atoms is used, it becomes apparent that the lattice corrections cannot contribute to the pseudomagnetic field. Upon expansion around a corner of the BZ of the undeformed lattice, $\bm{K}$, the lattice corrections to the vector potential can be cast as \cite{deJuan:2012}
+%
+\begin{equation}
+  \vec{A}_\text{latt}=\vec{A}_{\bm{K}}-\vec{A}_p \propto \bm{\nabla} (\bm{K}\cdot\bm{u})
+  .
+\end{equation}
+%
+Since the above is a total derivative, it cannot contribute to the pseudomagnetic field because $\nabla\times\nabla \phi \equiv 0$. This can be also verified by direct inspection of Eqs.~(4) of the original paper which remain valid in form if the replacement $\bm{\epsilon } \to \bm{ \nabla u }$ is made.
+
+Having clarified and established the correct expansion of the nearest neighbor vector and the lack of an induced pseudomagnetic field a few comments on the results in the original paper are in order:
+%
+\begin{enumerate} \renewcommand{\theenumi}{\roman{enumi}}
+  \item Lattice corrections beyond hopping clearly do not contribute to the pseudomagnetic field as originally claimed in the paper.
+  \item The lattice corrections are still needed to correctly describe the shift in the positions of the Dirac points due to strain. Thus, when the position of the Dirac points is required in a global frame of reference (e.g. to describe momentum-sensitive electronic tunneling to/from strained graphene from/to another system, probe, or contact), Eqs.~4 should be used with the substitution $\bm{\epsilon } \to \bm{\nabla u}$:
+%
+	\begin{align*}
+	\vec{A}_{\bm{K_1}}&=-\vec{A}_{\bm{K_1'}}=\frac{\phi_0}{2a} \left(
+\begin{array}{c} \frac{4}{3\sqrt{3}}\bm{[\nabla u]}_{yx}\\ \frac{4}{3
+\sqrt{3}} \bm{[\nabla u]}_{yy} \end{array} \right) +\vec{A}_p , \\ 
+	\vec{A}_{\bm{K_2}}&=-\vec{A}_{\bm{K_2'}}=\frac{\phi_0}{2a} \left(
+\begin{array}{c} \frac{2}{3}\bm{[\nabla u]}_{xx}-\frac{2\sqrt{3}}{9}
+\bm{[\nabla u]}_{yx} \\ \frac{2}{3} \bm{[\nabla u]}_{xy}-\frac{2
+\sqrt{3}}{9} \bm{[\nabla u]}_{yy} \end{array} \right)+\vec{A}_p  ,  \\
+	\vec{A}_{\bm{K_3}}&=-\vec{A}_{\bm{K_3'}}=\frac{\phi_0}{2a} \left(
+\begin{array}{c} -\frac{2}{3} \bm{[\nabla u]}_{xx}-\frac{2
+\sqrt{3}}{9} \bm{[\nabla u]}_{yx} \\ -\frac{2}{3} \bm{[\nabla
+u]}_{xy}-\frac{2 \sqrt{3}}{9} \bm{[\nabla u]}_{yy} \end{array}
+\right)+\vec{A}_p  , \\
+	\intertext{with}
+	&\vec{A}_p=\frac{\phi_0}{2a} \left( \begin{array}{c} \frac{\beta }{\pi} \epsilon_{xy} \\ \frac{\beta }{2 \pi} (\epsilon_{xx}-\epsilon_{yy}) \end{array} \right).
+	\end{align*}
+%
+  \item Unlike for the lattice corrections, the Lagrange strain tensor, $\bm{\epsilon}$, should still be used in the hopping contributions to the pseudo vector potential ($\vec{A}_p$) rather than $\bm{\nabla u}$ or $\tilde{\bm{\epsilon}}$. This is because, at the level of the tight-binding model considered here, $t_i$ depends only on the nearest-neighbor distance given to first order by: $|\bm{\delta}_{i}^{\prime}|\approx a+\frac{1}{a}\,\bm{\delta}_{i}\cdot\bm{\epsilon}\cdot\bm{\delta}_ {i}$.
+  \item Eq.~(3) of the original paper,
+\begin{equation*}
+  H \simeq -\sum_{\vec{k},j} \bigl(
+  t_0 + \delta t_j - it_0\vec{k}\cdot\epsilon\cdot\vec{\delta}_j
+  \bigr) \, e^{-i\vec{k}\cdot\vec{\delta}_j} \,
+  a_{\vec{k}}^{\dagger}b_{\vec{k}} + \text{H.c.}
+  ,
+  \label{eq:H-TB-strain}
+\end{equation*}
+is written as $\propto \bm{k}\cdot\bm{\epsilon}\cdot\bm{\delta}_i$, when, rigorously, it should have been $\propto\bm{k}\cdot\bm{\nabla u}\cdot\bm{\delta}_i$.
+  \item Figs.~1 and 2 are correct.  For the deformations considered (plane, pure strain) the expressions in Eqs.~4 of the paper are correct as originally stated.
+  \item Since lattice corrections cannot alter the pseudomagnetic field, Figs.~3(b) and 3(c) should be no different from Fig.~3(a).  This was inaccurate in the original paper because we expressed the deformation of the nearest-neighbor vectors in terms of the Lagrange strain tensor directly obtained from our finite element analysis rather than using the displacement gradient tensor. Extracting the plane projection of the displacement gradient from the simulation and replacing it in Eqs.~(4) yields a pseudomagnetic field with no contribution from lattice corrections. 
+\end{enumerate}

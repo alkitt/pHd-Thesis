@@ -9,19 +9,22 @@
 %%   additional packages  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{graphics,graphicx}         % Figures
-\usepackage{amsmath,amssymb,mathrsfs}  % Math symbols
-\usepackage{tikz}                      % Fancy drawings
-\usepackage{cite,citesort}             % Sorts citations in the order referenced
-\usepackage[toc,page]{appendix}        %needed to add the appendices to the t.o.c.
+\usepackage{graphics,graphicx}         		% Figures
+\usepackage{amsmath,amssymb,mathrsfs,bm} 	% Math symbols
+\usepackage{tikz}                      		% Fancy drawings
+\usepackage{cite,citesort}             		% Sorts citations in the order referenced
+\usepackage[toc,page]{appendix}       		%needed to add the appendices to the t.o.c.
 
+\includeonly{PVP}
 \begin{document}
 
 \tableofcontents
 
 \include{Friction}
 
+\include{PVP}
+
 \bibliographystyle{unsrt}
-\bibliography{Friction_chap}
+\bibliography{Friction_chap,PVP_chap}
 
 \end{document}
