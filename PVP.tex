@@ -1,37 +1,41 @@
-\chapter{Lattice-corrected strain-induced vector potentials in graphene}
+\chapter{Strain-induced vector potentials: Lattice-corrections and engineered pseudo magnetic fields\label{chap:PVP}}
 
-Many surprising properties of graphene can, and have, been engineered to create novel physical scenarios in a condensed matter setting: the chiral and Dirac-like energy dispersion near the Fermi energy leads to Klein tunneling \cite{Beenakker2008} and Veselago lensing \cite{Cheianov2007}; relativistic Landau level quantization, observable even at room temperature, emerges under applied magnetic fields \cite{Novoselov2007}.
-Graphene is also an extremely strong material, with an effective Young's modulus of 1~TPa, an intrinsic ultimate strength of 130 GPa \cite{Lee2008}, which  has been seen to withstand elastic deformations up to 15-20\% \cite{Cadelano2009}.
-This unusually large range of elastic response, combined with graphene's intrinsic two-dimensionality and the peculiar coupling between electrons and deformations, make graphene an unparalleled condensed matter system in which to explore strain as a tool for tailoring electronic functionality.
+At the intersection of graphene's outstanding mechanical properties, many of which were discussed in Chapter \ref{chap:fri}, and graphene's unique electrical properties, discussed in Chapter \ref{chap:TightBinding}, lies a peculiar and provocative coupling.
+By shifting the positions of the atoms, strain shifts the positions of the Dirac points in reciprocal space.
+This momentum shift is analogous to the shift in the canonical momentum when a magnetic field is applied.
+Thus, strain in graphene can be engineered to trick the electrons into believing they are in a magnetic field.
+This provocative coupling is made more appealing by the two dimensional elastic nature of graphene.
+Not only does the coupling exist in theory, the material also allows the physical realization of it.
 
 A dazzling glimpse of the feasibility and potential of strain-engineered graphene \cite{Pereira2009a,Guinea2009} has recently emerged with experiments reporting that certain strain profiles can induce Landau quantization and effective pseudomagnetic fields in excess of 300\,T \cite{Levy2010,Yan2012,Yeh2011}.
 Such physics strongly encourages the prospect of harnessing this unconventional interplay between graphene's unique electronic and impressive mechanical properties to control electronic transport in graphene devices \cite{Pereira2009a,Fogler2008}.
 
-The key elements underlying these experimental observations and the concept of strain-engineering can be readily captured from a tight-binding description of the electrons in graphene.
-Graphene has a honeycomb lattice (Fig.~\ref{lattice}(a)) which can be decomposed into two triangular Bravais sublattices, the A and B sublattices, with nearest neighbor vectors of $\vec{\delta_1}=a/2 \ \hat{x}+\sqrt{3}a/2 \ \hat{y}$, $\vec{\delta_2}=a/2 \ \hat{x}- \sqrt{3}a/2 \ \hat{y}$, and $\vec{\delta_3}=-a \ \hat{x}$ with $a=1.42$\,\AA.
-The two elementary lattice translation vectors ($\vec{R}_i$) are also shown.
-The associated band structure was first calculated in 1947 by Wallace, considering only the $\pi$ band electrons \cite{Wallace1947}.
-It is characterized by two energy bands touching at the two non-equivalent corners ($\bm{K}$ and $\bm{K'}$) of the hexagonal Brillouin zone (BZ)\cite{Wallace1947}, shown in Fig.~\ref{lattice}(b).
-The positions of the Dirac points can be found by rotating $\bm{K}=\frac{4 \pi}{3 \sqrt{3} a}\ \hat y$ by 60 degree increments about the origin.
-The dispersion is conical near these points,  mimicking the physics of 2D relativistic fermions. 
-In undoped graphene, the Fermi energy lies exactly at the contact point between the two dispersing cones.
-At these so-called Dirac points, an effective low energy Hamiltonian can be derived which coincides with the 2D Dirac Hamiltonian \cite{Semenoff1984,CastroNeto2009,Ando2005}.
-For unstrained graphene, the three $\bm{K}$ points are equivalent, and likewise for the three $\bm{K'}$ points.
+This chapter first discusses the theory of the strain-induced vector potentials including a new lattice-correction.  Next, the importance of the new lattice-corrections are discussed.
+Finally, methods of strain engineering graphene devices are examined with an emphasis on the over pressured hour glass shaped microchamber.
+This device cleverly takes advantage of plasmonics to enhance signals from higher pseudo magnetic field regions.
+
+\section{Lattice-corrected strain induced vector potentials}
 
 \begin{figure}
 \includegraphics{Figs_PVP/figure_1.pdf}
-\caption{\label{lattice} (a) Unstrained graphene's real space lattice with labeled nearest neighbor vectors ($\vec{\delta_i}$), labeled lattice translation vectors, $\vec{R}_i=n\vec{a}_+ + m \vec{a}_-$ with $m$ and $n$ integers, and black and gray dots representing the A and B sublattices, respectively. (b) The Brillouin zone of unstrained graphene with labeled high symmetry points. (c) The positions of the unstrained (black, solid) and strained (brown, dashed) nearest neighbors, and the corresponding $\vec{\delta}_i$ and $\vec{\delta}_i'$ for 20 \% uniaxial strain along the armchair direction.  (d) The unstrained (black, solid) and strained (brown, dashed) Brillouin zone, also for 20 \% armchair uniaxial strain, with labels for the now inequivalent Dirac points. }
+\caption{\label{fig:PVP:lattice} (a) Unstrained graphene's real space lattice with labeled nearest neighbor vectors ($\vec{\delta_i}$), labeled lattice translation vectors, $\vec{R}_i=n\vec{a}_+ + m \vec{a}_-$ with $m$ and $n$ integers, and black and gray dots representing the A and B sublattices, respectively. (b) The Brillouin zone of unstrained graphene with labeled high symmetry points. (c) The positions of the unstrained (black, solid) and strained (brown, dashed) nearest neighbors, and the corresponding $\vec{\delta}_i$ and $\vec{\delta}_i'$ for 20 \% uniaxial strain along the armchair direction.  (d) The unstrained (black, solid) and strained (brown, dashed) Brillouin zone, also for 20 \% armchair uniaxial strain, with labels for the now inequivalent Dirac points. }
 \end{figure}
 
-After accounting for the effects of the distorted lattice, a tight-binding description is equally applicable to strained graphene.
-In Fig.~\ref{lattice}(c), uniaxial strain in the armchair direction is shown.
-The distance between the nearest neighbors is modified, introducing a bond-dependent nearest neighbor hopping amplitude \cite{Hasegawa2006}.
-Additionally, the nearest neighbor vectors have been modified as well.
+The key elements underlying strain-engineering can be readily captured by generalizing the tight binding Hamiltonian discussed in Chapter to the strained graphene geometry\ref{chap:TightBinding}.
+Figure \ref{fig:PVP:lattice} illustrates the strain induced motion of the carbon atoms.
+For reference, in Figure \ref{fig:PVP:lattice} graphene's unstrained geometry from chapter \ref{chap:TightBinding} is shown with the real space lattice in (a) and the first Brillouin zone in (b).
+Figure \ref{fig:PVP:lattice}(c) shows the position of the carbon atoms for 20\% uniaxial strain in the armchair direction and Figure \ref{fig:PVP:lattice}(d) shows the corresponding distortion of the Brillouin zone.
+20\% strain was only used here to make the effect of strain on the lattice positions obvious.
+All effects discussed here are linear in strain and so persist at much smaller strains.
+In fact, it has been measured that graphene breaks near 20\% strain\cite{Lee2008}.
+
+This change in lattice geometry alters the tight binding approach by \emph{both} shifting the position of the atoms \emph{and}  introducing a bond-dependent nearest neighbor hopping amplitude \cite{Hasegawa2006} because of the modified distance between nearest neighbors.
 The essential consequences of these changes are the following \cite{Pereira2009}:
 (i) for any amount of strain, the Dirac points are displaced from the corners of the unstrained BZ and, furthermore, do not necessarily sit at the corners of the strained BZ;
 (ii) the gapless and conical nature of the energy dispersion remains robust, except when the deformation is so strong that the two inequivalent Dirac points merge in a Lifshitz transition (but that probably requires strains of the order 20\%, where the tight-binding description is not reliable anymore);
 (iii) at any finite density the Fermi line is deformed from the isotropic circle to an elliptical shape, and two Fermi velocities can be defined along the principal directions \cite{Pereira2009,Pereira2010c,Choi2010}.
-All these modifications are significant and happen concurrently, and hence a complete description of the electronic and transport properties of strained graphene requires their combined consideration.
+All these modifications are significant and happen concurrently. 
+Hence a complete description of the electronic and transport properties of strained graphene requires their combined consideration.
 For example, the local shift of the Dirac point (i) can hinder or completely suppress electronic propagation across regions of different strain states \cite{Pereira2009a,Fogler2008}.
 The anisotropy of the Fermi surface (iii) has direct bearing in measurable quantities such as the anisotropy in electrical resistivity\cite{Kim2009}, optical absorption \cite{Pereira2010c,Pellegrino2010}, and the Raman signature of the 2D peak \cite{Huang2010,Mohr2010a,Frank2011,Yoon2011}.
 
@@ -51,16 +55,16 @@ Here we include this effect, and show its importance in describing the absolute 
 This yields new leading order terms in the strain-induced pseudo vector potential which are different at the three inequivalent Dirac points.
 Specifically, we shall be interested below only in how strain affects the position of the Dirac point in reciprocal space.
 We also restrict the discussion to planar deformations, and hence ignore effects that might arise in the presence of curvature \cite{CastroNeto2009,Vozmediano2010}.
-We will detail the derivation of these terms in the Theory section, then, in the Discussion section, demonstrate their importance in describing the shift of the Dirac point in graphene, and, finally, illustrate how the inclusion of these terms affects the pseudomagnetic field distribution for particular strain profiles. 
+We will detail the derivation of these terms and then demonstrate their importance in describing the shift of the Dirac point in graphene. 
 
-\section{Theory}
+% HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 
 Deformation of the lattice necessarily leads to modified hoppings. If this is treated as a slowly varying perturbation to the relaxed nearest-neighbor tight-binding Hamiltonian \cite{CastroNeto2009}, the Hamiltonian can be written as
 \begin{equation}
   H = - t \sum_{<i,j>}a_i^{\dagger}b_j
     - \sum_{<i,j>} \delta t_{ij} a_i^{\dagger}b_j
     + \text{H.c.}
-  \label{eq:H-TB}
+  \label{eq:PVP:H-TB}
 \end{equation}
 Here the sum is over all nearest neighbor pairs, $a_i^{\dagger}$ is the creation operator for an electron on the A sublattice, $b_j$ is the annihilation operator for an electron on the B sublattice, $t$ is the unstrained hopping amplitude, and $\delta t_{ij}$ is the nearest neighbor, bond specific, change in hopping energy due to strain. The bond specificity of $\delta t$ can be made explicit by writing $\delta t_{ij} = \delta t(|\vec{\delta}_{ij}|)$.
 

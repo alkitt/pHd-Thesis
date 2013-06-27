@@ -13,18 +13,22 @@
 \usepackage{amsmath,amssymb,mathrsfs,bm} 	% Math symbols
 \usepackage{tikz}                      		% Fancy drawings
 \usepackage{cite,citesort}             		% Sorts citations in the order referenced
-\usepackage[toc,page]{appendix}       		%needed to add the appendices to the t.o.c.
+\usepackage[toc,page]{appendix}       		% needed to add the appendices to the t.o.c.
 
-\includeonly{PVP,Friction}
+% \includeonly{TightBinding}
+\includeonly{TightBinding}
+\newcommand{\angstrom}{\textup{\AA}}		% Angstrom command
 \begin{document}
 
 \tableofcontents
+
+\include{TightBinding}
 
 \include{Friction}
 
 \include{PVP}
 
 \bibliographystyle{unsrt}
-\bibliography{Friction_chap,PVP_chap}
+\bibliography{thesis}
 
 \end{document}
