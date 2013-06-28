@@ -1,0 +1,12 @@
+\begin{tikzpicture}[scale=.75]
+	%The spectra
+	\node at (0,0) {\includegraphics[scale=.75]{Figs_Friction/2012-12-18_Fit_101psi_Spectra_for_paper.pdf}};
+	
+	%The picture of the hole
+	\newcommand{\arrowlength}{.44*1.2*1.77 cm}
+	\begin{scope}[xshift=1.7 cm,yshift=.7 cm]
+		%For the total scale=1 the .jpg scale is .6
+		\node at (0,0) {\includegraphics[scale=.8,angle=-90,trim=9.5mm 8.5mm 9.5mm 8.75mm,clip]{Figs_Friction/SB02_1_cropped.jpg}};
+		\draw[->,black,thick,>=stealth] (0,-\arrowlength) -- (0,\arrowlength);
+	\end{scope}
+\end{tikzpicture}]

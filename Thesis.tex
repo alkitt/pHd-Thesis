@@ -1,34 +1,63 @@
 \documentclass[11pt]{report}
-%To compile, run the following commands in order (you'll need latex and bibtex installed):
-%  pdflatex thesis
-%  bibtex thesis
-%  pdflatex thesis
-%  pdflatex thesis
+% \includeonly{Friction}	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   additional packages  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \usepackage{graphics,graphicx}         		% Figures
 \usepackage{amsmath,amssymb,mathrsfs,bm} 	% Math symbols
 \usepackage{tikz}                      		% Fancy drawings
 \usepackage{cite,citesort}             		% Sorts citations in the order referenced
 \usepackage[toc,page]{appendix}       		% needed to add the appendices to the t.o.c.
+\usepackage{sectsty}                  		% needed for the \chapterfont command
 
-% \includeonly{TightBinding}
-\includeonly{TightBinding}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%    Custom Commands     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\angstrom}{\textup{\AA}}		% Angstrom command
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%    Formating Options   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\baselinestretch}{1.38}		% ??
+\chapterfont{\huge}							% ??
+\oddsidemargin=0.5in						% ??
+\evensidemargin=0.0in						% ??
+\topmargin=-0.1in							% ??
+\textheight=8.5in							% ??
+\textwidth=6.0in							% ??
+\footskip=0.22in							% ??
+
 \begin{document}
+	% Preamble
+	\pagenumbering{roman}					% Roman style inverse page numbers
+	\include{form_1_title}
+	\include{form_2_approval}
+	\baselineskip 22 true pt 				% Numbers at bottom of page are 3/4in from edge
+	\include{form_3_dedication}
+	\setcounter{page}{4}					% ??
+	\include{form_4_acknowledge}
+	\baselineskip 22 true pt 				% ??
+	\include{form_5_abstract} 
+	\tableofcontents
+	\listoftables
+	\listoffigures
+	\include{form6_abbreviations}
+	\clearpage
 
-\tableofcontents
 
-\include{TightBinding}
+	% Body text
+	\pagenumbering{arabic}					% Back to arabic style numbers
+	\pagestyle{myheadings} 					% This puts page numbers in the right place
+	\include{TightBinding}
+	\include{Friction}
+	\include{PVP}
 
-\include{Friction}
+	% Appendices
+	\begin{appendices}
+	\end{appendices}
 
-\include{PVP}
-
-\bibliographystyle{unsrt}
-\bibliography{thesis}
-
+	% Bibliography bibtex style
+	\bibliographystyle{unsrt}
+	\bibliography{thesis}
 \end{document}

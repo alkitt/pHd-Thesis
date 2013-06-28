@@ -1,0 +1,54 @@
+\newcommand{\topthick}{.3 cm}
+\newcommand{\botthick}{8 cm}
+\newcommand{\basethick}{2 cm}
+\newcommand{\edge}{12 cm}
+\newcommand{\radius}{5 cm}
+\newcommand{\srad}{.5 cm}
+\newcommand{\grup}{0 cm}
+\begin{tikzpicture}[scale=.25,sio2/.style={fill=blue!50!white,draw=none},siedge/.style={draw=black!50!white}]
+
+	%Image of a hole (top view)
+	\begin{scope}[xshift=0 cm,yshift=10 cm]
+		\node at (0,0) {\includegraphics[scale=1.2,trim=1.25cm .45cm 1.25cm .45cm,clip]{Figs_Friction/SB03-2.jpg}};
+	\end{scope}
+	
+	%The SiO2
+	\filldraw[sio2] (-\edge,0) -- (-\radius, 0) -- (-\radius, -\topthick) -- (-\edge, -\topthick);
+	\filldraw[sio2] (\edge,0) -- (\radius, 0) -- (\radius, -\topthick) -- (\edge, -\topthick);
+	
+	%The Si
+	\fill[fill=black!20!white]
+		(-\edge,-\topthick) -- (-\radius,-\topthick) 
+		\foreach \i in {0,...,15}
+			{-- (-\radius, -\topthick-\i*\srad) .. controls (-\radius-\srad/4, -\topthick-\srad/4-\i*\srad) and (-\radius-\srad/4, -\topthick-3*\srad/4-\i*\srad) ..
+			(-\radius,-\topthick-\srad-\i*\srad) }
+		-- (-\radius, -\topthick-\botthick) node[anchor=south west] {$P_0$} -- 
+		(\radius, -\topthick-\botthick) 
+		\foreach \j in {15,14,...,0}
+			{-- (\radius, -\topthick-\srad-\j*\srad) .. controls (\radius+\srad/4, -\topthick-3*\srad/4-\j*\srad) and (\radius+\srad/4, -\topthick-\srad/4-\j*\srad) ..
+			(\radius,-\topthick-\j*\srad) }
+		 -- (\edge, -\topthick) -- 
+		(\edge, -\topthick-\botthick-\basethick) -- (-\edge, -\topthick-\botthick-\basethick) [draw=none]-- cycle ;
+	
+	\draw[siedge](-\edge,-\topthick) --(-\radius,-\topthick);
+	\foreach \i in {1,...,16}
+		\draw[yshift=-1*(\i-1)*\srad,siedge] (-\radius, -\topthick) .. controls (-\radius-\srad/4, -\topthick-\srad/4) and (-\radius-\srad/4, -\topthick-3*\srad/4) ..
+			(-\radius,-\topthick-\srad);
+	\draw[siedge] (-\radius, -\topthick-\botthick) -- (\radius, -\topthick-\botthick);
+	\draw[siedge] (\radius, -\topthick) -- (\edge, -\topthick);
+	\foreach \i in {1,...,16}
+		\draw[yshift=-1*(\i-1)*\srad,siedge] (\radius, -\topthick) .. controls (\radius+\srad/4, -\topthick-\srad/4) and (\radius+\srad/4, -\topthick-3*\srad/4) ..
+			(\radius,-\topthick-\srad);
+	
+	\node at (9,1.5) {$N_2$};
+	
+	%The Graphene on the top
+	\draw[thick] (-\edge,\grup) -- (-\radius,\grup) node[anchor=south west]{$P>P_0$}  parabola bend (0,-.7 cm)  (\radius,\grup) -- (\edge,\grup);
+	
+	%Scale bar
+	\draw[draw=black,ultra thick, xshift=\radius/2+\edge/2-2.5cm, yshift=-\botthick-\topthick-\basethick/2] (0,0) -- node[anchor=south] {$5 \ \mu m$}(5 cm, 0);
+	
+	%Dashed lines
+	\draw[color=black!40!white,dashed] (-\edge,\grup+.5cm) -- (-\edge,\grup+4.5 cm);
+	\draw[color=black!40!white,dashed] (\edge,\grup+.5cm) -- (\edge,\grup+4.5 cm);
+\end{tikzpicture}

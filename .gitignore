@@ -5,7 +5,13 @@
 *.blg
 *.log
 *.toc
+*.lof
+*.lot
 *.pdf
+
+# sublime2 project files
+*.sublime-project
+*.sublime-workspace
 
 # Extra files specific to thesis
 *.zip
