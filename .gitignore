@@ -3,16 +3,15 @@
 *.aux
 *.bbl
 *.blg
-*.log
-*.toc
 *.lof
+*.log
 *.lot
-*.pdf
+*.toc
 
 # sublime2 project files
 *.sublime-project
 *.sublime-workspace
 
 # Extra files specific to thesis
-*.zip
 *.db
+*.zip

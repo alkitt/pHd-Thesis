@@ -1,4 +1,4 @@
-\documentclass[11pt]{report}
+\documentclass[12pt]{report}				% 12 pt font single sided
 % \includeonly{Friction}	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -7,9 +7,9 @@
 \usepackage{graphics,graphicx}         		% Figures
 \usepackage{amsmath,amssymb,mathrsfs,bm} 	% Math symbols
 \usepackage{tikz}                      		% Fancy drawings
-\usepackage{cite,citesort}             		% Sorts citations in the order referenced
 \usepackage[toc,page]{appendix}       		% needed to add the appendices to the t.o.c.
 \usepackage{sectsty}                  		% needed for the \chapterfont command
+\usepackage{apalike}						% APA like bibliography style
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    Custom Commands     %%
@@ -17,10 +17,10 @@
 \newcommand{\angstrom}{\textup{\AA}}		% Angstrom command
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%    Formating Options   %%
+%%     Format             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapterfont{\tiny}					% Sets section headers to 12 pt
 \renewcommand{\baselinestretch}{1.38}		% ??
-\chapterfont{\huge}							% ??
 \oddsidemargin=0.5in						% ??
 \evensidemargin=0.0in						% ??
 \topmargin=-0.1in							% ??
@@ -30,12 +30,12 @@
 
 \begin{document}
 	% Preamble
-	\pagenumbering{roman}					% Roman style inverse page numbers
 	\include{form_1_title}
 	\include{form_2_approval}
-	\baselineskip 22 true pt 				% Numbers at bottom of page are 3/4in from edge
 	\include{form_3_dedication}
-	\setcounter{page}{4}					% ??
+	\pagenumbering{roman}					% Roman style inverse page numbers
+	\setcounter{page}{4}					% Sets the page number to 4
+	\baselineskip 22 true pt 				% Numbers at bottom of page are 3/4in from edge
 	\include{form_4_acknowledge}
 	\baselineskip 22 true pt 				% ??
 	\include{form_5_abstract} 
@@ -43,21 +43,25 @@
 	\listoftables
 	\listoffigures
 	\include{form6_abbreviations}
-	\clearpage
 
 
 	% Body text
+	\clearpage
 	\pagenumbering{arabic}					% Back to arabic style numbers
-	\pagestyle{myheadings} 					% This puts page numbers in the right place
+	\pagestyle{myheadings} 					% ??
 	\include{TightBinding}
 	\include{Friction}
 	\include{PVP}
 
 	% Appendices
+	\clearpage
 	\begin{appendices}
 	\end{appendices}
 
-	% Bibliography bibtex style
-	\bibliographystyle{unsrt}
+	% Bibliography
+	\clearpage
+	\bibliographystyle{apalike}				% Should be listed alphabetically
 	\bibliography{thesis}
+
+	%CV at end--probably the absolute last thing to tack on
 \end{document}
