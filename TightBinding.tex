@@ -1,9 +1,4 @@
-\chapter{Graphene's electronic dispersion: Nearest neighbor tight binding\label{chap:TB}}
-
-Graphene is probably best known for its unusual electronic dispersion\cite{CastroNeto2009}.
-Instead of behaving like the massive particles regularly encountered in traditional condensed matter physics, the electrons in graphene behave like a particle one would expect to experience in high energy physics: massless, relativistic, chiral Dirac-Weyl electrons\cite{Wallace1947,Semenoff1984}.
-This results in graphene exhibiting unique properties such as the anomalous Quantum Hall effect\cite{Zhang2005,Novoselov2005a}, universal optical conductance\cite{Nair2008,Mak2008}, and Klein tunneling\cite{Beenakker2008,Young2009}.
-In this chapter graphene's electronic dispersion will be derived in a nearest neighbor tight binding frame work.
+In this chapter graphene's electronic dispersion will be calculated in a nearest neighbor tight binding frame work.
 
 The linear electronic dispersion of graphene was published by Wallace\cite{Wallace1947} 57 years before Geim, Novoselov and co-workers spurred graphene research forward with their method of mechanical exfoliation\cite{Novoselov2004}.
 In 1984 Semenoff formalized the equivalence between the low energy electrons in graphene and Dirac-Weyl electrons.
@@ -19,15 +14,20 @@ This chapter will follow in the spirit of these derivations but give additional 
 \end{figure}
 
 In its unperturbed state, the carbon atoms in the graphene lattice are arrayed in a hexagon as shown in Figure \ref{fig:TB:geometry}(a).
-Throughout the x axis will be taken in the graphene arm chair direction as shown.
+Throughout the x axis will be taken in the zigzag direction as shown.
 Since a hexagonal lattice is not a Bravais lattice, the lattice is treated as a triangular Bravais lattice with a two atom bases.
 In figure \ref{fig:TB:geometry}(a) the A sub-lattice is colored orange and the B sub-lattice is colored blue.
-The lattice is created by arraying the two atoms basic using the lattice vectors $\vec{a}_+=\frac{3}{2} a \hat{x}+\frac{\sqrt{3}}{2} a \hat{y}$ and $\vec{a}_-=\frac{3}{2} a \hat{x}-\frac{\sqrt{3}}{2} a \hat{y}$ where a is the distance between nearest neighbors, $a=1.4 \ l\angstrom$ for graphene.
+The lattice is created by arraying the two atoms basic using the lattice vectors 
+\begin{align*}
+	\vec{a}_+&= \frac{\sqrt{3}a}{2} \hat{x} + \frac{3a}{2} \hat{y} \\
+	\vec{a}_-&=-\frac{\sqrt{3}a}{2} \hat{x} + \frac{3a}{2} \hat{y}
+\end{align*}
+where $a=1.4 \ l\angstrom$ is the nearest neighbor distance.
 The three nearest neighbor vectors are given by:
 \begin{align*}
-	\vec \delta_1&=\frac{a}{2}\hat{x}+\frac{\sqrt{3} a}{2}\hat{y}\\
-	\vec \delta_2&=\frac{a}{2}\hat{x}-\frac{\sqrt{3} a}{2}\hat{y}\\
-	\vec \delta_3&=-a \hat{x}
+	\vec \delta_1&=-\frac{\sqrt{3} a}{2}\hat{x}+\frac{a}{2}\hat{y}\\
+	\vec \delta_2&= \frac{\sqrt{3} a}{2}\hat{x}+\frac{a}{2}\hat{y}\\
+	\vec \delta_3&=a \hat{y}
 \end{align*}
 
 The Brillouin zone of graphene is shown in Figure \ref{fig:TB:geometry}(b).
@@ -36,9 +36,9 @@ The $\Gamma$ point is at the center of the Brillouin zone while the $\bm{K}$ and
 It should be noted that only 2 of the 6 corners of the hexagon are unique, the others can be connected by reciprocal lattice vectors.
 The position of the $\bm{K}$ and $\bm{K'}$ points are given by:
 \begin{align*}
-	\bm{K}&=-\bm{K'}=\frac{4 \pi}{3 \sqrt{3} a} \hat{y} \\
-	\bm{K}&=-\bm{K'}= \frac{2 \pi}{3 a} \hat{x}-\frac{2 \pi}{3 \sqrt{3} a} \hat{y} \\
-	\bm{K}&=-\bm{K'}=-\frac{2 \pi}{3 a} \hat{x}-\frac{2 \pi}{3 \sqrt{3} a} \hat{y}
+	\bm{K}&=-\bm{K'}= \frac{4 \pi}{3 \sqrt{3} a} \hat{x} \\
+	\bm{K}&=-\bm{K'}=-\frac{2 \pi}{3 \sqrt{3} a} \hat{x} + \frac{2 \pi}{3 a} \hat{y} \\
+	\bm{K}&=-\bm{K'}=-\frac{2 \pi}{3 \sqrt{3} a} \hat{x} - \frac{2 \pi}{3 a} \hat{y},
 \end{align*}
 with the first pair the easiest to work with.
 
@@ -51,10 +51,10 @@ Afterward, the nearest neighbor tight binding formalism will be applied to graph
 
 In second quantization, the total energy in the system is written as:
 \begin{equation*}
-	H=\sum_{\vec{k},\sigma} c^{\dagger}_{\vec{k},\sigma} c__{\vec{k},\sigma} \epsilon_{\vec{k}}
+	H=\sum_{\vec{k},\sigma} c^{\dagger}_{\vec{k},\sigma} c_{\vec{k},\sigma} \epsilon_{\vec{k}}
 \end{equation*}
 where $c^{\dagger}_{\vec{k},\sigma}$ and $c_{\vec{k},\sigma}$ are the creation and annihilation operators for an electrons with wave-vector $\vec{k}$ and spin $\sigma$ and $\epsilon_{\vec{k}}$ is the energy of the electron with wave-vector $\vec{k}$.
-The product $c^{\dagger}_{\vec{k},\sigma} c__{\vec{k},\sigma}$ is then a number operator.
+The product $c^{\dagger}_{\vec{k},\sigma} c_{\vec{k},\sigma}$ is then a number operator.
 This is a very natural definition of the energy; the equation simply sums the energy one wave-vector at a time.
 
 % Here justification of this approximation--applicable when atoms aren't too close...
@@ -65,8 +65,8 @@ This is a very natural definition of the energy; the equation simply sums the en
 The Hamiltonian becomes:
 \begin{align*}
 	H&=-\sum_{\vec{R}_i, \vec{R}_j,\sigma} (-) \sum_{\vec{k}}\frac{1}{N} e^{i \vec{k} \cdot (\vec{R}_i-\vec{R}_j)}
-	 \epsilon_{\vec{k}} c^{\dagger}_{i,\sigma} c__{j,\sigma} \\
-	 &=-\sum_{<i,j>,\sigma} t_{i,j} c^{\dagger}_{i,\sigma} c__{j,\sigma} + \text{H.C},\\
+	 \epsilon_{\vec{k}} c^{\dagger}_{i,\sigma} c_{j,\sigma} \\
+	 &=-\sum_{<i,j>,\sigma} t_{i,j} c^{\dagger}_{i,\sigma} c_{j,\sigma} + \text{H.C},\\
 \end{align*}
 where the final sum is over $<i,j>$ nearest neighbor pairs and $t_{i,j}=-\sum_{\vec{k}}\frac{1}{N} e^{i \vec{k} \cdot (\vec{R}_i-\vec{R}_j)}\epsilon_{\vec{k}}$ is the hopping energy.
 This seemingly complicated parameter has an easy interpretation when the final form of the Hamiltonian is considered.
@@ -93,10 +93,98 @@ This will make the correspondence with the Dirac-Weyl equation more clear.
 	a_i^{\dagger}&=\frac{1}{\sqrt{N}}\sum_{\vec{k} } e^{ i \vec{k}  \cdot \vec{R}_i} a_{\vec{k} }^{\dagger} \\
 	b_j          &=\frac{1}{\sqrt{N}}\sum_{\vec{k}'} e^{-i \vec{k}' \cdot \vec{R}_j} b_{\vec{k}'} \\
 \end{align*}
-where $R_i$ and $R_j$ are the position of the $ith$ and $jth$ atomic basis respectfully.  The Hamiltonian becomes:
+where $R_i$ and $R_j$ are the position of the $ith$ and $jth$ atomic basis respectfully.  
+Since we are limited to nearest neighbor pairs $R_j$ is restricted to $\vec{R}_j \in \{ \vec{R}_i,\vec{R}_i+\vec{a}_+,\vec{R}_i+\vec{a}_-\}$.
+This is equivalent to saying the nearest neighbor is either in the same atomic basis or in one of the neighboring atomic basis. 
+The Hamiltonian can now be written in Fourier space as
 \begin{align}
-	H&=-t \frac{1}{N} \sum{<i,j>}\sum_{\vec{k},\vec{k'}}(e^{i \vec{k}}+\text{H.C.})\\
-	& \label{eq:TB:RealSpace}
+	H&=-t \frac{1}{N} \sum_{\vec{k},\vec{k'}}\sum_i \left( e^{i \vec{R}_i \cdot (\vec{k}-\vec{k}')}
+		\left( 1+e^{-i \vec{k}' \cdot \vec{a}_+}+e^{-i \vec{k}' \cdot \vec{a}_-} \right) 
+		a^{\dagger}_{\vec{k}} b_{\vec{k}'} + \text{H.C.} \right)\\
+	 &=-t \frac{1}{N} \sum_{\vec{k},\vec{k'}}\left( N \delta_{\vec{k},\vec{k'}}
+	 	\left( 1+e^{-i \vec{k}' \cdot \vec{a}_+}+e^{-i \vec{k}' \cdot \vec{a}_-}\right) 
+		a^{\dagger}_{\vec{k}} b_{\vec{k}'} + \text{H.C.}\right)\\ 
+	 &=-t \sum_{\vec{k}}\left( h(\vec{k})a^{\dagger}_{\vec{k}} b_{\vec{k}} + \text{H.C.} \right)\\ 
 \end{align}
+or
+\begin{equation}
+	H=\sum_{\vec k} 
+		\left( \begin{array}{cc} a^{\dagger}_{\vec{k}} & b^{\dagger}_{\vec{k}} \end{array} \right)
+		\left( \begin{array}{cc}
+			0              & -t h(\vec{k}) \\
+			-t h*(\vec{k}) & 0                                                 \end{array} \right)
+		\left( \begin{array}{c } a_{\vec{k}}           \\ b_{\vec{k}}          \end{array} \right) 
+	\label{eq:TB:RealSpace}
+\end{equation},
+where,
+\begin{equation}
+	h(\vec{k})=1+e^{-i \vec{k} \cdot \vec{a}_+}+e^{-i \vec{k} \cdot \vec{a}_-}
+		=1+2 e^{-i \frac{3}{2} k_y}\cos \left(\frac{\sqrt{3}}{2} a k_x \right)
+	\label{eq:TB:hk}
+\end{equation}
+A straightforward calculation provides the full electrical dispersion,
+\begin{equation*}
+	E(\vec{k})=\pm t |h(\vec{k})|=\sqrt{1+4 \cos^2 \left(\frac{\sqrt{3}}{2} a k_x\right)
+		+4 \cos\left(\frac{\sqrt{3}}{2} a k_x \right) \cos \left(\frac{3}{2} a k_y\right)},
+\end{equation*}
+which is plotted in figure \ref{fig:TB:Dispersion}.
+As shown, the two energy bands converge at the corners of the Brillouin zone, meeting at single points.
+When no extra charge carriers have been added through capacitive coupling or by charge transfer from contaminates, the Fermi energy sits at these points, with the lower energy band filled and the higher energy band empty. %Have to fill in why here
+Thus, the low energy excitations happen about these points.
+The nearest neighbor tight binding approach is fairly accurate in the low energy regime.
+If information further from these points is needed, a higher order approximation is required to account for things such as triginol warping.
+
+\begin{figure}
+	\begin{center}
+	\input{Figs_TightBinding/fullband}
+	\end{center}
+	\caption{\label{fig:TB:Dispersion} The electronic dispersion calculated with a nearest neighbor tight binding approach in the first Brillouin zone.  The two band meet at the $\bm{K}$ and $\bm{K'}$ points.}	
+\end{figure}
+
+The two points of convergence between the high and low energy bands are referred to as the Dirac points because of the characteristic energy dispersion near these points.
+This interesting low energy physics can be best captured by expanding the Hamiltonian in equation \ref{eq:TB:RealSpace} about these points.
+The wave-vectors near these points can be expressed as $\vec{k}=\bm{K}+\vec{q}$ and $\vec{k}=\bm{K'}+\vec{q}'$.
+Expanding the $\vec{k}$ dependent term in the Hamiltonian for small $\vec{q}$ yields different values at the $\bm{K}$ and $\bm{K'}$ points.
+\begin{align*}
+	h(\bm{K }+\vec{q})&= -\frac{3}{2} a \left( q_x-i q_y \right) \\
+	h(\bm{K'}+\vec{q}')&= -\frac{3}{2} a \left(-q_x-i q_y \right) . \\
+\end{align*}
+These values are independent of which of the three identical $\bm{K}$ or $\bm{K'}$ points are expanded about.
+The Hamiltonian can now be expressed in the simpler form \ref{eq:TB:RealSpace}
+\begin{align*}
+	\bm{K:} \ H&=\frac{3}{2} a t \sum_{\vec q} 
+		\left( \begin{array}{cc} a^{\dagger}_{\vec{q}} & b^{\dagger}_{\vec{q}} \end{array} \right)
+		\left( \begin{array}{cc}
+			0              & q_x - i q_y\\
+			q_x+i q_y      & 0                                                 \end{array} \right)
+		\left( \begin{array}{c } a_{\vec{q}}           \\ b_{\vec{q}}          \end{array} \right) \\
+	  &=\frac{3}{2} a t \sum_{\vec q}
+		\left( \begin{array}{cc} a^{\dagger}_{\vec{q}} & b^{\dagger}_{\vec{q}} \end{array} \right)
+		\vec{q} \cdot \vec{\sigma}
+		\left( \begin{array}{c } a_{\vec{q}}           \\ b_{\vec{q}}          \end{array} \right) \\
+	\bm{K':} \ H&=\frac{3}{2} a t \sum_{\vec q'} 
+		\left( \begin{array}{cc} b^{\dagger}_{\vec{q}'} & a^{\dagger}_{\vec{q}'} \end{array} \right)
+		\left( \begin{array}{cc}
+			0              & -q'_x + i q'_y\\
+			-q'_x-i q'_y     & 0                                                 \end{array} \right)
+		\left( \begin{array}{c } b_{\vec{q}'}           \\ a_{\vec{q}'}          \end{array} \right) \\
+	  =&\frac{3}{2} a t \sum_{\vec q'}
+		\left( \begin{array}{cc} b^{\dagger}_{\vec{q}'} & a^{\dagger}_{\vec{q}'} \end{array} \right)
+		(-1)\vec{q}' \cdot \vec{\sigma}
+		\left( \begin{array}{c } b_{\vec{q}'}           \\ a_{\vec{q}'}          \end{array} \right), \\
+\end{align*}
+or in the combined form:
+\begin{equation*}
+	H=\frac{3}{2} a t \sum_{\vec q, \vec{q}'}
+		\left( \begin{array}{cccc} b^{\dagger}_{\vec{q}} & a^{\dagger}_{\vec{q}} & a^{\dagger}_{\vec{q}'} & b^{\dagger}_{\vec{q}'}
+																							\end{array} \right)
+		\left( \begin{array}{cccc}
+			0              & q_x - i q_y & 0            & 0 \\
+			q_x+i q_y      & 0           & 0            & 0 \\                            
+			0              & 0           & 0            & -q'_x+i q'_y \\
+			0              & 0           & -q'_x-i q'_y & 0			            			\end{array} \right)
+		\left( \begin{array}{c } b_{\vec{q}} \\ a_{\vec{q}} \\ a_{\vec{q}'} \\ b_{\vec{q}'}  \end{array} \right)			
+\end{equation*}
+with $\vec{\sigma}= \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array} \right) \hat{x}+\left( \begin{array}{cc} 0 & -i \\ i & 0 \end{array} \right) \hat{y}$ is the vector of Pauli matrices.
 
 \section{Dirac-Weyl electrons}

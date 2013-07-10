@@ -1,5 +1,5 @@
 \documentclass[12pt]{report}				% 12 pt font single sided
-\includeonly{TightBinding}	
+% \includeonly{Friction}	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   additional packages  %%
@@ -19,7 +19,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%     Format             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\allsectionsfont{\normalsize}				% Sets all section headers to 12 pt
+\chapterfont{\tiny}					% Sets section headers to 12 pt
 \renewcommand{\baselinestretch}{1.38}		% ??
 \oddsidemargin=0.5in						% ??
 \evensidemargin=0.0in						% ??
@@ -29,39 +29,11 @@
 \footskip=0.22in							% ??
 
 \begin{document}
-	% Preamble
-	\include{form_1_title}
-	\include{form_2_approval}
-	\include{form_3_dedication}
-	\pagenumbering{roman}					% Roman style inverse page numbers
-	\setcounter{page}{4}					% Sets the page number to 4
-	\baselineskip 22 true pt 				% Numbers at bottom of page are 3/4in from edge
-	\include{form_4_acknowledge}
-	\baselineskip 22 true pt 				% ??
-	\include{form_5_abstract} 
-	% \tableofcontents
-	% \listoftables
-	% \listoffigures
-	\include{form6_abbreviations}
 
+\begin{figure}
+	\begin{center}
+	\input{Figs_TightBinding/fullband}
+	\end{center}
+\end{figure}
 
-	% Body text
-	\clearpage
-	\pagenumbering{arabic}					% Back to arabic style numbers
-	\pagestyle{myheadings} 					% ??
-	\include{TightBinding}
-	\include{Friction}
-	\include{PVP}
-
-	% Appendices
-	\clearpage
-	\begin{appendices}
-	\end{appendices}
-
-	% Bibliography
-	\clearpage
-	\bibliographystyle{apalike}				% Should be listed alphabetically
-	\bibliography{thesis}
-
-	%CV at end--probably the absolute last thing to tack on
 \end{document}

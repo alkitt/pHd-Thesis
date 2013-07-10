@@ -7,6 +7,8 @@
 *.log
 *.lot
 *.toc
+thesis.pdf
+Fig_test.pdf
 
 # sublime2 project files
 *.sublime-project

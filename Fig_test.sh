@@ -1,0 +1,1 @@
+pdflatex --aux-directory=./auxil/ Fig_test
