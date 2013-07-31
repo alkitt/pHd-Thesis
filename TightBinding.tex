@@ -1,7 +1,6 @@
-In this chapter graphene's electronic dispersion will be calculated in a nearest neighbor tight binding frame work.
-
+\chapter{Unmodified band structure}
 The linear electronic dispersion of graphene was published by Wallace\cite{Wallace1947} 57 years before Geim, Novoselov and co-workers spurred graphene research forward with their method of mechanical exfoliation\cite{Novoselov2004}.
-In 1984 Semenoff formalized the equivalence between the low energy electrons in graphene and Dirac-Weyl electrons.
+In 1984 Semenoff formalized the equivalence between the low energy electrons in graphene and Dirac-Weyl electrons \cite{Semenoff1984}.
 Remarkably, the nearest neighbor tight binding approach used by these authors has accurately described the majority of the low energy physics in graphene.
 This chapter will follow in the spirit of these derivations but give additional emphasis to prepare for the discussion of the strain induced pseudo vector potential and the phonon induced Kekul\'e transition.
 
@@ -174,8 +173,8 @@ The Hamiltonian can now be expressed in the simpler form \ref{eq:TB:RealSpace}
 		\left( \begin{array}{c } b_{\vec{q}'}           \\ a_{\vec{q}'}          \end{array} \right), \\
 \end{align*}
 or in the combined form:
-\begin{equation*}
-	H=\frac{3}{2} a t \sum_{\vec q, \vec{q}'}
+\begin{align}
+	H&=\frac{3}{2} a t \sum_{\vec q, \vec{q}'}
 		\left( \begin{array}{cccc} b^{\dagger}_{\vec{q}} & a^{\dagger}_{\vec{q}} & a^{\dagger}_{\vec{q}'} & b^{\dagger}_{\vec{q}'}
 																							\end{array} \right)
 		\left( \begin{array}{cccc}
@@ -183,8 +182,117 @@ or in the combined form:
 			q_x+i q_y      & 0           & 0            & 0 \\                            
 			0              & 0           & 0            & -q'_x+i q'_y \\
 			0              & 0           & -q'_x-i q'_y & 0			            			\end{array} \right)
-		\left( \begin{array}{c } b_{\vec{q}} \\ a_{\vec{q}} \\ a_{\vec{q}'} \\ b_{\vec{q}'}  \end{array} \right)			
-\end{equation*}
+		\left( \begin{array}{c } b_{\vec{q}} \\ a_{\vec{q}} \\ a_{\vec{q}'} \\ b_{\vec{q}'}  \end{array} \right) \\
+	H&=\sum_{\vec q, \vec{q}'}
+		\left( \begin{array}{cccc}  a^{\dagger}_{\vec{q}} & b^{\dagger}_{\vec{q}}&  b^{\dagger}_{\vec{q}'} & a^{\dagger}_{\vec{q}'}
+																							\end{array} \right)
+		\left( \begin{array}{cc}
+			v_f \vec{p} \cdot \vec{sigma}              & q_x - i q_y\\
+			0              & v_f \vec{p'} \cdot \vec{sigma}			   	            			\end{array} \right)
+		\left( \begin{array}{c }  a_{\vec{q}} \\ b_{\vec{q}} \\  b_{\vec{q}'} \\ a_{\vec{q}'} \end{array} \right)
+	\label{eq:TB:FullH}
+\end{align}
 with $\vec{\sigma}= \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array} \right) \hat{x}+\left( \begin{array}{cc} 0 & -i \\ i & 0 \end{array} \right) \hat{y}$ is the vector of Pauli matrices.
+To express the Hamiltonian near the $\bm{K'}$ point in terms of Pauli matrices, the order of the raising and lower operators was switched.
+This subtle difference means that the first component of eigenvectors corresponds to the amplitude for an electron on the B sublattice.
+These approximate Hamiltonians will be central for the discussion of electron physics in manipulated graphene.
+
+The eigenvalues near either $\bm{K}$ or $\bm{K'}$ are easy to solve for using the low energy Hamiltonians.
+At both points, the low energy electronic dispersion is identical,
+\begin{equation*}
+	E=\pm \frac{3}{2}a t |\vec{q}|=\hbar v_f |\vec{q}| \ .
+\end{equation*}
+where $v_f$ is the Fermi velocity given by $\frac{3}{2}\frac{at}{\hbar} \sim .9 \times 10^6 \ m/s$.
+As shown in Figure \ref{fig:TB:Dispersion}, the high and low energy bands meat at points at the Dirac points.
+Away from this point, the energy scales linearly with momentum measured from the Dirac point.
+Reminiscent of the light cone, this canonical dispersion is characteristic of a massless particle.
+
+From the low energy electronic dispersion the density of electronic states can be directly calculated for the two dimensional system.
+After taking account of the two full spin and two fold valley degeneracy, the density of states is:
+\begin{equation}
+	\rho(\epsilon)=\frac{2}{\pi} \left( \frac{\hbar v_f}{L} \right)^2 \epsilon
+\end{equation}
+where $L^2$ is the area of the graphene.
+The linearity is due to the canonical energy dispersion.
+The number of states at a given energy is just the circumference of the Dirac cone at this energy.
+Using the density of states the chemical potential can be calculated in standard graphene transport experiments.
+
+Graphene's two dimensional nature makes it simple to continuously modify the chemical potential.
+Rather than varying the concentration of dopants as must be done for most three dimensional systems, graphene only requires the application of a back gate voltage.
+A standard graphene gated device is shown in Figure \ref{fig:TB:FET}.
+Changing the back gate voltage ($V_{BG}$) charges the graphene-backgate capacitor, introducing charges into the system.
+In general, the differential increase in the number of charges is $dQ=C(\mu) dV$.
+The capacitance is defined as:
+\begin{equation}
+	C=\frac{d N}{d \mu}
+\end{equation}
+where $N$ is the number of electrons in the graphene and $\mu$ is the chemical potential.
+For intrinsic graphene the capacitance is continuous and the total number of charges is just $N=CV/e$.
+The gated graphene device shown in Figure \ref{fig:TB:FET} can be treated as a parallel plate capacitor with a plate separation of 285 nm and the dielectric constant of silicon dioxide.
+Matching the integrated density of states to the number of charges in the system relates the applied gate voltage to different measurements of the chemical potential in the system.
+Some useful relationships are:
+\begin{align*}
+	n(cm^{-2})&\sim 7 \times 10^{10} V_{BG} (Volts) \\
+	\mu(meV) &\sim 30 \sqrt{V_{BG} (Volts)} \\
+	\mu(meV) &\sim 1 \times 10^{-7} \sqrt{n(cm^{-2})}
+\end{align*}
+
+\begin{figure}
+	\begin{center}
+	\input{Figs_TightBinding/FET}
+	\end{center}
+	\caption{\label{fig:TB:FET} Side view of a back gated graphene device.  The graphene is on top of 300 nm of thermal oxide grown on heavily doped Si. }	
+\end{figure}
 
 \section{Dirac-Weyl electrons}
+Graphene's linear electrical dispersion is peculiar.
+According to the usual expression for the effective mass of an electron in an electric field, $m^*=\frac{\hbar^2}{\frac{d^2 E}{d k^2}}$, \cite{Kittel2005} the electrons in graphene have infinite mass.
+In a classical sense, this is understandable.
+The electron's group velocity, $d \omega/d k$ is constant; it can not be changed by applying a force.
+Classically, this corresponds to the case of an infinite mass which cannot be accelerated.
+An alternative, and more enlightening, interpretation of graphene's properties is as a massless, relativistic, spin 1/2, fermion.
+In this scenario the group velocity cannot be changed because the electrons are moving at the systems effective light speed.
+Hence, like a photon moving at the speed of light graphene's electrons cannot be accelerated.
+
+In 1984 Semenoff demonstrated that there is an exact correspondence between the low energy Hamiltonian of graphene and the two dimensional Dirac-Weyl Hamiltonian\cite{Semenoff1984} which governs massless, relativistic, spin 1/2, Fermions.
+As a result, many phenomena from high energy physics have been observed in graphene including...
+In this section this correspondence will be briefly discussed.
+
+The Hamiltonian of general, relativistic, spin 1/2, fermions is known as the Dirac equation.
+It is a matrix equation which is covariant, obeys the relativistic energy expression, and is first order in time.
+For the special case of massless particles, the expression is simplified and, in a wisely chosen representation, is written as:
+\begin{equation*}
+	H=\left( \begin{array}{cc}
+			c \vec{p} \cdot \vec{sigma}              & q_x - i q_y\\
+			0              & c \vec{p} \cdot \vec{sigma}			   	            			\end{array} \right)
+\end{equation*}
+which, for particles in two spatial dimensions, is identical to Equation \ref{eq:TB:FullH}.
+It is clear now that the electrons in graphene behave like relativistic particles in a system where the speed of light is given by the fermi velocity.
+
+As was the case in graphene, the Hamiltonian represents a decoupled system.
+In response to this, the wave function is written as the combination of two two element spinors:
+\begin{equation*}
+	\psi=\left( \begin{array}{c} \chi_{+} \\ \chi_{-} \end{array} \right)
+\end{equation*}
+It can be shown that the spinners have well defined and opposite helicities.
+Since the energy of these massless particles is given by $\pm p c$, the Hamiltonian can be rewritten in a simpler form known as Weyl's equations,
+\begin{align*}
+	(1 \mp \vec{\sigma} \cdot \hat{p}) \chi_{+}&=0
+	(1 \pm \vec{\sigma} \cdot \hat{p}) \chi_{-}&=0 \ ,
+\end{align*}
+where $\hat{p}$ is the unit vector in the direction of the momentum.
+From this form it is clear that the spinors are eigenvectors of the helicity operator, $\hat{h}=\frac{1}{2} \vec{sigma} \hat{p}$, with eigenvectors $\hat{h} \chi_+=\pm 1/2$ and $\hat{h} \chi_-=\mp 1/2$.
+The $\chi_+$ spinor is said to be right handed; for particles with positive energy the spin and momentum are in the same direction whereas for particles with negative energy they are in the opposite direction.
+The $\chi_-$ spinor then is left handed.
+Since the helicity operator commutes with the Hamiltonian, helicity is conserved in this system.
+Gottfried and Yan provide a more detailed discussion of the Dirac equation and its consequences\cite{Gottfried2003}.
+
+In graphene, the elements of the wavevector already have a meaning.
+They correspond to the amplitude that the electron is at the A or B sublattice.
+Identifying these components with the relativistic components yields the pseudo spinners: $\psi_+ \equiv \left(\begin{array}{c} \psi_A^{\bm{K}} \\ \psi_B^{\bm{K}} \end{array} \right)$ and $\psi_- \equiv \left(\begin{array}{c} \psi_B^{\bm{K'}} \\ \psi_A^{\bm{K'}} \end{array} \right)$.
+It is a subtle point that the spinor for the electrons at the $\bm{K'}$ point is in the opposite order than the $\bm{K}$ point.
+Thus, the pseudo spin in this system refers to the sublattice.
+Further, the wavefunction for electrons at the $\bm{K}$ point are right handed and the electrons at the $\bm{K'}$ are left handed.
+
+Since graphene's Hamiltonian is identical to that of massless, relativistic, spin 1/2 Fermions, the electrons should exhibit the same odd properties that have been predicted by high energy physicists.
+These unique properties include the Klein paradox, Zitterbewegun, and the anomalous quantum Hall effect, an anomalous quantum hall effect, 

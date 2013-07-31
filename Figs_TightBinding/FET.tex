@@ -1,0 +1,34 @@
+\newcommand{\FEThw}{4 cm}			% Width--1 cm=1 um
+\newcommand{\FETsiot}{.3 cm}		% SiO2 thickness
+\newcommand{\FETsit}{.7 cm}			% Si thickness
+\newcommand{\FETaut}{0.06 cm}		% Au thickness
+\newcommand{\FETauw}{2 cm}			% Separation and width of the gold pad
+\begin{tikzpicture}[scale=1,
+	sio2/.style={fill=blue!50!white,draw=none},
+	si/.style={top color=black!20!white, bottom color=white},
+	siedge/.style={draw=black!35!white},
+	au/.style={fill=yellow,draw=black!20!yellow,rounded corners=1 pt},
+	wire/.style={semithick}]
+	
+	%The SiO2
+	\filldraw[sio2] (-\FEThw,0) rectangle (\FEThw,\FETsiot);
+
+	%The Si
+	\shade[si] (-\FEThw,-\FETsit) rectangle (\FEThw,0);
+	\draw[siedge] (-\FEThw,0) -- (\FEThw,0);
+
+	%The Gold contacts
+	\filldraw[au] (-\FEThw*.9,\FETsiot) rectangle +(\FETauw,\FETaut);
+	
+	%The Graphene on the top
+	\draw[semithick] (-3*\FEThw/4,\FETsiot) -- (3*\FEThw/4,\FETsiot);
+
+	%The wires connecting the gate etc.
+	\node (VBG) at (-1.25*\FEThw,0) [circle,draw=black]{$V_{BG}$};
+	\draw[wire]  (VBG.north) -- (-1.25*\FEThw,2.5*\FETsiot+2.5*\FETaut) -- (-\FEThw*.9,2.5*\FETsiot+2.5*\FETaut) -- (-\FEThw*.	9,\FETsiot+\FETaut);
+	\draw[wire]  (VBG.south) -- (-1.25*\FEThw,-1.25*\FETsit) -- (0,-1.25*\FETsit) -- (0,-.5*\FETsit);
+
+	%Scale bar
+	\draw[draw=black,ultra thick,xshift=.75*\FEThw, yshift=-\FETsit*1.25] (-.5 cm,0) -- node[anchor=north] {$1 \ \mu m$}(.5 cm, 0);
+
+\end{tikzpicture}
