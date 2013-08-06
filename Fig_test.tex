@@ -1,5 +1,4 @@
 \documentclass[12pt]{report}				% 12 pt font single sided
-% \includeonly{Friction}	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   additional packages  %%
@@ -19,20 +18,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%     Format             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapterfont{\tiny}					% Sets section headers to 12 pt
+\allsectionsfont{\normalsize}				% Sets all section headers to 12 pt
+
 \renewcommand{\baselinestretch}{1.38}		% ??
-\oddsidemargin=0.5in						% ??
-\evensidemargin=0.0in						% ??
-\topmargin=-0.1in							% ??
-\textheight=8.5in							% ??
-\textwidth=6.0in							% ??
-\footskip=0.22in							% ??
+% Sets the margins--one sided document only odd commands are taken into effect
+\usepackage[top=1.5in, bottom=1in, left=1.5in, right=1in]{geometry}
 
 \begin{document}
 
 \begin{figure}
 	\begin{center}
-	\input{Figs_TightBinding/fullband}
+	\input{Figs_PVP/geometry_PVP}
 	\end{center}
 \end{figure}
 

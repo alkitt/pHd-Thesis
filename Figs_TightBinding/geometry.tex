@@ -25,9 +25,9 @@
 			}
 
 		% Draw the nearest neighbor vectors
-		\draw[nnarrow] (60:\alat*\sqth) -- +(210:\alat) node[anchor=north east]{$\vec{\delta}_1$};
-		\draw[nnarrow] (60:\alat*\sqth) -- +(330:\alat) node[anchor=north west]{$\vec{\delta}_2$};
-		\draw[nnarrow] (60:\alat*\sqth) -- +( 90:\alat) node[anchor=south     ]{$\vec{\delta}_3$};
+		\draw[nnarrow] (60:\alat*\sqth)++(-30:\alat) -- +(270:\alat) node[anchor=north     ]{$\vec{\delta}_1$};
+		\draw[nnarrow] (60:\alat*\sqth)++(-30:\alat) -- +( 30:\alat) node[anchor=south west]{$\vec{\delta}_2$};
+		\draw[nnarrow] (60:\alat*\sqth)++(-30:\alat) -- +(150:\alat) node[anchor=south east]{$\vec{\delta}_3$};
 		
 		% Draw the lattice vectors
 		\draw[nnarrow] (240:2*\sqth*\alat) ++(0,\alat/2) --node[circle,anchor=north west]{$\vec{a}_+$} +( 60:\sqth*\alat) ;

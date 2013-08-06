@@ -1,4 +1,5 @@
-\chapter{Unmodified band structure}
+\chapter{Unmodified band structure\label{chap:TB}}
+
 The linear electronic dispersion of graphene was published by Wallace\cite{Wallace1947} 57 years before Geim, Novoselov and co-workers spurred graphene research forward with their method of mechanical exfoliation\cite{Novoselov2004}.
 In 1984 Semenoff formalized the equivalence between the low energy electrons in graphene and Dirac-Weyl electrons \cite{Semenoff1984}.
 Remarkably, the nearest neighbor tight binding approach used by these authors has accurately described the majority of the low energy physics in graphene.
@@ -24,9 +25,9 @@ The lattice is created by arraying the two atoms basic using the lattice vectors
 where $a=1.4 \ l\angstrom$ is the nearest neighbor distance.
 The three nearest neighbor vectors are given by:
 \begin{align*}
-	\vec \delta_1&=-\frac{\sqrt{3} a}{2}\hat{x}+\frac{a}{2}\hat{y}\\
+	\vec \delta_1&=-a \hat{y} \\
 	\vec \delta_2&= \frac{\sqrt{3} a}{2}\hat{x}+\frac{a}{2}\hat{y}\\
-	\vec \delta_3&=a \hat{y}
+	\vec \delta_3&=-\frac{\sqrt{3} a}{2}\hat{x}+\frac{a}{2}\hat{y}\\
 \end{align*}
 
 The Brillouin zone of graphene is shown in Figure \ref{fig:TB:geometry}(b).
@@ -75,9 +76,10 @@ As will be illustrate for graphene, this tight binding formalism provides a simp
 The physics relevant for this work is captured by the nearest neighbor tight binding model, the lowest order tight binding approximation.
 For graphene, when an electron hops between nearest neighbor, it changes sub-lattice.
 The nearest neighbor Hamiltonian reflects this:
-\begin{equation*}
+\begin{equation}
 	H=-t \sum_{<i,j>} (a_i^{\dagger} b_j + \text{H.C.}),
-\end{equation*}
+	\label{eq:TB:baseham}
+\end{equation}
 where the hopping energy $t$ gives the energy it takes to remove an electron from the jth atom in the B sub-lattice with the B sub-lattice annihilation operator $b_j$ and put an electron on it nearest neighbor, the ith atom in the A sub-lattice, using the A sub-lattice creation operator $a_i$.
 The sum is restricted to $<i,j>$ nearest neighbor pairs.
 Finally the Hermitian conjugate, $\text{H.C.}$, accounts for the hopping from the A sub-lattice to the B sub-lattice and also ensures that the Hamiltonian is Hermitian.
@@ -88,10 +90,10 @@ They can either be chosen so that the operators are expanded around the position
 Both approaches yield the same result if one is consistent\cite{Bena2009}.
 Here the operators are expanded about the atomic basis.
 This will make the correspondence with the Dirac-Weyl equation more clear.
-\begin{align*}
-	a_i^{\dagger}&=\frac{1}{\sqrt{N}}\sum_{\vec{k} } e^{ i \vec{k}  \cdot \vec{R}_i} a_{\vec{k} }^{\dagger} \\
-	b_j          &=\frac{1}{\sqrt{N}}\sum_{\vec{k}'} e^{-i \vec{k}' \cdot \vec{R}_j} b_{\vec{k}'} \\
-\end{align*}
+\begin{align}
+	a_i^{\dagger}&=\frac{1}{\sqrt{N}}\sum_{\vec{k} } e^{ i \vec{k}  \cdot \vec{R}_i} a_{\vec{k} }^{\dagger} \nonumber \\
+	b_j          &=\frac{1}{\sqrt{N}}\sum_{\vec{k}'} e^{-i \vec{k}' \cdot \vec{R}_j} b_{\vec{k}'} \label{eq:TB:FT} 
+\end{align}
 where $R_i$ and $R_j$ are the position of the $ith$ and $jth$ atomic basis respectfully.  
 Since we are limited to nearest neighbor pairs $R_j$ is restricted to $\vec{R}_j \in \{ \vec{R}_i,\vec{R}_i+\vec{a}_+,\vec{R}_i+\vec{a}_-\}$.
 This is equivalent to saying the nearest neighbor is either in the same atomic basis or in one of the neighboring atomic basis. 
@@ -167,7 +169,7 @@ The Hamiltonian can now be expressed in the simpler form \ref{eq:TB:RealSpace}
 			0              & -q'_x + i q'_y\\
 			-q'_x-i q'_y     & 0                                                 \end{array} \right)
 		\left( \begin{array}{c } b_{\vec{q}'}           \\ a_{\vec{q}'}          \end{array} \right) \\
-	  =&\frac{3}{2} a t \sum_{\vec q'}
+	  &=\frac{3}{2} a t \sum_{\vec q'}
 		\left( \begin{array}{cc} b^{\dagger}_{\vec{q}'} & a^{\dagger}_{\vec{q}'} \end{array} \right)
 		(-1)\vec{q}' \cdot \vec{\sigma}
 		\left( \begin{array}{c } b_{\vec{q}'}           \\ a_{\vec{q}'}          \end{array} \right), \\
@@ -187,8 +189,8 @@ or in the combined form:
 		\left( \begin{array}{cccc}  a^{\dagger}_{\vec{q}} & b^{\dagger}_{\vec{q}}&  b^{\dagger}_{\vec{q}'} & a^{\dagger}_{\vec{q}'}
 																							\end{array} \right)
 		\left( \begin{array}{cc}
-			v_f \vec{p} \cdot \vec{sigma}              & q_x - i q_y\\
-			0              & v_f \vec{p'} \cdot \vec{sigma}			   	            			\end{array} \right)
+			v_f \vec{p} \cdot \vec{\sigma}              & 0\\
+			0              & v_f \vec{p'} \cdot \vec{\sigma}			   	            			\end{array} \right)
 		\left( \begin{array}{c }  a_{\vec{q}} \\ b_{\vec{q}} \\  b_{\vec{q}'} \\ a_{\vec{q}'} \end{array} \right)
 	\label{eq:TB:FullH}
 \end{align}
@@ -263,8 +265,8 @@ It is a matrix equation which is covariant, obeys the relativistic energy expres
 For the special case of massless particles, the expression is simplified and, in a wisely chosen representation, is written as:
 \begin{equation*}
 	H=\left( \begin{array}{cc}
-			c \vec{p} \cdot \vec{sigma}              & q_x - i q_y\\
-			0              & c \vec{p} \cdot \vec{sigma}			   	            			\end{array} \right)
+			c \vec{p} \cdot \vec{\sigma}              & 0\\
+			0              & c \vec{p} \cdot \vec{\sigma}			   	            			\end{array} \right)
 \end{equation*}
 which, for particles in two spatial dimensions, is identical to Equation \ref{eq:TB:FullH}.
 It is clear now that the electrons in graphene behave like relativistic particles in a system where the speed of light is given by the fermi velocity.
@@ -277,11 +279,11 @@ In response to this, the wave function is written as the combination of two two 
 It can be shown that the spinners have well defined and opposite helicities.
 Since the energy of these massless particles is given by $\pm p c$, the Hamiltonian can be rewritten in a simpler form known as Weyl's equations,
 \begin{align*}
-	(1 \mp \vec{\sigma} \cdot \hat{p}) \chi_{+}&=0
+	(1 \mp \vec{\sigma} \cdot \hat{p}) \chi_{+}&=0 \\
 	(1 \pm \vec{\sigma} \cdot \hat{p}) \chi_{-}&=0 \ ,
 \end{align*}
 where $\hat{p}$ is the unit vector in the direction of the momentum.
-From this form it is clear that the spinors are eigenvectors of the helicity operator, $\hat{h}=\frac{1}{2} \vec{sigma} \hat{p}$, with eigenvectors $\hat{h} \chi_+=\pm 1/2$ and $\hat{h} \chi_-=\mp 1/2$.
+From this form it is clear that the spinors are eigenvectors of the helicity operator, $\hat{h}=\frac{1}{2} \vec{\sigma} \hat{p}$, with eigenvectors $\hat{h} \chi_+=\pm 1/2$ and $\hat{h} \chi_-=\mp 1/2$.
 The $\chi_+$ spinor is said to be right handed; for particles with positive energy the spin and momentum are in the same direction whereas for particles with negative energy they are in the opposite direction.
 The $\chi_-$ spinor then is left handed.
 Since the helicity operator commutes with the Hamiltonian, helicity is conserved in this system.

@@ -1,35 +1,22 @@
 \chapter{Strain-induced vector potentials: Lattice-corrections and engineered pseudo magnetic fields\label{chap:PVP}}
 
-At the intersection of graphene's outstanding mechanical properties, many of which were discussed in Chapter \ref{chap:fri}, and graphene's unique electrical properties, discussed in Chapter \ref{chap:TightBinding}, lies a peculiar and provocative coupling.
-By shifting the positions of the atoms, strain shifts the positions of the Dirac points in reciprocal space.
-This momentum shift is analogous to the shift in the canonical momentum when a magnetic field is applied.
-Thus, strain in graphene can be engineered to trick the electrons into believing they are in a magnetic field.
-This provocative coupling is made more appealing by the two dimensional elastic nature of graphene.
-Not only does the coupling exist in theory, the material also allows the physical realization of it.
+At the intersection of graphene's outstanding mechanical and electrical properties lies a peculiar and provocative coupling.
+Certain strain distributions in graphene can trick the electrons into acting as if they were in a magnetic field.
+This comes about because strain shifts the crystal momentum of the Dirac points much like the the canonical momentum is shifted in the presence of a magnetic field.
+This exotic coupling is made more appealing by the two dimensional elastic nature of graphene.
+Not only does the coupling exist in theory, but the material also allows the physical realization of it.
 
 A dazzling glimpse of the feasibility and potential of strain-engineered graphene\cite{Pereira2009a,Guinea2009} has recently emerged with experiments reporting that certain strain profiles can induce Landau quantization and effective pseudomagnetic fields in excess of 300 T\cite{Levy2010,Yan2012,Yeh2011}.
 Such physics strongly encourages the prospect of harnessing this unconventional interplay between graphene's unique electronic and impressive mechanical properties to control electronic transport in graphene devices\cite{Pereira2009a,Fogler2008}.
 
-This chapter first discusses the theory of the strain-induced vector potentials including a new lattice-correction.  Next, the importance of the new lattice-corrections are discussed.
+This chapter starts by discussing the theory of the strain-induced vector potentials with an emphasis on the lattice-corrections first introduced by Kitt et al\cite{Kitt2012,Kitt2013}.
+This is followed by an examination of the importance of these lattice-corrections in different physical scenarios.
 Finally, methods of strain engineering graphene devices are examined with an emphasis on the over pressured hour glass shaped microchamber.
 This device cleverly takes advantage of plasmonics to enhance signals from higher pseudo magnetic field regions.
 
 \section{Lattice-corrected strain induced vector potentials}
 
-\begin{figure}
-\includegraphics{Figs_PVP/figure_1.pdf}
-\caption{\label{fig:PVP:lattice} (a) Unstrained graphene's real space lattice with labeled nearest neighbor vectors ($\vec{\delta_i}$), labeled lattice translation vectors, $\vec{R}_i=n\vec{a}_+ + m \vec{a}_-$ with $m$ and $n$ integers, and black and gray dots representing the A and B sub-lattices, respectively. (b) The Brillouin zone of unstrained graphene with labeled high symmetry points. (c) The positions of the unstrained (black, solid) and strained (brown, dashed) nearest neighbors, and the corresponding $\vec{\delta}_i$ and $\vec{\delta}_i'$ for 20 \% uniaxial strain along the armchair direction.  (d) The unstrained (black, solid) and strained (brown, dashed) Brillouin zone, also for 20 \% armchair uniaxial strain, with labels for the now inequivalent Dirac points. }
-\end{figure}
-
-The key elements underlying strain induced vector potentials is captured by generalizing the tight binding Hamiltonian discussed in Chapter \ref{chap:TB} to the geometry of the strained graphene.
-Figure \ref{fig:PVP:lattice} illustrates the change in lattice geometry due to strain.
-For reference, in Figure \ref{fig:PVP:lattice} graphene's unstrained geometry from chapter \ref{chap:TB} is shown with the real space lattice in (a) and the first Brillouin zone in (b).
-Figure \ref{fig:PVP:lattice}(c) shows the position of the carbon atoms for 20\% uniaxial strain in the armchair direction and Figure \ref{fig:PVP:lattice}(d) shows the corresponding distortion of the Brillouin zone.
-20\% strain was only used here to make the effect of strain on the lattice positions obvious.
-This magnitude of strain is not necessary; all effects discussed here are linear in strain and so persist at much smaller strains.
-
-This change in lattice geometry alters the electron energy dispersion by \emph{both} shifting the position of the atoms \emph{and}  introducing a bond-dependent nearest neighbor hopping amplitude\cite{Hasegawa2006} because of the modified distance between nearest neighbors.
-The essential consequences of these changes are the following\cite{Pereira2009}:
+By distorting the graphene lattice, strain causes the following\cite{Pereira2009}:
 (i) for any amount of strain, the Dirac points are displaced from the corners of the unstrained BZ and, furthermore, do not necessarily sit at the corners of the strained BZ;
 (ii) the gapless and conical nature of the energy dispersion remains robust, except when the deformation is so strong that the two inequivalent Dirac points merge in a Lifshitz transition (but that probably requires strains of the order 20\%, where the tight-binding description is not reliable anymore);
 (iii) at any finite density the Fermi line is deformed from the isotropic circle to an elliptical shape, and two Fermi velocities can be defined along the principal directions\cite{Pereira2009,Pereira2010c,Choi2010}.
@@ -54,7 +41,80 @@ Here we include this effect, and show its importance in describing the absolute 
 This yields new leading order terms in the strain-induced pseudo vector potential which are different at the three inequivalent Dirac points.
 Specifically, we shall be interested below only in how strain affects the position of the Dirac point in reciprocal space.
 We also restrict the discussion to planar deformations, and hence ignore effects that might arise in the presence of curvature \cite{CastroNeto2009,Vozmediano2010}.
-We will detail the derivation of these terms and then demonstrate their importance in describing the shift of the Dirac point in graphene. 
+We will detail the derivation of these terms and then demonstrate their importance in describing the shift of the Dirac point in graphene.
+
+The key elements underlying strain induced vector potentials is captured by generalizing the tight binding Hamiltonian discussed in Chapter \ref{chap:TB} to the geometry of the strained graphene.
+Figure \ref{fig:PVP:lattice} illustrates the change in lattice geometry due to strain.
+For reference the unstrained graphene geometry discussed in Chapter \ref{chap:TB} is included in the first row of Figure \ref{fig:PVP:lattice} with the real space lattice in (a) and the first Brillouin zone in (b).
+Figure \ref{fig:PVP:lattice}(c) shows the distortion of the lattice for 20\% uniaxial strain in the armchair direction and Figure \ref{fig:PVP:lattice}(d) shows the corresponding distortion of the Brillouin zone.
+The magnitude of strain is not necessary; all of the effects discussed here are linear in strain and thus persist at much smaller strains.
+Such a large strain is chosen here to better illustrate strains effect on the geometry.
+
+\begin{figure}
+  \input{Figs_PVP/geometry_PVP}
+  \caption{\label{fig:PVP:lattice} (a) Unstrained graphene's real space lattice with labeled nearest neighbor vectors ($\vec{\delta_i}$), labeled lattice vectors, $\vec{a}_+$ and  $\vec{a}_-$, and with light and dark dots representing the A and B sub-lattices, respectively. (b) The Brillouin zone of unstrained graphene with labeled high symmetry points. (c) The change in the real space lattice after the application 20 \% uniaxial strain in the $\hat{y}$ direction.  Red dots represent the position of the strained atoms and red dashed lines are the strained nearest neighbor and lattice vectors which are referred to as $\vec{\delta}_i'$ and $\vec{a}_i'$ respectively.  (d) The unstrained (black, solid) and strained (red, dashed) Brillouin zone, also for 20 \% armchair uniaxial strain, with the now inequivelent inequivalent Dirac points labeled.  $\bm{\nabla u}$ is the displacement gradient tensor detailing the distortion for each row.}
+\end{figure}
+
+The strain induced alterations to the unstrained nearest neighbor tight binding approach discussed in Chapter \ref{chap:TB} are evident in Figure \ref{fig:PVP:lattice}(c).
+The noticeable geometric distortion of both the nearest neighbor vectors and the lattice vectors corresponds to two distinct changes in the tight binding prescription.
+The anisotropic alteration of the nearest neighbor vectors introduces a bond-dependent nearest neighbor hopping amplitude\cite{Hasegawa2006} into Equation \ref{eq:TB:baseham} because of the modified distance between nearest neighbors.
+Additionally, the change in the lattice vectors modifies the Fourier expansion of the creation and annihilation operators in Equation \ref{eq:TB:FT}. 
+
+A necessary and non-trivial first step toward including these modifications in the tight binding description is determining how the lattice vectors and nearest neighbor vectors are altered by strain.
+In continuum mechanics the elastic deformation field, $\vec{u}(\vec{r})$, which detail the shifts in position generated by  deformation is calculated based on macroscopic quantities.
+Here we follow the Cauchy-Born rule which projects these macroscopic quantities onto the atomic lattice.
+In this approximation, the position of the $i$-th atom in the deformed configuration, $\vec{R}_i$, is given with reference to the undeformed one, $\vec{r}_i$, in terms of the deformation field:
+\begin{equation*}
+  \vec{R}_{i}=\vec{r}_{i}+\vec{u}(\vec{r_i})
+\end{equation*}
+Although it is feasible that at the atomic scale the A and B sublattices behave differently yet still yield the same macroscopic response, the Cauchy-Born rule provides a simple and reasonable starting point for the discussion of strain effects.
+The strained lattice vectors, $\vec{a}'_{\pm}$ are then given approximately by
+\begin{align*}
+  \vec{a}'_{\pm}(\vec{r})&=\vec{R}_j-\vec{R}_i \\
+                              &=(\vec{r}_j-\vec{r}_i)+\vec{u}(\vec{r_j})-\vec{u}(\vec{r_i}) \\
+                              &\simeq\vec{a}_{\pm}(\vec{r})+(\vec{a}_{\pm} \cdot \vec{\nabla}) \vec{u}(\vec{r}) \\
+                              &=(\bm{1}+\bm{\nabla u}) \cdot \vec{a}_{\pm} \ ,
+\end{align*}
+where $\bm{1}$ is the two dimensional identity matrix and the dyadic product $\bm{\nabla}\bm{u}$ is the Jacobian of the displacement field known as the displacement gradient tensor:
+\begin{align*}
+  [\bm{\nabla u}]_{ij} = u_{i,j} &= \frac{u_{i,j}+u_{j,i}}{2} + \frac{u_{i,j}-u_{j,i}}{2} \\
+                       &\equiv \tilde{\epsilon}_{ij} + \tilde{\omega}_{ij} \\
+    \rightarrow \quad \bm{\nabla u} &= \tilde{\bm{\epsilon}} + \tilde{\bm{\omega}}
+\end{align*}
+where $\tilde{\bm{\omega}}$ is the rotation tensor and $\tilde{\bm{\epsilon}}$ is the \emph{linear} strain tensor which is only one part of the full (Lagrange) strain tensor given by $\bm{\epsilon} = \tfrac{1}{2}(\bm{\nabla u} + \bm{\nabla u}^\top+\bm{\nabla u}^\top\bm{\nabla u}) = \tilde{\bm{\epsilon}} + \tfrac{1}{2}(\bm{\nabla u}^\top\bm{\nabla u})$.
+It is important to stress that the often used approximating $\vec{a}'_{+,-}(\bm{r})\simeq (\bm{1}+\tilde{\bm{\epsilon}})\cdot \vec{a}'_{+,-}$ is only valid if the deformation does not involve local rotation ($\tilde{\bm{\omega}}=0$).
+Similarly, the strain modified nearest neighbor vectors are $\vec{\delta}'_{1,2,3}(\vec{r})=(\bm{1}+\bm{\nabla u}) \cdot \vec{\delta}_{1,2,3}(\vec{r})$ \cite{Kitt2013}.
+
+The distortion of the nearest neighbor vectors causes a bond specific alteration of the hopping energy.
+By comparing a tight binding treatment of strained graphene to density functional calculations of the same system, Ribeiro and coworkers showed that the dependence of the hopping energy on the distance between carbon atoms can be parameterized as:
+\begin{equation*}
+  t(|\vec{\delta}_i|)=t_0 \exp[-\beta (|\vec{\delta}_i|/a-1)]
+\end{equation*}
+with $\beta\approx 3$\cite{Pereira2009,Ribeiro2009,CastroNeto2009}.
+An exponential decay is chosen because it correctly predicts both the nearest neighbor and next nearest neighbor hoppings.
+The fact that, the hopping energy is mostly insensitive to the bond angle, greatly simplifies the physics.
+Having already established the form for the strained nearest neighbor vectors, their length can be easily computer:
+\begin{align*}
+  |\delta'_i|^2&=\left(\vec{\delta}_i^{\intercal}+\vec{\delta}_i^{\intercal} \ \bf{\nabla u}^{\intercal} \right) \cdot
+    \left(\vec{\delta}_i+\bf{\nabla u} \ \vec{\delta}_i \right) \\
+    &=\vec{\delta}_i^{\intercal} \vec{\delta}_i+
+      \vec{\delta}_i^{\intercal} \left(\bf{\nabla u}+\bf{\nabla u}^{\intercal} \right) \vec{\delta}_i+
+      \mathcal{O}(\bf{\nabla u}^2) \\
+  \rightarrow |\delta'_i|&\simeq a+\frac{1}{a} \vec{\delta}_i \cdot \epsilon \cdot \vec{\delta}_i
+\end{align*}
+for small strains.
+As expected, the length of these vectors are dependent only on the symmetric part of the displacement gradient tensor-the strain.
+The strain induced change in the hopping energy can be expressed in the following approximate form:
+\begin{equation*}
+  \delta t_i=-\beta t_0 \frac{1}{a^2} \vec{\delta}_i \cdot \epsilon \cdot \vec{\delta}_i
+\end{equation*}
+yielding:
+\begin{align*}
+  \delta t_1&=-\beta t_0 \epsilon_{yy} \\
+  \delta t_2&=-\beta t_0 \left( \frac{3}{4}\epsilon_{xx} +\frac{1}{4} \epsilon_{yy} + \frac{\sqrt{3}}{2} \epsilon_{xy} \right) \\
+  \delta t_4&=-\beta t_0 \left( \frac{3}{4}\epsilon_{xx} +\frac{1}{4} \epsilon_{yy} - \frac{\sqrt{3}}{2} \epsilon_{xy} \right) 
+\end{align*}
+
 
 As the distance between nearest neighbor atoms changes, so does the nearest neighbor hopping energy.
 This effect is manifest in the real space Hamiltonian, Eq. \ref{eq:TB:RealSpace}. 
@@ -65,7 +125,7 @@ If the altered hoppings are treated as slowly varying perturbations\cite{CastroN
     + \text{H.c.}
   \label{eq:PVP:H-TB}
 \end{equation}
-Here the sum is over all nearest neighbor pairs, $a_i^{\dagger}$ is the creation operator for an electron on the A sublattice, $b_j$ is the annihilation operator for an electron on the B sublattice, $t$ is the unstrained hopping amplitude, and $\delta t_{ij}$ is the nearest neighbor, bond specific, change in hopping energy due to strain. The bond length dependence of $\delta t$ can be made explicit by writing $\delta t_{ij} = \delta t(|\vec{\delta}_{ij}|)$.
+Here the sum is over all nearest neighbor pairs, $a_i^{\dagger}$ is the creation operator for an electron on the A sublattice, $b_j$ is the annihilation operator for an electron on the B sublattice, $t$ is the unstrained hopping amplitude, and $\delta t_{ij}$ is the nearest neighbor, bond specific, change in hopping energy due to strain. 
 
 The second change due to the altered lattice geometry is hidden in the phase factors that arise upon writing eq.~\ref{eq:PVP:H-TB} in Fourier space.
 To explicitly show this dependence, we work in the basis in which the phase factors in the Fourier transform are given by the positions of the strained sublattices \cite{Bena2009}.
@@ -82,38 +142,9 @@ Past works have ignored the modification of the relative positions of the atoms.
 The strain dependencies of the alterations to the Hamiltonian are non-trivial.
 As such, they will be derived in detail below.
 
-By comparing a tight binding treatment of strained graphene to density functional calculations of the same system, Ribeiro and coworkers showed that the dependence of the hopping energy on the distance between carbon atoms can be parameterized as:
-\begin{equation*}
-t(|\vec{\delta}_i|)=t_0 \exp[-\beta (|\vec{\delta}_i|/a-1)]
-\end{equation*}
-with $\beta\approx 3$\cite{Pereira2009,Ribeiro2009,CastroNeto2009}.
-An exponential decay is chosen because it correctly predicts both the nearest neighbor and next nearest neighbor hoppings.
-The fact that, the hopping energy is mostly insensitive to the bond angle, greatly simplifies the physics.
-%KEEP GOING HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-%MY NOTES ARE KIND OF FUNNY HERE, ENDS UP DEPENDING ON \nabla \vec{u} pg 18 and 19 in soft theory book
 
-The strain-induced shift of the nearest neighbor vectors can be expressed using the Cauchy-Born hypothesis.
-In this approximation, the position of the $i$-th atom in the deformed configuration, $\vec{R}_i$, is given with reference to the undeformed one, $\vec{r}_i$, in terms of the deformation field $\vec{u}(\vec{r})$:
-\begin{equation*}
-  \vec{R}_{i}=\vec{r}_{i}+\vec{u}(\vec{r_i})
-\end{equation*}
-The strained nearest-neighbor vectors, $\vec{\delta}_{1,2,3}^{\prime}$ are then given approximately by
-\begin{align*}
-	\vec{\delta}_i^{\prime}(\vec{r})&=\vec{R}_j-\vec{R}_i \\
-	                       			&=(\vec{r}_j-\vec{r}_i)+\vec{u}(\vec{r_j})-\vec{u}(\vec{r_i}) \\
-	                       			&\simeq\vec{\delta}_i(\vec{r})+(\vec{\delta}_i \cdot \vec{\nabla}) \vec{u}(\vec{r}) \\
-	                       			&=(\bm{1}+\bm{\nabla u}) \cdot \vec{\delta}_i \ ,
-\end{align*}
-where $\bm{1}$ is the two dimensional identity matrix and $\bm{\nabla}\bm{u}$ is the Jacobian of the displacement field known as the displacement gradient tensor:
-\begin{align*}
-	[\bm{\nabla u}]_{ij} = u_{i,j} &= \frac{u_{i,j}+u_{j,i}}{2} + \frac{u_{i,j}-u_{j,i}}{2} \\
-						           &\equiv \tilde{\epsilon}_{ij} + \tilde{\omega}_{ij} \\
-  	\rightarrow \quad \bm{\nabla u} &= \tilde{\bm{\epsilon}} + \tilde{\bm{\omega}}
-\end{align*}
-where $\tilde{\bm{\omega}}$ is the rotation tensor and $\tilde{\bm{\epsilon}}$ is the \emph{linear} strain tensor which is only one part of the full (Lagrange) strain tensor given by $\bm{\epsilon} = \tfrac{1}{2}(\bm{\nabla u} + \bm{\nabla u}^\top+\bm{\nabla u}^\top\bm{\nabla u}) = \tilde{\bm{\epsilon}} + \tfrac{1}{2}(\bm{\nabla u}^\top\bm{\nabla u})$.
-It is important to stress that approximating $\bm{\delta}_{i}^{\prime}(\bm{r})\simeq (\bm{1}+\tilde{\bm{\epsilon}})\cdot\bm{\delta }_{i}$ is only valid if the deformation does not involve local rotation ($\tilde{\bm{\omega}}=0$).
 
-The length and direction of the three nearest neighbor vectors $\vec{\delta}_i$ transforms under strain according to $\vec{\delta}_i'=(I+\epsilon)\cdot\vec{\delta}_i$, where $I$ is the 2$\times$2 identity matrix, and $\epsilon$ the two-dimensional Cartesian strain tensor, with the $x$ axis along graphene's armchair direction.
+
 
 
 In reciprocal space, the Hamiltonian, eq.~\ref{eq:PVP:H-TB}, linearized to first order in strain reads:
