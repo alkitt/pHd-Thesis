@@ -71,9 +71,9 @@ Applying this Fourier transform to the systems Hamiltonian yields the tight bind
 	 \epsilon_{\vec{k}} c^{\dagger}_{i,\sigma} c_{j,\sigma} \\
 	 &=-\sum_{<i,j>,\sigma} t_{i,j} c^{\dagger}_{i,\sigma} c_{j,\sigma} + \text{H.C} \ ,
 \end{align*}
-where the final sum is over $<i,j>$ nearest neighbor pairs and $t_{i,j}=-\sum_{\vec{k}}\frac{1}{N} e^{i \vec{k} \cdot (\vec{R}_i-\vec{R}_j)}\epsilon_{\vec{k}}$ is the hopping.
+where the final sum is over $<i,j>$ nearest neighbor pairs and $t_{i,j}=-\sum_{\vec{k}}\frac{1}{N} e^{i \vec{k} \cdot (\vec{R}_i-\vec{R}_j)}\epsilon_{\vec{k}}$ is the hoping.
 This seemingly complicated parameter has an easy interpretation when the final form of the Hamiltonian is considered.
-The hopping energy is the energy associated with removing an electron from atom $j$ and putting it on atom $i$.
+The hoping energy is the energy associated with removing an electron from atom $j$ and putting it on atom $i$.
 It is usually measured empirically or calculated by matching the tight binding model to other more powerful methods such as density functional theory.
 As will be illustrate for graphene, this tight binding formalism provides a simple but powerful method of calculating band structures.
 
@@ -84,9 +84,9 @@ The nearest neighbor Hamiltonian reflects this:
 	H=-t_0 \sum_{<i,j>} (a_i^{\dagger} b_j + \text{H.C.}),
 	\label{eq:TB:baseham}
 \end{equation}
-where the hopping energy $t_0$ gives the energy it takes to remove an electron from the jth atom in the B sub-lattice with the B sub-lattice annihilation operator $b_j$ and put an electron on it nearest neighbor, the ith atom in the A sub-lattice, using the A sub-lattice creation operator $a_i$.
+where the hoping energy $t_0$ gives the energy it takes to remove an electron from the jth atom in the B sub-lattice with the B sub-lattice annihilation operator $b_j$ and put an electron on it nearest neighbor, the ith atom in the A sub-lattice, using the A sub-lattice creation operator $a_i$.
 The sum is restricted to $<i,j>$ nearest neighbor pairs.
-Finally the hopping from the A sub-lattice to the B sub-lattice is taken into account by the the Hermitian conjugate, $\text{H.C.}$.
+Finally the hoping from the A sub-lattice to the B sub-lattice is taken into account by the the Hermitian conjugate, $\text{H.C.}$.
 
 The Hamiltonian is simplified by writing the creation and annihilation operators in Fourier space.
 There is some freedom in choosing the phase factors.
@@ -152,7 +152,7 @@ A higher order model is required to account for things such as trigonal warping 
 
 The two points of convergence between the high and low energy bands are referred to as the Dirac points because of the characteristic energy dispersion in their vicinity.
 This interesting low energy physics can be best captured by expanding the Hamiltonian in Equation \ref{eq:TB:RealSpace} about these points.
-The wave-vectors are approximated as $\vec{k}=\bm{K}+\vec{q}$ and $\vec{k}=\bm{K'}+\vec{q}'$ and for small $qa$ the sum in Equation \ref{eq:TB:RealSpace} is approximated as,
+The wave-vectors are approximated as $\vec{k}=\bm{K}+\vec{q}$ and $\vec{k}=\bm{K'}+\vec{q}$ and for small $qa$ the sum in Equation \ref{eq:TB:RealSpace} is approximated as,
 \begin{align*}
 	\sum_{j} e^{-i \vec{k} \cdot \vec{\Delta}_j}&= \\
 	\bm{K:}\ 	&=\sum_{j} e^{-i (\bm{K}+\vec{q}) \cdot \vec{\Delta}_j} \\
