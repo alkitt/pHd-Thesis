@@ -1,6 +1,6 @@
 \chapter{Unmodified band structure\label{chap:TB}}
 
-The linear electronic dispersion of graphene was first published by Wallace\cite{Wallace1947} 57 years before Geim, Novoselov and co-workers spurred graphene research forward with their method of mechanical exfoliation\cite{Novoselov2004}.
+The linear electronic dispersion of graphene was first published by Wallace \cite{Wallace1947} 57 years before Geim, Novoselov and co-workers spurred graphene research forward with their method of mechanical exfoliation \cite{Novoselov2004}.
 Later, in 1984 Semenoff formalized the equivalence between the low energy electrons in graphene and Dirac-Weyl electrons \cite{Semenoff1984}.
 Remarkably, the nearest neighbor tight binding approach used by these authors has accurately described the majority of the low energy physics in graphene.
 This chapter will follow in the spirit of these derivations with additional emphasis provided to enhance the discussions of the strain induced pseudo vector potential and the phonon induced Kekul\'e transition.
@@ -91,7 +91,7 @@ Finally the hoping from the A sub-lattice to the B sub-lattice is taken into acc
 The Hamiltonian is simplified by writing the creation and annihilation operators in Fourier space.
 There is some freedom in choosing the phase factors.
 They can either be chosen so that the operators are expanded around the position of each atom or instead they can be expanded around the position of the atomic basis occupied by the atom.
-Both approaches yield the same result if one is consistent\cite{Bena2009}.
+Both approaches yield the same result if one is consistent \cite{Bena2009}.
 Here the operators are expanded about the atomic basis.
 This will make the correspondence with the Dirac-Weyl equation more clear.
 The expanded operators are
@@ -103,15 +103,15 @@ where $R_i$ and $R_j$ are the position of the $i$-th and $j$-th atomic basis res
 Since we are limited to nearest neighbor pairs the nearest neighbor is either in the same atomic basis or in one of the neighboring atomic basis.
 Thus, $\vec{R}_j$ is restricted to $\vec{R}_j \in \{ \vec{R}_i,\vec{R}_i+\vec{a}_+,\vec{R}_i+\vec{a}_-\}$ and the difference $\vec{\Delta_j}=\vec{R}_j-\vec{R}_i$ is independent of $i$.
 In reciprocal space the Hamiltonian is simplified,
-\begin{align*}
+\begin{align}
 	H&=-t_0 \frac{1}{N} \sum_{\vec{k},\vec{k'}}\sum_i \left( e^{i (\vec{k}-\vec{k}') \cdot \vec{R}_i}
 		e^{-i \vec{k}' \cdot \vec{\Delta}_j}
-		a^{\dagger}_{\vec{k}} b_{\vec{k}'} + \text{H.C.} \right)\\
+		a^{\dagger}_{\vec{k}} b_{\vec{k}'} + \text{H.C.} \right) \nonumber \\
 	 &=-t_0 \frac{1}{N} \sum_{\vec{k},\vec{k'}} \left( N \delta_{\vec{k},\vec{k'}} \
 	 	e^{-i \vec{k}' \cdot \vec{\Delta}_j}
-		a^{\dagger}_{\vec{k}} b_{\vec{k}'} + \text{H.C.}\right)\\ 
-	 &=-t_0 \sum_{\vec{k}}\left( \sum_{j} e^{-i \vec{k} \cdot \vec{\Delta}_j} a^{\dagger}_{\vec{k}} b_{\vec{k}} + \text{H.C.} \right) \ ,
-\end{align*}
+		a^{\dagger}_{\vec{k}} b_{\vec{k}'} + \text{H.C.}\right) \nonumber \\ 
+	 &=-t_0 \sum_{\vec{k}}\left( \sum_{j} e^{-i \vec{k} \cdot \vec{\Delta}_j} a^{\dagger}_{\vec{k}} b_{\vec{k}} + \text{H.C.} \right) \label{eq:TB:FTing}\ ,
+\end{align}
 where $\delta_{\vec{k},\vec{k'}}$ is the Kronecker delta function.
 In matrix notation this reads,
 \begin{equation}
@@ -153,17 +153,17 @@ A higher order model is required to account for things such as trigonal warping 
 The two points of convergence between the high and low energy bands are referred to as the Dirac points because of the characteristic energy dispersion in their vicinity.
 This interesting low energy physics can be best captured by expanding the Hamiltonian in Equation \ref{eq:TB:RealSpace} about these points.
 The wave-vectors are approximated as $\vec{k}=\bm{K}+\vec{q}$ and $\vec{k}=\bm{K'}+\vec{q}$ and for small $qa$ the sum in Equation \ref{eq:TB:RealSpace} is approximated as,
-\begin{align*}
-	\sum_{j} e^{-i \vec{k} \cdot \vec{\Delta}_j}&= \\
-	\bm{K:}\ 	&=\sum_{j} e^{-i (\bm{K}+\vec{q}) \cdot \vec{\Delta}_j} \\
-				&\simeq \sum_{j} (1-i \vec{q} \cdot \vec{\Delta}_j) e^{-i \bm{K} \cdot \vec{\Delta}_j} \\
-				&=-\frac{3}{2} a \left( q_x-i q_y \right) \\
-	\bm{K':}\	&\simeq \sum_{j} (1-i \vec{q} \cdot \vec{\Delta}_j) e^{-i \bm{K'} \cdot \vec{\Delta}_j} \\
-				&=-\frac{3}{2} a \left(-q_x-i q_y \right) . \\
-\end{align*}
+\begin{align}
+	\sum_{j} e^{-i \vec{k} \cdot \vec{\Delta}_j}&= \nonumber \\
+	\bm{K:}\ 	&=\sum_{j} e^{-i (\bm{K}+\vec{q}) \cdot \vec{\Delta}_j} \nonumber \\
+				&\simeq \sum_{j} (1-i \vec{q} \cdot \vec{\Delta}_j) e^{-i \bm{K} \cdot \vec{\Delta}_j} \nonumber \\
+				&=-\frac{3}{2} a \left( q_x-i q_y \right) \nonumber \\
+	\bm{K':}\	&\simeq \sum_{j} (1-i \vec{q} \cdot \vec{\Delta}_j) e^{-i \bm{K'} \cdot \vec{\Delta}_j} \nonumber \\
+				&=-\frac{3}{2} a \left(-q_x-i q_y \right) \ . \label{eq:TB:LowEnergy} 
+\end{align}
 These values are independent of which of the three identical $\bm{K}$ or $\bm{K'}$ points are expanded about.
 The low energy Hamiltonian is thus,
-\begin{align*}
+\begin{align}
 	\bm{K:} \ H&\simeq\frac{3}{2} a t_0 \sum_{\vec q} 
 		\left( \begin{array}{cc} a^{\dagger}_{\vec{q}} & b^{\dagger}_{\vec{q}} \end{array} \right)
 		\left( \begin{array}{cc}
@@ -184,7 +184,7 @@ The low energy Hamiltonian is thus,
 		\left( \begin{array}{cc} b^{\dagger}_{\vec{q}} & a^{\dagger}_{\vec{q}} \end{array} \right)
 		(-1)\vec{q} \cdot \vec{\sigma}
 		\left( \begin{array}{c } b_{\vec{q}}           \\ a_{\vec{q}}          \end{array} \right), \\
-\end{align*}
+\end{align}
 or in the combined form:
 \begin{align}
 	H&=\hbar v_f \sum_{\vec q, \vec{q}}
@@ -266,7 +266,7 @@ An alternative, and more enlightening, interpretation of graphene's properties i
 In this scenario the group velocity cannot be changed because the electrons are moving at the systems effective light speed.
 Hence, like a photon moving at the speed of light graphene's electrons cannot be accelerated.
 
-In 1984 Semenoff demonstrated that there is an exact correspondence between the low energy Hamiltonian of graphene and the two dimensional Dirac-Weyl Hamiltonian\cite{Semenoff1984} which governs massless, relativistic, spin 1/2, Fermions.
+In 1984 Semenoff demonstrated that there is an exact correspondence between the low energy Hamiltonian of graphene and the two dimensional Dirac-Weyl Hamiltonian \cite{Semenoff1984} which governs massless, relativistic, spin 1/2, Fermions.
 In this section this correspondence will be briefly discussed.
 
 The Hamiltonian of general, relativistic, spin 1/2, fermions is known as the Dirac equation.
@@ -296,7 +296,7 @@ From this form it is clear that the spinors are eigenvectors of the helicity ope
 The $\chi_+$ spinor is said to be right handed; for particles with positive energy the spin and momentum are in the same direction whereas for particles with negative energy they are in the opposite direction.
 The $\chi_-$ spinor then is left handed.
 Since the helicity operator commutes with the Hamiltonian, helicity is conserved in this system.
-Gottfried and Yan provide a more detailed discussion of the Dirac equation and its consequences\cite{Gottfried2003}.
+Gottfried and Yan provide a more detailed discussion of the Dirac equation and its consequences \cite{Gottfried2003}.
 
 In graphene, the elements of the wavevector have a geometric interpretation.
 They correspond to the amplitude that the electron is at the A or B sublattice.
