@@ -14,7 +14,7 @@ This is followed by an examination of the importance of these lattice-correction
 Finally, methods of strain engineering graphene devices are examined with an emphasis on the over pressured hour glass shaped microchamber.
 This device cleverly takes advantage of plasmonics to enhance signals from higher pseudo magnetic field regions.
 
-\section{Derivation of the strain induced vector potentials}
+\section{Derivation of the pseudo vector potentials}
 
 By distorting the graphene lattice, strain causes the following \cite{Pereira2009}:
 (i) for any amount of strain, the Dirac points are displaced from the corners of the unstrained BZ and, furthermore, do not necessarily sit at the corners of the strained BZ;
@@ -150,42 +150,23 @@ As a result, the real space Hamiltonian in Equation \ref{eq:PVP:RealSpace} can b
 with the strain dependence of $\delta t_{i,j}$ given by Equation \ref{eq:PVP:FT}.
 
 Using the Fourier transforms of the creation and annihilation operators in Equation \ref{eq:PVP:FT}, the Hamiltonian is written in reciprocal space as 
-\begin{equation*}
+\begin{equation}
   H=-\frac{1}{N} \sum_{<i,j>} \sum_{\vec{k},\vec{k}'} \left( t_0+\delta t_{i,j} \right)
     e^{i(\vec{k}-\vec{k}')\cdot \vec{R}_i'}
     e^{-i\vec{k}'\cdot \vec{\Delta}_{i,j}'}
     a_{\vec{k}}^{\dagger} b_{\vec{k'}} +\text{H.C.}\ ,
-\end{equation*}
-where $\vec{\Delta}_{i,j}=\vec{R}_j'-\vec{R}_i'$.
-As compared to the unstrained case in Equation \ref{eq:TB:FTing}, the $i$ dependence is not isolated to a single term.
-Instead, the strain can vary throughout the lattice resulting in the $i$ dependence of $\vec{\Delta}_{i,j}$.
-%----Justify why we drop the $i$ dependence here to define slowly varying.
+    \label{eq:TB:beforeSV}
+\end{equation}
+where $\vec{\Delta}_{i,j}'=\vec{R}_j'-\vec{R}_i'$.
+Comparing this Hamiltonian to the unstrained Hamiltonian in Equation \ref{eq:TB:FTing} reiterates the effects of strain.
+The previously discussed modifications of the hopping energy and the lattice positions are evident.
+Additionally, the $\vec{R}_i'$ term is no longer the only $i$ dependent term.
+Instead, the strain can vary throughout the lattice resulting in the $i$ dependence of both $\delta t_{i,j}$ and $\vec{\Delta}_{i,j}'$.
+It is shown in Appendix \ref{chap:idep} that to first order in small parameters the $i$ dependences can be neglected as long as $\delta t_{i,j}$ and $\bm{\nabla u}$ do not have Fourier components with frequencies $\bm{K}-\bm{K'}$.
+Throughout it will be assumed that this is true and the slowly varying approximation detailed in Appendix \ref{chap:idep} will be applied.
+The $i$ dependence is then eliminated through the substitutions $\delta t_{i,j} \rightarrow \delta t_j=<\delta t_{i,j}>$ and $\bm{\nabla u}_i \rightarrow <\bm{\nabla u}>$ where the averages over $i$. 
 
-When isolated, the remaining $i$ dependence corresponds to a Fourier Transform of the hoping energy,
-\begin{align*}
-  \tilde{t}_{\vec{k}-\vec{k}'}&=\sum_i \left( t_0+\delta t_{i,j} \right) e^{i(\vec{k}-\vec{k}')\cdot \vec{R}_i'} \\
-                              &=N t_0 \delta_{\vec{k},\vec{k}'}+\sum_i \delta t_{i,j} e^{i(\vec{k}-\vec{k}')\cdot \vec{R}_i'} \ .
-\end{align*}
-Only specific Fourier components yield relevant $\tilde{t}_{\vec{k}-\vec{k}'}$ when working in the low energy regime.
-The wave-vectors will again be approximated as $\vec{k}=\bm{K}+\vec{q}$ and $\vec{k}=\bm{K'}+\vec{q}$ for small $qa$, giving
-\begin{align*}
-  \tilde{t}_{\vec{k}-\vec{k}'}&\simeq N t_0 \delta_{\vec{k},\vec{k}'} + 
-    \sum_i \delta t_{i,j} e^{i(\bm{K^{(')}}+\vec{q}-\bm{K^{(')}}-\vec{q}') \cdot \vec{R}_i'} \\
-                              &\simeq N t_0 \delta_{\vec{k},\vec{k}'} + 
-    \sum_i \delta t_{i,j} e^{i(\bm{K^{(')}}-\bm{K^{(')}}) \cdot \vec{R}_i'} (1+(\vec{q}-\vec{q}') \cdot \vec{R}_i') \\
-                              &\simeq N t_0 \delta_{\vec{k},\vec{k}'} + 
-    \sum_i \delta t_{i,j} e^{i(\bm{K^{(')}}-\bm{K^{(')}}) \cdot \vec{R}_i'} \ ,
-\end{align*}
-where $\bm{K^{(')}}$ refers to either $\bm{K}$ or $\bm{K'}$ depending on the wave-vector.
-Thus, to first order in the small parameters the only relevant Fourier components are for $\vec{k}-\vec{k}' \in \{0,\bm{K}-\bm{K'}, \bm{K'}-\bm{K} \}$.
-The high frequency components could interestingly act to couple the $\bm{K}$ and $\bm{K}'$ points.
-However, since the strain is assumed to be slowly varying here, we eliminate the high frequency components and limit $\vec{k}-\vec{k}' \rightarrow 0$, yielding
-\begin{equation*}
-  \tilde{t}_{\vec{k}-\vec{k}'}\simeq N \delta_{\vec{k},\vec{k}'} (t_0 + <\delta t_{i,j}>) \ .
-\end{equation*}
-where $<\delta t_{i,j}>$ is the average value over $i$ of $\delta t_{i,j}$ which will be written as $\delta t_j$.
-
-The Hamiltonian is now simplified to
+After making the slowly varying approximation, the Hamiltonian simplifies to,
 \begin{equation*}
     H=-\sum_{\vec{k}} \sum_{j} \left( t_0+\delta t_j \right)
     e^{-i\vec{k}'\cdot \vec{\Delta}_{i,j}'}
@@ -271,23 +252,30 @@ Uniaxial strain of the same macroscopic value but at a different crystallographi
 The form for the pseudo vector potential assume that the tensors are written such that the x axis is aligned with a zig zag direction.
 They can be rewritten for different orientations by rotating the tensors so that their x axis is aligned with the zig zag direction, calculating the pseudo vector potential using Equations \ref{eq:PVP:PVP}, and then rotate the resulting pseudo vector potential back into the original reference frame.
 
+\section{Pseudo vector potential discussion}
+
+Calculations preceding Kitt et al. \cite{Kitt2012} considered only the term arising from hoping, $\vec{\mathcal{A}}_p$ in Equation \ref{eq:PVP:PVP}.
+By neglecting the lattice terms, they did not properly account for the shift in the Dirac points.
+Consider, for example, the seemingly trivial case of tensile isotropic strain.
+The traditional form of the pseudovector potential, $\vec{\mathcal{A}}_p$, predicts that there should be no shift in the Dirac points ($\tilde{\epsilon}_{xx}=\tilde{\epsilon}_{yy}$ and $\tilde{\epsilon}_{xy}=0$ in equation \ref{eq:PVP:PVP}).
+Physically however, the BZ must shrink isotropically under tensile isotropic strain, and, by symmetry, the Dirac points should follow the corners of the shrinking BZ.
+The pseudo vector potential should correspond to a shift of each Dirac point toward the $\Gamma$ point with respect to the unstrained reference state.
+Further, the direction of this shift is different for $\bm{K}_1$ then it is for $\bm{K}_2$ then it is for $\bm{K}_3$. 
+This illustrate two points: Preceding calculations were incomplete and the pseudo vector potential is not necessarily the same for each $\bm{K}$ point.
+
+In Figure \ref{fig:PVP:PVPshifts}, the reciprocal space shifts of the Dirac points predicted by the traditional and herein corrected forms of the pseudovector potential are compared.
+The contours represent the dispersion of strained graphene calculated using a nearest neighbor tight binding model which accounts for both the strain induced changes in hoping amplitudes and the lattice deformation \cite{Pereira2009}.
+This model 
+For isotropic tensile strain, the lattice-corrected pseudo vector potential in Equation \ref{eq:PVP:PVP} properly predicts the displacement of each Dirac point due to strain.
+The less trivial cases of uniaxial or shear strain are also shown in Figure \ref{fig:PVP:PVPshifts}.
+The differences between the red (traditional) and orange (corrected) arrows make it clear that the lattice corrections are needed to determine the absolute position of the Dirac point in reciprocal space (they can even reverse the sign of $\vec{\mathcal{A}}$).
+
 \begin{figure*}
-\includegraphics{Figs_PVP/figure_2.pdf}
-\caption{(Color online) Contours of the band structure of graphene under tensile isotropic strain, shear strain, uniaxial armchair strain, and zig-zag strain (rows), for $\epsilon=1\%$ near the three $\bm{K}$ points (columns). The contours are overlaid with the Brillouin zone of unstrained (solid, black)  and strained (dashed, brown) graphene. Vectors mark the displacement of the Dirac points predicted by the traditional ($\vec{A}_p$, dashed/red arrow) and the corrected ($\vec{A}_{\bm{K}_{\!i}}$, solid/orange arrow) form of the pseudo vector potential (eqs.~\ref{pvp-all}), with the green dots marking the positions of the Dirac points for strained graphene. The red vectors appears as a dot for isotropic strain because the traditional form of the vector potential does not predict a shift in the Dirac points.  Each plot is square with an area of $0.12^2$. \label{fig:PVP:PVPshifts}}
+\includegraphics{Figs_PVP/VPs.png}
+\caption{Contours of the band structure of graphene under tensile isotropic strain, shear strain, armchair uniaxial strain, and zig-zag uniaxial strain (rows), for $\epsilon=1\%$ near the three $\bm{K}$ points (columns). The contours are overlaid with the Brillouin zone of unstrained (solid, black)  and strained (dashed, red) graphene. Vectors mark the displacement of the Dirac points predicted by the traditional ($\vec{\mathcal{A}}_p$, dashed, yellow arrow) and the corrected ($\vec{\mathcal{A}}_{\bm{K}_{i}}$, solid, green arrow) form of the pseudo vector potential (Equation \ref{eq:PVP:PVP}), with the white dots marking the positions of the Dirac points for strained graphene. The yellow vectors appears as a dot for isotropic strain because the traditional form of the vector potential does not predict a shift in the Dirac points.  Each plot is square with an area of $0.12^2$. \label{fig:PVP:PVPshifts}}
 \end{figure*}
 
-
-\section{Discussion}
-
-All existing calculations consider only the term $\vec{A}_p$ and, as a result do not properly account for the shift in the Dirac points.
-Consider, for example, the seemingly trivial case of tensile isotropic strain.
-The traditional form of the pseudovector potential, $\vec{A}_p$, predicts that there should be no shift in the Dirac points ($\epsilon_{xx}=\epsilon_{yy}$ and $\epsilon_{xy}=0$ in equation \ref{pvpe}).
-However, the BZ shrinks isotropically under tensile isotropic strain, and, by symmetry, the Dirac points should follow the corners of the deformed BZ resulting in a Dirac point dependent shift toward the $\Gamma$ point with respect to the unstrained reference state.
-In Fig.~\ref{PVPshifts}, the reciprocal space shifts of the Dirac points predicted by the traditional and herein corrected forms of the pseudovector potential are compared.
-The contours are the strained band structure calculated using a nearest neighbor tight binding model which accounts for both the strain induced changes in hoping amplitudes and the lattice deformation \cite{Pereira2009}.
-For isotropic tensile strain, the lattice-corrected pseudo vector potential in eqs.~\eqref{pvp-all} properly predicts the displacement of each Dirac point due to strain.
-The less trivial cases of uniaxial or shear strain are also shown in Fig.~\ref{PVPshifts}. The differences between the red (traditional) and orange (corrected) arrows make it clear that the lattice corrections are needed to determine the absolute position of the Dirac point in reciprocal space (they can even reverse the sign of $\vec{A}$).
-
+\section{Pseudo Magnetic Fields}
 As discussed above, these corrections are immaterial for systems with spatially uniform strain but must be included for systems with non-uniform strain.
 For example, if there are regions of isotropic tension embedded in regions of different strain states, the relative shifts \emph{are} important, even though deformations are locally isotropic.
 In these cases lattice corrections contribute an extra, Dirac point specific, space dependence which is important when calculating transport across a strain barrier or when considering the spatial distribution of the pseudomagnetic fields: $\vec{B}_{\bm{K_i}} = \nabla \times \vec{A}_{\bm{K_i}}$.

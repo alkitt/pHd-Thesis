@@ -1,0 +1,61 @@
+\chapter{Slowly varying approximation \label{chap:idep}}
+
+A full, rigorous treatment of a non-uniform strain field is not compatible with the pseudo vector potential interpretation of strain developed in Chapter \ref{chap:TB}.
+In a strict treatment of non-uniform strain the $i$ dependencies of Equation \ref{eq:TB:beforeSV} cannot be neglected and the transformation into Fourier space is obstructed.
+Without elimination of the spatial dependence, the Hamiltonian of the full system must be painstakingly solved.
+For properly engineered strain distributions, this would result in a dispersion relationship which exhibits Landau like levels.
+Although rigorous, this method is more arduous and also less conceptually pleasing.
+The pseudo vector potential approach provides a qualitative framework for understanding the observed effects.
+
+In the slowly varying approximation the $i$ dependencies in Equation \ref{eq:TB:beforeSV} are eliminated.
+This is as if the the strain is treated as locally uniform.
+In this Appendix this approximation will be developed and the limits of validity will be discussed.
+
+Remembering that $\bm{\nabla u}$ is $i$ dependent, the $i$ dependent terms in Equation \ref{eq:TB:beforeSV} are 
+\begin{align*}
+  H_i=&\sum_i \left( t_0+\delta t_{i,j} \right) e^{i(\vec{k}-\vec{k}')\cdot \vec{R}_i'}
+  		e^{-i \vec{k}' \cdot \vec{\Delta}_{i,j}'} \\
+  	 =&\sum_i \left( t_0+\delta t_{i,j} \right) e^{i(\vec{k}-\vec{k}')\cdot \vec{R}_i'}
+  		e^{-i \vec{k}' \cdot (\bm{1}+\bm{\nabla u}) \vec{\Delta}_j} \\
+  	 \simeq & e^{-i \vec{k}' \cdot \vec{\Delta}_j} \sum_i \left( t_0+\delta t_{i,j} \right)
+  	 	e^{i(\vec{k}-\vec{k}')\cdot \vec{R}_i'} \left(1-i \vec{k}' \cdot \bm{\nabla u} \cdot \vec{\Delta}_j \right) \\
+  	 \simeq & e^{-i \vec{k}' \cdot \vec{\Delta}_j} \bigg \{
+  	 	t_0 \sum_i e^{i(\vec{k}-\vec{k}')\cdot \vec{R}_i'} 
+  	 	-i t_0 \vec{k}' \cdot \sum_i \left( \bm{\nabla u} \ e^{i(\vec{k}-\vec{k}')\cdot \vec{R}_i'} \right) \cdot \vec{\Delta}_j
+  	 	+\sum_i \delta t_{i,j} \  e^{i(\vec{k}-\vec{k}')\cdot \vec{R}_i'}
+  	 	\bigg \} \\
+  	 =& N t_0 \delta_{\vec{k},\vec{k}'}
+  	 	-i t_0 \vec{k}' \cdot \widetilde{\bm{\nabla u}}_{\vec{k}-\vec{k}'} \cdot \vec{\Delta}_j + \widetilde{\delta t}_{\vec{k}-\vec{k}'} \ ,
+\end{align*}
+where $\widetilde{\bm{\nabla u}}_{\vec{k}-\vec{k}'}$ and $\widetilde{\delta t}_{\vec{k}-\vec{k}'}$ are the Fourier transforms of $\delta t_{i,j}$ and $\bm{\nabla u}$ respectively.
+Only terms first order in products of the small quantities $\bm{\nabla u}$ and $\delta t_{i,j}$ were kept.
+All of the $i$ dependence has been absorbed by the Fourier transforms.
+
+Only specific Fourier components yield relevant $\widetilde{\bm{\nabla u}}_{\vec{k}-\vec{k}'}$ and $\widetilde{\delta t}_{\vec{k}-\vec{k}'}$ when working in the low energy regime.
+The wave-vectors will again be approximated as $\vec{k}=\bm{K}+\vec{q}$ and $\vec{k}=\bm{K'}+\vec{q}$ with the additional small parameter $qa$, giving
+\begin{align*}
+  \widetilde{\delta t}_{\vec{k}-\vec{k}'} &=
+    \sum_i \delta t_{i,j} e^{i(\bm{K^{(')}}+\vec{q}-\bm{K^{(')}}-\vec{q}') \cdot \vec{R}_i'} \\
+                              &\simeq 
+    \sum_i \delta t_{i,j} e^{i(\bm{K^{(')}}-\bm{K^{(')}}) \cdot \vec{R}_i'} (1+(\vec{q}-\vec{q}') \cdot \vec{R}_i') \\
+                              &=
+    \sum_i \delta t_{i,j} e^{i(\bm{K^{(')}}-\bm{K^{(')}}) \cdot \vec{R}_i'} \ ,
+\end{align*}
+where $\bm{K^{(')}}$ refers to either $\bm{K}$ or $\bm{K'}$ depending on the wave-vector.
+The low energy approximation for $\widetilde{\bm{\nabla u}}_{\vec{k}-\vec{k}'}$ is identical.
+Thus, to first order in the small parameters the only relevant Fourier components are for $\vec{k}-\vec{k}' \in \{0,\bm{K}-\bm{K'}, \bm{K'}-\bm{K} \}$.
+The high frequency components could interestingly act to couple the $\bm{K}$ and $\bm{K}'$ points.
+However, here we apply the slowly varying approximation for which we eliminate the high frequency components and limit $\vec{k}-\vec{k}' \rightarrow 0$, yielding
+\begin{align*}
+  \widetilde{\delta t}_{\vec{k}-\vec{k}'}     & \simeq N \delta_{\vec{k},\vec{k}'} ( <\delta t_{i,j}>) \\
+  \widetilde{\bm{\nabla u}}_{\vec{k}-\vec{k}'}& \simeq N \delta_{\vec{k},\vec{k}'} ( <\bm{\nabla u} >) \ .
+\end{align*}
+where $<\delta t_{i,j}>=\delta t_j$ and $<\bm{\nabla u}>$ are the average value over $i$ of $\delta t_{i,j}$ and $\bm{\nabla u}$ respectively.
+
+Thus, in the slowly varying approximation the $i$ dependence of Equation \ref{eq:TB:beforeSV} becomes
+\begin{equation*}
+	H_i=N \delta_{\vec{k},\vec{k}'}  \left( t_0 + \delta t_j - i t_0 \vec{k}' \cdot \bm{\nabla u} \cdot \vec{\Delta}_j \right)
+\end{equation*}
+which gives the same result as the simple substitutions $\delta t_{i,j} \rightarrow \delta t_j=<\delta t_{i,j}>$ and $\bm{\nabla u}_i \rightarrow <\bm{\nabla u}>$ in Equation \ref{eq:TB:beforeSV}.
+This approximation required low energies, $qa<<1$, small strains, $\delta t_j << t_0$ $\bm{\nabla u}<<1$, and slowly varying strain fields, $\widetilde{\delta t}_{\bm{K}-\bm{K}'}=\widetilde{\bm{\nabla u}}_{\bm{K}-\bm{K}'}=0$.
+It eliminates of the spatial dependence in the Hamiltonian of strained graphene allowing the identification of the pseudo vector potential.
