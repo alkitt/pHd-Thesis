@@ -52,7 +52,7 @@ Such a large strain is chosen here to better illustrate strains effect on the ge
 
 \begin{figure}
   \input{Figs_PVP/geometry_PVP}
-  \caption{\label{fig:PVP:lattice} (a) Unstrained graphene's real space lattice with labeled nearest neighbor vectors ($\vec{\delta_i}$), labeled lattice vectors, $\vec{a}_+$ and  $\vec{a}_-$, and with light and dark dots representing the A and B sub-lattices, respectively. (b) The Brillouin zone of unstrained graphene with labeled high symmetry points. (c) The change in the real space lattice after the application 20 \% uniaxial strain in the $\hat{y}$ direction.  Red dots represent the position of the strained atoms and red dashed lines are the strained nearest neighbor and lattice vectors which are referred to as $\vec{\delta}_i'$ and $\vec{a}_i'$ respectively.  (d) The unstrained (black, solid) and strained (red, dashed) Brillouin zone, also for 20 \% armchair uniaxial strain, with the now inequivelent inequivalent Dirac points labeled.  $\bm{\nabla u}$ is the displacement gradient tensor detailing the distortion for each row.}
+  \caption[Geometry of strained graphene]{\label{fig:PVP:lattice} Geometry of strained graphene.  (a) Unstrained graphene's real space lattice with labeled nearest neighbor vectors ($\vec{\delta_i}$), labeled lattice vectors, $\vec{a}_+$ and  $\vec{a}_-$, and with light and dark dots representing the A and B sub-lattices, respectively. (b) The Brillouin zone of unstrained graphene with labeled high symmetry points. (c) The change in the real space lattice after the application 20 \% uniaxial strain in the $\hat{y}$ direction.  Red dots represent the position of the strained atoms and red dashed lines are the strained nearest neighbor and lattice vectors which are referred to as $\vec{\delta}_i'$ and $\vec{a}_i'$ respectively.  (d) The unstrained (black, solid) and strained (red, dashed) Brillouin zone, also for 20 \% armchair uniaxial strain, with the now inequivelent inequivalent Dirac points labeled.  $\bm{\nabla u}$ is the displacement gradient tensor detailing the distortion for each row.}
 \end{figure}
 
 Figure \ref{fig:PVP:lattice}(c) provides a qualitative geometric picture for how strain alters the unstrained nearest neighbor tight binding approach discussed in Chapter \ref{chap:TB}.
@@ -271,8 +271,8 @@ The less trivial cases of uniaxial or shear strain are also shown in Figure \ref
 The differences between the red (traditional) and orange (corrected) arrows make it clear that the lattice corrections are needed to determine the absolute position of the Dirac point in reciprocal space (they can even reverse the sign of $\vec{\mathcal{A}}$).
 
 \begin{figure*}
-\includegraphics{Figs_PVP/VPs.png}
-\caption{Contours of the band structure of graphene under tensile isotropic strain, shear strain, armchair uniaxial strain, and zig-zag uniaxial strain (rows), for $\epsilon=1\%$ near the three $\bm{K}$ points (columns). The contours are overlaid with the Brillouin zone of unstrained (solid, black)  and strained (dashed, red) graphene. Vectors mark the displacement of the Dirac points predicted by the traditional ($\vec{\mathcal{A}}_p$, dashed, yellow arrow) and the corrected ($\vec{\mathcal{A}}_{\bm{K}_{i}}$, solid, green arrow) form of the pseudo vector potential (Equation \ref{eq:PVP:PVP}), with the white dots marking the positions of the Dirac points for strained graphene. The yellow vectors appears as a dot for isotropic strain because the traditional form of the vector potential does not predict a shift in the Dirac points.  Each plot is square with an area of $0.12^2$. \label{fig:PVP:PVPshifts}}
+  \includegraphics{Figs_PVP/VPs.png}
+  \caption[A geometric depiction of the need for the corrections to the strain induced pseudo vector potentials]{A geometric depiction of the need for the corrections to the strain induced pseudo vector potentials.  Contours of the band structure of graphene under tensile isotropic strain, shear strain, armchair uniaxial strain, and zig-zag uniaxial strain (rows), for $\epsilon=1\%$ near the three $\bm{K}$ points (columns) are overlaid with the Brillouin zone of unstrained (solid, black)  and strained (dashed, red) graphene. Vectors mark the displacement of the Dirac points predicted by the traditional ($\vec{\mathcal{A}}_p$, dashed, yellow arrow) and the corrected ($\vec{\mathcal{A}}_{\bm{K}_{i}}$, solid, green arrow) form of the pseudo vector potential (Equation \ref{eq:PVP:PVP}), with the white dots marking the positions of the Dirac points for strained graphene. The yellow vectors appears as a dot for isotropic strain because the traditional form of the vector potential does not predict a shift in the Dirac points.  Each plot is square with an area of $0.12^2$. \label{fig:PVP:PVPshifts}}
 \end{figure*}
 
 \section{Pseudo Magnetic Fields}
@@ -296,10 +296,6 @@ The surface was meshed with triangles with a maximum element size of 1 nm, and s
 The second subtle point is that the pseudo vector potential has no gauge freedom.
 Although it is true that there are a range of 
 
-\begin{figure*}
-\includegraphics{Figs_PVP/figure_3.pdf}
-\caption{\label{triholes}The spatial distribution of the pseudomagnetic fields generated when an equilateral triangle with 50 nm sides, 2 nm radius fillets, and the base oriented 30 degrees counterclockwise from the armchair direction is pressurized to 14 MPa. In (a) the calculation is done using the traditional form of the pseudovector potential, while in (b) it is performed including the corrections derived in this work. Here, the three different colored curves correspond to the pseudomagnetic fields felt by the electrons at the three different $\bm{K}$ points with the magnetic field for the electrons at $\bm{K_1}$ isolated in (c). (Color online)}
-\end{figure*}
 
 The effect of the lattice corrections to the extracted pseudomagnetic field are shown in Fig.~\ref{triholes} for an equilateral triangle with 50 nm sides, and under 14 MPa of pressure.
 At this pressure the graphene sheet has less than 0.26~\% strain.

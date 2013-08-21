@@ -1,5 +1,7 @@
-\documentclass[12pt]{report}				% 12 pt font single sided
-\includeonly{TightBinding,PVP,Appendix_TB_strainedBZ,Appendix_TB_idependence}	
+\documentclass[12pt,letterpaper,onecolumn,openany,oneside]{book}
+
+% \includeonly{TightBinding,PVP,Appendix_TB_strainedBZ,Appendix_TB_idependence}
+% \includeonly{form_5_abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   additional packages  %%
@@ -7,8 +9,6 @@
 \usepackage{graphics,graphicx}         		% Figures
 \usepackage{amsmath,amssymb,mathrsfs,bm} 	% Math symbols
 \usepackage{tikz}                      		% Fancy drawings
-\usepackage[toc,page]{appendix}       		% needed to add the appendices to the t.o.c.
-\usepackage{sectsty}                  		% needed for the \chapterfont command
 \usepackage{apalike}						% APA like bibliography style
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -19,48 +19,65 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%     Format             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\allsectionsfont{\normalsize}				% Sets all section headers to 12 pt
-
-\renewcommand{\baselinestretch}{1.38}		% ??
 % Sets the margins--one sided document only odd commands are taken into effect
 \usepackage[top=1.5in, bottom=1in, left=1.5in, right=1in]{geometry}
+\setlength{\footskip}{.25in}				% Page numbers in footer are positioned bottom margin-\footskip from bottom of page to give 0.75"
+\usepackage{fancyhdr}						% Custom setup of header and footers which allows number positions to be placed
+\usepackage[doublespacing]{setspace}		% Sets double spacing for main textand provides single spacing environment
+\usepackage[font=doublespacing]{caption}	% Captions now also double spaced
+\usepackage{sectsty}                  		% needed for the \allsectionsfont command
+\allsectionsfont{\normalsize}				% Sets all section headers to 12 pt
+
+% Formatting still to do:
+% Make sure page numbers are in the correct place 1" from top, .75" from bottom
+% No journal abbreviations in the bibliography (will have to manually edit :( )
+
+% Build file:
+% Catch overflows
 
 \begin{document}
-	% Preamble
+	\frontmatter							% Preamble
+	\fancypagestyle{plain}{					% Must redefine plain otherwise pages with chapter start (TOC, LOF, LOT) will look different
+		\fancyhf{}								% all header footer field clear
+		\fancyfoot[C]{\thepage}					% page number in right header
+		\renewcommand{\headrulewidth}{0pt}		% gets rid of lines that fancyhdr always sticks in
+		\renewcommand{\footrulewidth}{0pt}}
+	\pagestyle{plain}
 	\include{form_1_title}
 	\include{form_2_approval}
-	\include{form_3_dedication}
-	\pagenumbering{roman}					% Roman style inverse page numbers
-	\setcounter{page}{4}					% Sets the page number to 4
-	\baselineskip 22 true pt 				% Numbers at bottom of page are 3/4in from edge
+	\setcounter{page}{3}					% Sets the page number to 3
 	\include{form_4_acknowledge}
-	\baselineskip 22 true pt 				% ??
 	\include{form_5_abstract} 
-	% \tableofcontents
-	% \listoftables
-	% \listoffigures
-	\include{form6_abbreviations}
+	\tableofcontents
+	\listoftables
+	\listoffigures
+	\include{form6_abbreviations} 			% Listed alphabetically
 
 
 	% Body text
-	\clearpage
-	\pagenumbering{arabic}					% Back to arabic style numbers
-	\pagestyle{myheadings} 					% ??
+	\mainmatter								% Main text
+	\clearpage								% Finishes anything from \frontmatter before switching style
+	\fancypagestyle{plain}{					% Must redefine plain otherwise pages with chapter start will look different
+		\fancyhf{}								% all header footer field clear
+		\fancyhead[R]{\thepage}					% page number in right header
+		\renewcommand{\headrulewidth}{0pt}		% gets rid of lines that fancyhdr always sticks in
+		\renewcommand{\footrulewidth}{0pt}}
+	\pagestyle{plain}
 	\include{TightBinding}
 	\include{Friction}
 	\include{PVP}
 
 	% Appendices
-	\clearpage
-	\begin{appendices}
-		\include{Appendix_TB_strainedBZ}
-		\include{Appendix_TB_idependence}
-	\end{appendices}
+	\appendix 								% Appendices
+	\include{Appendix_TB_strainedBZ}
+	\include{Appendix_TB_idependence}
 
 	% Bibliography
-	\clearpage
-	\bibliographystyle{apalike}				% Should be listed alphabetically
-	\bibliography{thesis}
+	\backmatter
+	\begin{singlespace}						% Bibliography can be single spaced
+		\bibliographystyle{apalike}			% Should be listed alphabetically
+		\bibliography{thesis}
+	\end{singlespace}
 
 	%CV at end--probably the absolute last thing to tack on
 \end{document}
