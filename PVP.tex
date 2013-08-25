@@ -74,6 +74,7 @@ where $\vec{R}_i'$ and $\vec{R}_j'$ are the positions of the atoms in the strain
 They are not controllable independently in an actual physical system; the latter is a consequence of the former.
 Past works have ignored the modification of the relative positions of the atoms.
 
+\subsection{Strain altered lattice vectors}
 A necessary and non-trivial first step toward including these modifications in the tight binding description is determining how the lattice vectors and nearest neighbor vectors are altered by strain.
 This directly determines how the Fourier transforms in Equation \ref{eq:TB:FT} should be altered and is also useful for determining how the hopings in Equation \ref{eq:TB:baseham} are altered.
 In general the strain is not uniform and the distortion of these vectors has a spatial dependence.
@@ -102,6 +103,7 @@ It is important to stress that the often used approximating $\vec{a}'_{i,\pm}(\b
 To simplify the notation, the position dependence has been left off of $\bm{\nabla u}$.
 Similarly, the strain modified nearest neighbor vectors are $\vec{\delta}'_{i,j}(\vec{r})=(\bm{1}+\bm{\nabla u}) \cdot \vec{\delta}_{j}(\vec{r})$ \cite{Kitt2013} where $i$ keeps track of the spatial dependence by indicating the unit cell and $j \in {1,2,3}$ indicates which of the three nearest neighbor vectors is being referred to.
 
+\subsection{Strain altered hoping energies}
 The distortion of the nearest neighbor vectors causes a bond specific alteration of the hoping energy.
 By comparing a tight binding treatment of strained graphene to density functional calculations of the same system, Ribeiro and coworkers showed that the dependence of the hoping energy on the distance between carbon atoms can be parameterized as:
 \begin{equation*}
@@ -134,6 +136,7 @@ or
 \end{align}
 This fully defines the strain dependences of the modifications in Equations \ref{eq:PVP:RealSpace} and \ref{eq:PVP:FT}.
 
+\subsection{Strain altered Hamiltonian}
 All the pieces necessary to modify the nearest neighbor tight binding approach from Chapter \ref{chap:TB} are now in place.
 The first modification to include the approximated hoping energy in Equation \ref{eq:PVP:RealSpace},
 \begin{equation*}
@@ -199,8 +202,9 @@ The lattice was treated as if it were undeformed and strain only acted to alter 
 However, both of the perturbations are first order in small parameters; $H_{hoping}$ is $\mathcal{O}(\tilde{\bm{\epsilon}})$ while $H_{lattice}$ is $\mathcal{O}(\bm{\nabla u})$.
 Consequently, they contributes on equal footing and $H_{lattice}$ should be included.
 
+\subsection{Pseudo vector potential derivation}
 The perturbations $H_{hopping}$ and $H_{lattice}$ mimic the effects of a magnetic field.
-In the minimum coupling scenario the presence of a magnetic field is accounted through the substitution $\vec{p} \rightarrow \vec{p} - e \vec{A}$ where $A$ is the vector potential which is related to the magnetic field through $\vec{B}=\nabla \times \vec{A}$.
+In the minimum coupling scenario the presence of a magnetic field is accounted for through the substitution $\vec{p} \rightarrow \vec{p} - e \vec{A}$ where $A$ is the vector potential which is related to the magnetic field through $\vec{B}=\nabla \times \vec{A}$.
 The perturbations $H_{hoping}$ and $H_{lattice}$ contribute a similar shift in the crystal momentum $\vec{\hbar k} \rightarrow \vec{\hbar k} - e \vec{\mathcal{A}}$ where $\vec{\mathcal{A}}$ is the pseudo vector potential.
 This formalism uses the \emph{undeformed} BZ as global reference to which the strain induced shifts of the momentum are measured.
 This identification can be made because the perturbations contribute to the same matrix elements as $H_0$: they are off diagonal and do not couple the $\bm{K}$ and $\bm{K'}$ points.
@@ -210,7 +214,13 @@ The form of $H_0$ shown in Equation \ref{eq:TB:FullH} allows the isolation of th
   \mathcal{A}_{x,\bm{K}}&=-\vec{\mathcal{A}}_{x,\bm{K'}}=-\frac{1}{v_f e} Re[h_{hoping}+h_{lattice}] \\
   \mathcal{A}_{y,\bm{K}}&=\vec{\mathcal{A}}_{y,\bm{K'}}= \frac{1}{v_f e} Im[h_{hoping}+h_{lattice}] \ ,
 \end{align*}
-where $h_{hopping}=-\sum_{j} \delta t_j e^{-i \bm{K} \cdot \vec{\Delta}_j}$ and $h_{lattice}=i t_0 \bm{K} \cdot \bm{\nabla u} \cdot \sum_{j} \vec{\Delta}_j e^{-i \bm{K} \cdot \vec{\Delta}_j}$.
+where 
+\begin{align}
+  h_{hopping}&=-\sum_{j} \delta t_j e^{-i \bm{K} \cdot \vec{\Delta}_j}= \nonumber \\
+  h_{lattice}=i t_0 \bm{K} \cdot \bm{\nabla u} \cdot \sum_{j} \vec{\Delta}_j e^{-i \bm{K} \cdot \vec{\Delta}_j}
+    =\hbar v_f \bm{K}\cdot \bm{\nabla u} \cdot \left( \pm \hat{x}-i \hat{y}\right)\ . \label{eq:PVP:nocurl}
+\end{align}
+with the top sign in the $\pm$ referring to the $\bm{K}$ and the bottom sign to the $\bm{K'}$ point.
 The resulting pseudo vector potentials are:
 \begin{align}
   \vec{\mathcal{A}}_{\bm{K_1}}&=-\vec{\mathcal{A}}_{\bm{K_1'}}=
@@ -240,6 +250,7 @@ $\phi_0=\frac{h}{e}$, and the various $\bm{K}_i$ points are defined as in Figure
 The common term $\vec{\mathcal{A}}_p$ is proportional to the logarithmic derivative of the hoping, $\beta$, and arises from the hoping perturbations, $\delta t_j$, alone.
 It has the expected dependence on the strain tensor components \cite{CastroNeto2009,Vozmediano2010}. 
 The herein derived additional terms are the corrections due to lattice deformations.
+
 Since $\beta \approx 3$, the lattice corrections are equally important, not only for being of the same order in strain, but for having similar numerical coefficients.
 It is also worth emphasizing that taking explicit consideration of the lattice deformations leads to a vector potential that is different for all the corners of the BZ.
 This is of course expected because under an arbitrary deformation the equivalence among the three $\bm{K}$ and $\bm{K'}$ points is lost.
@@ -251,6 +262,8 @@ It should be noted that the pseudovector potential depends on the crystallograph
 Uniaxial strain of the same macroscopic value but at a different crystallographic orientation will result in different pseudo vector potentials.
 The form for the pseudo vector potential assume that the tensors are written such that the x axis is aligned with a zig zag direction.
 They can be rewritten for different orientations by rotating the tensors so that their x axis is aligned with the zig zag direction, calculating the pseudo vector potential using Equations \ref{eq:PVP:PVP}, and then rotate the resulting pseudo vector potential back into the original reference frame.
+
+The concept of gauge freedom for pseudo vector potentials is subtle to me.  Just like for a real magnetic field, there is clearly a class of pseudo vector potential distributions which will give rise to the same pseudo magnetic fields. However, for pseudo magnetic fields-each pseudo vector potential distribution represents a system with a different strain distribution.  Further, the interpretation of the pseudo vector potential as the shift in the Dirac points is concrete.  I bring this up because in our exchange in e-mails with the Mexican group they mentioned they were troubled that the lattice corrections couldn't be gauged away for all three K points at once.  I like how you put it in your notes: the lattice corrections have no rotation, and thus don't contribute to the pseudo magnetic field.  There is no sense of them being gauged away in this type of explanation.  I also think that this distinction is important for the strain barrier case-where the exact position of the Dirac points is the important piece.
 
 \section{Pseudo vector potential discussion}
 
