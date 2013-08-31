@@ -1,7 +1,7 @@
 \documentclass[12pt,letterpaper,onecolumn,openany,oneside]{book}
-
+% Use draft option to be overfull 
 % \includeonly{TightBinding,PVP,Appendix_TB_strainedBZ,Appendix_TB_idependence}
-% \includeonly{form_5_abstract}
+% \includeonly{PVP}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   additional packages  %%
@@ -22,18 +22,17 @@
 % Sets the margins--one sided document only odd commands are taken into effect
 \usepackage[top=1.5in, bottom=1in, left=1.5in, right=1in]{geometry}
 \setlength{\footskip}{.25in}				% Page numbers in footer are positioned bottom margin-\footskip from bottom of page to give 0.75"
+\setlength{\headheight}{15pt}				% To avoid an error in fanyhdr
+% Note: headers is automatically 1" from top of page like it should be
 \usepackage{fancyhdr}						% Custom setup of header and footers which allows number positions to be placed
 \usepackage[doublespacing]{setspace}		% Sets double spacing for main textand provides single spacing environment
 \usepackage[font=doublespacing]{caption}	% Captions now also double spaced
 \usepackage{sectsty}                  		% needed for the \allsectionsfont command
 \allsectionsfont{\normalsize}				% Sets all section headers to 12 pt
+\usepackage{layout}							% If you use the \layout command in the body of the text the formatting will be shown nicely
 
 % Formatting still to do:
-% Make sure page numbers are in the correct place 1" from top, .75" from bottom
 % No journal abbreviations in the bibliography (will have to manually edit :( )
-
-% Build file:
-% Catch overflows
 
 \begin{document}
 	\frontmatter							% Preamble

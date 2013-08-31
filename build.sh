@@ -11,4 +11,4 @@ bibtex --include-directory=../ $file # Must be run in $file.aux directory, and .
 cd ..
 echo -e "\n"
 pdflatex --aux-directory=./auxil/ --quiet $file
-pdflatex --aux-directory=./auxil/ $file | grep "LaTeX Warning:" | cat # Only prints out errors
+pdflatex --aux-directory=./auxil/ $file | grep 'Warning\|warning\|Overfull\|Underfull' | cat # Only prints out errors
