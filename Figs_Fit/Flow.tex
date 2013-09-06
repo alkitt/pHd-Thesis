@@ -1,0 +1,72 @@
+\newcommand{\fctw}{1.5in}
+\newcommand{\fcmh}{6mm}
+\resizebox{!}{7.5in}{
+\begin{tikzpicture}[node distance=5 mm,
+	terminal/.style={rectangle, rounded corners=3mm, 
+				minimum height=\fcmh, text width=\fctw, text centered,
+				very thick, draw=green!50!black, fill=black!5},
+	process/.style={rectangle, rounded corners=1.5mm,
+				minimum height=\fcmh, text width=\fctw, text centered,
+				very thick, draw=blue!50!black, fill=black!5},
+	pprocess/.style={rectangle,rounded corners=1.5mm,
+				minimum height=\fcmh, text width=\fctw, text centered,,
+				ultra thick, draw=red!50!black, fill=black!5},
+	decision/.style={diamond, aspect=2,
+				minimum height=\fcmh, text width=\fctw, text badly centered, inner sep=0,
+				very thick, draw=black, fill=black!5},
+	data/.style={trapezium, trapezium left angle=70, trapezium right angle=-70,
+				minimum height=\fcmh, text width=\fctw, text centered, 
+				very thick, draw=orange!50, fill=black!5},
+	line/.style={draw,thick,-latex'}
+	]
+
+	\node (load)	[terminal]
+		{Load spectra, known parameters};
+	\node (setFGB)	[process,below=of load]
+		{First $F$, $\gamma$, $\beta$};
+	\node (strain)	[process,below=of setFGB]
+		{Hypothesize strains};
+	\node (first)	[process,below=of strain]
+		{First spectra};
+	\node (getrho)	[pprocess,below=of first]
+		{Determine $\rho$};
+	\node (nextr)	[process,left=of getrho]
+		{Next spectra};
+	\node (isin)	[decision,below=of getrho]
+		{Fit $\rho$?};
+	\node (rdom)	[process,below=of isin]
+		{Restrict fit domain};
+	\node (pspec)	[pprocess,below=of rdom]
+		{Predict spectral shape};
+	\node (linc)	[pprocess,below=of pspec]
+		{Fit linear coefficients};
+	\node (chi2)	[process,below=of linc]
+		{Add $\chi^2$ to global $\chi^2$};
+	\node (rleft)	[decision,below=of chi2]
+		{Last spectra?};
+	\node (Fleft)	[decision,below=of rleft]
+		{Last fitting values?};
+	\node (nextF)	[process,right=of getrho]
+		{Next $F$, $\gamma$, $\beta$};
+	\node (end)		[terminal,below=of Fleft]
+		{Select best $\tilde{\chi}^2$ and estimate errors};
+
+	\draw[line] (load)	--	(setFGB);
+	\draw[line] (setFGB)--	(strain);
+	\draw[line] (strain)--	(first);
+	\draw[line]	(first)	--	(getrho);
+	\draw[line] (getrho)--	(isin);
+	\draw[line]	(isin) 	--	node[anchor=west]{yes}	(rdom);
+	\draw[line]	(isin)	-|	node[near start,anchor=south]{no}	(nextr);
+	\draw[line]	(nextr) |-	($(first.south) + (0,-2.5mm)$);
+	\draw[line]	(rdom)	--	(pspec);
+	\draw[line] (pspec) --	(linc);
+	\draw[line]	(linc)	--	(chi2);
+	\draw[line] (chi2)	--	(rleft);
+	\draw[line]	(rleft)	--	node[anchor=west]{yes} (Fleft);
+	\draw[line] (Fleft) -- 	node[anchor=west]{yes} (end);
+	\draw[line]	(rleft) -|	node[near start,anchor=south]{no}	(nextr);
+	\draw[line]	(Fleft) -|	node[near start,anchor=south]{no}	(nextF);
+	\draw[line]	(nextF)	|-	($(setFGB.south) + (0,-2.5mm)$);
+\end{tikzpicture}
+}

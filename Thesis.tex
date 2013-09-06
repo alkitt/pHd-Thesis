@@ -1,7 +1,9 @@
 \documentclass[12pt,letterpaper,onecolumn,openany,oneside]{book}
 % Use draft option to be overfull 
-% \includeonly{TightBinding,PVP,Appendix_TB_strainedBZ,Appendix_TB_idependence}
-% \includeonly{PVP}
+\pdfoptionpdfminorversion 6
+% Slightly newer pdf format outputted.  Helps compatability with included pdf images
+
+% \includeonly{Friction,Appendix_Fri_Fit}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%   additional packages  %%
@@ -9,6 +11,8 @@
 \usepackage{graphics,graphicx}         		% Figures
 \usepackage{amsmath,amssymb,mathrsfs,bm} 	% Math symbols
 \usepackage{tikz}                      		% Fancy drawings
+% Extra packages mostly for flowchart--extra arrows, node positioning, diamond shape, aspect, vector add
+\usetikzlibrary{arrows,positioning,shapes,shapes.geometric,calc}	
 \usepackage{apalike}						% APA like bibliography style
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -68,8 +72,9 @@
 
 	% Appendices
 	\appendix 								% Appendices
-	\include{Appendix_TB_strainedBZ}
-	\include{Appendix_TB_idependence}
+	\include{Appendix_PVP_strainedBZ}
+	\include{Appendix_PVP_idependence}
+	\include{Appendix_Fri_Fit}
 
 	% Bibliography
 	\backmatter
