@@ -116,7 +116,7 @@ Other groups have observed similar snap-to-sidewall behavior \cite{Lee2008,Bunch
 Bunch and Dunn noted that the AFM measured distance over which FLG snaps to sidewalls may be overestimated \cite{Bunch2012}.
 This position is supported by the comparison of the strain measured with Raman and the strain estimated from topography.
 For a 3 $\mathrm{\mu}$m hole, a change in radius of 7 nm should generate .2\% strain whereas a Raman shift of -5 1/cm indicates a strain of .08\%.
-Additionally, side wall sticking may explain the small Young's Modulus measured by Lee \emph{et al.} using a similar measurement over the a 0.1 MPa pressure range \cite{Lee2012}.
+Additionally, side wall sticking may explain the small Young's Modulus measured by Lee \textit{et al.} using a similar measurement over the a 0.1 MPa pressure range \cite{Lee2012}.
 
 \section{Qualitative results}
 Raman line scans over pressurized microchambers show that the supported graphene around the microchamber has slid inward toward the center.
@@ -402,20 +402,22 @@ From the displacement field $\mathbf{U}$, the strain was calculated by taking de
 The atomistic data plotted in the paper was obtained from the MD simulation results by the method above, and was expressed in polar coordinates. 
 
 \section{Fitting Raman spectra to the continuum model}
-The extended continuum model can be used to analyze the measured Raman spectra to determine the sliding friction as well as the Gr\"{u}neisen parameter and shear deformation potential.
-Comparing the extended Hencky model to strains found by directly inverting the positions of the $G^+$ and $G^-$ peaks is not possible because of the finite size of the focused laser beam.
+In conjunction with the measured Raman spectra, the extended continuum model can be used to determine the sliding friction, the Gr\"{u}neisen parameter, and the shear deformation potential.
+A simple comparison of the strains predicted by the extended Hencky model to strains found by directly inverting the positions of the $G^+$ and $G^-$ peaks is not possible because of the finite size of the focused laser beam.
 Instead, spectra are predicted by integrating against the system point spread function.
-This set of predicted spectra can then be compared to the measured line scan spectra.
-The best fit is found by repeating this for a series of different sets of fitting parameters and choosing the set which has the smallest $\chi^2$.
-A detailed description of the fitting algorithm used as well as the determination of the error bars is presented in Appendix \ref{chap:Fit}.
+A set of spectra predicted for each point in the line scan can then be compared to the measured line scan spectra.
+The best fit is found by predicting spectra for a series of different fitting parameters and choosing the one that best matches the measured spectra.
+This is done quantitatively by choosing the spectra with the smallest $\chi^2$.
+A detailed description of the fitting algorithm used as well as the determination of fitting error is presented in Appendix \ref{chap:Fit}.
 
-Unlike the sliding friction, the Gr\"{u}neisen parameter and shear deformation potential should be the same for every line scan
-As such, they were included as fitting parameters only in the two lines scans which best defined the $\beta$ based on the splitting of the supported graphene's G band just outside the edge of the microchamber: the $\sim 5 \mu m$ radius monolayer and the $\sim 5 \mu m$ radius trilayer at 0.80 MPa of applied pressure.
+Unlike the sliding friction, the Gr\"{u}neisen parameter and shear deformation potential should be the same for every line scan.
+As such, they were included as fitting parameters in only the two lines scans which best defined $\beta$ based on the splitting of the supported graphene's G band just outside the edge of the microchamber: the $\sim 5 \mu m$ radius monolayer and the $\sim 5 \mu m$ radius trilayer at 0.80 MPa of applied pressure.
 Figure \ref{fig:fri:gammabeta} shows reduced dimensionality plots of the $\chi^2$ per degree of freedom space.
 As described in Appendix \ref{chap:Fit}, each data point in this type of plot represents the best case for the given value of the plotted fitting parameters.
 The other, not plotted, fitting parameters ($\beta$ and $F$ for the $\gamma$ plot, and $\gamma$ and $F$ for the $\beta$ plot) are chosen to minimize $\chi^2$ at each data point.
+The sharp minimum and the agreement between monolayer and trilayer indicates a good determination of $\gamma$ and $\beta$.
 Using an increase in $\chi^2$ per degree of freedom of 0.25 to define uncertainties gives $\gamma_{mono} = 1.89 \pm .02$, $\gamma_{tri} = 1.89 \pm .02$, $\beta_{mono} = 0.69 \pm .04$, and $\beta_{tri} = 0.71 \pm .06$.
-The averages of the monolayer and the trilayer, $\gamma=1.89 \pm 0.01$ and $\beta= 0.70 \pm 0.04$, were then treated as known material parameters when fitting the remaining twenty Raman line scans.
+The averages of the monolayer and the trilayer, $\gamma=1.89 \pm 0.01$ and $\beta= 0.70 \pm 0.04$, were treated as known material parameters when fitting the remaining twenty Raman line scans.
 
 \begin{figure}
 	\begin{center}
@@ -430,7 +432,7 @@ The averages of the monolayer and the trilayer, $\gamma=1.89 \pm 0.01$ and $\bet
 
 Table \ref{tab:fri:gb} compares the measurements of the Gr\"{u}neisen parameter and shear deformation potentials to previous measurements.
 The substrate on which the parameters were measured in also included.
-Our measured $\gamma$ is commensurate with most of the other measured values and agrees particularly well with the \textit{ab initio} calculations of Cheng \emph{et al.} \cite{Cheng2011}.
+Our measured $\gamma$ is commensurate with most of the other measured values and agrees particularly well with the \textit{ab initio} calculations of Cheng \textit{et al.} \cite{Cheng2011}.
 On the other hand, the measured shear deformation potential is lower than most other measurements.
 Buckling out-of-plane cannot explain this result since the mono and trilayers would buckle differently for a microchamber with the same pressure and radius.
 These are the first measurements of $\gamma$ and $\beta$ for which the sliding of FLG over its substrate was included.
@@ -514,7 +516,7 @@ It is not surprising that the sliding friction for mono- and bilayer graphene is
 Increasing the load cannot further increase the contact area, but increasing the radial strain beyond the edge of the microchamber may act to smooth out the graphene sheet, decreasing the contact between the graphene and the substrate, and thus decreasing the sliding friction.
 The bending rigidity, which goes as thickness cubed, of trilayer graphene must be high enough to counteract the adhesion energy, causing lower conformation and allowing for a traditional pressure and load response.
 The existence of a bilayer to trilayer crossover in FLG-substrate interactions is also observed in GPa range pressure measurements of silicon dioxide supported graphene \cite{Proctor2009,Nicolle2011}.
-Nicolle \emph{et al.} observed a decrease in the pressure response of the G band between bilayer and trilayer graphene which was attributed to the transition from biaxial compression mediated by the substrate to hydrostatic compression mediated by the pressure transmitting medium \cite{Nicolle2011}.
+Nicolle \textit{et al.} observed a decrease in the pressure response of the G band between bilayer and trilayer graphene which was attributed to the transition from biaxial compression mediated by the substrate to hydrostatic compression mediated by the pressure transmitting medium \cite{Nicolle2011}.
 
 \section{Summary}
 In summary, it has been demonstrated that few layer graphene slides along the substrate when pulled.

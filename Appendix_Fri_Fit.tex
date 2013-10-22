@@ -6,14 +6,14 @@ Additionally it is computationally expensive.
 The fits including all three fitting parameters took two days to run on 7 processors.
 Accordingly, this Appendix will endeavor to give enough detail to easily reproduce the fitting algorithm while providing tricks to maximize efficiency in Wolfram Mathematica 8.0 along the way.
 
-Since the functional dependencies of the fitted parameters is very complicated and non-linear, an out of the box fitting algorithm can not be applied.
-Instead, a brute force algorithm is used to determine the fitting parameters.
+Since the functional dependencies of the fitted parameters are very complicated and non-linear, there is no applicable out of the box fitting algorithm.
+Instead, a brute force algorithm is used.
 A range of fitting parameters sets, ($F$,$\gamma$,$\beta$), are iterated through and for each set the global reduced $\chi^2$, 
 \begin{equation*}
 	\tilde{\chi}^2=\frac{1}{D.O.F.} \sum_i \left( \frac{model_i-data_i}{\sigma_i} \right)^2 \ ,
 \end{equation*}
 is calculated as a goodness of fit metric.
-Here, $D.O.F.$ is the degrees of freedom in the fit equal to the number of data points fit minus the number of parameters fit to the data, $model_i-data_i$ is the difference between the modeled and measured values at point $i$, and $\sigma_i$ is the measured uncertainty in $data_i$.
+Here, $D.O.F.$ is the degrees of freedom in the fit equal to the number of fit data points less the number of parameters fit to the data, $model_i-data_i$ is the difference between the modeled and measured values at point $i$, and $\sigma_i$ is the measured uncertainty in $data_i$.
 Most importantly, $i$ includes the data points from \emph{all} of the spectra in the line scan.
 Instead of fitting each spectra individually, the full line scan is taken into account for a global determination of the fitting parameters.
 The best fit value is then found by looking for the fitting parameters which yield the smallest $\tilde{\chi}^2$.
@@ -32,7 +32,7 @@ Steps with red outlines in the flowchart will be described in the most detail as
 
 \section*{Load spectra, known parameters}
 The first step is to load in the measured spectra and the independently determined parameters.
-There are many free parameters in the system, but the majority of them are measured independently.
+The majority of the many free parameters are measured independently.
 The applied pressure is measured using a digital pressure gauge and recorded as a function of time.
 Often, the pressure regulator will allow the pressure to decrease by several tenths of a PSI during a measurement.
 In this case, the average of the pressure over the measurement window is used.
@@ -47,7 +47,7 @@ For those devices which stick to the side walls, the radius is measured manually
 This leaves only the friction, Gr\"{u}neisen parameter, shear deformation potential, signal intensity, and signal background as unknowns.
 
 \section*{First $F$, $\gamma$, $\beta$}
-Next, the outer loop is entered which cycles through the sampled fitting parameters.
+The outer loop cycles through the range of sampled fitting parameters.
 A balance must be struck when defining the range of fitting parameters to be tested.
 Too few fitting parameters increases the chances of missing the global minimum while too many makes the computational load too high.
 Supplementing this fitting algorithm with a manual fitting technique can build an intuition for the system while also decreasing the chances the global minimum is not found.
@@ -55,29 +55,30 @@ By guessing individual fitting parameters instead of looping through a range of 
 This intuition gained should assist the user in determining a reasonable range of fitting parameters.
 
 \section*{Hypothesize strains}
-Having selected one set of fitting parameters, the guessed dimensionless friction, $F$, is used with the measured dimensionless loading, $q$, to generate a hypothetical strain distribution.
-This amounts to solving Equations \ref{eq:fri:BCs} for the parameters which determine the shape of the strain distribution, $b_0$ and $\rho_0$, given the physical parameters $q$ and $F$.
-Mathematica's Solve routine can be effectively used for this, giving a result in several seconds when the series solution for the stress of the suspended graphene includes terms up to tenth order in $\rho$.
-The single real solution to these equations defines the hypothetical strain distribution.
+Having selected one set of fitting parameters, the guessed dimensionless friction, $F$, is used with the known dimensionless loading, $q$, to generate a hypothetical strain distribution.
+This amounts to solving Equations \ref{eq:fri:BCs} for the parameters which determine the shape of the strain distribution.
+Mathematica's Solve routine can be effectively used for this.
+When including terms up to tenth order in the strain expansion a solution is found in seconds.
+The hypothetical strain distribution is defined by the single real solution.
 The next task is to determine how well the measure spectra agree with this strain distribution.
 
 \section*{First spectra}
-The second loop cycles through the spectra in the line scan.
-Even though the fitting is global in scope, individual spectra must still be isolated to fit linear coefficients.
+The inner loop cycles through the spectra in the line scan.
+Although the fitting is global in scope, individual spectra must still be isolated to fit linear coefficients.
 
 \section*{Determine $\rho$}
-Even though the distance the sample is moved between spectra is set experimentally, the position of the individual spectra relative to the center of the hole is not necessarily fully determined.
+Even though the relative distance the sample is moved between spectra is set experimentally, the absolute position of the individual spectra measured from the center of the microchamber is not necessarily fully determined.
 This uncertainty could arise due to a slight offset in the beam position relative to the targeted position, from sample drift, or from targeting uncertainty.
-This can be best overcome using a retroactive determination of the central spectra which uses single Lorentzian fits to the data.
-When the line scan spectra are fit with a single Lorentzian, the position dependence of the center frequency comes to a symmetric minimum as shown in Figure \ref{fig:fri:qualresults}.
-This minimum occurs at the center of the microchamber where the strains, and thus the downshifts, are the greatest.
-Its position can be accurately determined by fitting a similar symmetric function to the single Lorentzian fits, such as a Gaussian or a parabola.
-The dimensionless radius, $\rho=r/R$, which the spectra was taken at can then be calculated from the position of the center of the microchamber, the spacing between spectra, and the radius of the microchamber.
+It can be best overcome using a retroactive determination of the central spectra us single Lorentzian fits to the data.
+As shown in Figure \ref{fig:fri:qualresults} the single Lorentzian fit to the line scan spectra comes to a symmetric minimum.
+This minimum occurs at point closest to the center of the microchamber where the strains, and thus the down-shifts, are the greatest.
+Its position can be accurately determined by fitting a similar symmetric function to the single Lorentzian fits such as a Gaussian or a parabola.
+The dimensionless radius, $\rho=r/R$, of each spectra is then determined by the position of the center of the microchamber, the spacing between spectra, and the radius of the microchamber.
 
 \section*{Fit $\rho$?}
 Not every spectra in the line scan is included in the fit.
-When fitting the extended Hencky model to the measured spectra, for microchambers with radii larger than $1.5 \ \mu m$ the global $\chi^2$ includes every spectra in the line scan except for those located less than half the beam waist away from the edge of the microchamber.
-This is done to avoid including the additional fitting parameters needed to account for the signal mismatch between suspended and supported FLG created by different optical interference conditions.
+For microchambers with radii larger than $1.5 \ \mu m$, the global $\tilde{\chi}^2$ includes every spectra except for those located less than half the beam waist away from the edge of the microchamber.
+This is done to avoid the inclusion of the fitting parameters that would need to be added to account the different optical interference conditions for suspended and supported graphene.
 
 When fitting the smaller radius microchambers ($R<1.5 \ \mathrm{\mu m}$), the spectra from the suspended graphene are ignored.
 Figure \ref{fig:Fit:igouter} shows an example of the resulting best fit.
@@ -85,9 +86,9 @@ Even though they were not included in the fit, the spectra predicted by the exte
 Spectra from the suspended region ($\rho<1$) exhibit a high energy shoulder that is not predicted by the extended Hencky model.
 This feature is observed in each of the three measured graphene sealed microchambers with radius less than $1.5 \ \mathrm{\mu m}$ but not for the five larger radius microchambers.
 This feature is believed to come from airy rings in the focused laser beam.
-These rings of intensity would contribute signal from lower strain regions giving a distinct higher energy signal, and not a broadening.
+These rings of intensity would contribute signal from lower strain regions giving a distinct higher energy signal.
 For larger radius microchambers, the laser spot is smaller relative to the microchamber radius and so it samples a more uniform distribution of strains, making an extra contribution from the airy rings unimportant.
-Complications of fitting these features are avoided by only including the spectra from the supported graphene when fitting.  
+Complications of fitting these features are avoided by only including the spectra from the supported graphene when fitting.
 
 \begin{figure}
 	\begin{center}
@@ -104,9 +105,9 @@ Complications of fitting these features are avoided by only including the spectr
 The numerical integration over the point spread function is the most numerically intensive step in the algorithm and it is linear in the number of frequency points sampled.
 To hasten this process, many of the measured data points can be eliminated.
 They are flat background which adds no value to the fit.
-Since the energy of the features varies by as much as 100 1/cm, a static fitting domain is not ideal.
+Since the energy of the features vary by as much as 100 1/cm, a static fitting domain is not ideal.
 Instead the expendable data points are eliminated using a position dependent fitting domain.
-The domain boundaries are calculated using the hypothetical energies of the $G^-$ ($\omega_{G}^-$) and $G^+$ ($\omega_{G}^+$) at the position the spectra is taken given the values of $\gamma$ and $\beta$.
+The domain boundaries are calculated using the hypothetical energies of the $G^-$ ($\omega_{G}^-$) and $G^+$ ($\omega_{G}^+$) peaks at the position the spectra is taken given the values of $\gamma$ and $\beta$.
 The fitting domain is taken as $[\omega_{G}^- - 4 \Gamma_{in},\omega_{G}^+  +3 \Gamma_{in}]$ where $\Gamma_{in}$ is the width of the G band for the suspended graphene.
 The asymmetry of the fitting domain is chosen to better match the fitted features.
 In this way computation time is decrease without jeopardizing the quality of the fit.
@@ -116,7 +117,7 @@ Measured spectra do not represent the signal from a single point.
 In fact, as shown in Section \ref{sec:fri:Raman} the focused laser excitation has a Gaussian profile with a beam waist of $0.81 \pm .01 \ \mathrm{\mu m}$.
 The need to account for the finite excitation spot size is illustrated in Figure \ref{Fig:Fit:FiniteSpot} which shows the intensity envelope of the excitation beam overlaid on the strain profile.
 Even for this large radii microchamber, each spectra represents a continuum of strain states.
-This section explains how the shape of the spectra is predicted based on the current values of the fitting parameters by integrating over the excitation point spread function.
+This section explains how the shape for the current values of the fitting parameters is predicted by integrating over the excitation point spread function.
 In the next section, this spectral shape will be scaled to best fit the data.
 
 \begin{figure}
@@ -127,7 +128,8 @@ In the next section, this spectral shape will be scaled to best fit the data.
 \end{figure}
 
 It should be noted that when the suspended graphene is pushed into the microchamber, it is also pushed slightly out of the focal plane.
-This effect is minimal; the confocal length of a 514 nm laser with a 0.81 $\mathrm{\mu}$m beam waste is 4 $\mathrm{\mu}$m, yielding a beam expansion of $<3\%$ for the $<1 \ \mathrm{\mu m}$ graphene deflections encountered in the experiments.
+This effect is minimal.
+The confocal length of a 514 nm laser with a 0.81 $\mathrm{\mu}$m beam waste is 4 $\mathrm{\mu}$m, yielding a beam expansion of $<3\%$ for the $<1 \ \mathrm{\mu m}$ graphene deflections encountered in the experiments.
 This was considered small enough to ignore.
 
 The finite spot size is accounted for by integrating over the spectra contributed by each point weighted by the excitation point spread function.
@@ -149,7 +151,7 @@ The resulting spatial dependence of the Raman spectra is
 A position dependence is given to $\omega_0(\rho)$ and $\Gamma(\rho)$ because the suspended graphene is in general less doped than supported graphene.
 This is taken into account by treating $\omega_0(\rho)$ and $\Gamma(\rho)$ as step functions which change value at the edge of the microchamber.
 
-To match the spectra, the excitation point spread function should be expressed as an envelope function along the radial direction with the origin at the center of the microchamber.
+To match the circular symmetry of the strain distribution, the excitation point spread function should be expressed as an envelope function in radial coordinates with the origin at the center of the microchamber.
 Accounting for the point spread function, the shape of the measured spectra is given by
 \begin{align*}
 	f(\omega,\rho_{\star})&=
@@ -199,7 +201,7 @@ Everything should then reference back to these values.
 Having established the predicted shape of the spectra given the current values of the fitting parameters, the modeled spectra needs only to be scaled to match the measured spectra for a comparison to be made.
 The scaled modeled spectra is
 \begin{equation*}
-	model(\omega,\rho_0)=A f(\omega,(\rho_{\star}) + b \ ,
+	model(\omega,\rho_0)=A f(\omega,\rho_{\star}) + b \ ,
 \end{equation*}
 where $A$ and $b$ are linear coefficients which correspond to the signal amplitude and the background levels respectively.
 These will be independently fit to the measured spectra on a spectra by spectra basis.
@@ -233,8 +235,8 @@ Two linear coefficients are enough to capture the complexity of the system while
 
 \section*{Add $\chi^2$ to global $\chi^2$}
 Having calculated the best possible fit of the hypothetical spectra to the measured data, the goodness of fit can be quantified using the $\chi^2$ metric.
-The calculated $\chi^2$ of this spectra should be added to the global $\chi^2$ which includes the $\chi^2$ of each spectra in the data set for the current fitting parameters.
-It is also useful to save the linear coefficients so that in the off chance that the current fitting parameters are the best fit, the linear coefficients will not need to be redetermined.
+The calculated, not yet reduced by dividing the degrees of freedom, $\chi^2$ of this spectra should be added to the global $\chi^2$ which includes the $\chi^2$ of each spectra in the data set for the current fitting parameters.
+In the off chance that the current fitting parameters are the best fit, it is also useful to save the linear coefficients so that they will not need to be redetermined later.
 
 \section*{Select best $\tilde{\chi}^2$ and estimate errors}
 After each spectra in the line scan is considered, the global $\chi^2$ is reduced by dividing by the degrees of freedom.
@@ -242,15 +244,15 @@ The number of degrees of freedom are equal to the number of fit data points, whi
 This global $\tilde{\chi}^2$ should be saved so that the $\tilde{\chi}^2$ space can be visualized and the minimum found.
 It is useful to keep track of the best $\tilde{\chi}^2$ and the corresponding linear coefficients so that the linear coefficients won't need to be refit afterward.
 
-The sampled fitting parameter with the lowest $\tilde{\chi}^2$ best represented the data.
+The sampled fitting parameter with the lowest $\tilde{\chi}^2$ best represent the data.
 However, these values are not necessarily the best fit.
-To ensure that these fitting parameters represent a global minimum and not just a local minimum the $\tilde{\chi}^2$ space should be visualized to.
+To ensure that these fitting parameters represent a global minimum and not just a local minimum the $\tilde{\chi}^2$ space should be visualized.
 If only the dimensionless friction was varied, this is done by plotting $\tilde{\chi}^2$ as a function of $F$.
-A minimum indicates a best fit.
-If all three fitting parameters were varied four dimensional $\tilde{\chi}^2$ space is more difficult to visualize.
+A global minimum indicates a best fit.
+If all three fitting parameters were varied the four dimensional $\tilde{\chi}^2$ space is more difficult to visualize.
 One useful way to reduce the dimensionality is to choose the unplotted fitting parameters such that they minimized the $\tilde{\chi}^2$ for the plotted value.
 In this way, the plotted values represent the best case scenario.
-Figure \ref{fig:Fit:chispace} shows the one dimensional $\tilde{\chi}^2$ space for a fit which included all three fitting parameters.
+Figure \ref{fig:Fit:chispace} shows a reduced dimensionality $\tilde{\chi}^2$ plot for a three fitting parameter fit.
 An obvious minimum in the $\tilde{\chi}^2$ near f=0.14 MPa is visible.
 
 \begin{figure}
@@ -260,14 +262,14 @@ An obvious minimum in the $\tilde{\chi}^2$ near f=0.14 MPa is visible.
 	\caption[$\tilde{\chi}^2$ as a function of the dimensionless friction]{\label{fig:Fit:chispace}
 	$\tilde{\chi}^2$ as a function of the dimensionless friction for the $\sim 5 \ \mu m$ radius monolayer graphene sealed microchamber with 0.80 MPa of applied pressure.
 	For each value of $F$, the $\gamma$ and $\beta$ pair which minimized $\tilde{\chi}^2$ was chosen.
-	The black cross hair sits at the best fit and the red side ways error bar indicates the uncertainty in the fit based on an increase in $\tilde{\chi}^2$ of 0.25.
+	The black cross hair sits at the best fit and the red, side ways error bar indicates the uncertainty in the fit based on an increase in $\tilde{\chi}^2$ of 0.25.
 	}
 \end{figure}
 
 The departure from the minimum of $\tilde{\chi}^2$ can be used to estimate uncertainties in the fitting parameters.
 A very steep $\tilde{\chi}^2$ space corresponds to tightly defined fitting parameters.
 When viewing the $\tilde{\chi}^2$ space in reduced dimensionality, one needs to be careful that the dimensionality is reduced properly.
-Taking a slice in $\tilde{\chi}^2$ space can yield artificially low uncertainties.
+Taking an arbitrary slice in $\tilde{\chi}^2$ space can yield artificially low uncertainties.
 Errors in the fitted parameters found by using the increase in $\chi^2$ away from its minimum value \cite{Press2007} are better than one part in one hundred, much smaller than we can claim to have achieved in our experiment.
 This discrepancy is due to an underestimation of our uncertainties which include only photon counting and ignore effects due to inhomogeneous doping, sample drift, and laser assisted deposition of dirt on the FLG.
 To better illustrate the relative uncertainties amongst different fitted friction values we use a 0.25 increase of $\chi^2$ per degree of freedom above the best fit value to define confidence intervals.

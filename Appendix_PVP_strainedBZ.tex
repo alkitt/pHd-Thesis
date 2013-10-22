@@ -1,20 +1,17 @@
 \chapter{The first Brillouin zone of strained graphene \label{chap:sBZ}}
 
-In this appendix an approximate analytic expression for the positions of the corners of the first Brillouin zone in deformed graphene is presented.
-The first Brillouin zone can then be constructed by connecting these points.
-This proves useful in Chapter \ref{chap:PVP} to illustrate the distortion of reciprocal space that accompanies the distortion of graphene's lattice.
-The strain dependence is found by applying a general method for determining the positions of the first Brillouin zone corners for close to hexaganal lattices.
-
-The general method will follow the following steps:
+In this appendix an approximate analytic expression for the positions of the corners of the BZ of deformed graphene is presented.
+The BZ can then be constructed by connecting these points.
+The strain dependence is found by applying a general method for determining the positions of the BZ corners for close to hexaganal lattices:
 \begin{enumerate}
-	\item{The lattice vectors will be used to determine the reciprocal lattice vectors.}
-	\item{The combination of reciprocal lattice vectors which give the important points in reciprocal space will be determined.}
-	\item{The conditions for Bragg refraction will be used to determine the corners of the first Brillouin zone.}
+	\item{The lattice vectors are used to determine the reciprocal lattice vectors.}
+	\item{The combination of reciprocal lattice vectors which give the important points in reciprocal space are determined.}
+	\item{The conditions for Bragg refraction will be used to determine the corners of the BZ.}
 \end{enumerate}
 After establishing this general methodology, the explicit strain dependence can easily be determined to first order.
 
-The lattice vectors $\vec{a}_+$ and $\vec{a}_-$ determine the reciprocal lattice vectors through the relationship $\vec{a}_i \cdot \vec{b}_j=2 \pi \delta_{ij}$ where $\vec{b}_j$ are the two reciprocal lattice vectors, $i$ and $j$ are $\in \{+,-\}$, and $\delta_{ij}$ is the Kronecker delta function \cite{Kittel2005}.
-In two dimensions this implies the two matrix relationships which determine $\vec{b}_{\pm}$,
+The lattice vectors $\vec{a}_+$ and $\vec{a}_-$ determine the reciprocal lattice vectors through the relationship $\vec{a}_i \cdot \vec{b}_j=2 \pi \delta_{ij}$, where $\vec{b}_j$ are the two reciprocal lattice vectors, $i$ and $j$ are $\in \{+,-\}$, and $\delta_{ij}$ is the Kronecker delta function \cite{Kittel2005}.
+In two dimensions this can be cast as a a matrix relationship,
 \begin{equation}
 	\left(\begin{array}{cc}
 		a_{\pm x} & a_{\pm y} \\
@@ -23,42 +20,43 @@ In two dimensions this implies the two matrix relationships which determine $\ve
 		b_{\pm x} \\
 		b_{\pm y} \end{array} \right) 
 	=
-	\left(\begin{array}{c} 2 \pi \\ 0 \end{array} \right) \ .
+	\left(\begin{array}{c} 2 \pi \\ 0 \end{array} \right) \ ,
 	\label{eq:sBZ:RLVs}
 \end{equation}
-This orthogonality condition can be easily solved by inverting the matrix.
-Having determined the form for the reciprocal lattice vectors, the next step is to determine the boundaries of the first Brillouin zone.
+which can be easily solved by inverting the matrix.
+Having determined the form for the reciprocal lattice vectors, the next step is to determine the boundaries of the BZ.
 
-The traditional method of determining the first Brillouin zone is qualitatively simple, but not necessarily trivial to implement algorithmically.
-In this method, one draws the perpendicular bisector of each reciprocal lattice vector given by $n \vec{b}_+ + m \vec{b}_-$ where $m$ and $n$ are integers.
-The most inner polygon formed by the perpendicular bisectors is then the first Brillouin zone \cite{Kittel2005}.
+The traditional method of determining the BZ does not lend itself to simple algorithmic implementation.
+In this method, one draws the perpendicular bisector of each reciprocal lattice vector given by $\vec{G}=n \vec{b}_+ + m \vec{b}_-$ where $m$ and $n$ are integers.
+The most inner polygon formed by the perpendicular bisectors is then the BZ \cite{Kittel2005}.
 The first step to simplify this method is to restrict the number of perpendicular bisectors which are considered.
-The construction of the the first Brillouin zone for a perfect hexagonal lattice is shown in figure \ref{fig:sBZ:BZ}.
-For clarity, the minimal set of reciprocal lattice vectors is shown.
-None of the other reciprocal lattice vectors contribute a perpendicular bisector which is used in constructing the first Brillouin zone.
-This set of six reciprocal lattice vectors is relatively robust to distortions of the hexagonal lattice.
-They determine the first Brillouin zone for strains as large as 20 \% armchair uniaxial, 20 \% armchair uniaxial, or 20 \% shear strain.
-Although the reciprocal lattice vectors themselves are different, their combinations remain the same.
-This was confirmed by comparing the first Brillouin zone predicted by the method here with that calculated by geometric construction.
-The phrase ``close to hexagonal'' lattices is used to refer to those lattice for which the minimal set of reciprocal lattice vectors is given by the combinations shown in figure \ref{fig:sBZ:BZ}.
+The construction of the BZ using the minimum number of reciprocal lattice vectors is shown for a perfect hexagonal lattice in Figure \ref{fig:sBZ:BZ}.
+This six combinations of reciprocal lattice vectors needed to construct the BZ is relatively robust to distortions of the hexagonal lattice.
+They determine the BZ for strains as large as 20\% armchair uniaxial, 20\% armchair uniaxial, or 20\% shear strain.
+The reciprocal lattice vectors themselves are altered by strain but the combinations used to construct the BZ are the same.
+This was confirmed by comparing the BZ predicted by the method presented here with that calculated using a geometric construction.
+The phrase ``close to hexagonal'' lattices is used to refer to those lattice for which the minimal set of reciprocal lattice vectors is given by the combinations shown in Figure \ref{fig:sBZ:BZ}.
 For this discussion, the strained graphene lattice is then a close to hexagonal lattice.
 
 \begin{figure}
 	\begin{center}
 	\input{Figs_sBZ/BZ}
 	\end{center}
-	\caption[The construction of the first Brillouin zone for a hexagonal lattice]{\label{fig:sBZ:BZ} The construction of the first Brillouin zone for a hexagonal lattice.  The reciprocal lattice vectors which contribute the perpendicular bisectors that make up the first Brillouin zone are shown as labeled arrows. The dashed lines indicate the edge of the First Brillouin zone.  Close to hexagonal lattices are lattices for which the same set of reciprocal lattice vectors define the first Brillouin zone.}
+	\caption[The construction of the BZ for a hexagonal lattice]{\label{fig:sBZ:BZ}
+	The construction of the BZ for a hexagonal lattice.
+	The edges of the BZ (dashed, gray) are made up of the perpendicular bisectors of the labeled reciprocal lattice vectors (black, arrows).
+	Close to hexagonal lattices are lattices for which the same set of reciprocal lattice vectors define the BZ.}
 \end{figure}
 
-Having restricted the reciprocal lattice vectors, the corners of the first Brillouin zone can be constructed from the condition for Bragg reflection.
+Having restricted the reciprocal lattice vectors, the corners of the BZ can be constructed from the condition for Bragg reflection.
 This condition,
 \begin{equation*}
 	\vec{k} \cdot \left(\frac{1}{2} \vec{G} \right)=\left(\frac{1}{2} \vec{G}\right)^2 \ ,
 \end{equation*}
-defines the wave vectors, $\vec{k}$, which make up the perpendicular bisector of the reciprocal lattice vector, $\vec{G}$ \cite{Kittel2005}.
-If the wave vector is on the perpendicular bisector of two sequential reciprocal lattice vectors, then it is a corner of the first Brillouin zone.
+defines the wave vectors, $\vec{k}$, which make up the perpendicular bisector of the reciprocal lattice vector \cite{Kittel2005}.
+The corners of the BZ can be found by noticing that if the wave vector is on the perpendicular bisector sequential reciprocal lattice vectors in Figure \ref{fig:sBZ:BZ}, it is a corner of the BZ.
 For example, the corner $\bm{K}_1$ is a perpendicular bisector of both $-\vec{b}_-$ and $\vec{b_+}$.
-Thus, the corners of the first Brillouin zone can be calculated analytically by using the matrix identity,
+Thus, the corners of the BZ can be calculated analytically by using the matrix identity,
 \begin{equation}
 	\left(\begin{array}{cc}
 		G_{1,x} & G_{1,y} \\
@@ -69,14 +67,12 @@ Thus, the corners of the first Brillouin zone can be calculated analytically by 
 	\label{eq:sBZ:corners}
 \end{equation}
 where $\vec{G_1}$ and $\vec{G_2}$ are sequential reciprocal lattice vectors from Figure \ref{fig:sBZ:BZ}.
-This matrix identity can be inverted to determine the wave-vector at the corner of the first Brillouin zone.
-The full first Brillouin zone is given by the intersection of these corners.
-This completes the general methodology for determining the first Brillouin zone based on the lattice vectors for close to hexagonal lattices.
-In summary, the reciprocal lattice vectors are calculated from the lattice vectors using Equation \ref{eq:sBZ:RLVs} and then the corners of the first Brillouin zone can be found using Equation \ref{eq:sBZ:corners} for the reciprocal lattice vector combination shown in Figure \ref{fig:sBZ:BZ}.
+This matrix identity can be inverted to determine the wave-vector at the corner of the BZ.
+This completes the general methodology for determining the BZ based on the lattice vectors for close to hexagonal lattices.
+In summary, the reciprocal lattice vectors are calculated from the lattice vectors using Equation \ref{eq:sBZ:RLVs} and then the corners of the BZ can be found using Equation \ref{eq:sBZ:corners} for the reciprocal lattice vector combination shown in Figure \ref{fig:sBZ:BZ}.
 
-The final step is to use the strain dependence of the lattice vectors given in Equation \ref{eq:PVP:StrainVectors} and approximate the result to first order in the elements of the displacement gradient tensor.
-The first order approximation was found using Wolfram Mathematica version 9.0.
-The first order strain dependence of the position of the corners of the first Brillouin zone are given by 
+The final step is to calculate the positions of the BZ corners using the form of the strained lattice vectors in  Equation \ref{eq:PVP:StrainVectors}.
+The first order approximation found using Wolfram Mathematica version 9.0 is
 \begin{align*}
 	\bm{K}_1&=-\bm{K'}_1\simeq 
 		\frac{4 \pi}{3 \sqrt{3} a} \left( \begin{array}{cc} 1 \\ 0 \end{array} \right)
@@ -100,8 +96,8 @@ The first order strain dependence of the position of the corners of the first Br
 		\frac{\sqrt{3}}{2}u_{yy}-\frac{1}{2} u_{yx}
 		\end{array} \right) \ .
 \end{align*}
-The shifts in the corners of the first Brillouin zone are opposite for time reversal pairs respecting time reversal symmetry.
-As should be expected for something that depends on the strained lattice vectors, the positions of the corners are determined by the terms of the displacement gradient tensor and not the strain tensor.
-These approximation were tested against the geometric construction successfully.
+The shifts in the corners of the BZ are opposite for time reversal pairs respecting time reversal symmetry.
+The positions of the corners are determined by the terms of the displacement gradient tensor and not the strain tensor.
+These approximation were successfully tested against the geometric construction.
 They are used in Chapter \ref{chap:PVP} to visualize the distortion of Reciprocal space which accompanies the deformation of the real space lattice.
-In particular, Figure \ref{fig:PVP:PVPshifts} shows the shifts in the corners of the first Brillouin zone for several deformation geometries.
+In particular, Figure \ref{fig:PVP:PVPshifts} shows the shifts in the corners of the BZ for several deformation geometries.
