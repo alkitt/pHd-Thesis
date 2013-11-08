@@ -1,0 +1,96 @@
+% Comparing the Lattice and BZ with Kekule to without Kekule
+{ % Scope so that user defined commands don't carry throughout
+% Sizing constants
+\newcommand{\alat}{1}
+\newcommand{\amp}{.25}
+\newcommand{\Klen}{2 cm}
+\newcommand{\psize}{2 mm}
+\newcommand{\sqth}{1.73205080757}
+
+% Functions which draws the Kekule lattice
+\newcommand{\kekdraw}{
+	\begin{scope}
+
+		%This scope is clipped to limit the drawn lattice to a square
+		\clip (-3.9cm,-4.38cm) rectangle(3.9cm,3cm);
+		
+		% Cycle through the lattice points
+		\foreach \ip in {-3,-2,...,3}
+			\foreach \im in {-3,-2,...,3}
+			{
+			% Draw the unkekuled lattice
+			\node at ($\ip*\sqth*\alat/2*(1,{\sqth})+\im*\sqth*\alat/2*(-1,{\sqth})+(0,+\alat/2)$) [Au] {};
+			\node at ($\ip*\sqth*\alat/2*(1,{\sqth})+\im*\sqth*\alat/2*(-1,{\sqth})+(0,-\alat/2)$) [Bu] {};
+
+			% Draw the Kekuled lattice
+			\node at ($\ip*\sqth*\alat/2*(1,{\sqth})+\im*\sqth*\alat/2*(-1,{\sqth})+(0,+\alat/2)
+				+\amp*({cos(120*(\ip-\im)-90)},{+sin(120*(\ip-\im)-90)} )$)            [A] {};
+			\node at ($\ip*\sqth*\alat/2*(1,{\sqth})+\im*\sqth*\alat/2*(-1,{\sqth})+(0,-\alat/2)
+				+\amp*({cos(120*(\ip-\im)-90)},{-sin(120*(\ip-\im)-90)} )$)            [B] {};
+			}
+
+	\end{scope}
+}
+
+\begin{tikzpicture}
+	% Real space
+	\begin{scope}[xshift=-3.75cm, scale=1,>=stealth,
+		Bu/.style={circle,draw=blue!25,fill=blue!10,
+			thick,minimum size=\psize,inner sep=0pt}, 					% Unkekuled A sublattice dots
+		Au/.style={circle,draw=orange!35,fill=orange!20,
+			thick,minimum size=\psize,inner sep=0pt},					% Unkekuled B sublattice dots
+		B/.style={circle,draw=blue!50,fill=blue!20,
+			thick,minimum size=\psize,inner sep=0pt}, 					% Kekuled A sublattice dots
+		A/.style={circle,draw=orange!70,fill=orange!40,
+			thick,minimum size=\psize,inner sep=0pt},					% Kekuled B sublattice dots
+		nnarrow/.style={color=black,very thick, ->}]					% Arrows
+		% Draw the lattice
+		\kekdraw
+
+		% Draw the primitive lattice vectors
+		\draw[nnarrow] (0,-\alat*5/2) -- +( 30:3*\alat)node[anchor=south]{$\vec{A}_+$};
+		\draw[nnarrow] (0,-\alat*5/2) -- +(150:3*\alat)node[anchor=south]{$\vec{A}_-$};
+
+		% Draw the unit cell
+		\draw[dashed,draw=black!75,rounded corners=.2cm,thick] (-\alat*\sqth*3/4,-\alat*15/4) rectangle (\alat*\sqth*3/4,-\alat*3/4);
+
+	\end{scope}
+
+
+	% Reciprical space
+	\begin{scope}[xshift=3.75cm,yshift=-1 cm,scale=1,
+		BZold/.style={color=black!75,very thick,dashed},
+		BZnew/.style={color=black,very thick},
+		Bar/.style={color=black,very thick,->},
+		circ2/.style={radius=1.5pt}]
+
+		% Draw the BZ
+		\draw[BZold]
+			(  0:\Klen) --
+			( 60:\Klen) --
+			(120:\Klen) -- 
+			(180:\Klen) -- 
+			(240:\Klen) -- 
+			(300:\Klen) -- 
+			(  0:\Klen);
+
+					% Draw the BZ
+		\draw[BZnew]
+			( 30:\Klen/\sqth) --
+			( 90:\Klen/\sqth) --
+			(150:\Klen/\sqth) -- 
+			(210:\Klen/\sqth) -- 
+			(270:\Klen/\sqth) -- 
+			(330:\Klen/\sqth) -- 
+			( 30:\Klen/\sqth);
+
+		\draw[Bar] (0,0) -- ( 60:\Klen) node[anchor=south west]{$\vec{B}_+$};
+		\draw[Bar] (0,0) -- (120:\Klen) node[anchor=south east]{$\vec{B}_-$};
+
+		% Label the high symmetry points
+		\draw[fill=black] (0,0) circle[circ2] node[anchor=west]{$\Gamma$};
+	\end{scope}
+	\node at (-7cm,3.5cm) {\textbf{(a)}};
+	\node at ( 1cm,3.5cm) {\textbf{(b)}};
+\end{tikzpicture}
+}

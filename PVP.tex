@@ -74,7 +74,7 @@ where $\vec{R}_i'$ and $\vec{R}_j'$ are the positions of the atoms in the strain
 These two effects are not controllable independently in an actual physical system.
 Kitt \textit{et al.} was the first to introduce the modification of the relative positions of the atoms \cite{Kitt2012}.
 
-\subsection{Strain altered lattice vectors}
+\subsection{Strain altered lattice vectors \label{sub:PVP:straindistances}}
 A necessary and non-trivial first step toward the inclusion of these modifications is the determination of how the lattice vectors and nearest neighbor vectors are altered by strain.
 This directly determines how the Fourier transforms in Equation \ref{eq:TB:FT} should be altered and is also useful for determining how the hoppings in Equation \ref{eq:TB:baseham} are altered.
 
@@ -108,9 +108,10 @@ Similarly, the strain modified nearest neighbor vectors are $\vec{\delta}'_{i,j}
 \subsection{Strain altered hopping energies}
 The distortion of the nearest neighbor vectors causes a bond specific alteration of the hopping energy.
 By comparing a tight binding treatment of strained graphene to density functional calculations of the same system, Ribeiro and coworkers showed that the dependence of the hopping energy on the distance between carbon atoms can be parameterized as
-\begin{equation*}
-  t(|\vec{\delta}_{i,j}|)=t_0 \exp[-\beta (|\vec{\delta}_{i,j}|/a-1)] \ , 
-\end{equation*}
+\begin{equation}
+  t(|\vec{\delta}_{i,j}|)=t_0 e^{-\beta (|\vec{\delta}_{i,j}|-a)/a} \approx t_0- \beta t_0 \frac{|\vec{\delta}_{i,j}|-a}{a}\ , 
+  \label{eq:PVP:hopp}
+\end{equation}
 with $\beta\approx 3$ \cite{Ribeiro2009}.
 An exponential decay is chosen because it correctly predicts both the nearest neighbor and next nearest neighbor hopping energies \cite{Pereira2009}.
 The fact that the hopping energy is mostly insensitive to the bond angle greatly simplifies the physics.

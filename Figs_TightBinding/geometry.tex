@@ -1,3 +1,4 @@
+{
 % Geometry taken directly from my lectures notes on tight binding in graphene
 \newcommand{\alat}{1 cm}
 \newcommand{\sqth}{1.73205080757}
@@ -5,43 +6,44 @@
 \begin{tikzpicture}															
 
 	% Graphene lattice, sublattices different colors, nearest neighbor vectors and lattice vectors
-	\begin{scope}[xshift=-3.5 cm,>=stealth,
+	\begin{scope}[xshift=-3.75 cm,>=stealth,
 		nnarrow/.style={color=black,very thick, ->},					% Nearest neighbor vectors
-		A/.style={circle,draw=blue!50,fill=blue!20,
+		B/.style={circle,draw=blue!50,fill=blue!20,
 			thick,minimum size=2 mm,inner sep=0pt}, 					% A sublattice dots
-		B/.style={circle,draw=orange!70,fill=orange!40,
+		A/.style={circle,draw=orange!70,fill=orange!40,
 			thick,minimum size=2mm,inner sep=0pt},						% B sublattice dots
 		el1/.style={x radius=.3*\alat,y radius=.85*\alat},				% Style for the ellipse
-		el2/.style={dashed,thick}]										% Style for the ellipse draw
+		el2/.style={dashed,thick,draw=black!75}]						% Style for the ellipse draw
 
 		%This scope is clipped to limit the drawn lattice to a square
-		\clip (-4cm,-4.25cm) rectangle(4cm,3.75cm);
+		\clip (-3.9cm,-4.38cm) rectangle(3.9cm,3cm);
 		% Draw the lattice
 		\foreach \ip in {-3,-2,...,3}
 			\foreach \im in {-3,-2,...,3}
 			{
-			\node at (\ip*\sqth*\alat/2-\im*\sqth*\alat/2, \ip*\alat*3/2+\im*\alat*3/2      ) [A] {};
-			\node at (\ip*\sqth*\alat/2-\im*\sqth*\alat/2, \ip*\alat*3/2+\im*\alat*3/2+\alat) [B] {};
+			\node at (\ip*\sqth*\alat/2-\im*\sqth*\alat/2, \ip*\alat*3/2+\im*\alat*3/2+\alat/2) [A] {};
+			\node at (\ip*\sqth*\alat/2-\im*\sqth*\alat/2, \ip*\alat*3/2+\im*\alat*3/2-\alat/2) [B] {};
 			}
 
 		% Draw the nearest neighbor vectors
-		\draw[nnarrow] (60:\alat*\sqth)++(-30:\alat) -- +(270:\alat) node[anchor=north     ]{$\vec{\delta}_1$};
-		\draw[nnarrow] (60:\alat*\sqth)++(-30:\alat) -- +( 30:\alat) node[anchor=south west]{$\vec{\delta}_2$};
-		\draw[nnarrow] (60:\alat*\sqth)++(-30:\alat) -- +(150:\alat) node[anchor=south east]{$\vec{\delta}_3$};
+		\draw[nnarrow] (60:\alat*\sqth)++(-30:\alat)++(0,-\alat/2) -- +(270:\alat) node[anchor=north     ]{$\vec{\delta}_1$};
+		\draw[nnarrow] (60:\alat*\sqth)++(-30:\alat)++(0,-\alat/2) -- +( 30:\alat) node[anchor=south west]{$\vec{\delta}_2$};
+		\draw[nnarrow] (60:\alat*\sqth)++(-30:\alat)++(0,-\alat/2) -- +(150:\alat) node[anchor=south east]{$\vec{\delta}_3$};
 		
 		% Draw the lattice vectors
-		\draw[nnarrow] (240:2*\sqth*\alat) ++(0,\alat/2) --node[circle,anchor=north west]{$\vec{a}_+$} +( 60:\sqth*\alat) ;
-		\draw[nnarrow] (240:2*\sqth*\alat) ++(0,\alat/2) --node[circle,anchor=north east]{$\vec{a}_-$} +(120:\sqth*\alat);
+		\draw[nnarrow] (240:2*\sqth*\alat) --node[circle,anchor=north west]{$\vec{a}_+$} +( 60:\sqth*\alat) ;
+		\draw[nnarrow] (240:2*\sqth*\alat) --node[circle,anchor=north east]{$\vec{a}_-$} +(120:\sqth*\alat);
 
 		% Ellipses around two atom basis
-		\draw[el2] (240:2*\sqth*\alat) ++(0,\alat/2) +(  0,0          ) ellipse[el1];
-		\draw[el2] (240:2*\sqth*\alat) ++(0,\alat/2) +( 60:\sqth*\alat) ellipse[el1];
-		\draw[el2] (240:2*\sqth*\alat) ++(0,\alat/2) +(120:\sqth*\alat) ellipse[el1];
+		\draw[el2] (240:2*\sqth*\alat) +(  0,0          ) ellipse[el1];
+		\draw[el2] (240:2*\sqth*\alat) +( 60:\sqth*\alat) ellipse[el1];
+		\draw[el2] (240:2*\sqth*\alat) +(120:\sqth*\alat) ellipse[el1];
 	\end{scope}
 
 	% Reciprocal space BZ and high symmetry points
-	\begin{scope}[xshift=3.5cm,
+	\begin{scope}[xshift=3.75cm,yshift=-1 cm,
 		BZ/.style={color=black,fill=black,very thick},
+		Bar/.style={color=black,very thick,->},
 		circ2/.style={radius=1.5pt}]
 
 		% Draw the BZ
@@ -56,9 +58,14 @@
 
 		% Label the high symmetry points
 		\draw[BZ] (0,0) circle[circ2] node[anchor=west]{$\Gamma$};
+
+		% The primitive RLVs
+		\draw[Bar] (0,0) -- ( 30:\sqth*\Klen) node[anchor=south east]{$\vec{b}_+$};
+		\draw[Bar] (0,0) -- (150:\sqth*\Klen) node[anchor=south west]{$\vec{b}_-$};
 	\end{scope}
 
 	% (a) and (b) labels
-	\node at (-7cm,4cm) {\textbf{(a)}};
-	\node at ( 1cm,4cm) {\textbf{(b)}};
+	\node at (-7cm,3.5cm) {\textbf{(a)}};
+	\node at ( 1cm,3.5cm) {\textbf{(b)}};
 \end{tikzpicture}
+}

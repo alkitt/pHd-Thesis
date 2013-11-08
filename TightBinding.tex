@@ -19,27 +19,33 @@ Since a hexagonal lattice is not a Bravais lattice, the lattice is treated as a 
 In figure \ref{fig:TB:geometry}(a) the A sub-lattice is colored orange and the B sub-lattice is colored blue.
 The lattice is created by arraying the two atoms basic using the lattice vectors 
 \begin{align*}
-	\vec{a}_+&= \frac{\sqrt{3}a}{2} \hat{x} + \frac{3a}{2} \hat{y} \\
-	\vec{a}_-&=-\frac{\sqrt{3}a}{2} \hat{x} + \frac{3a}{2} \hat{y}
+	\vec{a}_+&= \frac{\sqrt{3}a}{2} \left( +\hat{x} + \sqrt{3} \ \hat{y} \right) \\
+	\vec{a}_-&= \frac{\sqrt{3}a}{2} \left( -\hat{x} + \sqrt{3} \ \hat{y} \right)
 \end{align*}
 where $a=1.4 \ \angstrom$ is the nearest neighbor distance.
 The three nearest neighbor vectors,
 \begin{align*}
 	\vec \delta_1&=-a \hat{y} \\
-	\vec \delta_2&= \frac{\sqrt{3} a}{2}\hat{x}+\frac{a}{2}\hat{y}\\
-	\vec \delta_3&=-\frac{\sqrt{3} a}{2}\hat{x}+\frac{a}{2}\hat{y} \ ,
+	\vec \delta_2&= \frac{a}{2} \left( +\sqrt{3} \ \hat{x}+\hat{y} \right)\\
+	\vec \delta_3&= \frac{a}{2} \left( -\sqrt{3} \ \hat{x}+\hat{y} \right) \ ,
 \end{align*}
 connect each atom in the A sub-lattice to its three nearest neighbors in the B sub-lattice.
 
-The Brillouin zone of graphene is shown in Figure \ref{fig:TB:geometry}(b).
-The Brillouin zone is a hexagon rotated 30 degrees relative to the crystal axis.
+The primitive recipricol lattice vectors are
+\begin{align*}
+	b_+&=\frac{2 \pi}{3} \left(+\sqrt{3} \ \hat{x} + \hat{y} \right) \\ 
+	b_-&=\frac{2 \pi}{3} \left(-\sqrt{3} \ \hat{x} + \hat{y} \right)
+\end{align*} 
+
+The BZ of graphene is shown in Figure \ref{fig:TB:geometry}(b).
+It is a hexagon rotated 30 degrees relative to the crystal axis.
 The $\Gamma$ point is at the center of the Brillouin zone while the $\bm{K}$ and $\bm{K'}$ are at the corners.
 It should be noted that only 2 of the 6 corners of the hexagon are unique, the others can be connected by reciprocal lattice vectors.
 The position of the $\bm{K}$ and $\bm{K'}$ points are given by:
 \begin{align*}
 	\bm{K}&=-\bm{K'}= \frac{4 \pi}{3 \sqrt{3} a} \hat{x} \\
-	\bm{K}&=-\bm{K'}=-\frac{2 \pi}{3 \sqrt{3} a} \hat{x} + \frac{2 \pi}{3 a} \hat{y} \\
-	\bm{K}&=-\bm{K'}=-\frac{2 \pi}{3 \sqrt{3} a} \hat{x} - \frac{2 \pi}{3 a} \hat{y} \ ,
+	\bm{K}&=-\bm{K'}= \frac{2 \pi}{3 \sqrt{3} a} \left( -\sqrt{3} \ \hat{x} + \hat{y} \right)\\
+	\bm{K}&=-\bm{K'}= \frac{2 \pi}{3 \sqrt{3} a} \left( -\sqrt{3} \ \hat{x} - \hat{y} \right)\ ,
 \end{align*}
 with the first pair the easiest to work with.
 
