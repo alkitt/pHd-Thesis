@@ -206,11 +206,11 @@ The second is the additional perturbation which opens the band gap.
 
 Similar to the individual terms in $H_0$, each term in $H'$ can be simplified by writing the operators in Fourier using Equation \ref{eq:kek:FT} 
 \begin{align*}
-	- \sum_{l} \delta t_{m,j} \rl{m}{l}{m'}{l'} &= 
-	    -\frac{1}{N}\sum_l \sum_{\vec{k},\vec{k}'} \delta t_{m,j} \rl{m}{\vec{k}}{m'}{\vec{k}'} 
+	-  \delta t_{m,j} \sum_{l} \rl{m}{l}{m'}{l'} &= 
+	    -\frac{\delta t_{m,j}}{N}\sum_l \sum_{\vec{k},\vec{k}'} \rl{m}{\vec{k}}{m'}{\vec{k}'} 
 	    e^{i \vec{R}_l \cdot (\vec{k}-\vec{k}')} e^{i(\vec{R}_l-\vec{R}_l')\cdot \vec{k}'} \\
-	    &= \frac{1}{3}  \sum_{\vec{k}} \rl{m}{\vec{k}}{m'}{\vec{k}} 
-	    	\underbrace{ \Delta (t) \left\{ e^{i \bm{K} \cdot \vec{\delta}_j} e^{i \bm{G} \cdot \vec{r}_{m}}+\text{c.c.} \right\} e^{i(\vec{R}_l-\vec{R}_l')\cdot \vec{k}}}_{g_{m,j,l-l'}} \ .
+	    &=- \sum_{\vec{k}} \rl{m}{\vec{k}}{m'}{\vec{k}} 
+	    	\underbrace{ \delta t_{m,j}  e^{i(\vec{R}_l-\vec{R}_l')\cdot \vec{k}}}_{g_{m,j,l-l'}} \ .
 \end{align*}
 In addition to the $l$ independent distance between involved Kekul\'e unit cells, each term depends on $m$ which indicates the old unit cell which the A sub-lattice atom occupies, and $j$ which indicates which $\vec{\delta}_j$ the hopping is along.
 The associated vectors are $\vec{R}_l-\vec{R}_l' \in \{ 0, \vec{A}_+, \vec{A}_+ +\vec{A}_-,\vec{A}_- \}$ and $\vec{r}_m \in {0, \vec{a}_+,\vec{a}_-}$.
@@ -229,8 +229,55 @@ Figure \ref{fig:kek:hoppings} is useful in determining the elements of perturbed
 	\psi \ ,
 \end{equation*}
 
+\begin{figure}
+	\begin{center}
+	\includegraphics{Figs_Kekule/gapped.pdf}
+	\end{center}
+	\caption[Gapped electronic dispersion of the Kekul\'e lattice]{\label{fig:kek:gapped}
+		The electronic dispersion of the Kekul\'e lattice along the $\Gamma$ to $M'$ direction for a lattice distortion of $c/a=1\%$.
+		The plot on the right focuses on the 310 meV energy gap at the $\Gamma$ point.
+	}
+\end{figure}
+
 \subsection{Results and discussion}
 
 \section{Experimental design}
 \subsection{Phonon excitation}
+
 \subsection{Band gap measurement}
+
+\subsubsection{Density of states and graphene field effect transistors}
+From the low energy electronic dispersion the density of electronic states can be calculated.
+After taking account of the two fold spin and two fold valley degeneracy, the density of states of the two dimensional electron gas is
+\begin{equation*}
+	\rho(\epsilon)=\frac{2}{\pi} \left( \frac{\hbar v_f}{L} \right)^2 \epsilon \ ,
+\end{equation*}
+where $L^2$ is the area of the graphene and $\epsilon$ the energy measured from the Dirac points.
+The number of states at a given energy depends on the circumference of the Dirac cone at that energy resulting in a linear energy dependence.
+Using the density of states the chemical potential can be calculated in standard graphene transport experiments.
+
+Graphene's two dimensional nature makes it simple to continuously modify the chemical potential.
+Rather than varying the concentration of a dopant as must be done for most three dimensional systems, graphene only requires the application of a back gate voltage.
+A standard graphene gated field effect device is shown in Figure \ref{fig:kek:FET}.
+Changing the back gate voltage ($V_{BG}$) charges the graphene-backgate capacitor, introducing charges into the system.
+The differential increase in the number of charges is $dQ=C(\mu) dV$ where the capacitance is defined as
+\begin{equation*}
+	C=\frac{d N}{d \mu} \ .
+\end{equation*}
+Here $N$ is the number of electrons in the graphene and $\mu$ is the chemical potential.
+For intrinsic graphene the capacitance is continuous and the total number of charges is just $N=CV/e$.
+The gated graphene device shown in Figure \ref{fig:kek:FET} can be treated as a parallel plate capacitor with a plate separation of 285 nm and the dielectric constant of silicon dioxide.
+Matching the integrated density of states to the number of charges in the system relates the applied gate voltage to different measurements of the chemical potential in the system.
+Some useful relationships are:
+\begin{align*}
+	n(cm^{-2})&\sim 7 \times 10^{10} V_{BG} (Volts) \\
+	\mu(meV) &\sim 30 \sqrt{V_{BG} (Volts)} \\
+	\mu(meV) &\sim 1 \times 10^{-7} \sqrt{n(cm^{-2})}
+\end{align*}
+
+\begin{figure}
+	\begin{center}
+	\input{Figs_TightBinding/FET}
+	\end{center}
+	\caption[Side view of a back gated graphene device.]{\label{fig:kek:FET} Side view of a back gated graphene device.  The graphene is on top of 285 nm of thermal oxide grown on heavily doped Si. }	
+\end{figure}

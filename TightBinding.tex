@@ -1,26 +1,26 @@
 \chapter{Unmodified band structure\label{chap:TB}}
 
-The linear electronic dispersion of graphene was first published by Wallace \cite{Wallace1947} 57 years before Geim, Novoselov and co-workers spurred graphene research forward with their method of mechanical exfoliation \cite{Novoselov2004}.
-Later, in 1984 Semenoff formalized the equivalence between the low energy electrons in graphene and Dirac-Weyl electrons \cite{Semenoff1984}.
-Remarkably, the nearest neighbor tight binding approach used by these authors has accurately described the majority of the low energy physics in graphene.
-This chapter will follow in the spirit of these derivations with additional emphasis provided to enhance the discussions of the strain induced pseudo vector potential and the phonon induced Kekul\'e transition.
+Graphene's linear electronic dispersion was first investigated by Wallace \cite{Wallace1947} 57 years before Geim, Novoselov and co-workers spurred graphene research forward with their method of mechanical exfoliation \cite{Novoselov2004}.
+Thirty seven years later Semenoff formalized the equivalence between the low energy electrons in graphene and relativistic Dirac-Weyl electrons \cite{Semenoff1984}.
+Remarkably, the fairly simple nearest neighbor tight binding approach used by these authors has accurately described the majority of the low energy physics in graphene.
+This chapter will follow in the spirit of these derivations but include additional emphasis to guide the discussions of the strain induced pseudo vector potentials and the phonon induced Kekul\'e transition.
 
 \section{Graphene's lattice and Brillouin zone}
 \begin{figure}
 	\begin{center}
 	\input{Figs_TightBinding/geometry}
 	\end{center}
-	\caption[Geometry of intrinsic graphene.]{\label{fig:TB:geometry} Geometry of intrinsic graphene.  (a) Real space graphene lattice with the A sub-lattice in orange, the B sub-lattice in blue, nearest neighbor vectors ($\vec \delta_1$, $\vec \delta_2$, and $\vec \delta_3$) shown as arrows, and lattice vectors ($\vec a_+$ and $\vec a_-$) shown translating the two atom basis. (b) First Brillouin zone with the $\Gamma$ point and equivalent $\bm{K}$ and $\bm{K'}$ points indicated.}
+	\caption[Geometry of intrinsic graphene.]{\label{fig:TB:geometry} Geometry of intrinsic graphene.  (a) Real space graphene lattice with the A sub-lattice in orange, the B sub-lattice in blue, nearest neighbor vectors ($\vec \delta_1$, $\vec \delta_2$, and $\vec \delta_3$) shown as arrows, and lattice vectors ($\vec a_+$ and $\vec a_-$) shown translating the two atom basis. (b) First Brillouin zone with labeled high symmetry points and reciprocal lattice vectors ($\vec{b}_+$ and $\vec{b}_-$).}
 \end{figure}
 
-In its unperturbed state, the carbon atoms in the graphene lattice are arrayed in a hexagon as shown in Figure \ref{fig:TB:geometry}(a).
-Throughout the x axis will be taken in the zigzag direction as shown.
-Since a hexagonal lattice is not a Bravais lattice, the lattice is treated as a triangular Bravais lattice with a two atom bases.
-In figure \ref{fig:TB:geometry}(a) the A sub-lattice is colored orange and the B sub-lattice is colored blue.
-The lattice is created by arraying the two atoms basic using the lattice vectors 
+In its unperturbed state the carbon atoms in the graphene lattice are arrayed in a hexagon as shown in Figure \ref{fig:TB:geometry}(a).
+Throughout this thesis the $\hat x$ direction will be oriented along the zigzag direction as shown.
+Since a hexagonal lattice is not a Bravais lattice, the lattice must be treated as a triangular Bravais lattice with a two atom bases.
+In Figure \ref{fig:TB:geometry}(a) the A sub-lattice is colored orange and the B sub-lattice is colored blue.
+The lattice is created by arraying the two atoms basis using the primitive lattice vectors 
 \begin{align*}
 	\vec{a}_+&= \frac{\sqrt{3}a}{2} \left( +\hat{x} + \sqrt{3} \ \hat{y} \right) \\
-	\vec{a}_-&= \frac{\sqrt{3}a}{2} \left( -\hat{x} + \sqrt{3} \ \hat{y} \right)
+	\vec{a}_-&= \frac{\sqrt{3}a}{2} \left( -\hat{x} + \sqrt{3} \ \hat{y} \right) \ ,
 \end{align*}
 where $a=1.4 \ \angstrom$ is the nearest neighbor distance.
 The three nearest neighbor vectors,
@@ -31,95 +31,105 @@ The three nearest neighbor vectors,
 \end{align*}
 connect each atom in the A sub-lattice to its three nearest neighbors in the B sub-lattice.
 
-The primitive recipricol lattice vectors are
+Graphene's reciprocal lattice is shown in Figure \ref{fig:TB:geometry}(b).
+The primitive reciprocal lattice vectors, 
 \begin{align*}
 	b_+&=\frac{2 \pi}{3} \left(+\sqrt{3} \ \hat{x} + \hat{y} \right) \\ 
-	b_-&=\frac{2 \pi}{3} \left(-\sqrt{3} \ \hat{x} + \hat{y} \right)
+	b_-&=\frac{2 \pi}{3} \left(-\sqrt{3} \ \hat{x} + \hat{y} \right) \ ,
 \end{align*} 
-
-The BZ of graphene is shown in Figure \ref{fig:TB:geometry}(b).
-It is a hexagon rotated 30 degrees relative to the crystal axis.
+create the hexagonal first Brillouin zone (BZ).
+The hexagon is rotated 30 degrees relative to the real space hexagonal lattice.
 The $\Gamma$ point is at the center of the Brillouin zone while the $\bm{K}$ and $\bm{K'}$ are at the corners.
-It should be noted that only 2 of the 6 corners of the hexagon are unique, the others can be connected by reciprocal lattice vectors.
-The position of the $\bm{K}$ and $\bm{K'}$ points are given by:
+Only 2 of the 6 corners of the hexagon are unique, the others can be connected by reciprocal lattice vectors.
+The two unique corners are referred to as $\bm{K}$ and $\bm{K'}$ are positioned at
 \begin{align*}
 	\bm{K}&=-\bm{K'}= \frac{4 \pi}{3 \sqrt{3} a} \hat{x} \\
 	\bm{K}&=-\bm{K'}= \frac{2 \pi}{3 \sqrt{3} a} \left( -\sqrt{3} \ \hat{x} + \hat{y} \right)\\
-	\bm{K}&=-\bm{K'}= \frac{2 \pi}{3 \sqrt{3} a} \left( -\sqrt{3} \ \hat{x} - \hat{y} \right)\ ,
+	\bm{K}&=-\bm{K'}= \frac{2 \pi}{3 \sqrt{3} a} \left( -\sqrt{3} \ \hat{x} - \hat{y} \right) \ .
 \end{align*}
-with the first pair the easiest to work with.
+For simplicity we will often work with the first pair.
 
-In later sections this discussion will be expanded to take into account strain and phonons perturbing the graphene lattice.
-In both cases the changes in graphene's electronic dispersion originates from changes in the position of the atoms.
+In later sections this discussion will be expanded to take into account strain and phonons which modify the graphene lattice.
+In both cases the changes in graphene's electronic dispersion are directly linked to geometric distortions.
 
-\section{Electronic dispersion}
-Since the tight binding formalism is used universally in this work, this section will start with a brief motivation of its form.
+\section{General tight binding}
+The tight binding formalism is used universally in this work.
+As such, it will be briefly motivated here.
 Afterward, the nearest neighbor tight binding formalism will be applied to graphene.
 
-In second quantization, the total electronic energy in the system is written as:
+In second quantization the total electronic energy in the system is written as
 \begin{equation*}
-	H=\sum_{\vec{k},\sigma} c^{\dagger}_{\vec{k},\sigma} c_{\vec{k},\sigma} \epsilon_{\vec{k}}
+	H=\sum_{\vec{k}} c^{\dagger}_{\vec{k}} c_{\vec{k}} \epsilon_{\vec{k}} \ ,
 \end{equation*}
-where $\epsilon_{\vec{k}}$ is the energy of the electron with wave-vector $\vec{k}$ and $c^{\dagger}_{\vec{k},\sigma}$ and $c_{\vec{k},\sigma}$ are the creation and annihilation operators for an electrons with wave-vector $\vec{k}$ and spin $\sigma$.
-The product $c^{\dagger}_{\vec{k},\sigma} c_{\vec{k},\sigma}$ is the number operator, providing the number of electrons with the given spin and wave-vector.
-This is a very natural definition of the energy; the equation simply sums the energy one wave-vector at a time.
+where $c^{\dagger}_{\vec{k}}$ and $c_{\vec{k}}$ are the creation and annihilation operators for an electron with wavevector $\vec{k}$ and energy $\epsilon_{\vec{k}}$.
+The product $c^{\dagger}_{\vec{k}} c_{\vec{k}}$ is the number operator which counts the number of electrons with the given wavevector.
+Thus, the energy is found by simply summing the energy of each electron.
 
-When the atomic wave functions of the atoms in the material do not overlap considerably, the electrons are sufficiently localized to consider real space creation and annihilation operators which create or annihilate electrons at specific lattice points.
-The reciprocal space creation and annihilation operators can then be Fourier expanded about these points,
+When the atomic wave functions of the atoms in the material do not overlap considerably it is reasonable to work with real space creation and annihilation operators.
+These operators create or annihilate electrons at specific lattice points.
+The reciprocal space operators are related to the real space operators through a Fourier transform
 \begin{align*}
-	c^{\dagger}_{\vec{k},\sigma}&=\frac{1}{\sqrt{N}}\sum_{\vec{R}_i} e^{ i \vec{k} \cdot \vec{R}_i} c^{\dagger}_{i,\sigma} \\
-	c          _{\vec{k},\sigma}&=\frac{1}{\sqrt{N}}\sum_{\vec{R}_i} e^{-i \vec{k} \cdot \vec{R}_i} c_{i,\sigma} \ .
+	c^{\dagger}_{\vec{k}}&=\frac{1}{\sqrt{N}}\sum_{\vec{R}_i} e^{ i \vec{k} \cdot \vec{R}_i} c^{\dagger}_{i} \\
+	c          _{\vec{k}}&=\frac{1}{\sqrt{N}}\sum_{\vec{R}_j} e^{-i \vec{k} \cdot \vec{R}_j} c_{j} \ ,
 \end{align*}
-It will be important to note that the phase term must include the position which corresponds to the position at which the operator works.
-Applying this Fourier transform to the systems Hamiltonian yields the tight binding Hamiltonian,
-\begin{align*}
-	H&=-\sum_{\vec{R}_i, \vec{R}_j,\sigma} (-) \sum_{\vec{k}}\frac{1}{N} e^{i \vec{k} \cdot (\vec{R}_i-\vec{R}_j)}
-	 \epsilon_{\vec{k}} c^{\dagger}_{i,\sigma} c_{j,\sigma} \\
-	 &=-\sum_{<i,j>,\sigma} t_{i,j} c^{\dagger}_{i,\sigma} c_{j,\sigma} + \text{H.C} \ ,
-\end{align*}
-where the final sum is over $<i,j>$ nearest neighbor pairs and $t_{i,j}=-\sum_{\vec{k}}\frac{1}{N} e^{i \vec{k} \cdot (\vec{R}_i-\vec{R}_j)}\epsilon_{\vec{k}}$ is the hoping.
-This seemingly complicated parameter has an easy interpretation when the final form of the Hamiltonian is considered.
-The hoping energy is the energy associated with removing an electron from atom $j$ and putting it on atom $i$.
-It is usually measured empirically or calculated by matching the tight binding model to other more powerful methods such as density functional theory.
-As will be illustrate for graphene, this tight binding formalism provides a simple but powerful method of calculating band structures.
+where the sum is over the lattice vectors.
+This Fourier transform can only eliminate spatial dependencies with the periodicity of the lattice.
+As such, if there are more than one atom per unit cell distinct creation and annihilation operators must be used for each atom in the basis.
 
-The physics relevant for this work is captured by this nearest neighbor tight binding model.
-For graphene, when an electron hops between nearest neighbor, it changes sub-lattice.
-The nearest neighbor Hamiltonian reflects this:
+Applying the Fourier transform to the systems Hamiltonian yields the tight binding Hamiltonian
+\begin{align*}
+	H&=-\sum_{\vec{R}_i, \vec{R}_j} (-) \sum_{\vec{k}}\frac{1}{N} e^{i \vec{k} \cdot (\vec{R}_i-\vec{R}_j)}
+	 \epsilon_{\vec{k}} c^{\dagger}_{i} c_{j} \\
+	 &\approx -\sum_{<i,j>} t_{i,j} c^{\dagger}_{i} c_{j} + \text{H.C} \ .
+\end{align*}
+By limiting the sums to the $<i,j>$ nearest neighbor pairs we are limiting ourselves to a nearest neighbor tight binding formalism.
+The hopping energy, $t_{i,j}=-\sum_{\vec{k}}\frac{1}{N} e^{i \vec{k} \cdot (\vec{R}_i-\vec{R}_j)}\epsilon_{\vec{k}}$, is the energy associated with removing an electron from atom $j$ and putting it on atom $i$.
+It is usually determined empirically or calculated by matching the tight binding model to other more powerful methods such as density functional theory.
+In graphene, it is around 2.8 eV \cite{CastroNeto2009}.
+
+By using real space creation and annihilation operators the reciprocal space Hamiltonian has been recast into real space.
+As will be shown for graphene, this proves to be a powerful starting point.
+
+\section{Tight binding in graphene}
+
+\subsection{Nearest neighbor tight binding}
+The physics relevant for this work is captured by the nearest neighbor tight binding formalism.
+In graphene, when an electron hops between nearest neighbor it changes sub-lattice.
+This is reflected in the nearest neighbor tight binding Hamiltonian,
 \begin{equation}
-	H=-t_0 \sum_{<i,j>} (a_i^{\dagger} b_j + \text{H.C.}),
+	H=-t_0 \sum_{<i,j>} (a_i^{\dagger} b_j + \text{H.C.}) \ .
 	\label{eq:TB:baseham}
 \end{equation}
-where the hoping energy $t_0$ gives the energy it takes to remove an electron from the jth atom in the B sub-lattice with the B sub-lattice annihilation operator $b_j$ and put an electron on it nearest neighbor, the ith atom in the A sub-lattice, using the A sub-lattice creation operator $a_i$.
-The sum is restricted to $<i,j>$ nearest neighbor pairs.
-Finally the hoping from the A sub-lattice to the B sub-lattice is taken into account by the the Hermitian conjugate, $\text{H.C.}$.
+Here the hopping energy, $t_0$, gives the energy required to remove an electron from the $j$th atom in the B sub-lattice using the B sub-lattice annihilation operator, $b_j$, and put that electron on it nearest neighbor, the $i$th atom in the A sub-lattice using the A sub-lattice creation operator, $a_i$.
+The hopping from the A sub-lattice back to the B sub-lattice is taken into account by the the Hermitian conjugate, $\text{H.C.}$.
 
-The Hamiltonian is simplified by writing the creation and annihilation operators in Fourier space.
-There is some freedom in choosing the phase factors.
-They can either be chosen so that the operators are expanded around the position of each atom or instead they can be expanded around the position of the atomic basis occupied by the atom.
+The Hamiltonian is simplified by writing the creation and annihilation operators in Fourier space using a Fourier expansion.
+There is some freedom in choosing the phase factors in the Fourier expansion.
+The operators can be expanded around the atomic positions or, alternatively, they can be expanded around the position of the basis occupied by the atom.
 Both approaches yield the same result if one is consistent \cite{Bena2009}.
-Here the operators are expanded about the atomic basis.
+Throughout this thesis we will expand about the atomic basis.
 This will make the correspondence with the Dirac-Weyl equation more clear.
 The expanded operators are
 \begin{align}
 	a_i^{\dagger}&=\frac{1}{\sqrt{N}}\sum_{\vec{k} } e^{ i \vec{k}  \cdot \vec{R}_i} a_{\vec{k} }^{\dagger} \nonumber \\
-	b_j          &=\frac{1}{\sqrt{N}}\sum_{\vec{k}'} e^{-i \vec{k}' \cdot \vec{R}_j} b_{\vec{k}'} \label{eq:TB:FT} 
+	b_j          &=\frac{1}{\sqrt{N}}\sum_{\vec{k}'} e^{-i \vec{k}' \cdot \vec{R}_j} b_{\vec{k}'} \ ,
+	\label{eq:TB:FT} 
 \end{align}
-where $R_i$ and $R_j$ are the position of the $i$-th and $j$-th atomic basis respectfully.  
-Since we are limited to nearest neighbor pairs the nearest neighbor is either in the same atomic basis or in one of the neighboring atomic basis.
+where $R_i$ and $R_j$ are the position of the $i$th and $j$th atomic basis respectfully.  
+The nearest neighbor is either in the same atomic basis or in one of the neighboring atomic bases.
 Thus, $\vec{R}_j$ is restricted to $\vec{R}_j \in \{ \vec{R}_i,\vec{R}_i+\vec{a}_+,\vec{R}_i+\vec{a}_-\}$ and the difference $\vec{\Delta_j}=\vec{R}_j-\vec{R}_i$ is independent of $i$.
-In reciprocal space the Hamiltonian is simplified,
+In reciprocal space the Hamiltonian becomes
 \begin{align}
-	H&=-t_0 \frac{1}{N} \sum_{\vec{k},\vec{k'}}\sum_i \left( e^{i (\vec{k}-\vec{k}') \cdot \vec{R}_i}
+	H&=-t_0 \frac{1}{N} \sum_{\vec{k},\vec{k'}}\sum_i\sum_j \left( e^{i (\vec{k}-\vec{k}') \cdot \vec{R}_i}
 		e^{-i \vec{k}' \cdot \vec{\Delta}_j}
 		a^{\dagger}_{\vec{k}} b_{\vec{k}'} + \text{H.C.} \right) \nonumber \\
-	 &=-t_0 \frac{1}{N} \sum_{\vec{k},\vec{k'}} \left( N \delta_{\vec{k},\vec{k'}} \
+	 &=-t_0 \frac{1}{N} \sum_{\vec{k},\vec{k'}}\sum_j \left( N \delta_{\vec{k},\vec{k'}} \
 	 	e^{-i \vec{k}' \cdot \vec{\Delta}_j}
 		a^{\dagger}_{\vec{k}} b_{\vec{k}'} + \text{H.C.}\right) \nonumber \\ 
 	 &=-t_0 \sum_{\vec{k}}\left( \sum_{j} e^{-i \vec{k} \cdot \vec{\Delta}_j} a^{\dagger}_{\vec{k}} b_{\vec{k}} + \text{H.C.} \right) \label{eq:TB:FTing}\ ,
 \end{align}
 where $\delta_{\vec{k},\vec{k'}}$ is the Kronecker delta function.
-In matrix notation this reads,
+In matrix notation this reads
 \begin{equation}
 	H=\sum_{\vec k} 
 		\left( \begin{array}{cc} a^{\dagger}_{\vec{k}} & b^{\dagger}_{\vec{k}} \end{array} \right)
@@ -127,189 +137,116 @@ In matrix notation this reads,
 			0              & -t_0 \sum_{j} e^{-i \vec{k} \cdot \vec{\Delta}_j} \\
 			-t_0 \sum_{j} e^{-i \vec{k} \cdot \vec{\Delta}_j} & 0               \end{array} \right)
 		\left( \begin{array}{c } a_{\vec{k}}           \\ b_{\vec{k}}          \end{array} \right) \ .
-	\label{eq:TB:RealSpace}
+	\label{eq:TB:fullH}
 \end{equation}
-It is sometimes useful to express the sum as,
-\begin{equation*}
-	\sum_{j} e^{-i \vec{k} \cdot \vec{\Delta}_j}
-		=1+2 e^{-i \frac{3}{2} k_y}\cos \left(\frac{\sqrt{3}}{2} a k_x \right) \ .
-\end{equation*}
-The geometry of the lattice was the only input required to find this nearest neighbor tight binding Hamiltonian.
+The two atom basis yields a two by two matrix which will give two energy bands.
 
 A straightforward calculation provides the electron dispersion,
 \begin{equation*}
 	E(\vec{k})=\pm t_0 |h(\vec{k})|=t_0 \sqrt{1+4 \cos^2 \left(\frac{\sqrt{3}}{2} a k_x\right)
 		+4 \cos\left(\frac{\sqrt{3}}{2} a k_x \right) \cos \left(\frac{3}{2} a k_y\right)} \ ,
 \end{equation*}
-which is plotted in figure \ref{fig:TB:Dispersion}.
-As shown, the two energy bands meet at points at the corners of the Brillouin zone.
+which is plotted in Figure \ref{fig:TB:Dispersion}.
+As shown, the two energy bands touch at the corners of the Brillouin zone.
 For pristine graphene there is one electron per carbon atom leaving the low energy band completely filled and the high energy band empty.
 The Fermi energy can be shifted by charge transfer from contaminates or it can be purposely modified by adding adding or removing charges through capacitive coupling.
-The resulting shifts in Fermi energy are relatively small and thus the low energy excitations happen in a narrow energy window around these points.
-This just happens to be the energy window for which the nearest neighbor tight binding approach is most accurate.
+The resulting shifts in Fermi energy are relatively small and, thus, the low energy excitations happen in a narrow energy window around these points.
+This happens to be the energy window for which the nearest neighbor tight binding approach is most accurate.
 A higher order model is required to account for things such as trigonal warping which alter the dispersion at higher energies.
 
 \begin{figure}
 	\begin{center}
 	\input{Figs_TightBinding/fullband}
 	\end{center}
-	\caption[The electronic dispersion of intrinsic graphene]{\label{fig:TB:Dispersion} The electronic dispersion of intrinsic graphene in the first Brillouin zone calculated with a nearest neighbor tight binding model.  The two energy bands meet at the $\bm{K}$ and $\bm{K'}$ points.}	
+	\caption[The electronic dispersion of intrinsic graphene]{\label{fig:TB:Dispersion} The electronic dispersion of intrinsic graphene in the BZ calculated with a nearest neighbor tight binding model.  The two energy bands meet at the $\bm{K}$ and $\bm{K'}$ points.}	
 \end{figure}
 
+\subsection{Low energy approximation}
 The two points of convergence between the high and low energy bands are referred to as the Dirac points because of the characteristic energy dispersion in their vicinity.
-This interesting low energy physics can be best captured by expanding the Hamiltonian in Equation \ref{eq:TB:RealSpace} about these points.
-The wave-vectors are approximated as $\vec{k}=\bm{K}+\vec{q}$ and $\vec{k}=\bm{K'}+\vec{q}$ and for small $qa$ the sum in Equation \ref{eq:TB:RealSpace} is approximated as,
+This interesting low energy physics is best captured by expanding the Hamiltonian in Equation \ref{eq:TB:fullH} about these points.
+The wavevectors are approximated as $\vec{k}=\bm{K}+\vec{q}$ and $\vec{k}=\bm{K'}+\vec{q}$.
+For small $qa$ the sum in Equation \ref{eq:TB:fullH} is approximately
 \begin{align}
 	\sum_{j} e^{-i \vec{k} \cdot \vec{\Delta}_j}&= \nonumber \\
-	\bm{K:}\ 	&=\sum_{j} e^{-i (\bm{K}+\vec{q}) \cdot \vec{\Delta}_j} \nonumber \\
-				&\simeq \sum_{j} (1-i \vec{q} \cdot \vec{\Delta}_j) e^{-i \bm{K} \cdot \vec{\Delta}_j} \nonumber \\
+	\bm{K:}\ 	&\simeq \sum_{j} (1-i \vec{q} \cdot \vec{\Delta}_j) e^{-i \bm{K} \cdot \vec{\Delta}_j} \nonumber \\
 				&=-\frac{3}{2} a \left( q_x-i q_y \right) \nonumber \\
 	\bm{K':}\	&\simeq \sum_{j} (1-i \vec{q} \cdot \vec{\Delta}_j) e^{-i \bm{K'} \cdot \vec{\Delta}_j} \nonumber \\
-				&=-\frac{3}{2} a \left(-q_x-i q_y \right) \ . \label{eq:TB:LowEnergy} 
+				&=-\frac{3}{2} a \left(-q_x-i q_y \right) \ .
+	\label{eq:TB:LowEnergy} 
 \end{align}
-These values are independent of which of the three identical $\bm{K}$ or $\bm{K'}$ points are expanded about.
-The low energy Hamiltonian is thus,
-\begin{align}
-	\bm{K:} \ H&\simeq\frac{3}{2} a t_0 \sum_{\vec q} 
-		\left( \begin{array}{cc} a^{\dagger}_{\vec{q}} & b^{\dagger}_{\vec{q}} \end{array} \right)
-		\left( \begin{array}{cc}
-			0              & q_x - i q_y\\
-			q_x+i q_y      & 0                                                 \end{array} \right)
-		\left( \begin{array}{c } a_{\vec{q}}           \\ b_{\vec{q}}          \end{array} \right) \\
-	  &=\frac{3}{2} a t_0 \sum_{\vec q}
-		\left( \begin{array}{cc} a^{\dagger}_{\vec{q}} & b^{\dagger}_{\vec{q}} \end{array} \right)
-		\vec{q} \cdot \vec{\sigma}
-		\left( \begin{array}{c } a_{\vec{q}}           \\ b_{\vec{q}}          \end{array} \right) \\
-	\bm{K':} \ H& \simeq \frac{3}{2} a t_0 \sum_{\vec q} 
-		\left( \begin{array}{cc} b^{\dagger}_{\vec{q}} & a^{\dagger}_{\vec{q}} \end{array} \right)
-		\left( \begin{array}{cc}
-			0              & -q_x + i q_y\\
-			-q_x-i q_y     & 0                                                 \end{array} \right)
-		\left( \begin{array}{c } b_{\vec{q}}           \\ a_{\vec{q}}          \end{array} \right) \\
-	  &=\frac{3}{2} a t_0 \sum_{\vec q}
-		\left( \begin{array}{cc} b^{\dagger}_{\vec{q}} & a^{\dagger}_{\vec{q}} \end{array} \right)
-		(-1)\vec{q} \cdot \vec{\sigma}
-		\left( \begin{array}{c } b_{\vec{q}}           \\ a_{\vec{q}}          \end{array} \right), \\
-\end{align}
-or in the combined form:
+These expansions are independent of which of the three identical $\bm{K}$ or $\bm{K'}$ points are selected.
+The approximate low energy Hamiltonians near the $\bm{K}$ and $\bm{K'}$ points can be combined into a single Hamiltonian
 \begin{align}
 	H&=\hbar v_f \sum_{\vec q, \vec{q}}
-		\left( \begin{array}{cccc}  a^{\dagger}_{\vec{q}} & b^{\dagger}_{\vec{q}}&  b^{\dagger}_{\vec{q}} & a^{\dagger}_{\vec{q}}
-																							\end{array} \right)
+		\psi^{\dagger}
 		\left( \begin{array}{cccc}
 			0              & q_x - i q_y & 0            & 0 \\
 			q_x+i q_y      & 0           & 0            & 0 \\                            
 			0              & 0           & 0            & -q_x+i q_y \\
 			0              & 0           & -q_x-i q_y & 0			            			\end{array} \right)
-		\left( \begin{array}{c }  a_{\vec{q}} \\ b_{\vec{q}} \\  b_{\vec{q}} \\ a_{\vec{q}} \end{array} \right) \\
+		\psi \nonumber \\
 	H&=\sum_{\vec q, \vec{q}}
-		\left( \begin{array}{cccc}  a^{\dagger}_{\vec{q}} & b^{\dagger}_{\vec{q}}&  b^{\dagger}_{\vec{q}} & a^{\dagger}_{\vec{q}}
-																							\end{array} \right)
+		\psi^{\dagger}
 		\left( \begin{array}{cc}
 			v_f \vec{p} \cdot \vec{\sigma}              & 0\\
 			0              & -v_f \vec{p} \cdot \vec{\sigma}			   	            			\end{array} \right)
-		\left( \begin{array}{c }  a_{\vec{q}} \\ b_{\vec{q}} \\  b_{\vec{q}} \\ a_{\vec{q}} \end{array} \right)
+		\psi \ ,
 	\label{eq:TB:FullH}
 \end{align}
-with $\vec{\sigma}= \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array} \right) \hat{x}+\left( \begin{array}{cc} 0 & -i \\ i & 0 \end{array} \right) \hat{y}$ is the vector of Pauli matrices and $v_f$ is the Fermi velocity given by $\frac{3}{2}\frac{at}{\hbar} \sim .9 \times 10^6 \ m/s$.
-To express the Hamiltonian near the $\bm{K'}$ point in terms of Pauli matrices, the order of the raising and lower operators had to be switched.
-This subtle difference means that the first component of eigenvectors for electrons the near $\bm{K'}$ corresponds to the amplitude for an electron on the B sub-lattice, not the A sub-lattice.
-These approximate Hamiltonians will be central for the discussion of electron physics in manipulated graphene.
+where $\psi^{\dagger}=(a^{\dagger}_{\vec{q}}, b^{\dagger}_{\vec{q}},  b^{\dagger}_{\vec{q}}, a^{\dagger}_{\vec{q}})$, $\vec{\sigma}= \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array} \right) \hat{x}+\left( \begin{array}{cc} 0 & -i \\ i & 0 \end{array} \right) \hat{y}$ is the vector of Pauli matrices, and $v_f$ is the Fermi velocity given by $\frac{3}{2}\frac{at}{\hbar} \sim .9 \times 10^6 \ m/s$.
+In order to express the Hamiltonian near the $\bm{K'}$ point in terms of Pauli matrices, the order of the second pair of raising and lowering operators in $\psi$ had to be switched.
+The approximate low energy Hamiltonian will be central for the discussion of electron physics in manipulated graphene.
 
-The eigenvalues near either $\bm{K}$ or $\bm{K'}$ are easy to solve for using the low energy Hamiltonians.
-At both points, the low energy electronic dispersion is identical,
+At both $\bm{K}$ and $\bm{K'}$ the low energy electronic dispersion is identical
 \begin{equation*}
-	E=\hbar v_f |\vec{q}| \ .
+	E=\pm \hbar v_f |\vec{q}| \ .
 \end{equation*}
-As shown in Figure \ref{fig:TB:Dispersion}, the high and low energy bands meat at points at the Dirac points.
-Away from this point, the energy scales linearly with momentum measured from the Dirac point.
-Reminiscent of the light cone, this canonical dispersion is characteristic of a massless particle.
-
-From the low energy electronic dispersion the density of electronic states can be directly calculated for the two dimensional system.
-After taking account of the two full spin and two fold valley degeneracy, the density of states is
-\begin{equation}
-	\rho(\epsilon)=\frac{2}{\pi} \left( \frac{\hbar v_f}{L} \right)^2 \epsilon \ ,
-\end{equation}
-where $L^2$ is the area of the graphene and $\epsilon$ the energy measured from the Dirac points.
-This is linear in energy due to the canonical energy dispersion.
-The number of states at a given energy is related to the circumference of the Dirac cone at this energy.
-Using the density of states the chemical potential can be calculated in standard graphene transport experiments.
-
-Graphene's two dimensional nature makes it simple to continuously modify the chemical potential.
-Rather than varying the concentration of dopants as must be done for most three dimensional systems, graphene only requires the application of a back gate voltage.
-A standard graphene gated device is shown in Figure \ref{fig:TB:FET}.
-Changing the back gate voltage ($V_{BG}$) charges the graphene-backgate capacitor, introducing charges into the system.
-In general, the differential increase in the number of charges is $dQ=C(\mu) dV$.
-The capacitance is defined as:
-\begin{equation}
-	C=\frac{d N}{d \mu}
-\end{equation}
-where $N$ is the number of electrons in the graphene and $\mu$ is the chemical potential.
-For intrinsic graphene the capacitance is continuous and the total number of charges is just $N=CV/e$.
-The gated graphene device shown in Figure \ref{fig:TB:FET} can be treated as a parallel plate capacitor with a plate separation of 285 nm and the dielectric constant of silicon dioxide.
-Matching the integrated density of states to the number of charges in the system relates the applied gate voltage to different measurements of the chemical potential in the system.
-Some useful relationships are:
-\begin{align*}
-	n(cm^{-2})&\sim 7 \times 10^{10} V_{BG} (Volts) \\
-	\mu(meV) &\sim 30 \sqrt{V_{BG} (Volts)} \\
-	\mu(meV) &\sim 1 \times 10^{-7} \sqrt{n(cm^{-2})}
-\end{align*}
-
-\begin{figure}
-	\begin{center}
-	\input{Figs_TightBinding/FET}
-	\end{center}
-	\caption[Side view of a back gated graphene device.]{\label{fig:TB:FET} Side view of a back gated graphene device.  The graphene is on top of 285 nm of thermal oxide grown on heavily doped Si. }	
-\end{figure}
+This canonical energy dispersion in which the high and low energy bands meet at a single point is reminiscent of the light cone.
 
 \section{Dirac-Weyl electrons}
 Graphene's linear electrical dispersion is peculiar.
 According to the usual expression for the effective mass of an electron in an electric field, $m^*=\frac{\hbar^2}{\left(\frac{d^2 E}{d k^2}\right)}$, \cite{Kittel2005} the electrons in graphene have infinite mass.
-In a classical sense, this is understandable.
-The electron's group velocity, $d \omega/d k$ is constant; it can not be changed by applying a force.
-Classically, this corresponds to the case of an infinite mass which cannot be accelerated.
-An alternative, and more enlightening, interpretation of graphene's properties is as a massless, relativistic, spin 1/2, fermion.
+This is because the electron's group velocity, $d \omega/d k$, is independent of momentum. 
+It cannot be changed by applying a force.
+In a classical sense this corresponds to an infinite mass which cannot be accelerated.
+A more enlightening interpretation is as massless, relativistic, spin 1/2, fermions.
 In this scenario the group velocity cannot be changed because the electrons are moving at the systems effective light speed.
-Hence, like a photon moving at the speed of light graphene's electrons cannot be accelerated.
+Like a photon, graphene's electrons cannot be accelerated.
+In 1984 Semenoff demonstrated the exact correspondence between the low energy nearest neighbor tight binding Hamiltonian of graphene and the two dimensional Dirac-Weyl Hamiltonian which governs massless, relativistic, spin 1/2, Fermions \cite{Semenoff1984}.
+In this section we will briefly discuss this correspondence.
 
-In 1984 Semenoff demonstrated that there is an exact correspondence between the low energy Hamiltonian of graphene and the two dimensional Dirac-Weyl Hamiltonian \cite{Semenoff1984} which governs massless, relativistic, spin 1/2, Fermions.
-In this section this correspondence will be briefly discussed.
-
-The Hamiltonian of general, relativistic, spin 1/2, fermions is known as the Dirac equation.
+The Hamiltonian of relativistic, spin 1/2, fermions is known as the Dirac equation.
 It is a matrix equation which is covariant, obeys the relativistic energy expression, and is first order in time.
-For the special case of massless particles, the expression is simplified by a wisely chosen representation and is written as
+The only difference between the Dirac equation for massless particles in two spatial dimensions,
 \begin{equation*}
 	H=\left( \begin{array}{cc}
 			c \vec{p} \cdot \vec{\sigma}              & 0\\
-			0              & c \vec{p} \cdot \vec{\sigma}			   	            			\end{array} \right)
+			0              & -c \vec{p} \cdot \vec{\sigma}			   	            			\end{array} \right) \ ,
 \end{equation*}
-which, for particles in two spatial dimensions, is identical to Equation \ref{eq:TB:FullH}.
-It is clear now that the electrons in graphene behave like relativistic particles in a system where the speed of light is given by the fermi velocity.
+and the Hamiltonian governing graphene (Equation \ref{eq:TB:FullH}) is the speed of light for the system.
+Thus, even though the Fermi velocity of the electrons in graphene is a factor of 300 slower than the speed of light, the electrons behave as relativistic massless particles.
 
-As was the case in graphene, the Hamiltonian represents a decoupled system.
-In response to this, the wave function is written as the combination of two, two element spinors:
+The decoupled nature of both the Dirac equation and graphene's Hamiltonian can be interpreted from a high energy point of view.
+The wave function for these Hamiltonians can be written as the combination of two, two element spinors
 \begin{equation*}
-	\psi=\left( \begin{array}{c} \chi_{+} \\ \chi_{-} \end{array} \right)
+	\psi=\left( \begin{array}{c} \chi_{+} \\ \chi_{-} \end{array} \right) \ .
 \end{equation*}
-It can be shown that the spinners have well defined and opposite helicities.
-Since the energy of these massless particles is given by $\pm p c$, the Hamiltonian can be rewritten in a simpler form known as Weyl's equations,
+Using these spinors and the relativistic dispersion, $E=\pm p c$, in the Hamiltonians gives Weyl's equations,
 \begin{align*}
 	(1 \mp \vec{\sigma} \cdot \hat{p}) \chi_{+}&=0 \\
 	(1 \pm \vec{\sigma} \cdot \hat{p}) \chi_{-}&=0 \ ,
 \end{align*}
 where $\hat{p}$ is the unit vector in the direction of the momentum.
-From this form it is clear that the spinors are eigenvectors of the helicity operator, $\hat{h}=\frac{1}{2} \vec{\sigma} \hat{p}$, with eigenvectors $\hat{h} \chi_+=\pm 1/2$ and $\hat{h} \chi_-=\mp 1/2$.
+In this form it is clear that the spinors are eigenvectors of the helicity operator, $\hat{h}=\frac{1}{2} \vec{\sigma} \cdot \hat{p}$, with eigenvectors $\hat{h} \chi_+=\pm 1/2$ and $\hat{h} \chi_-=\mp 1/2$.
 The $\chi_+$ spinor is said to be right handed; for particles with positive energy the spin and momentum are in the same direction whereas for particles with negative energy they are in the opposite direction.
 The $\chi_-$ spinor then is left handed.
 Since the helicity operator commutes with the Hamiltonian, helicity is conserved in this system.
 Gottfried and Yan provide a more detailed discussion of the Dirac equation and its consequences \cite{Gottfried2003}.
 
-In graphene, the elements of the wavevector have a geometric interpretation.
-They correspond to the amplitude that the electron is at the A or B sublattice.
+In graphene, the elements of the spinors have an additional geometric interpretation.
 Identifying these components with the relativistic components yields the pseudo spinners: $\psi_+ \equiv \left(\begin{array}{c} \psi_A^{\bm{K}} \\ \psi_B^{\bm{K}} \end{array} \right)$ and $\psi_- \equiv \left(\begin{array}{c} \psi_B^{\bm{K'}} \\ \psi_A^{\bm{K'}} \end{array} \right)$.
-It is a subtle point that the spinor for the electrons at the $\bm{K'}$ point is in the opposite order than the $\bm{K}$ point.
-Thus, the pseudo spin in this system refers to the sublattice.
-Further, the wavefunction for electrons at the $\bm{K}$ point are right handed and the electrons at the $\bm{K'}$ are left handed.
+The components of graphene's pseudo spin correspond to the sub-lattice.
+Additionally, the wave function for electrons at the $\bm{K}$ point are right handed and the electrons at the $\bm{K'}$ are left handed.
 
 Since graphene's Hamiltonian is identical to that of massless, relativistic, spin 1/2 Fermions, the electrons should exhibit the same odd properties that have been predicted by high energy physicists.
 These unique properties include the Klein paradox \cite{Young2009}, Zitterbewegung \cite{CastroNeto2009}, and the anomalous quantum Hall effect \cite{Novoselov2005a,Zhang2005}.
