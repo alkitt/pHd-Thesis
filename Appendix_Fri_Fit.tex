@@ -129,7 +129,7 @@ In the next section, this spectral shape will be scaled to best fit the data.
 
 It should be noted that when the suspended graphene is pushed into the microchamber, it is also pushed slightly out of the focal plane.
 This effect is minimal.
-The confocal length of a 514 nm laser with a 0.81 $\mathrm{\mu}$m beam waste is 4 $\mathrm{\mu}$m, yielding a beam expansion of $<3\%$ for the $<1 \ \mathrm{\mu m}$ graphene deflections encountered in the experiments.
+The confocal length of a 514 nm laser with a 0.81 $\mathrm{\mu}$m beam waist is 4 $\mathrm{\mu}$m, yielding a beam expansion of $<3\%$ for the $<1 \ \mathrm{\mu m}$ graphene deflections encountered in the experiments.
 This was considered small enough to ignore.
 
 The finite spot size is accounted for by integrating over the spectra contributed by each point weighted by the excitation point spread function.
@@ -163,7 +163,7 @@ Accounting for the point spread function, the shape of the measured spectra is g
 		\mathrm{I}_{0} \left( \frac{\rho \rho_{\star}}{\bar{\sigma}^2} \right) \\
 	&\propto \frac{1}{Norm(\rho_{\star})} \int \mathrm{d \rho} \ g(\rho,\omega) \ P(\rho,\rho_{\star}) \ ,
 \end{align*}
-where $x_{\star}$, $r_{\star}$, and $\rho_{\star}$ are the position of the laser in Cartesian, cylindrical, and normalized cylindrical coordinates respectively, $\sigma$, is equal to half the beam waste, $\bar{\sigma}=\sigma/R$, $\mathrm{I}_0(x)$ is the modified Bessel function of the first kind, and $P(\rho,\rho_{\star})=\rho \ e^{-\rho^2/2 \bar{\sigma}^2} \ \mathrm{I}_0 \left( \frac{\rho \rho_{\star}}{\bar{\sigma}^2} \right)$ is the envelope function.
+where $x_{\star}$, $r_{\star}$, and $\rho_{\star}$ are the position of the laser in Cartesian, cylindrical, and normalized cylindrical coordinates respectively, $\sigma$, is equal to half the beam waist, $\bar{\sigma}=\sigma/R$, $\mathrm{I}_0(x)$ is the modified Bessel function of the first kind, and $P(\rho,\rho_{\star})=\rho \ e^{-\rho^2/2 \bar{\sigma}^2} \ \mathrm{I}_0 \left( \frac{\rho \rho_{\star}}{\bar{\sigma}^2} \right)$ is the envelope function.
 A normalization constant, $Norm(\rho_{\star})$, which is close to the maximum value of the envelope function was included to keep the widely varying values of the envelope function in a computationally reasonable range.
 The maximum of the envelope function is well approximated as
 \begin{align*}

@@ -1,31 +1,65 @@
 \chapter{Kekul\'e \label{chap:kek}}
 
+\section{Theory}
+The $\bm{K}$ point Kekul\'e phonon corresponds to a high spatial frequency deformation of graphene's lattice.
+Displacement vectors describe the eigenmode of this phonon by detailing the displacements of the atoms in the A and B sub-lattices originally at position $\vec{r}_{A,B}$
 \begin{equation}
-	u^{A,B}(\vec{r}_{A,B},t)=c \ e^{i \vec{r}_{A,B} \cdot \vec{K}} \label{eq:kek:displacements}
+	u^{A,B}(\vec{r}_{A,B},t)=\frac{1}{2} c \ e^{i \vec{r}_{A,B} \cdot \bm{K}} e^{-i \omega t} 
+		\left( \begin{array}{c}
+			1 \\
+			\mp i
+		\end{array} \right)
+	 + \text{c.c.} \label{eq:kek:displacements} \ ,
 \end{equation}
+where the top sign corresponds to the A sub-lattice and the bottom sign corresponds to the B sub-lattice.
+Here c is the amplitude, $\omega$ is the frequency of the phonon, and $t$ is time.
+Snapshots showing the time dependence of the resulting lattice distortion are shown in Figure \ref{fig:kek:snapshots}.
+This phonon mode is special in that the atoms in each sub-lattice rotated around their equilibrium positions without ever returning to equilibrium.
+Atoms in the A sub-lattice are left handed, rotating in the clockwise direction while the atoms in the B sub-lattice are right handed.
+As time progresses, adjacent A and B sub-lattice atoms dimerize in a sequential fashion.
+At $\omega t=\{90 \text{\textdegree}, 210 \text{\textdegree}, 330 \text{\textdegree} \}$ the dimerization switches between the three nearest neighbors.
+At all other time the system is in varying phases of dimerization.
+This dimerization is similar to the Peierls distortion in polyacetylene except that in this two dimensional analog the system does not gap spontaneously.
+Instead the phonon must be continuously excited to maintain the gap.
 
 \begin{figure}
 	\begin{center}
 	\input{Figs_Kekule/time_series}
 	\end{center}
-	\caption[]{}
+	\caption[Snapshots of the Kekul\'e phonon mode]{\label{fig:kek:snapshots}
+		Snapshots of the Kekul\'e phonon mode spanning one period of oscillation.
+		The A sub-lattice is in orange and the B sub-lattice in blue.
+		Faded dots indicating the intrinsic graphene lattice are included for reference.}
 \end{figure}
 
-\section{Theory}
-In this section the electronic band structure of the Kekul\'e lattice is calculated using a tight binding model for the expanded unit cell.
-This calculation is done in two parts.
-First, the effects of the change in lattice periodicity are discussed including a description of the zone folded electrical dispersion.
+The time reversed pair of the $\bm{K}$ Kekul\'e phonon, the $\bm{K'}$ Kekul\'e phonon, corresponds to sub-lattices rotating with opposite handedness.
+If both $\bm{K}$ and $\bm{K'}$ modes were excited at once, the rotations with opposite circular polarizations would sum resulting in linear polarized atomic motion.
+In this case the dimerization would only be temporary.
+The atoms would return to their equilibrium positions during their oscillations.
+Thus, it is important to excite exclusively the $\bm{K}$ or $\bm{K'}$ phonon.
+In the experimental section our method of selecting the phonon will be described.
+In the theory section, for simplicity we will continue to concentrate on the $\bm{K}$ phonon.
+However, the resulting dispersion is the same for either mode. 
+
+When considering how these phonon modes affect the electronic dispersion, we will use the Born-Oppenheimer approximation.
+According to this approximation, the very fast electrons react nearly instantaneously to the slow phonon induced modifications of the lattice.
+Thus, the modified electronic dispersion can be calculated assuming the lattice is frozen in sequential snapshots.
+In this section this calculation is done using a tight binding model in the expanded unit cell of the deformed lattice.
+It is performed in two parts.
+First, the effects of the change in lattice periodicity are discussed including a discussion of the zone folded electrical dispersion.
 Second, it is shown that by perturbing the zone folded Hamiltonian the phonons gap the electronic dispersion.
 
 \subsection{Kekul\'e geometry}
 The Kekul\'e distortion causes an expansion of the unit cell, a reduction of the BZ, and a modification of the primitive lattice vectors and reciprocal lattice vectors.
-When referencing the new geometry back to the intrinsic geometry, the notation previously developed in Chapter \ref{chap:TB} is used.
+When referencing this new geometry back to graphene's intrinsic geometry, the notation previously developed in Chapter \ref{chap:TB} is used.
 The expanded periodicity of the Kekul\'e lattice is determined by the periodicity of the distortion in Equation \ref{eq:kek:displacements}.
 This term repeats whenever 
 \begin{equation*}
 	2 \pi=\vec{r}_{A,B} \cdot \bm{K}=(m \vec{a}_+ + n \vec{a}_-) \cdot (\vec{b}_+ - \vec{b}_-)/3=\frac{2 \pi}{3} (m-n) \ ,
 \end{equation*}
-resulting in the enlarged unit cell shown in Figure \ref{fig:kek:geometry}.
+where $m$ and $n$ are integers.
+Thus, at any snapshot in time the electrons see the expanded six atom unit cell shown in Figure \ref{fig:kek:geometry}.
+This tripled unit cell is time independent; it never returns to the intrinsic two atom basis. 
 
 \begin{figure}
 	\begin{center}
@@ -33,11 +67,11 @@ resulting in the enlarged unit cell shown in Figure \ref{fig:kek:geometry}.
 	\end{center}
 	\caption[The geometry of the Kekul\'e lattice]{\label{fig:kek:geometry}
 		The real space (a) and reciprocal space (b) geometry of the Kekul\'e lattice.
-		Figure (a) shows a snapshot of the atomic positions with the A sub-lattice shown as orange dots and the B sub-lattice shown as blue dots.	
+		(a) shows a snapshot of the atomic positions with the A sub-lattice in orange and the B sub-lattice in blue.	
 		For reference, the intrinsic graphene lattice is shown using faded dots.
 		The dashed rectangle outlines the time independent unit cell and the labeled arrows represent the primitive lattice vectors.
-		In (b) the hexagon with dashed lines indicates the BZ of intrinsic graphene while the hexagon with solid lines indicates the shrunken BZ of the Kekul\'e lattice.
-		The primitive reciprocal lattice vectors are labeled.
+		In (b) the dashed hexagon indicates the BZ of intrinsic graphene while the hexagon with solid lines indicates the shrunken BZ of the Kekul\'e lattice.
+		The primitive reciprocal lattice vectors are labeled along with select high symmetry points.
 	}
 \end{figure}
 
@@ -59,25 +93,19 @@ For completeness, three equivalent corners of the BZ are positioned at
 \begin{equation*}
 	\frac{2 \pi}{9 a} (-\sqrt{3},-1), \ \ \frac{2 \pi}{9 a} (+\sqrt{3},-1), \ \ \textrm{and} \ \  \frac{2 \pi}{9 a} (0,2) \ .
 \end{equation*}
+Hence, the periodicity of the phonon fully describes the geometry of the expanded lattice.
 
 \subsection{Zone folding}
-When the BZ is reduced in size the two band dispersion of intrinsic graphene becomes a six band dispersion.
-The energy bands outside the new BZ are folded into the new BZ by translation by a reciprocal lattice vectors.
-Since the size of BZ is reduced by a factor there are two zone folding schemes resulting in six energy bands.
+When the BZ is reduced in size the number of bands in the electronic dispersion is increased.
+Energy bands outside the new BZ are folded into the new BZ by translation by reciprocal lattice vectors.
+Since the size of BZ is reduced by a factor of three, there are two zone folding schemes resulting in six energy bands.
 
 The zone folding schemes shown in Figure \ref{fig:kek:folding} describe the two distinct ways the symmetry reduced area of the new BZ can be mapped onto via translations of reciprocal lattice vectors.
 The rest of the BZ can be constructed using symmetry operations on the symmetry reduced area.
-In both zone folding schemes, the Dirac point is translated from the corner of the old BZ to the zone center.
-Since this will still correspond to the charge neutrality point, this is the point in the new BZ we will be most interested in.
-It is also worth noting that right edge of the symmetry reduced area in zone fold 1 shares its right edge with the symmetry reduced area already inside the new BZ.
+In both zone folding schemes, the Dirac point is translated from the corner of the old BZ to the zone center of the new BZ.
+Thus, the $\Gamma$ point is the most interesting point in the new BZ.
+It is also worth noting that the right edge of the symmetry reduced area in zone fold 1 shares its right edge with the symmetry reduced area already inside the new BZ.
 Also, the top edge of the symmetry reduced area is shared between zone fold 1 and zone fold 2.
-
-The hierarchy of the folded energy bands away from degeneracies can be determined by comparing the zone folded areas to the electronic dispersion of intrinsic graphene shown in Figure \ref{fig:TB:Dispersion}.
-Just like for intrinsic graphene the the energy bands should be symmetric about the charge neutrality point.
-The new BZ occupies the basin in the intrinsic graphene dispersion.
-Thus, the unfolded area gives the lowest and highest energy bands.
-Zone fold 1 extends further into the basin of intrinsic graphene's dispersion and so gives the second lowest and second highest energy bands.
-Finally, the zone fold 2 gives the two middle energy bands.
 
 \begin{figure}
 	\begin{center}
@@ -85,14 +113,19 @@ Finally, the zone fold 2 gives the two middle energy bands.
 	\end{center}
 	\caption[The zone foldings introduced by the Kekul\'e distortion]{\label{fig:kek:folding}
 		The zone foldings introduced by the Kekul\'e distortion.
-		The outer hexagon with dashed lines is the BZ of intrinsic graphene and the inner hexagon with solid lines is the new BZ of the Kekul\'e lattice.
-		Specifically shown, for both foldings the symmetry reduced area represented by the black outlined triangle is shifted by the labeled reciprocal lattice vector.
+		The outer, dashed hexagon is the BZ of intrinsic graphene and the inner hexagon with solid lines is the new BZ of the Kekul\'e lattice.
+		The symmetry reduced area represented by the black outlined triangle is translated into the new BZ by different reciprocal lattice vectors (labeled) for the two folding schemes.
 		}
 \end{figure}
 
-The zone folded electronic dispersion can either be calculated by folding the dispersion calculated in Chapter \ref{chap:TB} or by performing a tight binding calculation using the expanded unit cell.
+The hierarchy of the folded energy bands can be determined by comparing the zone folded areas to the electronic dispersion of intrinsic graphene shown in Figure \ref{fig:TB:Dispersion}.
+The lowest and highest energy bands will correspond to the unfolded area because the new BZ occupies the basin in the intrinsic graphene dispersion.
+Zone fold 1 extends further into the basin of intrinsic graphene's dispersion than zone fold 2 and so gives the second lowest and second highest energy bands.
+Finally, the zone fold 2 gives the two middle energy bands.
+
+The zone folded electronic dispersion can either be calculated by folding the dispersion calculated in Chapter \ref{chap:TB} or by performing a tight binding calculation in the expanded unit cell.
 Although it is more involved, the tight binding calculation will be done here because it will be needed later.
-Each of the six atoms in the unit cell must have its own raising and lowering operator.
+In this scheme, each of the six atoms in the unit cell must have its own raising and lowering operator.
 To simplify this bookkeeping the operators will be referenced back to the three two atom bases which make up the six atom Kekul\'e basis.
 These two atom bases are shown in Figure \ref{fig:kek:hoppings}.
 The operators $a_{i,l}$ and $b_{i,l}$ are then the lowering operators for the three A sub-lattice atoms and the three B sub-lattice atoms in the lth Kekul\'e basis respectively.
@@ -155,13 +188,13 @@ The Hamiltonian can then be expressed in matrix form as
 where $\psi^{\dagger}=\left( a^{\dagger}_1, a^{\dagger}_2, a^{\dagger}_3, b^{\dagger}_1, b^{\dagger}_2, b^{\dagger}_3 \right)$.
 As expected, the six by six Hamiltonian will provide six energy levels.
 
-The zone folded electronic dispersion is shown in Figure \ref{fig:kek:zfdisp}.
+The resulting electronic dispersion is shown in Figure \ref{fig:kek:zfdisp}.
 To best show the shapes of the bands the dispersion is plotted both over the full Kekul\'e BZ and also over only the symmetry reduced area.
 The six energy bands are clearly visible with the highest and lowest energy bands appearing as caps.
-As expected the Dirac point has been shifted to zone center where the four lower energy bands converge to touch at a single point.
+As expected the Dirac point has been shifted to zone center where the four middle bands converge to touch at a single point.
 In agreement with the zone folding schemes the highest energy band is degenerate with the second highest energy band on the BZ border.
-Also, the second and third highest energy bands are degenerate along the lines connecting the $\Gamma$ point to the BZ border.
-In summary, the electronic dispersion calculated with a tight binding model of the expanded unit cell agrees with our zone folding predictions.
+Also, the second and third highest energy bands are degenerate along the lines connecting the $\Gamma$ point to the corner of the BZ.
+The electronic dispersion calculated with a tight binding model of the expanded unit cell agrees with our zone folding predictions.
 
 \begin{figure}
 	\begin{center}
@@ -174,10 +207,10 @@ In summary, the electronic dispersion calculated with a tight binding model of t
 \end{figure}
 
 \subsection{Altered hoppings}
-Coherent excitation of the iTO phonon mode does more than just enlarge the unit cell, it also modifies the hopping energies.
+The excitation of the Kekul\'e phonon mode does more than just enlarge the unit cell, it also modifies the hopping energies.
 This is similar to the case of strained graphene where the altered bond lengths caused altered hopping energies and generated new physics.
 In this case, however, the bond lengths vary with a much higher spatial frequency and the slowly varying approximation described in Appendix \ref{chap:idep} is not applicable.
-In fact, the atomic displacements in Equation \ref{eq:kek:displacements} will lead to hopping alterations with a spatial frequency of $\bm{G}=\bm{K}-\bm{K'}$
+In fact, the atomic displacements in Equation \ref{eq:kek:displacements} will lead to hopping alterations with a spatial frequency of $\bm{G}=\bm{K}-\bm{K'}$.
 As mentioned in Appendix \ref{chap:idep}, a distortion with this frequency is expected to couple the inequivalent $\bm{K}$ and $\bm{K'}$ points.
 This coupling will generate a band gap at the $\Gamma$ point of the zone folded dispersion.
 
@@ -192,7 +225,7 @@ Iadecola \textit{et al.} showed that the bond length alterations generate hoppin
 \end{align}
 which have a spatial frequency component of $\bm{G}$ that couples the Dirac points \cite{Iadecola2013}.
 Here $\vec{r}_{m}$ is the position of the A sub-lattice atom involved in the hopping.
-Index $m$ indicates which of the three old unit cells the atom is in.
+Index $m$ indicates which of the three intrinsic unit cells embedded in the enlarged Kekul\'e unit cell the atom is in.
 The B sub-lattice atom is specified through $\vec{\delta}_j$, the unperturbed nearest neighbor vector which connects the A sub-lattice atom to the B sub-lattice atom.
 Figure \ref{fig:kek:hoppings} summarizes these indices.
 For completeness, the calculation of Equation \ref{eq:kek:hopps} is included in Appendix \ref{chap:hopps}.
@@ -201,10 +234,10 @@ For completeness, the calculation of Equation \ref{eq:kek:hopps} is included in 
 
 The Kekul\'e mode causes the hopping energies in Equation \ref{eq:kek:Hreal} to be bond and time specific.
 Taking $t=t_0+\delta t_{m,j}$ with $\delta t_{m,j}$ defined in equation \ref{eq:kek:hopps} breaks Equation \ref{eq:kek:Hreal} into two pieces.
-The first, corresponding to $t_0$ is just the zone folding Hamiltonian in Equation \ref{eq:kek:Hzonefold}.
-The second is the additional perturbation which opens the band gap.
+The first, corresponding to $t_0$, is just the zone folding Hamiltonian in Equation \ref{eq:kek:Hzonefold}.
+The second is the perturbation which opens the band gap.
 
-Similar to the individual terms in $H_0$, each term in $H'$ can be simplified by writing the operators in Fourier using Equation \ref{eq:kek:FT} 
+Similar to the individual terms in $H_0$, each term in the perturbed Hamiltonian, $H'$, can be simplified by writing the operators in Fourier using Equation \ref{eq:kek:FT} 
 \begin{align*}
 	-  \delta t_{m,j} \sum_{l} \rl{m}{l}{m'}{l'} &= 
 	    -\frac{\delta t_{m,j}}{N}\sum_l \sum_{\vec{k},\vec{k}'} \rl{m}{\vec{k}}{m'}{\vec{k}'} 
@@ -212,10 +245,10 @@ Similar to the individual terms in $H_0$, each term in $H'$ can be simplified by
 	    &=- \sum_{\vec{k}} \rl{m}{\vec{k}}{m'}{\vec{k}} 
 	    	\underbrace{ \delta t_{m,j}  e^{i(\vec{R}_l-\vec{R}_l')\cdot \vec{k}}}_{g_{m,j,l-l'}} \ .
 \end{align*}
-In addition to the $l$ independent distance between involved Kekul\'e unit cells, each term depends on $m$ which indicates the old unit cell which the A sub-lattice atom occupies, and $j$ which indicates which $\vec{\delta}_j$ the hopping is along.
-The associated vectors are $\vec{R}_l-\vec{R}_l' \in \{ 0, \vec{A}_+, \vec{A}_+ +\vec{A}_-,\vec{A}_- \}$ and $\vec{r}_m \in {0, \vec{a}_+,\vec{a}_-}$.
+In addition to the $l$ independent distance between involved Kekul\'e unit cells, each term depends on $m$ which indicates the old, two atom unit cell which the A sub-lattice atom occupies, and $j$ which indicates which $\vec{\delta}_j$ the hopping is along.
+The associated vectors are $\vec{R}_l-\vec{R}_l' \in \{ 0, \vec{A}_+, \vec{A}_+ +\vec{A}_-,\vec{A}_- \}$ and $\vec{r}_m \in \{ 0, \vec{a}_+,\vec{a}_- \}$.
 
-Figure \ref{fig:kek:hoppings} is useful in determining the elements of perturbed Hamiltonian.
+The perturbed Hamiltonian can then be constructed using Figure \ref{fig:kek:hoppings}, 
 \begin{equation*}
 	H'=-\frac{1}{3} \sum_{\vec{k}} \psi^{\dagger} 
 	\left(\begin{array}{cccccc}
@@ -226,27 +259,42 @@ Figure \ref{fig:kek:hoppings} is useful in determining the elements of perturbed
 		g_{1,2,0}^* & g_{2,1,0}^*           & g_{3,3,\leftarrow}^* & 0            & 0              & 0 \\
 		g_{1,3,0}^* & g_{2,2,\rightarrow}^* & g_{3,1,0}^*          & 0            & 0              & 0 
 	\end{array}\right)
-	\psi \ ,
+	\psi \ .
 \end{equation*}
+Using the Born-Oppenheimer approximation the electronic dispersion of the total Hamiltonian, $H=H_0+H'$, can now be calculated at any snapshot in time.
+In this approximation it turns out that the dispersion is time independent.
+Figure \ref{fig:kek:gapped} shows the electronic dispersion along the $\Gamma$ to $M'$ direction for a lattice distortion of $c^*/a=1\%$.
+It is clear that the modified hoppings which couples the $\bm{K}$ point to the $\bm{K'}$ point opens a band gap at the charge neutrality point.
+The gap has a width of $2 |\Delta|$ where $\Delta$ is given in Equation \ref{eq:kek:hopps}.
+The inner two bands are gapped equally, maintaining there degeneracy at the $\Gamma$ point.
 
 \begin{figure}
 	\begin{center}
 	\includegraphics{Figs_Kekule/gapped.pdf}
 	\end{center}
 	\caption[Gapped electronic dispersion of the Kekul\'e lattice]{\label{fig:kek:gapped}
-		The electronic dispersion of the Kekul\'e lattice along the $\Gamma$ to $M'$ direction for a lattice distortion of $c/a=1\%$.
+		The electronic dispersion of the Kekul\'e lattice along the $\Gamma$ to $M'$ direction for a lattice distortion of $c^*/a=1\%$.
 		The plot on the right focuses on the 310 meV energy gap at the $\Gamma$ point.
 	}
 \end{figure}
 
-\subsection{Results and discussion}
+The generation of the band gap is not an artifact of the Born-Oppenheimer approximation.
+Iadecola and coworkers solved the time dependent Hamiltonian in the low energy limit by absorbing the time dependence of $\Delta$ in a pseudo spin rotation.
+The resulting Hamiltonian has the same time independent band gap of $2 |\Delta|$.
+The electronic response and system bath coupling are both conserved by this rotation ensuring that the gap could be measured in an electrical transport experiment \cite{Iadecola2013}.
+They were additionally able to use this fairly simple system to gain insight into the Floquet formalism used to study more difficult driven solid state systems \cite{Iadecola2013a}.
+
+The origins of this gapped phase are very similar to the origin of the band gap in polyacetylene.
+The system is continuously dimerized necessitating an expanded unit cell.
+Expanding the unit cell requires a shrinking of the BZ and a zone folding of the dispersion.
+Finally, the lattice modifications induce couplings which open a band gap.
+The only difference with polyacetylene is that the gap in graphene does not form spontaneously.
+Instead, phonons must be continuously created to gap the system.
 
 \section{Experimental design}
 \subsection{Phonon excitation}
 
-\subsection{Band gap measurement}
-
-\subsubsection{Density of states and graphene field effect transistors}
+\subsection{Band gap measurements}
 From the low energy electronic dispersion the density of electronic states can be calculated.
 After taking account of the two fold spin and two fold valley degeneracy, the density of states of the two dimensional electron gas is
 \begin{equation*}

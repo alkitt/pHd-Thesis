@@ -1,26 +1,9 @@
 \chapter{The thermal conductivity of strained graphene\label{chap:therm}}
-Graphene's very high thermal conductivity has been linked to out of plane acoustic (ZA) phonons.
-As a result of their quadratic dispersion, these phonons are believed to have two conflicting contributions to the thermal conductivity.
-Strain tunes the character of these phonons providing a method to study their influence on thermal transport.
-
-Lindsay and coworkers have argued that the ZA phonons contribute more than 70\% of the very high thermal conductivity of suspended graphene \cite{Seol2010}.
-The quadratic dispersion gives a  high density of states throughout the BZ and the in plane reflection symmetry provides a selection rule that limits the scattering phase space \cite{Lindsay2010}.
-ZA phonon dominated thermal transport is consistent with observations that the thermal conductivity of supported graphene \cite{Seol2010,Cai2010} is a factor of four smaller than suspended graphene \cite{Balandin2008,Cai2010,Chen2011a,Lee2011} and that encased graphene is a factor of two smaller yet \cite{Jang2010}.
-The ZA phonons either leak into the surrounding media, are scattered by it, or are dampened by it.
-
-On the other hand the ZA phonons are believed to limit the potentially divergent thermal conductivity of the in plane phonons.
-In the absence of ZA phonons Klemens showed that the linear in plane acoustic phonons should provide a logarithmically divergent thermal conductivity in two dimensions.
-This divergence follows from the frequency dependence of the terms which make up the thermal conductivity, $\kappa=\frac{1}{3} \int C v_G l(\omega) \rho(\omega) \ d\omega $, where $\kappa$ is the thermal conductivity, $C$ is the specific heat, $v_G$ is the group velocity of the acoustic phonons, $l(\omega)$ is the scattering length, and $\rho(\omega)$ is the density of states.
-For a two dimensional phonon gas with linear dispersion $\rho(\omega) \propto \omega$ while for anharmonic scattering between linear acoustic phonons $l(\omega) \propto 1/\omega^2$.
-Hence, in the absence of extrinsic scatterers, the integrand scales as $1/\omega$ and $\kappa$ diverges logarithmically.
-The logarithmic divergence in $\omega$ should translate to a logarthmic divergence in device size \cite{Klemens2001}.
-To date this has not been observed \cite{Chen2011a} and Pereira and coworkers believe that the ZA phonons are the cause.
-Very close to the center of the BZ there is a divergent population of zero group velocity ZA phonons which can only contribute to the thermal conductivity as scatterers.
-It is predicted that they alter the frequency dependence of $l(\omega)$ and remove the divergent contribution of the in plane phonons \cite{Pereira2013}.
-Thus, the ZA phonons are the main contributor to graphene's thermal conductivity only because the low energy ZA phonons suppress the divergent thermal conductivity of the in plane phonons.
-
-Here we use strain to tune the thermal conductivity of  
-
+If the out of plane acoustic (ZA) phonons in graphene were a person, they might be characterized as productive egomaniacs.
+They are believed to enable graphene's very high thermal conductivity by contributing more than 70\% of the thermal conductivity of suspended graphene \cite{Lindsay2010}.
+However, they are also believed to suppress the potentially divergent thermal conductivity contributions from the other phonon modes in the system \cite{Pereira2013,Bonini2012}.
+Both of these conflicting contributions are linked to the atypical quadratic dispersion of the ZA phonons.
+Straining graphene is expected to linearize the ZA phonon modes and liberate the divergent contribution to the thermal conductivity \cite{Pereira2013,Bonini2012}.
 
 \section{Past measurements of graphene's thermal conductivity}
 The first measurement of graphene's thermal conductivity was on suspended graphene and was reported to have the highest thermal conductivity ever measured \cite{Balandin2008}.
@@ -43,7 +26,7 @@ Although certainly less error prone, there has been only one other measurement o
 This is a result of the more difficult measurement and much more difficult sample fabrication.
 
 Figure \ref{fig:therm:lit} summarizes all of the reported room temperature thermal conductivity measurements of single layer graphene.
-The thermal conductivity decrease from a value of roughly 2000 W/m-K for suspended graphene to a value close to 500 W/m-K for graphene supported on one side, to a value of less than 160 W/m-K for graphene encased in SiO$_2$ \cite{Jang2010}.
+The thermal conductivity decrease from a value of roughly 2000 W/m-K for suspended graphene, to a value close to 500 W/m-K for graphene supported on one side, to a value of less than 160 W/m-K for graphene encased in SiO$_2$ \cite{Jang2010}.
 The general observation is that graphene's thermal conductivity is negatively effected by the presence of a supporting or encasing bulk material.
 This difference in thermal conductivity is not an artifact of the measurement techniques, a nanoscale thermal conductivity measurement also observed an increase in thermal conductivity for suspended few layer graphene \cite{Pumarol2012}.
 
@@ -61,26 +44,41 @@ This difference in thermal conductivity is not an artifact of the measurement te
 \end{figure}
 
 The Raman measurement technique has been advanced in a series of publications.
-Faugeras et al was the first to use graphene suspended over a circular aperture.
+Faugeras \textit{et al} was first to study graphene suspended over a circular aperture.
 This circular symmetry of this geometry simplifies the heat transfer model.
-Additionally, they used the Raman Stokes to anti-Stokes ratio to measure the temperature and validated the previously used temperature induced phonon energy shift \cite{Faugeras2010}.
-Cai et al advanced the thermal transport model by including the thermal transport to the substrate instead of treating supported graphene as a heat sync.
+Additionally, they used the Raman Stokes to anti-Stokes ratio as an independent temperature measurement to validate the previously used temperature induced phonon energy shift \cite{Faugeras2010}.
+Cai \textit{et al} advanced the thermal transport model by including the thermal transport to the substrate instead of treating supported graphene as a heat sync.
 Additionally, they brought up concerns about ballistic thermal transport \cite{Cai2010}.
-Chen et al showed that if not accounted for, the thermal conductivity to the gas could inflate the measured value of graphene's thermal conductivity \cite{Chen2011a}.
+Chen \textit{et al} showed that if not accounted for, the thermal conductivity to the gas could inflate the measured value of graphene's thermal conductivity \cite{Chen2011a}.
 
-A variety of potentially interesting physics surrounding the thermal transport of few layer graphene has been studied.
-The thickness dependence of the thermal transport has also generated some interest.
-Supported graphene's thermal conductivity was shown to converge upward toward graphite's thermal conductivity as the number of layers increased above 34 layers \cite{Sadeghi2013}.
-On the other hand the thermal conductivity of suspended graphene was shown to converge downward toward graphite's thermal conductivity as then number of layers increased to four layers \cite{Ghosh2010}.
-Ballistic phonon transport has also been of interest.
-Since phonons with longer mean free path are able to thermalize and participate in thermal transport for larger samples a size dependence has been expected and observed for trilayer graphene \cite{Wang2010} but not for monolayer CVD graphene \cite{Chen2011a}.
-Other studies have concentrated on the effects of scattering on the thermal properties of graphene \cite{Wang2010,Pettes2011,Jang2013,Chen2012}.
+
+\subsection{Theoretical background}
+Lindsay and coworkers have argued that the ZA phonons contribute more than 70\% of the very high thermal conductivity of suspended graphene \cite{Seol2010}.
+This is for two reasons.
+First, the quadratic dispersion gives a high density of states throughout the BZ.
+Second, the in plane reflection symmetry provides a selection rule that limits the scattering phase space \cite{Lindsay2010}.
+ZA phonon dominated thermal transport is consistent with observations that the thermal conductivity of supported graphene \cite{Seol2010,Cai2010} is a factor of four smaller than suspended graphene \cite{Balandin2008,Cai2010,Chen2011a,Lee2011} and that encased graphene is a factor of two smaller yet \cite{Jang2010}.
+The ZA phonons either leak into the surrounding media, are scattered by it, or are dampened by it, lowering the thermal conductivity.
+
+On the other hand the ZA phonons are believed to limit the potentially divergent thermal conductivity contribution of the in plane phonons.
+Klemens showed that the linear in plane acoustic phonons should contribute a logarithmically divergent thermal conductivity in graphene \cite{Klemens2001}.
+This divergence follows from the frequency dependence of the terms which make up the thermal conductivity, $\kappa=\frac{1}{3} \int C v_G l(\omega) \rho(\omega) \ d\omega $, where $\kappa$ is the thermal conductivity, $C$ is the specific heat, $v_G$ is the group velocity of the acoustic phonons, $l(\omega)$ is the scattering length, and $\rho(\omega)$ is the density of states.
+For a two dimensional phonon gas with linear dispersion $\rho(\omega) \propto \omega$ while for anharmonic scattering between linear acoustic phonons $l(\omega) \propto 1/\omega^2$.
+Hence, in the absence of extrinsic scatterers, the integrand scales as $1/\omega$ and $\kappa$ diverges logarithmically.
+The logarithmic divergence in $\omega$ should translate to a logarithmic divergence device size \cite{Klemens2001}.
+Larger devices should exhibit larger thermal conductivities because they support more of the long wavelength phonons that contribute strongly to the thermal conductivity.
+To date this logarithmic divergence has not been observed \cite{Chen2011a}.
+Pereira and coworkers believe that the ZA phonons suppress this divergence \cite{Pereira2013}.
+Close to the center of the BZ there is a divergent population of zero group velocity ZA phonons.
+With near zero group velocity these phonons cannot contribute much to to the thermal conductivity, but, with a large population they can effectively scatter other phonons.
+When the ZA phonons are neglected in equilibrium molecular dynamics the thermal conductivity diverges, but when they are included the thermal conductivity converges.
+Thus, the ZA phonons are the main contributor to graphene's thermal conductivity only because the low energy ZA phonons suppress the divergent thermal conductivity of the in plane phonons.
 
 \section{Heat transport model}
 An accurate heat transport model is necessary for the determination of the thermal conductivity using the Raman measurement technique.
-In this section the heat transfer model first proposed by Cai et al is summarized.
-It predicts the temperature profile which develops in a circular graphene sealed microchabmer due to central laser heating \cite{Cai2010}.
-The temperature profile is then used to predict the anti-Stokes to Stokes ratio following Herman et al \cite{Herman2011}.
+In this section the heat transfer model first proposed by Cai \textit{et al} is summarized.
+It predicts the temperature profile which develops in a circular graphene sealed microchamber due to central laser heating \cite{Cai2010}.
+The temperature profile is then used to predict the anti-Stokes to Stokes ratio following Herman \textit{et al} \cite{Herman2011}.
 Finally, by predicting how the anti-Stokes to Stokes ratio depends on unknown parameters, the importance of the various experimental unknowns is investigated.
 
 The heat transfer model is simplified by the concentric circular symmetry of the laser heating source and the circular microchamber.
@@ -97,7 +95,7 @@ The laser heating is described by,
 \begin{align}
 	\dot{Q}_{L}=\frac{\alpha P}{t} \frac{1}{2 \pi \sigma^2} e^{-r^2/\sigma^2} \ ,
 \end{align}
-where $\dot{Q}_L$ is the energy from the incident laser, $P$ is the laser power at the graphene surface, $\alpha$ is the factor of this power which is absorbed by the graphene, $t$ is the thickness of the graphene, $\sigma$ is half the beam waste measured to be 0.81 $\mu$m as shown in Section \ref{sec:fri:Raman}, and $\frac{1}{2 \pi \sigma^2}$ is the normalization factor.
+where $\dot{Q}_L$ is the energy from the incident laser, $P$ is the laser power at the graphene surface, $\alpha$ is the factor of this power which is absorbed by the graphene, $t$ is the thickness of the graphene, $\sigma$ is half the beam waist measured to be 0.81 $\mu$m as shown in Section \ref{sec:fri:Raman}, and $\frac{1}{2 \pi \sigma^2}$ is the normalization factor.
 The energy lost to the substrate and gas is modeled using Newton's law of cooling,
 \begin{align*}
 	\dot{Q}_{S}&=-g_S \frac{1}{t} \left(T(r)-T_0 \right) \\
