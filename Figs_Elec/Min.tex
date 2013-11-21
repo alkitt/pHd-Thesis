@@ -1,0 +1,28 @@
+{
+\newcommand{\gw}{.5cm}
+\newcommand{\gh}{3.75cm}
+\newcommand{\cw}{.4cm}
+\newcommand{\enl}{1.5pt}
+\begin{tikzpicture}
+	% The graphene sheat with contacts
+	% the sheat itself
+	\draw[decorate,decoration={random steps,segment length=3pt, amplitude=1 pt}] [draw=blue!80!black,fill=blue!20!white]
+		(-\gw/2,-\gh/2) rectangle (\gw/2,\gh/2);
+	% Contacts
+	\foreach \y/\rot/\rott in {-1.5cm/180/-90,-.5cm/0/90,.5cm/0/90,1.5cm/180/-90}{
+		\shade[top color=yellow!60!black,shading angle=\rott,rotate=\rot,yshift=\y] 
+			($(\gw/2*5,-\cw/2-\enl)$) rectangle ($(-1*\gw/2*1.5-\enl,\cw/2+\enl)$);
+		\shade[top color=yellow!80!black,shading angle=\rott,rotate=\rot,yshift=\y] 
+			($(\gw/2*5,-\cw/2)$) rectangle ($(-1*\gw/2*1.5,\cw/2)$);
+	}
+
+	% The electronics
+	% Voltage probes
+	\draw (\gw/2*3.5,+.5) to[short,-o] +(1.5cm,0) node[anchor=west]{$V_1$};
+	\draw (\gw/2*3.5,-.5) to[short,-o] +(1.5cm,0) node[anchor=west]{$V_2$};
+
+	% The emf connected to the resitor
+	% \node[sinusoidal voltage source] (emf) at (0,0) {};
+	\draw (-1*\gw/2*3.5,-1.5) -- ++ (-3cm,0) to[sV,l=$1V$] ++ (0,3cm) to[R=$R_L$] (-1*\gw/2*3.5,1.5);
+\end{tikzpicture}
+}

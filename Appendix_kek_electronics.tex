@@ -1,0 +1,114 @@
+\chapter{Electronics for measuring the phonon induced band gap in graphene\label{chap:elec}}
+Gate dependent electrical transport measurements are central to the study of the phonon induced electrical band gap of Chapter \ref{chap:kek}.
+When performing these measurements the goals are to achieve sufficient signal to noise while protecting the nanomaterial from damage.
+In this Appendix the devices used to measure the transport, the precautions employed to protect the graphene, and the methods of shielding the electronics are described.
+Because of its importance and because it is so easily forgotten, it should be immediately mentioned that a grounding strap should always be worn when measuring graphene's electrical properties.
+
+A circuit diagram detailing the electronic devices is shown in Figure \ref{fig:elec:wires}.
+A Standford Research SR850 digital lock-in is used to measure the low frequency AC resistance of the graphene device in the four probe, Kelvin sensing geometry.
+The variable back gate voltage is supplied by a Keithley 2400 source meter (K2400).
+The breakout box is a custom built passive electronics box that serves several functions.
+It has two double pull switches, $S_1$ and $S_2$, used to ground and protect the sample.
+It also holds the current limiting $10 M \Omega$ resistor.
+Finally, it breaks the six core, shielded, sample connection wire into six individual BNC terminals.
+Using short BNC jumpers these terminals are connected to the second row of BNC terminals allowing for a flexible connection between the sample and the source voltage, $S$, the drain voltage, $D$, the voltage measurement probes, $V_1$ and $V_2$, and the back gate voltage, $V_{BG}$.
+All grounds in the system are connected to the SR850 ground.
+These electronic devices will be described in some detail below.
+
+\begin{figure}
+	\begin{center}
+	\input{Figs_Elec/Kekule_Wires}
+	\end{center}
+	\caption[Circuit diagram of the electronics for measuring the phonon induced band gap in graphene]{\label{fig:elec:wires}
+		Circuit diagram of the electronics for measuring the phonon induced band gap in graphene.
+		The diagram details the internal circuitry of the break out box which interfaces the Standford Research SR850 digital lock-in and the Keithley 2400 source meter with the graphene sample mounted in the test cube.
+		The open $V_{BG}$, $S$, $D$, $V_1$, and $V_2$ contacts are bridged to the appropriate $G1-G6$ contacts using BNC jumpers.
+		Switches $S_1$ and $S_2$ are used to ground the sample contacts.
+		The grounds, colored in green, are all referenced to the SR850 ground.
+		Although not shown in the diagram, the core of all BNC cables are grounded on one side.
+	}
+\end{figure}
+
+The low frequency lock-in technique improves on the signal to noise of a DC measurement.
+However, out of necessity the AC technique is slightly different than the traditional four probe DC resistance measurement.
+This is because there is no such thing as a constant current AC sources which can be used to pump a contact resistant independent current from source to drain.
+Instead, the effect of the contact resistance is minimized using a large resister, $R_L=11.130 M\Omega$, placed between the SR850 oscillator out and the source terminal as shown in Figure \ref{fig:elec:min}.
+As long as the contact resistance is much less than $R_L$, the contact resistance can be ignored and the system can be treated as a voltage divider with the graphene resistance given by
+\begin{equation*}
+	R_g=R_{L} \frac{V_1-V_2}{V_{AC}-(V_1-V_2)} \pm R_{L} \left( \frac{V_{AC}}{(V_{AC}-(V_1-V_2))^2} \right) \delta (V_1-V_2) \ ,
+\end{equation*}
+where $V_{AC}=1$ is the root mean squared AC voltage amplitude used in experiments and the term after the $\pm$ is the standard error which is proportional to the uncertainty in the measured voltage, $\delta (V_1-V_2)$, determined by the standard deviation of $>10$ sequentially measured values.
+The accuracy of this formula is limited if the resistance approaches the $10 M\Omega$ input impedance of the lock-in.
+When $R_g<<R_L$ the useful approximation
+\begin{equation*}
+	R_g \approx (V_1-V_2) * 10^4 \frac{\Omega}{mV} \ ,
+\end{equation*} 
+holds.
+The added resistor is useful for other reasons.
+It limits the current through the graphene to a safe value of less than $100 nA$.
+Additionally, the large value of $R_L$ ensures that the $50 \Omega$ output impedance of the lock-in is unimportant.
+The resistor $R_L$ allows us to use lock-in techniques to increase our signal to noise.
+
+To reduce noise in our measurements, we use the lock-in's internal oscillator as both the AC voltage source, $V_{AC}$, and as the reference to which the voltage measurements are mixed.
+To limit AC cross talk between lines the source is set to oscillate at the relatively low value of $f=17 \ Hz$.
+To best limit any 1/f noise the rule of thumb is to set the time constant of the low pass filter to $\tau=5 \frac{1}{f} \approx 300 ms$.
+However, we use $\tau=100 ms$ because it triples the measurement speed but does not substantially increase the noise.
+At each back gate voltage we takes 2 seconds worth of data sampled at $f_S=8Hz<=1/\tau$ and record the average and standard deviation of these 16 data points.
+Between back gate voltages we wait for the low pass filter to respond by waiting for $10 \tau$.
+The back gate capacitor is much faster than the low pass filter, fully charging in micro seconds.
+Noise is further reduced by measuring with the $60 Hz$ and $120 Hz$ line filters removed and the synchronous filter turned off.
+We use the 24 dB/octave low pass filter with a sufficiently large 36 dB dynamic reserve.
+The voltage is measured between the A and B lock-in terminals with their shells grounded.
+Using these techniques we achieve a sufficient signal to noise of 2000 to 1 for a resistance of $1 k\Omega$.
+
+\begin{figure}
+	\begin{center}
+	\input{Figs_Elec/Min}
+	\end{center}
+	\caption[Simplified circuit diagram of the four probe AC transport measurement]{\label{fig:elec:min}
+		Simplified circuit diagram of the four probe AC transport measurement.
+	}
+\end{figure}
+
+The K2400 source meter is used as an ambipolar voltage source to control the back gate voltage.
+During measurement the back gate voltage is set by the Hi terminal.
+The outputted voltage is referenced to the floating Lo terminal that is in turn tied to ground in the breakout box.
+To limit electro magnetic interference (EMI) the Hi and Lo terminals are connected to the breakout box via separate BNC cables that have shields grounded on the breakout box side.
+Instrument noise is minimized by auto ranging the voltage.
+This keeps the voltage range as low as possible for each step in the back gate sweep.
+To protect the sample the current compliance is kept low and the software warns the user if it is reached.
+A value of $10 \ \mu A$ is low enough to protect the sample but high enough that the current needed to charge the capacitor does not cause a warning.
+The current compliance being reached is an indicator of a leaky back gate.
+Finally to avoid SiO$_2$ breakdown the voltage in volts should be kept below the oxide thickness in nanometers.
+Applying these settings allows the K2400 to provide a safe and stable back gate voltage.
+
+To protect the sample there are two double pull switches on the break out box which ground the sample.
+This is useful both when mounting the sample and for putting the system in a safe state during measurement downtime.
+The first switch, $S_1$, is a shorting rotary switch (NKK switches model number HS16-5SN-ND) which toggles the back gate and source terminals between measurement and ground modes.
+In measurement mode the terminals are connected to the measurement instruments while in ground mode the terminals are connected to ground through a $10 \Omega$ resistor.
+To make the transition between measurement and ground modes smoother for the sample, a shorting switch is used so that the second throw is made before the first throw is broken.
+For additional sample safety, the K2400 voltage and the sine out voltage on the SR850 should be set to zero to minimize the voltage change when switching.
+The small resistor between switch and ground limits the current flow between instrument and ground during the shorting action of the switch.
+Without this the small difference between the instrument voltages and ground can cause a large current flow to ground.
+The second switch, $S_2$, is a simple double pull single throw switch used to ground the $V_1$ and $V_2$ terminals.
+The $A$ and $B$ terminals on the SR850 are high impedance ($10 M \Omega$) terminals and, as such, static charge could build up on these terminals and destroy the sample when it is connected.
+Closing $S_2$ grounds the terminals, dissipating any static charge.
+Used together these switches ground all of the pins on the sample.
+
+Several precautions are made when mounting the sample.
+As mentioned earlier, a grounding strap is always worn.
+During sample transport the pins are embedded in a conducting foam to keep all contacts at the same voltage.
+The sample is then removed from the foam for mounting in the presence of an ionizing fan.
+Before the sample is mounted switches $S_1$ and $S_2$ are set so that all the contacts are grounded.
+These precautions protect the sample from damage during mounting.
+
+To limit EMI the shields on all of the BNCs are grounded on one side.
+They are only grounded on one side so as to avoid ground loops.
+In a perfect scenario the shield grounds would be isolated from the instrument ground.
+However, we do not have this capability.
+To further limit the EMI the length of the BNC cables is minimized.
+In fact the break out box is connected directly to the SR850.
+Finally, the metal break out box shields the passive electronics inside.
+
+The measurement of the phonon induced band gap relies on the electronics detailed here.
+The electronics setup should maximize signal to noise while protecting the fragile graphene.

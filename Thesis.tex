@@ -4,7 +4,7 @@
 % Slightly newer pdf format outputted.  Helps compatability with included pdf images
 
 % \includeonly{TightBinding,PVP,Friction,Therma,Kekule,Appendix_PVP_strainedBZ,Appendix_PVP_idependence,Appendix_Fri_Fit,Appendix_kek_hopps}
-% \includeonly{Kekule,Appendix_kek_hopps}
+% \includeonly{Kekule,Appendix_kek_hopps,Appendix_kek_electronics}
 % \includeonly{form_1_title,form_2_approval,form_4_acknowledge,form_5_abstract,form6_abbreviations}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,8 +14,9 @@
 \usepackage{amsmath,amssymb,mathrsfs,bm} 	% Math symbols
 \usepackage{textcomp}						% Degree symbol
 \usepackage{tikz}                      		% Fancy drawings
-% Extra packages mostly for flowchart--extra arrows, node positioning, diamond shape, aspect, vector add
-\usetikzlibrary{arrows,positioning,shapes,shapes.geometric,calc}	
+\usepackage{circuitikz}						% Circuit diagram in tikz
+% Extra packages mostly for flowchart--extra arrows, node positioning, diamond shape, aspect, vector add, line decorations
+\usetikzlibrary{arrows,positioning,shapes,shapes.geometric,calc,decorations}	
 \usepackage{apalike}						% APA like bibliography style
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,6 +83,7 @@
 	\include{Appendix_PVP_idependence}
 	\include{Appendix_Fri_Fit}
 	\include{Appendix_kek_hopps}
+	\include{Appendix_kek_electronics}
 
 	% Bibliography
 	\backmatter
