@@ -149,6 +149,7 @@ A straightforward calculation provides the electron dispersion,
 which is plotted in Figure \ref{fig:TB:Dispersion}.
 As shown, the two energy bands touch at the corners of the Brillouin zone.
 For pristine graphene there is one electron per carbon atom leaving the low energy band completely filled and the high energy band empty.
+The points that the bands meeting are referred to as the Dirac points or as the charge neutrality points.
 The Fermi energy can be shifted by charge transfer from contaminates or it can be purposely modified by adding adding or removing charges through capacitive coupling.
 The resulting shifts in Fermi energy are relatively small and, thus, the low energy excitations happen in a narrow energy window around these points.
 This happens to be the energy window for which the nearest neighbor tight binding approach is most accurate.
@@ -202,6 +203,15 @@ At both $\bm{K}$ and $\bm{K'}$ the low energy electronic dispersion is identical
 	E=\pm \hbar v_f |\vec{q}| \ .
 \end{equation*}
 This canonical energy dispersion in which the high and low energy bands meet at a single point is reminiscent of the light cone.
+
+The density of electronic states can be calculated from the low energy dispersion.
+Taking account the two fold spin and two fold valley degeneracy, the density of states is 
+\begin{equation}
+	\rho(\epsilon)=\frac{2}{\pi} \left( \frac{\hbar v_f}{L} \right)^2 \epsilon \ ,
+	\label{eq:TB:DOS}
+\end{equation}
+where $L^2$ is the area of the graphene and $\epsilon$ is the energy measured from the charge neutrality point.
+The density of states at a given energy goes as the circumference of the Dirac cone resulting in a linear energy dependence.
 
 \section{Dirac-Weyl electrons}
 Graphene's linear electrical dispersion is peculiar.

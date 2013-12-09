@@ -292,40 +292,122 @@ The only difference with polyacetylene is that the gap in graphene does not form
 Instead, phonons must be continuously created to gap the system.
 
 \section{Experimental design}
+The experimental measurement of the phonon induced band gap has two components: The excitation of the phonon using neon scattering and the measurement of the resulting band gap using electrical transport.
+
 \subsection{Phonon excitation}
 
-\subsection{Band gap measurements}
-From the low energy electronic dispersion the density of electronic states can be calculated.
-After taking account of the two fold spin and two fold valley degeneracy, the density of states of the two dimensional electron gas is
-\begin{equation*}
-	\rho(\epsilon)=\frac{2}{\pi} \left( \frac{\hbar v_f}{L} \right)^2 \epsilon \ ,
-\end{equation*}
-where $L^2$ is the area of the graphene and $\epsilon$ the energy measured from the Dirac points.
-The number of states at a given energy depends on the circumference of the Dirac cone at that energy resulting in a linear energy dependence.
-Using the density of states the chemical potential can be calculated in standard graphene transport experiments.
+\begin{figure}
+	\begin{center}
+	\input{Figs_Kekule/Scattering}
+	\end{center}
+	\caption[Neon scattering geometry]{
+		The degrees of freedom in the neon scattering geometry.
+	}
+\end{figure}
 
-Graphene's two dimensional nature makes it simple to continuously modify the chemical potential.
-Rather than varying the concentration of a dopant as must be done for most three dimensional systems, graphene only requires the application of a back gate voltage.
-A standard graphene gated field effect device is shown in Figure \ref{fig:kek:FET}.
-Changing the back gate voltage ($V_{BG}$) charges the graphene-backgate capacitor, introducing charges into the system.
-The differential increase in the number of charges is $dQ=C(\mu) dV$ where the capacitance is defined as
+\subsection{Estimation of the band gap}
+The size of the band gap is estimated in three steps.
+The band gap is related to atomic displacements, the atomic displacements are related to the number of phonons, and the number of phonons is estimated based on the neon flux and the phonon lifetime.
+Based on Equation \ref{eq:kek:hopps}, the band gap is given by
 \begin{equation*}
-	C=\frac{d N}{d \mu} \ .
+	gap=2|\Delta|=6 \beta t_0 \frac{|c|}{a} \approx 50 \ eV \ \frac{|c|}{a} \ ,
 \end{equation*}
-Here $N$ is the number of electrons in the graphene and $\mu$ is the chemical potential.
-For intrinsic graphene the capacitance is continuous and the total number of charges is just $N=CV/e$.
-The gated graphene device shown in Figure \ref{fig:kek:FET} can be treated as a parallel plate capacitor with a plate separation of 285 nm and the dielectric constant of silicon dioxide.
-Matching the integrated density of states to the number of charges in the system relates the applied gate voltage to different measurements of the chemical potential in the system.
-Some useful relationships are:
+where $|c|$ is the amplitude of the phonon oscillation.
+In a semi-classical approximation $|c|$ is related to the number of phonons through
 \begin{align*}
-	n(cm^{-2})&\sim 7 \times 10^{10} V_{BG} (Volts) \\
-	\mu(meV) &\sim 30 \sqrt{V_{BG} (Volts)} \\
-	\mu(meV) &\sim 1 \times 10^{-7} \sqrt{n(cm^{-2})}
+	&N \frac{1}{2} M \omega^2 |c|^2=n \hbar \omega \\
+	&\rightarrow |c|=\sqrt{\frac{2 \hbar}{M \omega}} \sqrt{\frac{n}{N}} \approx 0.1 \ \text{\AA} \ \sqrt{\frac{n}{N}}	\ ,
 \end{align*}
+where $n$ is the total number of excited Kekul\'e phonons in the system, $N$ is the number of unit cells, $M$ is the mass of a carbon atom, and $\omega$ is the frequency of the Kekul\'e phonon.
+Thus, the band gap is related to the number of phonons by
+\begin{equation*}
+	gap=6 \beta t_0 \sqrt{\frac{2 \hbar}{M \omega}}\sqrt{\frac{n}{a^2N}} 
+	\approx 50 \ eV \ 0.1 \ \text{\AA} \ \sqrt{\frac{n}{A}} \ ,
+\end{equation*}
+where $a^2 N=A$ is roughly the area of the graphene sheet.
+Finally, the number of excited phonons can be calculated using the steady state solution to the rate equation
+\begin{equation*}
+	\frac{dn}{dt}=f \eta A-\frac{n}{\tau}=0 \ ,
+\end{equation*}
+where $f \approx 10^{18} \ atoms/m^2/s$ is the neon flux, $\eta \geq 10^{-2}$ is the scattering efficiency, and $\tau$ is the persistence time of the phonon.
+The persistence time is longer than the phonon lifetime because not all phonon decay channels result in less phonons.
+For instance, if a phonon decays into an electron hole pair this electron hole pair can recombine to recreate the same phonon thereby maintaining the number of phonons in the system.
+However, the phonon lifetime can be used to estimate a lower bound for the band gap.
+For a phonon lifetime of  0.2 ps estimated based on the $27 \ cm^{-1}$ line width of the Raman 2D feature, the expected band gap is
+\begin{equation*}
+	gap \geq 6 \beta t_0 \sqrt{\frac{2 \hbar}{M \omega}}\sqrt{f \eta \tau} \approx 50 \ eV \ 10^{-11} \ m \ 10 \ \frac{1}{m}
+	= 5 \ neV \ .
+\end{equation*}
+The short phonon lifetime makes it very difficult to create enough phonons to open a sufficient band gap.
+If the persistence time were a factor of $10^12$ longer than the phonon lifetime ($\tau \approx 0.2 \ s$), the system would reach a continuous bandgap of roughly 5 meV.
+It is not entirely outside the range of possibility for the phonon persistence times to be this long; acoustic phonons have lifetimes on this order.
+A more detailed calculation of the Kekul\'e phonon decay channels is necessary for a better estimation of the phonon persistence time and the expected band gap.
+
+In the case of short persistence times it makes sense to think of the system in the stochastic regime.
+A neon atom would hit a $10 \ \mu m^2$ sample and create a phonon every $10 \ \mu s$ based on $f$ and $\eta$.
+If $\tau << 10 \ \mu s$ the system would spend most of its time in its unexcited, ungapped, instrinsic state.
+Assuming that the coherence length of the phonon covers the whole sample, phonon creation events would cause temporary transitions to a gapped state.
+For the $10 \ \mu m^2$ sample with $2 \times 10^8$ unit cells a single phonon excitation would correspond to a band gap of roughly 0.5 meV or 6 Kelvin.
+Liquid helium temperature electrical transport could be used to measured a gap of this magnitude.
+However, for a persistence time on the order of picoseconds the system is only gapped a factor of $10^{-6}$ of the time.
+To overcome this signal to noise issue the neon seeded helium beam could be chopped and the electrical transport measurements described in the next section could be locked in to the chopping frequency.
+
+\subsection{Band gap measurements}
+The development of the band gap will be observed using \textit{in situ} four probe, gated, electrical transport measurements.
+When $\phi$ is set such that the neon beam is along the $\bm{K}$ or $\bm{K'}$ directions the Kekul\'e phonon should be excited, the band gap should be opened, and the gate dependent electrical transport should be altered.
+The fingerprint of the phonon induced band gap will be transport phenomena which exhibit the 60 degree periodicity of the lattice.
+In this section gated electrical transport measurements are described and the expected change in the electrical transport of gapped graphene is discussed.
+
+The resistance, $R$, of the graphene device is measured using a four probe, low frequency AC, lock-in technique. 
+Measurement details are are included in Appendix \ref{chap:elec}.
+The measured resistance is related to the two dimensional resistivity, $\rho$, and the two dimensional conductivity, $\sigma$, through
+\begin{equation*}
+	\rho=\frac{1}{\sigma}=R \frac{w}{L} \ ,
+\end{equation*}
+where $w$ is the width and $L$ is the length of the measured graphene strip.
+To differentiate resistance and resistivity, the units of resistivity are written as $\Omega/\square$.
+Gate dependent resistance measurements provide information about the electrical dispersion.
+
+Graphene's two dimensional nature makes it simple to continuously modify the Fermi energy using a back gate.
+Rather than varying the concentration of a dopant as must be done for most three dimensional systems, graphene's Fermi energy can be capacitively tuned with a back gate, as shown schematically in Figure \ref{fig:kek:FET}.
+Together, the silicon back gate and the graphene form a parallel plate capacitor with a plate separation of 285 nm and the dielectric constant of thermal dioxide.
+Changing the back gate voltage, $V_{BG}$, adds or removes a charge of $n=CV_{BG}/e$ to the graphene where $C$ is the capacitance and $e$ is the charge of the electron.
+When $V_{BG}$ is set such that the Fermi energy sits at the charge neutrality point there are the fewest number of charge carriers and thus the highest resistance.
+This situation doesn't always correspond to $V_{BG}=0$; every device has a finite number of dopants which shift the Dirac point from zero volts.
+Tuning the back gate voltage away from the Dirac point adds additional charges and lowers the resistance.
 
 \begin{figure}
 	\begin{center}
 	\input{Figs_TightBinding/FET}
 	\end{center}
-	\caption[Side view of a back gated graphene device.]{\label{fig:kek:FET} Side view of a back gated graphene device.  The graphene is on top of 285 nm of thermal oxide grown on heavily doped Si. }	
+	\caption[Side view of a back gated graphene device.]{\label{fig:kek:FET} 
+	Side view of a back gated graphene device.
+	The contacted graphene (black line) is on top of 285 nm of thermal oxide (blue) grown on heavily doped silicon (gray).
+	A voltage difference of $V_{BG}$ is placed between the silicon and the graphene.
+	}	
 \end{figure}
+
+Near the Dirac point in gapless graphene the conductivity is symmetric and nearly linear allowing a field effect mobility, $\frac{d \sigma}{d (n e)}$, to be defined.
+Even though there are no charge carriers at the Dirac point there is always a residual conductivity, $\sigma_0$ \cite{DasSarma2011}.
+Further from the Dirac point the conductivity is sub-linear and is best fit by
+\begin{equation*}
+	\frac{1}{\sigma}=\frac{1}{n e \sigma_C + \sigma_0} + \rho_S \ ,
+\end{equation*}
+where $\mu_C$ is the mobility due to long-range Coulomb scattering and $\rho_S$ is from short range scattering \cite{Dean2010,DasSarma2011,Remi2013T}.
+Higher quality devices have higher mobilities and Dirac points closer to $V_{BG}=0$.
+
+For gapless graphene, the Fermi energy can be determined from $V_{BG}$ by matching the integrated density of states (Equation \ref{eq:TB:DOS}) to $n$.
+Some useful relationships for graphene on 285 nm of thermal oxide are
+\begin{align*}
+	n(cm^{-2})&\sim 7 \times 10^{10} V_{BG} (Volts) \\
+	\mu(meV) &\sim 30 \sqrt{V_{BG} (Volts)} \\
+	\mu(meV) &\sim 1 \times 10^{-7} \sqrt{n(cm^{-2})} \ ,
+\end{align*}
+where $\mu$ is the Fermi energy.
+
+The opening of the band gap should have two fingerprints in electrical transport.
+First, the resistance at the charge neutrality point should increase.
+If the capability were available, measuring the temperature dependence of this resistance would give a direct measurement of the size of the band gap.
+Second, because of the energy required to excite an electron across the band gap, the gate dependent conductivity should exhibit a low conductivity plateau centered on the charge neutrality point.
+The width of this plateau in volts should correspond to the band gap in electron volts plus any many body effects.
+The presence of these fingerprints with a 60 degree periodicity in $\phi$ is the hallmark of the phonon induced band gap. 

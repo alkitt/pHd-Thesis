@@ -1,0 +1,123 @@
+{
+\begin{singlespace}
+		%To have hanging indents in a table, must put \hsect in table
+		\newcommand{\hsect}[2]{
+			\setlength{\leftskip}{#1}
+			\setlength{\parindent}{-#1}
+			\setlength{\parskip}{#2}
+		}
+
+		%Creates an overall section--first argument section title, second argument, the body
+		\newcommand{\Lhind}[0]{15pt}
+		\newcommand{\sspace}[0]{.2 cm }
+		\newcommand{\sect}[2]{
+			\noindent \begin{tabular}{@{} p{.1 \textwidth} p{.85 \textwidth}}
+			\noindent \textbf{#1:} & \\
+			& 
+			\hsect{\Lhind}{\sspace}
+			#2
+			\end{tabular}
+			
+			\bigspace
+		}
+
+		% Dated format-date on the right.  First argument dated event, second argument date.
+		\newcommand{\dated  }[2]{#1 \hfill #2}
+		\newcommand{\datedbf}[2]{\textbf{#1 \hfill #2} } %Makes it bold as well
+
+		%Formats the presentations with presentation (first arg) quoted and the location (second arg) on the next line
+		\newcommand{\present}[2]{``#1'' \newline #2}
+
+		%Publications format:
+		\newcommand{\pub}[3]{
+			#1 \newline
+			``#2'' \newline
+			#3
+		}
+
+		%Gets rid of the bold for the list in BU experience
+		\setdescription{font=\normalfont}
+
+		%The big space between sections
+		\newcommand{\bigspace}[0]{\vspace{.3 cm} }
+
+%my name
+\noindent{\huge Alexander Kitt} \newline
+Department of Physics \hfill (585) 737-3493 \newline
+Boston University \hfill alexander.kitt@gmail.com \newline
+590 Commonwealth Avenue \newline
+Boston, MA 02215\newline
+
+\bigspace
+
+\sect{Education}
+{
+	\datedbf{Boston University, Boston MA}{2008-2014}\newline
+	PhD in Physics 1/2014\newline
+	Advisors: Bennett B Goldberg and Anna Swan \newline
+	Thesis: \thesistitlelower 
+
+	\datedbf{SUNY at Buffalo, Buffalo NY}{2004-2008}\newline
+	B.S. in Physics, B.A. in Mathematics, Minor in Philosophy of Science\newline
+	Honors Scholar, Renaissance Scholar, \emph{summa cum laude}\newline
+}
+
+\sect{Skills}{
+	\textbf{Experimental Techniques:} \newline
+	Raman Spectroscopy, Electrical transport, AFM, SEM, Photolithography, RIE, DRIE, E-beam and thermal evaporation, Ellipsometry, Thermal oxide growth
+
+	\textbf{Programming Languages/Software:} \newline
+	Matlab, Mathematica, IDL, C++, Python, Labview, Comsol Multiphysics FEA, CAD
+
+	\textbf{Lab/Hardware skills:}\newline
+	Microscope fabrication and optical design, Laser alignment, Vacuum equipment, Machining
+}
+
+\sect{Experience}
+{
+	\datedbf{Boston University: Graphene}{2009-2014} 
+	\begin{description}[noitemsep,topsep=-5pt,labelindent=15pt]
+	\item[Experiment:] First measurement of graphene's anomalous macroscopic sliding friction. 
+	\item[Theory:] Derived corrections to the strain-induced pseudo vector potential in graphene.
+	\item[Aperatus design:] Integrated an electrical transport assay into a UHV Helium scattering facility, designed and built both a high pressure Raman microscope and a low pressure CVD furnace.
+	\item[Device:] Demonstrated proof of concept for graphene based threshold pressure sensor for remote oil well application.
+	\item[Mentoring:] Mentored 4 undergraduate students.
+	\end{description}
+	\vspace{\sspace}
+
+	\datedbf{Undergraduate Thesis: Astro-physics Simulations}{2007-2008} \newline
+	To give insight into early galaxy formation, wrote a scalable program to simulate an interacting luminous and dark matter gas.
+	 
+	\datedbf{University of Rochester: Infrared Astronomy}{Summer 2006 and 2008} \newline
+	Working in William Forrest's group found preliminary evidence of extremely small silicates in the interstellar medium.
+
+	\datedbf{University of Colorado at Boulder}{Summer 2007} \newline
+	Tested alternate methods for graphene exfoliation.
+}
+
+\sect{Publications}
+{
+	\pub{AL Kitt, Z Qi, S R\`{e}mi, H.S. Park, A.K. Swan, BB Goldberg}{How graphene slides: Measurement and theory of strain-dependent frictional forces between graphene and $SiO_2$}{Nano Letters \textbf{13} 2605 (2013)}
+
+	\pub{AL Kitt, V.M. Pereira, A.K. Swan, BB Goldberg}{Lattice-corrected strain-induced vector potentials in graphene}{Physical Review B \textbf{85} 115432 (2012)}
+
+	\pub{J.W. Suk, AL Kitt, C.W. Magnuson, Y. Hao, S. Ahmed, J. An, A.K. Swan, BB Goldberg, R.S. Ruoff}{Transfer of CVD-Grown Monolayer Graphene onto Arbitrary Substrates}{ACS Nano \textbf{5} 6916 (2011)}
+}
+
+\sect{Presentations}
+{
+	\present{How graphene slides: Measurement and theory of frictional forces between graphene and $SiO_2$}{\dated{Talk at Boston Area Caron Nanoscience}{3/2013}}
+
+	\present{The correct solution for (in plane) strain-induced pseudo vector potentials in graphene}{\dated{Talk at American Physical Society March Meeting}{3/2012}}
+
+	\present{Corrections to pseudo vector potentials and their effect on pseudo magnetic fields}{\dated{Talk at Boston Area Caron Nanoscience}{2/2012}}
+
+	\present{Complete solution for strain-induced pseudo vector potentials in graphene}{\dated{Poster at Materials Research Society Fall Meeting}{12/2011}}
+
+	\present{Variable strain in graphene sealed microchambers studied with Raman spectroscopy}{\dated{Talk at American Physical Society March Meeting}{3/2011}}
+
+	\present{Raman spectroscopy of suspended mono and bilayer graphene}{\dated{Talk at American Physical Society March Meeting}{3/2010}}
+}
+
+\end{singlespace}
+}

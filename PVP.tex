@@ -490,6 +490,14 @@ The pseudo magnetic field for each is calculated from the curl of the vector pot
   \end{array} \right) \ ,
 \end{equation*}
 where $\vec{\mathcal{A}}_{p,cyl}$ is in cylindrical coordinates.
+Since the strains in cylindrical graphene sealed microchambers have no $\phi$ dependence and no shear terms, the $\phi$ dependence in the pseudo magnetic field,
+\begin{equation*}
+  \vec{B}=\frac{\phi_0}{2a}\frac{\beta}{2 \pi} \sin(3 \phi) \left[ 
+  3 \frac{1}{r} (\epsilon_{\rho\rho}-\epsilon_{\phi \phi})-
+  \frac{1}{r} \frac{\partial}{\partial r} \left[ r (\epsilon_{\rho\rho}-\epsilon_{\phi \phi}) \right]
+  \right] \hat{z} \ ,
+\end{equation*}
+is a reflection of the lattice symmetry.
 
 The spatial distributions of pseudo magnetic fields predicted using three different continuum models are shown in Figure \ref{fig:PVP:circle}.
 For each continuum model a surface plot of the pseudo magnetic field is plotted above a contour plot.
@@ -511,7 +519,6 @@ This simple model provides everything needed to determine the Young's modulus of
 However, this approximation does not accurately describe the strain profiles and so is not applicable for studying pseudo magnetic fields.
 Nonetheless, Kyung-Joong Kim \textit{et al.} use a similar model to predict exotic physical phenomena in pressurized circular graphene sealed microchambers \cite{Kim2011b}.
 As shown in Figure \ref{fig:PVP:circle}a, when this model is naively used three distinct global maximum and three distinct global minimum are visible with pseudo magnetic fields of nearly 5 Tesla.
-The six fold symmetry is a reflection of the lattice symmetry.
 
 In Figure \ref{fig:PVP:circle}b Hencky's model is used to predict the pseudo magnetic field.
 This model is an exact series solution for the large deflection of a circular plate under a uniform vertical load with fixed boundaries.
@@ -520,15 +527,31 @@ The resulting pseudo magnetic fields are noticeably reduced, barely exceeding 1 
 In this case the peaks occur at the boundary of the microchamber.
 
 Finally, in \ref{fig:PVP:circle}c the pseudo magnetic fields are calculated using the extended Hencky model that is derived and experimentally confirmed in Chapter \ref{chap:fri}.
-In this model the fixed boundary conditions at the edge of the microchamber are relaxed.
-The supported graphene is allowed to slide against a resistive frictional force.
+In this model the fixed boundary conditions at the edge of the microchamber are relaxed and the supported graphene is allowed to slide against a resistive frictional force.
 The frictional force for this small of a device at this large of a pressure have not yet been measured experimentally.
 To get a qualitative idea of the changes resulting from sliding, the dimensionless frictional force found in Chapter \ref{chap:fri} by comparison to atomistic modeling of a 6 nm radius microchamber was used.
-The resulting strain distribution of the suspended graphene is similar to the one predicted by the Hencky model.
-The strain distribution in the supported graphene, however, is much different.
-Since the derivative of the strain is not continuous at the edge of the microchamber, nether is the pseudo magnetic field.
-In fact, since the slope of the radial strain changes sign, so does the psuedo magnetic field.
-As friction decreases the distributed strain the pseudo magnetic field of the supported graphene decays to zero from its value of almost 9 Tesla at the edge of microchamber.
+The strain distribution of the suspended graphene is similar to the strains predicted by the Hencky model.
+The supported graphene, however, is allowed to slide resulting in interesting pseudo magnetic fields.
+The strain in the supported graphene quickly to decay to zero creating fairly large 9 Tesla pseudo magnetic fields just outside the edge of the microchamber.
+Further, because the derivative of the strain is not continuous at the edge of the microchamber, neither is the pseudo magnetic field.
+
+Figure \ref{fig:PVP:atoms} shows that the pseudo magnetic field predicted by the extended Hencky model agrees well with atomistic simulations.
+The atomistic simulation was similar to the one described in Section \ref{sec:fri:atom} except it was a smaller, 4 nm radius microchamber modeled over a 10 nm square region at a pressure of 1.2 GPa.
+The pseudo magnetic field was determined by taking the curl of the strain distribution.
+To extract the radial dependence of the pseudo magnetic fields the results of the atomistic model were binned into radial elements containing at least 10 atoms and the standard deviation in elements in the bin were taken as the uncertainty in the average.
+The $\phi$ dependence was then projected out by fitting each radius to the expected $sin(3 \phi)$ form.
+Finally, the amplitude of these fits was compared to the extended continuum model with the sliding friction chosen to best match the strain profiles of the atomistic model.
+Considering there are two numeric derivatives involved in determining the pseudo magnetic field from the atomistic simulations, the agreement is impressive.
+
+\begin{figure}
+  \begin{center}
+  \includegraphics{Figs_PVP/data2_PMF.pdf}
+  \end{center}
+  \caption[Comparison of pseudo magnetic field calculated based on an atomistic model and based on the extended Hencky model]{\label{fig:PVP:atoms}
+    Comparison of the radial dependence of the pseudo magnetic field calculated based on an atomistic model (points), extended Hencky model (black line), and the small strain continuation model (blue line) when a pressure of 1.2 GPa is applied to a 6 nm radius cylindrical graphene sealed microchamber.
+    The $\phi$ dependence was removed by fitting the atomistic data to the expected $sin(3 \phi)$ form.
+  }
+\end{figure}
 
 The example of cylindrical graphene sealed microchambers clearly shows that the validity of predicted pseudo magnetic fields is directly tied to the validity of the strain distribution predicted by the continuum model.
 One needs to be careful to ensure that the approximations made in solving for the large deflection of the plate do not make the resulting strain distributions inaccurate.
