@@ -1,4 +1,4 @@
-\chapter{Global fitting algorithm details \label{chap:Fit}}
+\chapter{Global fitting algorithm \label{chap:Fit}}
 This Appendix is devoted to the method used to extract the fitting parameters from the Raman line scans discussed in Chapter \ref{chap:fri}.
 Throughout, fitting parameters refers to the non-linear parameters of interest, namely the dimensionless friction, $F$, the Gru\"uneisen parameter, $\gamma$, and the shear deformation potential, $\beta$.
 The determination of these values is complicated; there is no out of the box technique which can be blindly applied.
@@ -27,7 +27,8 @@ Steps with red outlines in the flowchart will be described in the most detail as
 	\begin{center}
 	\input{Figs_Fit/Flow}
 	\end{center}
-	\caption[Flow chart of global fitting algorithm]{\label{fig:Fit:Flow}Flow chart of global fitting algorithm to determine $F$, $\gamma$, $\beta$ from line scans over pressurized graphene sealed microchambers.}
+	\caption[Global fitting algorithm flow chart]{\label{fig:Fit:Flow}
+	Flow chart of global fitting algorithm to determine $F$, $\gamma$, $\beta$ from line scans over pressurized graphene sealed microchambers.}
 \end{figure}
 
 \section*{Load spectra, known parameters}
@@ -94,7 +95,7 @@ Complications of fitting these features are avoided by only including the spectr
 	\begin{center}
 	\input{Figs_Fit/igouter}
 	\end{center}
-	\caption[An example globally fit line scan with radii less than 1.5 microns]{\label{fig:Fit:igouter}
+	\caption[Global fit for microchambers with radii less than 1.5 microns]{\label{fig:Fit:igouter}
 	An example globally fit line scan with radii less than 1.5 microns ($R\sim 1.2 \ \mu m$, bilayer, 0.8 MPa).
 	Spectra taken along the path shown in the inset are arrayed vertically with those spectra within half a beam waste of the microchamber edge omitted. 
 	The black vertical line indicates the supported graphene's unstrained G band energy.
@@ -123,7 +124,9 @@ In the next section, this spectral shape will be scaled to best fit the data.
 \begin{figure}
 	\begin{center}
 	\includegraphics{Figs_Fit/SB02-1_StrainWithLaser.pdf}
-	\caption[Laser excitation profile overlaid on strain distribution]{\label{Fig:Fit:FiniteSpot}Laser excitation profile overlaid on the best fit strain distribution for the $\sim 5 \ \mu m$ radius monolayer graphene sealed microchamber with 0.80 MPa of applied pressure.}
+	\caption[Laser excitation profile overlaid on strain distribution]{\label{Fig:Fit:FiniteSpot}
+	Laser excitation profile overlaid on the best fit strain distribution for the $\sim 5 \ \mu m$ radius monolayer graphene sealed microchamber with 0.80 MPa of applied pressure.
+	}
 	\end{center}
 \end{figure}
 
@@ -259,7 +262,7 @@ An obvious minimum in the $\tilde{\chi}^2$ near f=0.14 MPa is visible.
 	\begin{center}
 	\includegraphics{Figs_Fit/2013-09-05_Fit_101psi_ErrorBar_ForThesis.pdf}
 	\end{center}
-	\caption[$\tilde{\chi}^2$ as a function of the dimensionless friction]{\label{fig:Fit:chispace}
+	\caption[Goodness of fit metric used to determine friction]{\label{fig:Fit:chispace}
 	$\tilde{\chi}^2$ as a function of the dimensionless friction for the $\sim 5 \ \mu m$ radius monolayer graphene sealed microchamber with 0.80 MPa of applied pressure.
 	For each value of $F$, the $\gamma$ and $\beta$ pair which minimized $\tilde{\chi}^2$ was chosen.
 	The black cross hair sits at the best fit and the red, side ways error bar indicates the uncertainty in the fit based on an increase in $\tilde{\chi}^2$ of 0.25.

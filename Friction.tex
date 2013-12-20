@@ -1,4 +1,4 @@
-\chapter{How graphene slides: Measurement and theory of strain-dependent frictional forces between graphene and \texorpdfstring{$\mathrm{SiO_2}$}{SiO2} \label{chap:fri}}
+\chapter{How graphene slides: Graphene's anomalous macroscopic friction \label{chap:fri}}
 
 Graphene is an amazing mechanical system with extreme elasticity \cite{Lee2008}, ultrastrong adhesion \cite{Koenig2011}, and impermeability to gases \cite{Bunch2008}.
 As a pure two dimensional material, graphene's interactions with its supporting substrate are unique.
@@ -27,7 +27,7 @@ Specifically, as demonstrated in Section \ref{sec:PVP:GoodCont}, you can not pre
 	\begin{center}
 	\input{Figs_Friction/device}
 	\end{center}
-	\caption[Schematic of devices used to measure graphene's sliding]{\label{fig:fri:device} Top: An optical image of a trilayer graphene-sealed microchamber. Bottom: Device cross-section schematic showing the microchamber etched 8 $\mathrm{\mu}$m into the underlying Si substrate and the supported graphene atop the 300 nm of thermal oxide.  Pictured to scale is the largest pressure induced deflection of the graphene achieved in any of the analyzed experiments.}
+	\caption[Schematic of devices used to measure graphene's macroscopic friction]{\label{fig:fri:device} Top: An optical image of a trilayer graphene-sealed microchamber. Bottom: Device cross-section schematic showing the microchamber etched 8 $\mathrm{\mu}$m into the underlying Si substrate and the supported graphene atop the 300 nm of thermal oxide.  Pictured to scale is the largest pressure induced deflection of the graphene achieved in any of the analyzed experiments.}
 \end{figure}
 
 \section{Raman G band strain response\label{sec:fri:Raman}}
@@ -53,7 +53,12 @@ This verifies that spectra measured with circularly polarized represent both the
 	\begin{center}
 	\includegraphics[scale=.75]{Figs_Friction/LinearvsCircular.pdf}
 	\end{center}
-	\caption[A comparison of Raman spectra measured using circularly and linearly polarized light]{\label{fig:fri:circlelinear}Comparison of Raman spectra measured using circularly and linearly polarized light. Measurements were taken at the labeled values of $\rho=r/R$ on a R=5 $\mathrm{\mu}$m graphene sealed microchamber under 0.80 MPa of applied absolute pressure. The black dots are spectrum measured using circularly polarized light. The red dots are the sum of spectra taken with outgoing polarizations varied between -90 to 90 degrees in 20 degree steps while the excitation is held in the $\hat x$ direction. Spectra are scaled to match intensities.}
+	\caption[Comparison of Raman spectra measured using circularly and linearly polarized light]{\label{fig:fri:circlelinear}Comparison of Raman spectra measured using circularly and linearly polarized light.
+	Measurements were taken at the labeled values of $\rho=r/R$ on a R=5 $\mathrm{\mu}$m graphene sealed microchamber under 0.80 MPa of applied absolute pressure.
+	The red dots are the sum of spectra taken with outgoing polarizations varied between -90 to 90 degrees in 20 degree steps while the excitation is held in the $\hat x$ direction.
+	The spectra taken with circularly polarized light (black dots) reproduces the summed polarization data.
+	Spectra are scaled to match intensities.
+	}
 \end{figure}
 
 The local Raman response is measured inside an optically accessible pressure chamber with a focused laser beam while variable pressures up to 0.80 MPa are used to push the FLG into the microchamber.
@@ -66,7 +71,10 @@ The beam waist of the focused laser was measured to be $0.81 \pm .01 \ \mathrm{\
 	\begin{center}
 	\includegraphics[scale=1]{Figs_Friction/SpotSize.pdf}
 	\end{center}
-	\caption[Determination of the beam waist of the focused laser in the pressure chamber]{\label{fig:fri:waist}Determination of the beam waist of the focused laser in the pressure chamber by scanning a sample with a gold pad under the focused beam while measuring the Si Raman line intensity. As the sharp edge of the gold pad moves under the laser, the Si line is blocked giving a measure of the beam size. Fitting the signal to an error function gives a beam waist of $0.81 \pm .01 \ \mu m$.}
+	\caption[Beam waste determination]{\label{fig:fri:waist}
+	Determination of the beam waist of the focused laser in the pressure chamber by scanning a sample with a gold pad under the focused beam while measuring the Si Raman line intensity.
+	As the sharp edge of the gold pad moves under the laser, the Si line is blocked giving a measure of the beam size.
+	Fitting the signal to an error function gives a beam waist of $0.81 \pm .01 \ \mu m$.}
 \end{figure}
 
 \section{Experimental Design}
@@ -98,7 +106,10 @@ By fitting the Raman data with the $p^{2/3}$ form predicted by the standard Henc
 	\begin{center}
 	\input{Figs_Friction/ambient}
 	\end{center}
-	\caption[Characteristic ambient pressure behavior of FLG sealed microchambers]{\label{fig:fri:ambient}Characteristic ambient pressure behavior of FLG sealed microchambers. (Top) Low contact force ($\approx 1\ \mathrm{nN}$) AFM taken at ambient pressure with line cuts above (bottom) the center frequency of single Lorentzian fit spectra taken at the center of the hole as a function of the applied gauge pressure for (a) (left hand side) a 5 $\mathrm{\mu}$m radius trilayer sealed microchamber and (b) (right hand side) a 3 $\mathrm{\mu}$m radius monolayer sealed microchamber.}
+	\caption[Characteristic ambient pressure behavior of FLG sealed microchambers]{\label{fig:fri:ambient}
+	The two characteristic ambient pressure behaviors of FLG sealed microchambers: Bubbled out (a) and snapped to the sidewall (b) measured on a 5 $\mathrm{\mu}$m radius trilayer sealed microchamber and 3 $\mathrm{\mu}$m radius monolayer sealed microchamber respectively.
+	The first row shows low contact force ($\approx 1\ \mathrm{nN}$), ambient pressure AFM topographies and line cuts.
+	The second row shows the pressure dependence of the single frequency Lorentzian fits to Raman spectra taken at the center of the microchamber.}
 \end{figure}
 
 In the second half of the devices, the pressure inside the microchamber was an atmosphere, as shown on the right side (b) of Figure \ref{fig:fri:ambient}.
@@ -142,7 +153,14 @@ Similar behavior is observed in each of the eight measured microchambers which h
 	\begin{center}
 	\input{Figs_Friction/qualresults}
 	\end{center}
-	\caption[Qualitative observations of graphene sliding]{\label{fig:fri:qualresults} Qualitative observations of graphene sliding.  The frequency shift of the Raman G band as a function of position for four line scans taken at 0.45 MPa and five line scans taken at 0.80 MPa from 3 separate pressure cycles scanned across a single 6 $\mathrm{\mu}$m diameter monolayer sealed microchamber. Each point represents the position of the center of a single Lorentzian fit to the Raman spectra at that position.  Solid vertical black lines are positioned at the edges of the microchamber and the dashed horizontal line indicates the zero strain position of the G band.  Data points are separated by $0.5 \ \mu m$; the focused beam has a waist of 0.81 $\mathrm{\mu}$m. Inset left is an optical image of the microchamber with line scan direction indicated. The bottom right inset is an SEM image of the device taken after all of the data was acquired.}
+	\caption[Qualitative observations of graphene sliding]{\label{fig:fri:qualresults}
+	Qualitative observations of graphene sliding.
+	The frequency shift of the Raman G band is shown as a function of position for four line scans taken at 0.45 MPa and five line scans taken at 0.80 MPa from 3 separate pressure cycles scanned across a single 6 $\mathrm{\mu}$m diameter monolayer sealed microchamber.
+	Each point represents the position of the center of a single Lorentzian fit to the Raman spectra at that position.
+	The solid vertical black lines are positioned at the edges of the microchamber and the dashed horizontal line indicate the zero strain position.
+	Data points are separated by $0.5 \ \mu m$; the focused beam has a waist of 0.81 $\mathrm{\mu}$m.
+	Inset left is an optical image of the microchamber with line scan direction indicated.
+	The bottom right inset is an SEM image of the device taken after all of the data was acquired.}
 \end{figure}
 
 To determine the nature of the strain outside of the microchamber, Raman spectra 2 $\mathrm{\mu}$m outside the edge of a 5 $\mathrm{\mu}$m radius monolayer covered microchamber were analyzed in detail using linearly polarized light.
@@ -155,7 +173,9 @@ The compressive tangential strain is expected: When an annulus of the supported 
 	\begin{center}
 	\input{Figs_Friction/qualout}
 	\end{center}
-	\caption[Linearly polarized Raman spectra of supported graphene]{\label{fig:fri:qualout} (a) Linearly polarized Raman spectra of supported graphene taken 2 $\mathrm{\mu}$m outside a 5 $\mathrm{\mu}$m radius graphene sealed microchamber pressurized to 0.80 MPa absolute pressure with the incident light polarized in the $\hat x$ direction ($\phi=0$) and the outgoing light linearly analyzed at the labeled angle. (b) The areas under the 1570.9 1/cm and the 1581.3 1/cm peak as a function of outgoing analyzer angle in black and red, respectively fit with $\pi$ out-of-phase sine squared functions.}
+	\caption[Discrimination of strain split Raman modes using linearly polarized light]{\label{fig:fri:qualout}
+	(a) Linearly polarized Raman spectra of supported graphene taken 2 $\mathrm{\mu}$m outside a 5 $\mathrm{\mu}$m radius graphene sealed microchamber pressurized to 0.80 MPa absolute pressure with the incident light polarized in the $\hat x$ direction ($\phi=0$) and the outgoing light linearly analyzed at the labeled angle.
+	The areas under the strain split 1570.9 1/cm and 1581.3 1/cm peaks are tuned on and off as a function of outgoing analyzer and are fit with $\pi$ out-of-phase sine squared functions in (b).}
 \end{figure}
 
 In the Raman and AFM experiments there is no evidence of the FLG wrinkling to relieve its compressive strain.
@@ -175,7 +195,13 @@ Thus, wrinkling in all other measured microchambers which have lower compressive
 	\begin{center}
 	\input{Figs_Friction/cylindrical}
 	\end{center}
-	\caption[Raman map of pressurized graphene sealed microchamber]{\label{fig:fri:cylindrical} Raman map of pressurized graphene sealed microchamber. (a) The $\omega^+$ peak and (b) $\omega^-$ peak for a 5 $\mathrm{\mu}$m radius graphene sealed microchamber pressurized to 0.80 MPa.  Color scale are set to emphasize the peak shifts experienced by the supported graphene.  The speckles in (b) appear because the suspended graphene spectra are not fit well by two Lorentzians.  Both maps show a high degree of radial symmetry inconsistent with the formation of wrinkles.}
+	\caption[Raman map of pressurized graphene sealed microchamber]{\label{fig:fri:cylindrical}
+	Two frequency fit Raman map of a pressurized graphene sealed microchamber.
+	The position of the the $\omega^+$ peak (a) and $\omega^-$ peak (b) are plotted for a 5 $\mathrm{\mu}$m radius graphene sealed microchamber pressurized to 0.80 MPa.
+	Color scale are set to emphasize the peak shifts experienced by the supported graphene.
+	The speckles in (b) appear because the suspended graphene spectra are not fit well by two Lorentzians.
+	Both maps show a high degree of radial symmetry inconsistent with the formation of wrinkles.
+	}
 \end{figure}
 
 \section{Continuum model of strain distributions}
@@ -195,7 +221,7 @@ The extended model, with f=520 MPa, is in good agreement with the dots in Figure
 	\begin{center}
 	\includegraphics{Figs_Friction/Figure_3.pdf}
 	\end{center}
-	\caption[Theoretical strains in FLG sealed microchambers]{\label{fig:fri:theory} Theoretical strains in FLG sealed microchambers. Comparisons of the radial and tangential strains predicted by Hencky's model (dashed), the extended Hencky model that includes strain outside the microchamber for a sliding friction of f=520 MPa (solid), and atomistic simulations of a 6 nm radius microchamber with 500 MPa of applied pressure (dots). The extended Hencky model used to extract friction agrees very well with the atomistic model.}
+	\caption[Continuum model of pressurized, graphene sealed, circular microchambers]{\label{fig:fri:theory} Theoretical strains in FLG sealed microchambers. Comparisons of the radial and tangential strains predicted by Hencky's model (dashed), the extended Hencky model that includes strain outside the microchamber for a sliding friction of f=520 MPa (solid), and atomistic simulations of a 6 nm radius microchamber with 500 MPa of applied pressure (dots). The extended Hencky model used to extract friction agrees very well with the atomistic model.}
 \end{figure}
 
 This work represents the first time that Hencky's model has been generalized to allow strain to be distributed outside of the microchamber's edge.
@@ -253,7 +279,10 @@ However, instead of continuing forward to determine the value of $b_0$ by requir
 	\begin{center}
 	\input{Figs_Friction/stressfigurei}
 	\end{center}
-	\caption[Force diagram of the suspended section of a pressurized graphene sealed microchamber]{\label{fig:fri:stressfigurei} Force diagram of the suspended section ($\rho<1$) of a pressurized graphene sealed microchamber. Depicted are the stresses, $N_r=E_{3D} \sigma_r$ and $N_t=E_{3D} \sigma_t$, and pressure, $P$, which act on a radial area element as viewed from the top and side.}
+	\caption[Forces acting on suspended, pressurized graphene]{\label{fig:fri:stressfigurei}
+	Forces acting on a suspended section ($\rho<1$) of a pressurized graphene sealed microchamber.
+	Depicted are the stresses, $N_r=E_{3D} \sigma_r$ and $N_t=E_{3D} \sigma_t$, and pressure, $P$, which act on a radial area element as viewed from the top and side.
+	}
 \end{figure}
 
 Outside of the hole the plate is constrained to move in the x-y plane, radial symmetry is preserved, and friction is present. 
@@ -304,7 +333,10 @@ This defines in closed form the strains for $\rho>1$ as a function of one free p
 	\begin{center}
 	\input{Figs_Friction/stressfigureo}
 	\end{center}
-	\caption[Force diagram of the supported section of a pressurized graphene sealed microchamber]{\label{fig:fri:stressfigureo} Force diagram of the supported section ($\rho>1$) of a pressurized graphene sealed microchamber.  Depicted are the stresses, $N_r=E_{3D} \sigma_r$ and $N_t=E_{3D} \sigma_t$, and friction, $f$, which act on a radial area element.}
+	\caption[Forces acting on supported, pressurized graphene]{\label{fig:fri:stressfigureo}
+	Force acting on a supported section ($\rho>1$) of a pressurized graphene sealed microchamber.
+	Depicted are the stresses, $N_r=E_{3D} \sigma_r$ and $N_t=E_{3D} \sigma_t$, and friction, $f$, which act on a radial area element.
+	}
 \end{figure}
 
 Next, the boundary condition for the stresses at the edge of the hole will be determined so that the stresses can be matched across the boundary.
@@ -336,7 +368,10 @@ This proves that the radial and tangential stresses must be continuous over the 
 	\begin{center}
 	\input{Figs_Friction/egestress}
 	\end{center}
-	\caption[The boundary condition at the edge of the microchamber]{\label{fig:fri:egestress}The boundary condition at the edge of the microchamber is determined by the stresses and forces acting on a thin, symmetrized volume element which spans the edge of the hole.  The tangential strains inside and outside are ignored because their contribution goes to zero as the width of the element, $\epsilon$ goes to zero.  $P$ is the pressure which acts out of plane.}
+	\caption[Boundary conditions at the microchamber edge]{\label{fig:fri:egestress}
+	The boundary condition at the edge of the microchamber is determined by the stresses and forces acting on a thin, symmetrized volume element which spans the edge of the hole.
+	The tangential strains inside and outside are ignored because their contribution goes to zero as the width of the element, $\epsilon$, goes to zero.
+	$P$ is the pressure which acts out of plane.}
 \end{figure}
 
 All of the necessary relationships have now been derived.
@@ -357,7 +392,9 @@ At the same time $b_0$ increases toward the limiting value of 1.66, the result f
 	\begin{center}
 	\includegraphics{Figs_Friction/b0rho0.pdf}
 	\end{center}
-	\caption[Numerical solutions for the values of $\rho_0$ and $b_0$]{\label{fig:fri:rho0b0} Numerical solutions for the values of $\rho_0$ and $b_0$, the furthest normalized radii that the strain reaches and the coefficient for the strain at the center of the hole, respectively. Note the large friction convergence to the values of the original Hencky model, $\rho_0 = 1$ and $b_0=1.66$.}
+	\caption[Numerical solutions to the continuum model]{\label{fig:fri:rho0b0}
+	Numerical solutions for the values of $\rho_0$ and $b_0$, the furthest normalized radii that the strain reaches and the coefficient for the strain at the center of the hole, respectively.
+	Note the large friction convergence to the values of the original Hencky model, $\rho_0 = 1$ and $b_0=1.66$.}
 \end{figure}
 
 This completes the derivation of the extended Hencky model.
@@ -379,7 +416,8 @@ The Ar-Si and Ar-O interaction parameters were obtained using the standard Loren
 	\begin{center}
 	\includegraphics[scale=0.12]{Figs_Friction/MD.pdf}
 	\end{center}
-	\caption[Schematic diagram of the atomistic simulation]{\label{fig:fri:MD} Schematic diagram of the atomistic simulation of the pressurized graphene sealed microchamber including (from bottom to top) amorphous SiO$_{2}$ substrate (red and orange atoms), circular graphene monolayer (brown atoms) and argon gas (cyan atoms). Visualization was performed using Visual Molecular Dynamics \cite{Humphrey1996}.}
+	\caption[Schematic diagram of the atomistic simulation]{\label{fig:fri:MD}
+	Schematic diagram of the atomistic simulation of the pressurized graphene sealed microchamber including (from bottom to top amorphous SiO$_{2}$ substrate (red and orange atoms), circular graphene monolayer (brown atoms) and argon gas (cyan atoms).Visualization was performed using Visual Molecular Dynamics \cite{Humphrey1996}.}
 \end{figure}
 
 The system was first relaxed at room temperature (300K) with a pressure of .03 MPa, at which point the gas density was slowly increased by reducing the volume of gas to increase the pressure.
@@ -426,7 +464,7 @@ The averages of the monolayer and the trilayer, $\gamma=1.89 \pm 0.01$ and $\bet
 	\caption[Determination of the Gr\"{u}neisen parameter and shear deformation potential]{\label{fig:fri:gammabeta}Determination of the Gr\"{u}neisen parameter and shear deformation potential based on global fits to a monolayer covered (blue, circles) and a trilayer covered (purple, squares) $\sim 5 \ \mu m$ radius sealed microchamber at 0.80 MPa of applied absolute pressure.
 	All three fitting parameters ($F$, $\gamma$, and $\beta$) were included in the fits.
 	In (a) and (b) the reduced dimensionality plots of the deviation of $\chi^2$ per degree of freedom from the minimum are plotted for the Gr\"{u}neisen parameter and shear deformation potential respectively.
-	The parabolic fits show sharp minimum.
+	The parabolic fits show sharp minimum indicating strongly determined parameters.
 	}
 \end{figure}
 
@@ -457,7 +495,7 @@ These are the first measurements of $\gamma$ and $\beta$ for which the sliding o
 		 \hline
 	\end{tabular}
 	\end{center}
-	\caption[Summary of the Gr\"{u}neisen parameter, $\gamma$, and shear deformation potential, $\beta$, as measured on different substrates]{\label{tab:fri:gb} Summary of the Gr\"{u}neisen parameter, $\gamma$, and shear deformation potential, $\beta$, as measured on different substrates.}
+	\caption[Summary of the Gr\"{u}neisen parameter and shear deformation potential as measured on different substrates]{\label{tab:fri:gb} Summary of the Gr\"{u}neisen parameter, $\gamma$, and shear deformation potential, $\beta$, as measured on different substrates.}
 \end{table}
 
 The extended Hencky model agrees extremely well with the measured spectra.
@@ -470,7 +508,10 @@ In comparison, without the theoretical extension the standard Hencky model would
 	\begin{center}
 	\input{Figs_Friction/fitlinescan}
 	\end{center}
-	\caption[Line scan spectra fit with the extended Hencky model]{\label{fig:fri:fitlinescan} Raman spectra from a line scan over a $\sim 5 \ \mu m$ radius monolayer graphene sealed microchamber with 0.80 MPa of applied pressure analyzed with the extended Hencky model (red lines).  The spectra taken along the path shown in the inset are arrayed vertically with spectra taken too close to the edge of the microchamber omitted (see text).  The black vertical line is positioned at the supported graphene's unstrained G band energy.}
+	\caption[Fit line scan spectra]{\label{fig:fri:fitlinescan} 
+	Raman spectra from a line scan over a $\sim 5 \ \mu m$ radius monolayer graphene sealed microchamber with 0.80 MPa of applied pressure fit successfully using the extended Hencky model (red lines).
+	The spectra taken along the path shown in the inset are arrayed vertically with spectra taken too close to the edge of the microchamber omitted (see text).
+	The black vertical line is positioned at the supported graphene's unstrained G band energy.}
 \end{figure}
 
 \section{Measured frictional dependencies}
@@ -502,7 +543,8 @@ The best fit to the strain dependence is $0.002 MPa/\epsilon_{r,edge}$.
 	\begin{center}
 	\includegraphics{Figs_Friction/Tri_mu.pdf}
 	\end{center}
-	\caption[The sliding friction for trilayer graphene as a function of the absolute applied pressure]{\label{fig:fri:trimu} The sliding friction for trilayer graphene as a function of the absolute applied pressure extracted from Raman lines scans over two $5 \ \mu m$ radii trilayer sealed microchambers.
+	\caption[The sliding friction for trilayer graphene]{\label{fig:fri:trimu}
+	The sliding friction for trilayer graphene as a function of the absolute applied pressure extracted from Raman lines scans over two $5 \ \mu m$ radii trilayer sealed microchambers.
 	The datat is fit with Amonton's law, $f=\mu P_{abs}$, giving a coefficient of friction between trilayer graphene and $\mathrm{SiO_2}$ of $\mu=0.11 \pm 0.01$. }
 \end{figure}
 

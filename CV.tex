@@ -1,3 +1,6 @@
+\chapter*{Curriculum Vitae}
+\addcontentsline{toc}{chapter}{Curriculum Vitae}
+
 {
 \begin{singlespace}
 		%To have hanging indents in a table, must put \hsect in table
@@ -11,8 +14,11 @@
 		\newcommand{\Lhind}[0]{15pt}
 		\newcommand{\sspace}[0]{.2 cm }
 		\newcommand{\sect}[2]{
-			\noindent \begin{tabular}{@{} p{.1 \textwidth} p{.85 \textwidth}}
-			\noindent \textbf{#1:} & \\
+			\noindent
+			\begin{tabular}{@{} p{.1 \textwidth} @{} p{.9 \textwidth} @{}}
+			% First line is the section header which can be bigger than the first column
+			\multicolumn{2}{@{} l @{}}{\textbf{#1:} } \\
+			% All other lines 
 			& 
 			\hsect{\Lhind}{\sspace}
 			#2
@@ -41,12 +47,13 @@
 		%The big space between sections
 		\newcommand{\bigspace}[0]{\vspace{.3 cm} }
 
-%my name
-\noindent{\huge Alexander Kitt} \newline
-Department of Physics \hfill (585) 737-3493 \newline
-Boston University \hfill alexander.kitt@gmail.com \newline
-590 Commonwealth Avenue \newline
-Boston, MA 02215\newline
+% Personal information
+\noindent
+{\huge Alexander Kitt} \\
+Department of Physics \hfill (585) 737-3493 \\
+Boston University \hfill alexander.kitt@gmail.com \\
+590 Commonwealth Avenue \\
+Boston, MA 02215
 
 \bigspace
 
