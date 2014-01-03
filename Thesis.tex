@@ -3,6 +3,7 @@
 \pdfoptionpdfminorversion 6
 % Slightly newer pdf format outputted.  Helps compatability with included pdf images
 
+\includeonly{form_5_abstract}
 % \includeonly{Introduction,TightBinding,PVP,Friction,Thermal,Kekule,Conclusion}
 % \includeonly{Appendix_PVP_strainedBZ,Appendix_PVP_idependence,Appendix_Fri_Fit,Appendix_kek_hopps,Appendix_kek_electronics}
 % \includeonly{form_1_title,form_copyright,form_2_approval,form_4_acknowledge,form_5_abstract,form_6_abbreviations,CV}
@@ -24,8 +25,8 @@
 %%    Custom Commands     %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\angstrom}{\textup{\AA}}		% Angstrom command
-\newcommand{\thesistitle}{MANIPULATING GRAPHENE'S LATTICE: PSEUDO VECTOR POTENTIALS, ANOMALOUS FRICTION, AND STRAIN DEPENDENT THERMAL CONDUCTIVITY}
-\newcommand{\thesistitlelower}{Manipulating graphene's lattice: Pseudo vector potentials, anom\-alous friction, and strain dependent thermal conductivity}
+\newcommand{\thesistitle}{MANIPULATING GRAPHENE'S LATTICE TO CREATE PSEUDO VECTOR POTENTIALS, DISCOVER ANOMALOUS FRICTION, AND MEASURE STRAIN DEPENDENT THERMAL CONDUCTIVITY}
+\newcommand{\thesistitlelower}{Manipulating graphene's lattice to create pseudo vector potentials, discover anomalous friction, and measure strain dependent thermal conductivity}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%     Format             %%
@@ -64,9 +65,9 @@
 	\setcounter{page}{4}					% Sets the page number to 4
 	\include{form_4_acknowledge}
 	\include{form_5_abstract} 
-	\tableofcontents
-	\listoftables
-	\listoffigures
+	% \tableofcontents
+	% \listoftables
+	% \listoffigures
 	\include{form_6_abbreviations} 			% Listed alphabetically
 
 
@@ -97,10 +98,10 @@
 
 	% Bibliography
 	\backmatter
-	\begin{singlespace}						% Bibliography can be single spaced
-		\bibliographystyle{apalike}			% Should be listed alphabetically
-		\bibliography{thesis}
-	\end{singlespace}
+	% \begin{singlespace}						% Bibliography can be single spaced
+	% 	\bibliographystyle{apalike}			% Should be listed alphabetically
+	% 	\bibliography{thesis}
+	% \end{singlespace}
 
 	%CV at end--probably the absolute last thing to tack on
 	\include{CV}
