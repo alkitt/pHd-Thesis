@@ -4,7 +4,7 @@
 \newcommand{\alat}{1}
 \newcommand{\amp}{.25}
 \newcommand{\Klen}{2 cm}
-\newcommand{\psize}{2 mm}
+\newcommand{\psize}{1.4 mm}
 \newcommand{\sqth}{1.73205080757}
 
 % Functions which draws the Kekule lattice
@@ -32,9 +32,9 @@
 	\end{scope}
 }
 
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.5]
 	% Real space
-	\begin{scope}[xshift=-3.75cm, scale=1,>=stealth,
+	\begin{scope}[xshift=-5.25cm, scale=1,>=stealth,
 		Bu/.style={circle,draw=blue!25,fill=blue!10,
 			thick,minimum size=\psize,inner sep=0pt}, 					% Unkekuled A sublattice dots
 		Au/.style={circle,draw=orange!35,fill=orange!20,
@@ -58,7 +58,7 @@
 
 
 	% Reciprical space
-	\begin{scope}[xshift=3.75cm,yshift=-1 cm,scale=1,
+	\begin{scope}[xshift=5.25cm,yshift=-1 cm,scale=1,
 		BZold/.style={color=black!75,very thick,dashed},
 		BZnew/.style={color=black,very thick},
 		Bar/.style={color=black,very thick,->},
@@ -91,7 +91,7 @@
 		\draw[fill=black] (0,0) circle[circ2] node[anchor=west]{$\Gamma$};
 		\draw[fill=black] (\Klen/2,0) circle[circ2] node[anchor=west]{$M'$};
 	\end{scope}
-	\node at (-7cm,3.5cm) {\textbf{(a)}};
-	\node at ( 1cm,3.5cm) {\textbf{(b)}};
+	\node at (-9.5cm,3.5cm) {\textbf{(a)}};
+	\node at ( 2.5cm,3.5cm) {\textbf{(b)}};
 \end{tikzpicture}
 }

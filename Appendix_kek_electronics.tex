@@ -1,5 +1,63 @@
 \chapter{Electrical transport experimental design \label{chap:elec}}
-Gate dependent electrical transport measurements are central to the study of the phonon induced electrical band gap of Chapter \ref{chap:kek}.
+\textit{In situ}, four probe, gate dependent electrical transport measurements can be used to measure the phonon induced electrical band gap discussed in Chapter \ref{chap:kek}.
+The fingerprint of the phonon induced band gap is transport phenomena which are corrolated with the creation of the Kekul\'e phonon.
+In this Appendix gated electrical transport is considered, the expected changes in the electrical transport of gapped graphene is discussed, and finally the measurement of gated electrical transport is described in detail.
+
+\section{Gate dependent transport}
+The resistance, $R$, of a graphene device is related to the two dimensional resistivity, $\rho$, and the two dimensional conductivity, $\sigma$, through
+\begin{equation*}
+	\rho=\frac{1}{\sigma}=R \frac{w}{L} \ ,
+\end{equation*}
+where $w$ is the width and $L$ is the length of the measured graphene strip.
+To differentiate resistance and resistivity, the units of resistivity are written as $\Omega/\square$.
+Gate dependent resistance measurements provide information about a graphene device.
+
+Graphene's two dimensional nature makes it simple to continuously modify the Fermi energy using a back gate.
+Rather than varying the concentration of a dopant as must be done for most three dimensional systems, graphene's Fermi energy can be capacitively tuned with a back gate, as shown schematically in Figure \ref{fig:kek:FET}.
+Together, the silicon back gate and the graphene form a parallel plate capacitor with a plate separation of 285 nm and the dielectric constant of thermal dioxide.
+Changing the back gate voltage, $V_{BG}$, adds or removes a charge of $n=CV_{BG}/e$ to the graphene where $C$ is the capacitance and $e$ is the charge of the electron.
+When $V_{BG}$ is set such that the Fermi energy sits at the charge neutrality point there are the fewest number of charge carriers and thus the highest resistance.
+This situation doesn't always correspond to $V_{BG}=0$; every device has a finite number of dopants which shift the Dirac point from zero volts.
+Tuning the back gate voltage away from the Dirac point adds additional charges and lowers the resistance.
+
+\begin{figure}
+	\begin{center}
+	\input{Figs_TightBinding/FET}
+	\end{center}
+	\caption[Side view of a back gated graphene device.]{\label{fig:kek:FET} 
+	Side view of a back gated graphene device.
+	The contacted graphene (black line) is on top of 285 nm of thermal oxide (blue) grown on heavily doped silicon (gray).
+	A voltage difference of $V_{BG}$ is placed between the silicon and the graphene to drive charges into the graphene.
+	}	
+\end{figure}
+
+Near the Dirac point in gapless graphene the conductivity is symmetric and nearly linear allowing a field effect mobility, $\frac{d \sigma}{d (n e)}$, to be defined.
+Even though there are no charge carriers at the Dirac point there is always a residual conductivity, $\sigma_0$ \cite{DasSarma2011}.
+Further from the Dirac point the conductivity is sub-linear and is best fit by
+\begin{equation*}
+	\frac{1}{\sigma}=\frac{1}{n e \sigma_C + \sigma_0} + \rho_S \ ,
+\end{equation*}
+where $\mu_C$ is the mobility due to long-range Coulomb scattering and $\rho_S$ is from short range scattering \cite{Dean2010,DasSarma2011,Remi2013T}.
+Higher quality devices have higher mobilities and Dirac points closer to $V_{BG}=0$.
+
+For gapless graphene, the Fermi energy can be determined from $V_{BG}$ by matching the integrated density of states (Equation \ref{eq:TB:DOS}) to $n$.
+Some useful relationships for graphene on 285 nm of thermal oxide are
+\begin{align*}
+	n(cm^{-2})&\sim 7 \times 10^{10} V_{BG} (Volts) \\
+	\mu(meV) &\sim 30 \sqrt{V_{BG} (Volts)} \\
+	\mu(meV) &\sim 1 \times 10^{-7} \sqrt{n(cm^{-2})} \ ,
+\end{align*}
+where $\mu$ is the Fermi energy.
+
+\section{Electrical transport fingerprints of the phonon induced band gap}
+The opening of the band gap should have two fingerprints in electrical transport.
+First, the resistance at the charge neutrality point should increase.
+If the capability were available, measuring the temperature dependence of this resistance would give a direct measurement of the size of the band gap.
+Second, because of the energy required to excite an electron across the band gap, the gate dependent conductivity should exhibit a low conductivity plateau centered on the charge neutrality point.
+The width of this plateau in volts should correspond to the band gap in electron volts plus any many body effects.
+The corrolation of these fingerprints with the excitation of the Kekul\'e phonon would be proof of the phonon induced band gap.
+
+\section{Measurement of the gate dependent electrical transport}
 When performing these measurements the goals are to achieve sufficient signal to noise while protecting the nanomaterial from damage.
 In this Appendix the devices used to measure the transport, the precautions employed to protect the graphene, and the methods of shielding the electronics are described.
 Because of its importance and because it is so easily forgotten, it should be immediately mentioned that a grounding strap should always be worn when measuring graphene's electrical properties.

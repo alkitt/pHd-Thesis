@@ -1,7 +1,27 @@
 \chapter{Phonon induced band gap in graphene \label{chap:kek}}
+Graphene's conspicuous lack of an electrical band gap prevents it from being used in transistor applications which require a large on off ratio.
+As such, there has been a large effort to induce an electrical band gap.
+Groups have generated a 25 meV gap by placing graphene on hexagonal boron nitride breaking the A, B sub-lattice symmetry \cite{Hunt2013}, generated a tunable gap of up to 250 meV by applying an out of plane electrical field to bilayer graphene \cite{Zhang2009}, and theorists have predicted that electron confinement in graphene nanoribbons should generate a bulk band gap \cite{CastroNeto2009}.
+Iadecola and co-workers recently proposed an alternative, dynamic method of gapping graphene \cite{Iadecola2013,Iadecola2013a}.
+They showed that when graphene is pushed out of equilibrium by exciting a particular optical phonon, the electrical band structures gaps. 
+
+In this chapter we consider the effects of these distortions in the frame work of a Peierls transition and discuss the prospects of measuring the induced band gap.
+This discussion represents the opposite limit of Chapters \ref{chap:PVP} and \ref{chap:therm} where the effect of long wavelength lattice distortions on graphene's electrical and thermal properties were discussed.
 
 \section{Theory}
-The $\bm{K}$ point Kekul\'e phonon corresponds to a high spatial frequency deformation of graphene's lattice.
+This section briefly discusses Iadecola and coworker's theory of the phonon induced band gap in graphene in the framework of a Peierls transition.
+Although the real space approach is slightly different, the results are in agreement with Iadecola and coworkers.
+
+When considering how these phonon modes affect the electronic dispersion, we will use the Born-Oppenheimer approximation.
+According to this approximation, the very fast electrons react nearly instantaneously to the slow, phonon induced modifications of the lattice.
+This allows the modified electronic dispersion to be calculated assuming the lattice is frozen in sequential snapshots.
+In this section this calculation is done using a tight binding model in the expanded unit cell of the deformed lattice.
+It is performed in two parts.
+First, the effects of the change in lattice periodicity are discussed including a discussion of the zone folded electrical dispersion.
+Second, it is shown that by perturbing the zone folded Hamiltonian, the phonons gap the electronic dispersion.
+
+\subsection{The Kekul\'e phonon}
+The phonon which induces the electrical band gap is the so called Kekul\'e phonon \cite{Hou2007}, the highest energy optical phonon at the $\bm{K}$ point.
 Displacement vectors describe the eigenmode of this phonon by detailing the displacements of the atoms in the A and B sub-lattices originally at position $\vec{r}_{A,B}$
 \begin{equation}
 	u^{A,B}(\vec{r}_{A,B},t)=\frac{1}{2} c \ e^{i \vec{r}_{A,B} \cdot \bm{K}} e^{-i \omega t} 
@@ -14,11 +34,10 @@ Displacement vectors describe the eigenmode of this phonon by detailing the disp
 where the top sign corresponds to the A sub-lattice and the bottom sign corresponds to the B sub-lattice.
 Here c is the amplitude, $\omega$ is the frequency of the phonon, and $t$ is time.
 Snapshots showing the time dependence of the resulting lattice distortion are shown in Figure \ref{fig:kek:snapshots}.
-This phonon mode is special in that the atoms in each sub-lattice rotate around their equilibrium positions without ever returning to equilibrium.
+The atoms in each sub-lattice rotate around their equilibrium positions without ever returning to their equilibrium position.
 Atoms in the A sub-lattice are left handed, rotating in the clockwise direction while the atoms in the B sub-lattice are right handed.
-As time progresses, adjacent A and B sub-lattice atoms dimerize in a sequential fashion.
-At $\omega t=\{90 \text{\textdegree}, 210 \text{\textdegree}, 330 \text{\textdegree} \}$ the dimerization switches between the three nearest neighbors.
-At all other time the system is in varying phases of dimerization.
+At $\omega t=\{90 \text{\textdegree}, 210 \text{\textdegree}, 330 \text{\textdegree} \}$ adjacent A and B sub-lattice atoms form well ordered dimers with their nearest neighbors.
+In the intervening time the system remains partially dimerized.
 This dimerization is similar to the Peierls distortion in polyacetylene except that in this two dimensional analog the system does not gap spontaneously.
 Instead the phonon must be continuously excited to maintain the gap.
 
@@ -32,22 +51,10 @@ Instead the phonon must be continuously excited to maintain the gap.
 		Faded dots indicating the intrinsic graphene lattice are included for reference.}
 \end{figure}
 
-The time reversed pair of the $\bm{K}$ Kekul\'e phonon, the $\bm{K'}$ Kekul\'e phonon, corresponds to sub-lattices rotating with opposite handedness.
-If both $\bm{K}$ and $\bm{K'}$ modes were excited at once, the rotations with opposite circular polarizations would sum resulting in linear polarized atomic motion.
-In this case the dimerization would only be temporary.
-The atoms would return to their equilibrium positions during their oscillations.
-Thus, it is important to excite exclusively the $\bm{K}$ or $\bm{K'}$ phonon to excite gap.
-In the experimental section our method of selecting the phonon will be described.
-In the theory section, for simplicity we will continue to concentrate on the $\bm{K}$ phonon.
-However, the resulting dispersion is the same for either mode. 
-
-When considering how these phonon modes affect the electronic dispersion, we will use the Born-Oppenheimer approximation.
-According to this approximation, the very fast electrons react nearly instantaneously to the slow phonon induced modifications of the lattice.
-Thus, the modified electronic dispersion can be calculated assuming the lattice is frozen in sequential snapshots.
-In this section this calculation is done using a tight binding model in the expanded unit cell of the deformed lattice.
-It is performed in two parts.
-First, the effects of the change in lattice periodicity are discussed including a discussion of the zone folded electrical dispersion.
-Second, it is shown that by perturbing the zone folded Hamiltonian the phonons gap the electronic dispersion.
+The time reversed pair of the $\bm{K}$ Kekul\'e phonon, the $\bm{K'}$ Kekul\'e phonon, exhibits a similar distortion with sub-lattices rotating with opposite handedness.
+The resulting electrical dispersion is the same for either mode so for simplicity we concentrate only on the $\bm{K}$ phonon.
+However, if both $\bm{K}$ and $\bm{K'}$ modes are excited simultaneously, the opposite circular polarizations sum to linear polarized atomic motion with only temporary dimerization and no sustained band gap.
+Thus, the experimental realization of this effect requires the exclusive excitation of the $\bm{K}$ or the $\bm{K'}$ Kekul\'e phonon.
 
 \subsection{Kekul\'e geometry}
 The Kekul\'e distortion causes an expansion of the unit cell, a reduction of the BZ, and a modification of the primitive lattice vectors and reciprocal lattice vectors.
@@ -65,7 +72,7 @@ This tripled unit cell is time independent; it never returns to the intrinsic tw
 	\begin{center}
 	\input{Figs_Kekule/Kekule_geometry}
 	\end{center}
-	\caption[The geometry of the Kekul\'e lattice]{\label{fig:kek:geometry}
+	\caption[Geometry of the Kekul\'e lattice]{\label{fig:kek:geometry}
 		The real space (a) and reciprocal space (b) geometry of the Kekul\'e lattice.
 		(a) shows a snapshot of the atomic positions with the A sub-lattice in orange and the B sub-lattice in blue.	
 		For reference, the intrinsic graphene lattice is shown using faded dots.
@@ -87,7 +94,7 @@ The primitive reciprocal lattice vectors,
 	\vec{B}_+&=\frac{1}{3} (2\vec{b}_+ + \vec{b}_-)=\frac{2 \pi}{3 \sqrt{3} a}(+1,\sqrt{3}) \\
 	\vec{B}_-&=\frac{1}{3} (2\vec{b}_- + \vec{b}_+)=\frac{2 \pi}{3 \sqrt{3} a}(-1,\sqrt{3}) \ ,
 \end{align*}
-generate a hexagonal BZ rotated 90 degrees and shrunken by a factor of three relative to the intrinsic lattice.
+generate a hexagonal BZ rotated 90 degrees with area condense by a factor of three relative to the intrinsic lattice.
 Unlike for intrinsic graphene, the interesting physics occurs near the center of the BZ.
 For completeness, three equivalent corners of the BZ are positioned at
 \begin{equation*}
@@ -102,8 +109,7 @@ Since the size of BZ is reduced by a factor of three, there are two zone folding
 
 The zone folding schemes shown in Figure \ref{fig:kek:folding} describe the two distinct ways the symmetry reduced area of the new BZ can be mapped onto via translations of reciprocal lattice vectors.
 The rest of the BZ can be constructed using symmetry operations on the symmetry reduced area.
-In both zone folding schemes, the Dirac point is translated from the corner of the old BZ to the zone center of the new BZ.
-Thus, the $\Gamma$ point is the most interesting point in the new BZ.
+In both zone folding schemes, the Dirac point is translated from the corner of the old BZ to the zone center of the new BZ making the $\Gamma$ point the most interesting point in the new BZ.
 It is also worth noting that the right edge of the symmetry reduced area in zone fold 1 shares its right edge with the symmetry reduced area already inside the new BZ.
 Also, the top edge of the symmetry reduced area is shared between zone fold 1 and zone fold 2.
 
@@ -149,8 +155,7 @@ In the meantime the bond independent hopping energy of intrinsic graphene, $t_0$
 	\input{Figs_Kekule/Hoppings}
 	\end{center}
 	\caption[Diagram of the hoppings in the expanded Kekul\'e unit cell]{\label{fig:kek:hoppings}
-		A diagram of the hoppings included in the Hamiltoninan.
-		Hoppings connect atoms originally from the A sub-lattice (orange) to atoms originally from the B sub-lattice (blue).
+		The hoppings included in the Hamiltonian connect atoms originally from the A sub-lattice (orange) to atoms originally from the B sub-lattice (blue).
 		They can pass between the labeled intrinsic unit cells (dashed ellipses) and they can also pass between the labeled extended unit cells (dashed rectangles).
 		For reference the directions of the nearest neighbor vectors are included.
 	}
@@ -186,7 +191,7 @@ The Hamiltonian can then be expressed in matrix form as
 	\label{eq:kek:Hzonefold}
 \end{equation}
 where $\psi^{\dagger}=\left( a^{\dagger}_1, a^{\dagger}_2, a^{\dagger}_3, b^{\dagger}_1, b^{\dagger}_2, b^{\dagger}_3 \right)$.
-As expected, the six by six Hamiltonian will provide six energy levels.
+The six by six Hamiltonian will provide six energy levels as expected.
 
 The resulting electronic dispersion is shown in Figure \ref{fig:kek:zfdisp}.
 To best show the shapes of the bands the dispersion is plotted both over the full Kekul\'e BZ and also over only the symmetry reduced area.
@@ -210,25 +215,21 @@ The electronic dispersion calculated with a tight binding model of the expanded 
 The excitation of the Kekul\'e phonon mode does more than just enlarge the unit cell, it also modifies the hopping energies.
 This is similar to the case of strained graphene where the altered bond lengths caused altered hopping energies and generated new physics.
 In this case, however, the bond lengths vary with a much higher spatial frequency and the slowly varying approximation described in Appendix \ref{chap:idep} is not applicable.
-In fact, the atomic displacements in Equation \ref{eq:kek:displacements} will lead to hopping alterations with a spatial frequency of $\bm{G}=\bm{K}-\bm{K'}$.
-As mentioned in Appendix \ref{chap:idep}, a distortion with this frequency is expected to couple the inequivalent $\bm{K}$ and $\bm{K'}$ points.
 This coupling will generate a band gap at the $\Gamma$ point of the zone folded dispersion.
 
-Before determining the hopping alterations the bond length changes must be found.
-Although it was helpful in finding the lengths of the strained nearest neighbor vectors in Section \ref{sub:PVP:straindistances}, the Cauchy-Born rule cannot be used here.
-The iTO phonon causes the atoms in the A and B sub-lattices to rotate in opposite directions, an effect which an not be captured in the Cauchy-Born frame work.
-Instead, the bond lengths must be calculated directly from the displacements.
 Iadecola \textit{et al.} showed that the bond length alterations generate hopping alterations,
 \begin{align}
 	\delta t_{m,j}&=\frac{1}{3} \Delta(t) e^{i \bm{K} \cdot \vec{\delta}_j} e^{i \bm{G} \cdot \vec{r}_{m}}+\text{c.c.} \nonumber \\
 	& \text{with } \Delta(t)=-i 3 \beta t_0 \frac{c^*}{a} e^{i \omega t} \label{eq:kek:hopps} \ ,
 \end{align}
-which have a spatial frequency component of $\bm{G}$ that couples the Dirac points \cite{Iadecola2013}.
+which have a spatial frequency component of $\bm{G}=\bm{K}-\bm{K'}$ that couples the Dirac points \cite{Iadecola2013}.
 Here $\vec{r}_{m}$ is the position of the A sub-lattice atom involved in the hopping.
 Index $m$ indicates which of the three intrinsic unit cells embedded in the enlarged Kekul\'e unit cell the atom is in.
 The B sub-lattice atom is specified through $\vec{\delta}_j$, the unperturbed nearest neighbor vector which connects the A sub-lattice atom to the B sub-lattice atom.
 Figure \ref{fig:kek:hoppings} summarizes these indices.
 For completeness, the calculation of Equation \ref{eq:kek:hopps} is included in Appendix \ref{chap:hopps}.
+It is worth noting that the Cauchy-Born rule cannot be used here as it was in Section \ref{sub:PVP:straindistances}.
+The iTO phonon causes the atoms in the A and B sub-lattices to rotate in opposite directions, an effect which is not captured in the Cauchy-Born frame work.
 
 \subsection{Tight binding of the expanded Kekul\'e lattice}
 
@@ -291,23 +292,15 @@ Finally, the lattice modifications induce couplings which open a band gap.
 The only difference with polyacetylene is that the gap in graphene does not form spontaneously.
 Instead, phonons must be continuously created to gap the system.
 
-\section{Experimental design}
-The experimental measurement of the phonon induced band gap has two components: The excitation of the phonon using neon scattering and the measurement of the resulting band gap using electrical transport.
+\section{Measurement prospects}
+An experimental measurement of the phonon induced band gap has two components: The excitation of the phonon and the measurement of the resulting band gap.
+The former is the more difficult of the two; the electrical transport measurements described in Appendix \ref{chap:elec} can be used to measure the resulting band gap.
+The large momentum and energy associated with the Kekul\'e phonon makes their excitation using surface accoustic waves, evanescent fields, surface plasmons, or temperature impractical.
+In this section we discuss the prospects of directly exciting the Kekul\'e phonon using a neon seeded helium beam.
 
-\subsection{Phonon excitation}
-
-\begin{figure}
-	\begin{center}
-	\input{Figs_Kekule/Scattering}
-	\end{center}
-	\caption[Neon scattering geometry]{
-		The degrees of freedom in the neon scattering geometry.
-	}
-\end{figure}
-
-\subsection{Estimation of the band gap}
+To determine the feasibility of this measurement we will estimate the expected band gap.
 The size of the band gap is estimated in three steps.
-The band gap is related to atomic displacements, the atomic displacements are related to the number of phonons, and the number of phonons is estimated based on the neon flux and the phonon lifetime.
+The band gap is related to atomic displacements, the atomic displacements are related to the number of phonons, and the number of phonons is estimated based on the neon flux and the phonon persistence time.
 Based on Equation \ref{eq:kek:hopps}, the band gap is given by
 \begin{equation*}
 	gap=2|\Delta|=6 \beta t_0 \frac{|c|}{a} \approx 50 \ eV \ \frac{|c|}{a} \ ,
@@ -330,84 +323,30 @@ Finally, the number of excited phonons can be calculated using the steady state 
 	\frac{dn}{dt}=f \eta A-\frac{n}{\tau}=0 \ ,
 \end{equation*}
 where $f \approx 10^{18} \ atoms/m^2/s$ is the neon flux, $\eta \geq 10^{-2}$ is the scattering efficiency, and $\tau$ is the persistence time of the phonon.
-The persistence time is longer than the phonon lifetime because not all phonon decay channels result in less phonons.
-For instance, if a phonon decays into an electron hole pair this electron hole pair can recombine to recreate the same phonon thereby maintaining the number of phonons in the system.
-However, the phonon lifetime can be used to estimate a lower bound for the band gap.
+The persistence time is longer than the phonon lifetime because not all phonon decay channels result in fewer phonons.
+For instance, if a phonon decays into an electron hole pair that electron hole pair can recombine and replace the original phonon.
+The phonon lifetime can, however, be used to estimate a lower bound for the band gap.
 For a phonon lifetime of  0.2 ps estimated based on the $27 \ cm^{-1}$ line width of the Raman 2D feature, the expected band gap is
 \begin{equation*}
 	gap \geq 6 \beta t_0 \sqrt{\frac{2 \hbar}{M \omega}}\sqrt{f \eta \tau} \approx 50 \ eV \ 10^{-11} \ m \ 10 \ \frac{1}{m}
-	= 5 \ neV \ .
+	\approx 5 \ neV \ .
 \end{equation*}
-The short phonon lifetime makes it very difficult to create enough phonons to open a sufficient band gap.
-If the persistence time were a factor of $10^12$ longer than the phonon lifetime ($\tau \approx 0.2 \ s$), the system would reach a continuous bandgap of roughly 5 meV.
-It is not entirely outside the range of possibility for the phonon persistence times to be this long; acoustic phonons have lifetimes on this order.
+This illustrates the difficulty in creating a sufficient number of phonons to open a measurable band gap.
+If the persistence time were a factor of $10^12$ longer than the phonon lifetime ($\tau \approx 0.2 \ s$), the system would reach a continuous bandgap of roughly 5 meV measurable at room temperature.
+This seemingly unending lifetime is not entirely outside the range of possibility.
+Acoustic phonons have lifetimes on this order.
 A more detailed calculation of the Kekul\'e phonon decay channels is necessary for a better estimation of the phonon persistence time and the expected band gap.
 
-In the case of short persistence times it makes sense to think of the system in the stochastic regime.
+In the case of short persistence times it makes sense to think of the system stochastically.
 A neon atom would hit a $10 \ \mu m^2$ sample and create a phonon every $10 \ \mu s$ based on $f$ and $\eta$.
 If $\tau << 10 \ \mu s$ the system would spend most of its time in its unexcited, ungapped, instrinsic state.
 Assuming that the coherence length of the phonon covers the whole sample, phonon creation events would cause temporary transitions to a gapped state.
 For the $10 \ \mu m^2$ sample with $2 \times 10^8$ unit cells a single phonon excitation would correspond to a band gap of roughly 0.5 meV or 6 Kelvin.
 Liquid helium temperature electrical transport could be used to measured a gap of this magnitude.
 However, for a persistence time on the order of picoseconds the system is only gapped a factor of $10^{-6}$ of the time.
-To overcome this signal to noise issue the neon seeded helium beam could be chopped and the electrical transport measurements described in the next section could be locked in to the chopping frequency.
+A possible method to overcome this signal to noise issue would be to chop the helium neon excitation beam and lock the electrical transport measurements in to the chopping frequencies.
 
-\subsection{Band gap measurements}
-The development of the band gap will be observed using \textit{in situ} four probe, gated, electrical transport measurements.
-When $\phi$ is set such that the neon beam is along the $\bm{K}$ or $\bm{K'}$ directions the Kekul\'e phonon should be excited, the band gap should be opened, and the gate dependent electrical transport should be altered.
-The fingerprint of the phonon induced band gap will be transport phenomena which exhibit the 60 degree periodicity of the lattice.
-In this section gated electrical transport measurements are described and the expected change in the electrical transport of gapped graphene is discussed.
-
-The resistance, $R$, of the graphene device is measured using a four probe, low frequency AC, lock-in technique. 
-Measurement details are are included in Appendix \ref{chap:elec}.
-The measured resistance is related to the two dimensional resistivity, $\rho$, and the two dimensional conductivity, $\sigma$, through
-\begin{equation*}
-	\rho=\frac{1}{\sigma}=R \frac{w}{L} \ ,
-\end{equation*}
-where $w$ is the width and $L$ is the length of the measured graphene strip.
-To differentiate resistance and resistivity, the units of resistivity are written as $\Omega/\square$.
-Gate dependent resistance measurements provide information about the electrical dispersion.
-
-Graphene's two dimensional nature makes it simple to continuously modify the Fermi energy using a back gate.
-Rather than varying the concentration of a dopant as must be done for most three dimensional systems, graphene's Fermi energy can be capacitively tuned with a back gate, as shown schematically in Figure \ref{fig:kek:FET}.
-Together, the silicon back gate and the graphene form a parallel plate capacitor with a plate separation of 285 nm and the dielectric constant of thermal dioxide.
-Changing the back gate voltage, $V_{BG}$, adds or removes a charge of $n=CV_{BG}/e$ to the graphene where $C$ is the capacitance and $e$ is the charge of the electron.
-When $V_{BG}$ is set such that the Fermi energy sits at the charge neutrality point there are the fewest number of charge carriers and thus the highest resistance.
-This situation doesn't always correspond to $V_{BG}=0$; every device has a finite number of dopants which shift the Dirac point from zero volts.
-Tuning the back gate voltage away from the Dirac point adds additional charges and lowers the resistance.
-
-\begin{figure}
-	\begin{center}
-	\input{Figs_TightBinding/FET}
-	\end{center}
-	\caption[Side view of a back gated graphene device.]{\label{fig:kek:FET} 
-	Side view of a back gated graphene device.
-	The contacted graphene (black line) is on top of 285 nm of thermal oxide (blue) grown on heavily doped silicon (gray).
-	A voltage difference of $V_{BG}$ is placed between the silicon and the graphene.
-	}	
-\end{figure}
-
-Near the Dirac point in gapless graphene the conductivity is symmetric and nearly linear allowing a field effect mobility, $\frac{d \sigma}{d (n e)}$, to be defined.
-Even though there are no charge carriers at the Dirac point there is always a residual conductivity, $\sigma_0$ \cite{DasSarma2011}.
-Further from the Dirac point the conductivity is sub-linear and is best fit by
-\begin{equation*}
-	\frac{1}{\sigma}=\frac{1}{n e \sigma_C + \sigma_0} + \rho_S \ ,
-\end{equation*}
-where $\mu_C$ is the mobility due to long-range Coulomb scattering and $\rho_S$ is from short range scattering \cite{Dean2010,DasSarma2011,Remi2013T}.
-Higher quality devices have higher mobilities and Dirac points closer to $V_{BG}=0$.
-
-For gapless graphene, the Fermi energy can be determined from $V_{BG}$ by matching the integrated density of states (Equation \ref{eq:TB:DOS}) to $n$.
-Some useful relationships for graphene on 285 nm of thermal oxide are
-\begin{align*}
-	n(cm^{-2})&\sim 7 \times 10^{10} V_{BG} (Volts) \\
-	\mu(meV) &\sim 30 \sqrt{V_{BG} (Volts)} \\
-	\mu(meV) &\sim 1 \times 10^{-7} \sqrt{n(cm^{-2})} \ ,
-\end{align*}
-where $\mu$ is the Fermi energy.
-
-The opening of the band gap should have two fingerprints in electrical transport.
-First, the resistance at the charge neutrality point should increase.
-If the capability were available, measuring the temperature dependence of this resistance would give a direct measurement of the size of the band gap.
-Second, because of the energy required to excite an electron across the band gap, the gate dependent conductivity should exhibit a low conductivity plateau centered on the charge neutrality point.
-The width of this plateau in volts should correspond to the band gap in electron volts plus any many body effects.
-The presence of these fingerprints with a 60 degree periodicity in $\phi$ is the hallmark of the phonon induced band gap. 
+\section{Summary}
+The theory behind the phonon induced band gap was developed in the frame work of the Peierls transition.
+It was shown that exciting the phonon reduces the size of the BZ and couples the $\bm{K}$ and $\bm{K'}$ creating a band gap.
+The experimental measurement of this exciting physical phenomena is challenging because of the difficulty in exciting a sufficient number of optical phonons.
