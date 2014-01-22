@@ -1,0 +1,163 @@
+\chapter{Heat transport model \label{chap:HTM}}
+This Appendix gives details on and describes the use of the heat transfer model in Chapter \ref{chap:therm}.
+In the first section the heat transfer model first proposed by Cai \textit{et al} is summarized.
+It predicts the temperature profile which develops in a circular graphene sealed microchamber due to central laser heating \cite{Cai2010}.
+In the second section an approximation relating the thermal properties to the measured peak shifts is presented.
+This allows for a fast interpretation of the measured spectra.
+
+\section{Model derivation}
+The heat transfer model predicts the temperature profile based on the thermal conductivity of the suspended graphene, $\kappa_{SS}$, the thermal conductivity of the supported graphene, $\kappa_{SP}$, the interface thermal conductivity between the supported graphene and the underlying SiO$_2$, $g_S$, the interface thermal conductivity to the gas, $g_g$, and the laser power which reaches the graphene, $P$.
+The solution is determined by solving the steady state heat equation,
+\begin{equation*}
+	\vec{\nabla} \cdot \left(\kappa(r) \ \vec{\nabla} T(r) \right) + \dot{Q}=0 \ ,
+	\label{eq:HTM:heateq}
+\end{equation*}
+where $T(r)$ is the temperature distribution, $\kappa$ is the thermal conductivity, and $\dot{Q}$ is the generated heat flux per unit time.
+This model is simplified by the concentric circular symmetry of the laser heating source and the circular microchamber.
+The general solution is found by matching the solution for inside, $r<R$, and outside, $r>R$, the edge of the microchamber with boundary conditions at $r=R$.
+
+Isolating the graphene, the generated heat flux includes the laser heating, the energy lost to the gas, and the energy lost to the supporting substrate.
+The laser heating is described by
+\begin{align}
+	\dot{Q}_{L}=\frac{\alpha P}{t} \frac{1}{2 \pi \sigma^2} e^{-r^2/\sigma^2} \ ,
+\end{align}
+where $\dot{Q}_L$ is the energy from the incident laser, $\alpha$ is the absorption by the graphene, $t$ is the thickness of the graphene, and $\sigma$ is half the beam waist measured to be 0.66 $\mu$m.
+The beam waist was measured the same way as in is Section \ref{sec:fri:Raman}.
+It is smaller because the test slip adjustment collar was readjusted.
+The energy lost to the substrate and gas is modeled using Newton's law of cooling
+\begin{align*}
+	\dot{Q}_{S}&=-g_S \frac{1}{t} \left(T(r)-T_0 \right) \\
+	\dot{Q}_{g}&=-g_g \frac{1}{t} \left(T(r)-T_0 \right) \ ,
+\end{align*}
+where $\dot{Q}_{S}$ and $\dot{Q}_g$ are the energy lost to the substrate and to the gas respectively and $T_0$ is ambient temperature.
+In the case of the suspended graphene, heat can be lost to both the gas above and below the graphene.
+This will be differentiated using $g_g^{\uparrow}$ and $g_g^{\downarrow}$.
+
+When applying Newton's law of cooling for the heat conduction to the silicon dioxide, we assume the temperature of the SiO$_2$ is fixed at $T_0$.
+To test this assumption the thermal oxide is treated as a cylindrical shell connected on one side to a heat sync and heated on the other side by a 0.03 mW source.
+This heating matches a 1.5 mW laser excitation with graphene's 2.3 \% absorption.
+The width of the shell is taken as 200 nm to match the width of the supported graphene expected to have elevated temperatures.
+With an inner radius of 5 $\mu$m, a thickness of 300 nm, and a thermal conductivity of 1 W/m-K \cite{Resnick2002} the temperature is expected to rise by 1.5 K on the top surface of the thermal oxide.
+This should be treated as an upper bound; the transport in the silicon dioxide would flare outward resulting in a larger conduction cross section.
+This validates the assumption that the thermal oxide is not significantly heated in our measurements.
+
+The other term in Equation \ref{eq:HTM:heateq}, the thermal conductivity, is assumed to be piecewise uniform
+\begin{equation*}
+	\kappa (\vec{r})=\left \{ \begin{array}{ll} \kappa_{SS} & , r<R \\ \kappa_{SP} & , r \geq R \end{array} \right. \ .
+\end{equation*}
+This eliminates the spatial dependence of $\kappa$ in the two regions and simplifies the heat equation in Equation \ref{eq:HTM:heateq} but still allows for the disparate suspended and supported thermal conductivities observed in the literature.
+While needed to simplify the problem, this simple form for the thermal conductivity may not be entirely accurate. 
+A strain dependent thermal conductivity would inherit the spatial dependence of the strain field.
+Since the measurement described here can not provide spatial information to inform a more detailed model, we will assume a uniform $\kappa_{SS}$ and refer to it as the effective thermal conductivity of the suspended graphene.
+It acts a metric which represents the departure of the system from the unstrained case.
+
+Including the generated heat fluxes and the piecewise thermal conductivity in the heat equation, Equation \ref{eq:HTM:heateq}, results in two differential equations that in the dimensionless variables
+\begin{align*}
+	\theta&= \frac{1}{T_a} (T(r)-T_a) \\
+	\rho&=\frac{r}{\sqrt{2} \sigma}
+\end{align*}
+becomes
+\begin{equation}
+	\left\{
+	\begin{array}{r l}
+	\nabla^2 \theta + \beta e^{-\rho^2} - \gamma \theta =0 & , \ \textrm{for } \rho < \frac{R}{\sqrt{2} \sigma} \\
+	\nabla^2 \theta - \Gamma \theta =0 & , \ \textrm{for } \rho \geq \frac{R}{\sqrt{2} \sigma}
+	\end{array}
+	\right. \ , \label{eq:HTM:DE}
+\end{equation}
+where
+\begin{align*}
+	\beta &=\frac{1}{\pi T_0} \frac{\alpha P}{t \kappa_{SS}}\\
+	\gamma&=2 \sigma^2 \frac{g_g^{\uparrow}+g_g^{\downarrow}}{t \kappa_{SS}} \\
+	\Gamma&=2 \sigma^2 \frac{g_g^{\uparrow}+g_S             }{t \kappa_{SP}} \ .
+\end{align*}
+Together with the boundary conditions
+\begin{align}
+	\theta(\infty) &= 0 \label{eq:therm:BC1} \\
+	|\theta(0)| &< \infty \label{eq:therm:BC2} \\
+	\theta\left(\frac{R}{\sqrt{2} \sigma}\right)^- &= \theta\left(\frac{R}{\sqrt{2} \sigma}\right)^+ 
+		\label{eq:therm:BC3} \\
+	-\kappa_{SS} \left. \frac{d}{d\rho} \theta^- \right)_{r=\frac{R}{\sqrt{2} \sigma}}&=
+	-\kappa_{SP} \left. \frac{d}{d\rho} \theta^+ \right)_{r=\frac{R}{\sqrt{2} \sigma}} \  \label{eq:therm:BC4}
+\end{align}
+this fully defines the problem.
+The boundary conditions are written by assuming that the temperature profiles are finite, decay asymptotically to ambient temperature, are continuous at the edge of the microchamber, and have continuous heat flux at the edge of the microchamber respectively.
+The heat flux, $\vec{\phi}$, is found using Fourier's law of heat conduction, $\vec{\phi}=-\kappa \vec{\nabla} T(\vec{r})$.
+
+The heat equation for $r \geq R$ has a relatively simple solution.
+It can be recast in the form of the modified Bessel's equation and after applying the boundary condition in Equation \ref{eq:therm:BC1} it has the solution,
+\begin{equation}
+	\theta(\rho)=c_2 K_0 (\sqrt{\gamma} \rho) , \ \textrm{for } \rho \geq \frac{R}{\sqrt{2} \sigma} \ ,
+\end{equation}
+where $c_2$ is a integration constant and $K_0 (\sqrt{\gamma} \rho)$ is the modified Bessel function of the second kind.
+
+The solution for the suspended graphene is complicated by the incident laser.
+Using the substitution $x=\sqrt{\gamma} \rho$ the heat equation is cast into a \emph{inhomogeneous} modified Bessel function,
+\begin{equation*}
+	\rho^2 \frac{d^2 \theta}{d x^2}+x \frac{d \theta}{dx}-x^2 \theta = -\frac{\beta}{\gamma}x^2 \ e^{-x^2/\gamma} \ .
+\end{equation*}
+This differential equation has the general solution
+\begin{equation*}
+	\theta(\rho)=c_3 I_0(\sqrt{\gamma}\rho) + c_4 K_0(\sqrt{\gamma}\rho) + \theta_P(\sqrt{\gamma} \rho) , \ \textrm{for } \rho \geq \frac{R}{\sqrt{2} \sigma} \ ,
+\end{equation*}
+where $I_0 (\sqrt{\gamma} \rho)$ is the modified Bessel function of the first kind and $\theta_P (\rho)$ is the particular solution to the inhomogeneous differential equation.
+Using the variation of parameters technique, the particular solution can be written as an integral function, 
+\begin{align*}
+	\theta_P (x)=&\frac{\beta}{\gamma} \left \{
+	I_0 (x) \int_0^{x} 
+		\frac{K_0(x') \ e^{-x'^2/\gamma} }{-I_0(x') K_1 (x')-K_0(x') I_1 (x')} dx' \right. \\
+	&\left.-K_0 (x) \int_0^{x}
+		\frac{I_0(x') \ e^{-x'^2/\gamma} }{-I_0(x') K_1 (x')-K_0(x') I_1 (x')} dx'
+	\right \} \ .
+\end{align*}
+The boundary condition in Equation \ref{eq:therm:BC2} requires that $c_4=0$ leaving two integration constants: $c_2$ and $c_3$.
+
+These two remaining integration constants are fully determined by the boundary conditions in Equations \ref{eq:therm:BC3} and \ref{eq:therm:BC4}.
+This results in two equations with two unknowns,
+\begin{align}
+	c_2 K_0(\sqrt{\Gamma/2} R/\sigma)=&c_3 I_0(\sqrt{\gamma/2} R/\sigma)+\theta_P (\sqrt{\Gamma/2} R/\sigma) 
+	\nonumber \\
+	c_2 \kappa_{SP} \sqrt{\Gamma} K_1 (\sqrt{\Gamma/2} R/\sigma) =&
+		-\kappa_{SS} \sqrt{\gamma} \left \{c_3 I_1(\sqrt{\gamma/2} ) \right. \nonumber \\
+		&+I_1(x) \frac{\beta}{\gamma} \int_0^{x} 
+			\frac{K_0(x') \ e^{-x'^2/\gamma} }{-I_0(x') K_1 (x')-K_0(x') I_1 (x')} dx' \nonumber \\
+		&\left.-K_1(x) \frac{\beta}{\gamma} \int_0^{x}
+			\frac{I_0(x') \ e^{-x'^2/\gamma} }{-I_0(x') K_1 (x')-K_0(x') I_1 (x')} dx' 	
+		\right \}_{x=\sqrt{\frac{\gamma}{2}} \frac{R}{\sigma}} \ . \label{eq:HTM:c3}
+\end{align}
+This fully defines the temperature profile as a function of the thermal parameters $\kappa_{SS}$, $\kappa_{SP}$, $g_g$, and $g_S$ as well as the power of the excitation laser at the graphene, the radius of the microchamber, and the beam waist.
+The temperature at the center of the microchamber, $\theta_0$, is given by $c_3$.
+The derived temperature profile is scaled linearly by the power $P$.
+
+\section{Relating model to measurements}
+To extract thermal properties from the Raman measurements, the heat transfer model must be related to the measured spectra.
+This is complicated by the finite spot size of the measurement as shown in Figure \ref{fig:therm:HTPlot}.
+This section will derive an approximate relationship between the measurement and the heat transfer model which allows for a simple determination of the thermal properties.
+
+The measure temperature rise, $\theta_M$ represents a weighted average of the temperature profile,
+\begin{equation}
+	\theta_M=\frac{\int_0^{\infty} \theta(\rho) e^{-\rho^2} \rho \ d \rho}{\int_0^{\infty} e^{-\rho^2} \rho \ d \rho} \ . \label{eq:HTM:average}
+\end{equation}
+Using the full heat transfer model derived in the previous section makes the determination of this integral difficult.
+Instead, an approximate solution for the temperature profile of the suspended graphene in the vicinity of the laser excitation is used.
+Since the amount of energy lost to the gas across the laser spot is small compared to the heat transferred in plane, the heat transfer to the gas can be ignored when calculating the temperature profile in the vicinity of the laser beam.
+This can be shown by starting with Equation \ref{eq:HTM:DE} and using separation of variables twice,
+\begin{align*}
+	d \left[\rho \frac{d \theta}{d \rho} \right]&=-\beta \rho e^{-\rho^2} \ d \rho+\gamma \rho \theta \ d \rho \\
+	\int_{\theta_0}^{\theta(\rho)} d \theta&=
+		-\frac{\beta}{2} \int_0^{\rho}\frac{e^{-\rho'^2}-1}{\rho'} d \rho' + 
+		\gamma \int_0^{\rho}\rho' \left[\int_{0}^{\rho'}\rho'' \theta(\rho'') \ d \rho''\right] \ d \rho' \\
+	\theta(\rho)&=\theta_0-\frac{\beta}{2} \int_0^{\rho}\frac{e^{-\rho'^2}-1}{\rho'} d \rho'+
+		\frac{\gamma}{8} \theta_0 +
+		\gamma \int_0^{\rho}\rho' \left[\int_{0}^{\rho'}\rho'' \Delta \theta(\rho'') \ d \rho''\right] \ d \rho' \ ,
+\end{align*}
+where $\theta_0$ is the temperature at the center of the microchamber and $\Delta \theta(\rho)=\theta(\rho)-\theta_0$.
+The first two terms have the form of the temperature profile ignoring thermal transport to the gas \cite{Faugeras2010}, the second term is the first order correction for the gas, and the last term is the higher order correction that will be neglected.
+The temperature at the center of the microchamber is determined by the full heat transfer model described in the previous section.
+
+This approximation temperature profile has a simpler radial dependence which can be averaged over in closed form.
+The integral in Equation \ref{eq:HTM:average} has the simple form
+\begin{equation}
+	\theta_M \approx \theta_0(1+\frac{\gamma}{4})-\frac{ln(2)}{4} \beta \ .
+\end{equation}
+By using this relationship in conjunction with $\theta_0=c_3$ in Equation \ref{eq:HTM:c3} the measured temperature is related to the thermal parameters.

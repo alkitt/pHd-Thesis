@@ -3,9 +3,9 @@
 \pdfoptionpdfminorversion 6
 % Slightly newer pdf format outputted.  Helps compatability with included pdf images
 
-% \includeonly{Kekule,Appendix_kek_hopps,Appendix_kek_electronics}
+\includeonly{Thermal,Appendix_HeatModel}
 % \includeonly{Introduction,TightBinding,PVP,Friction,Thermal,Kekule,Conclusion}
-% \includeonly{Appendix_PVP_strainedBZ,Appendix_PVP_idependence,Appendix_Fri_Fit,Appendix_kek_hopps,Appendix_kek_electronics}
+% \includeonly{Appendix_PVP_strainedBZ,Appendix_PVP_idependence,Appendix_Fri_Fit,Appendix_HeatModel,Appendix_kek_hopps,Appendix_kek_electronics}
 % \includeonly{form_1_title,form_copyright,form_2_approval,form_4_acknowledge,form_5_abstract,form_6_abbreviations,CV}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -25,8 +25,8 @@
 %%    Custom Commands     %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\angstrom}{\textup{\AA}}		% Angstrom command
-\newcommand{\thesistitle}{MANIPULATING GRAPHENE'S LATTICE TO CREATE PSEUDO VECTOR POTENTIALS, DISCOVER ANOMALOUS FRICTION, AND MEASURE STRAIN DEPENDENT THERMAL CONDUCTIVITY}
-\newcommand{\thesistitlelower}{Manipulating graphene's lattice to create pseudo vector potentials, discover anomalous friction, and measure strain dependent thermal conductivity}
+\newcommand{\thesistitle}{MANIPULATING GRAPHENE'S LATTICE TO CREATE PSEUDOVECTOR POTENTIALS, DISCOVER ANOMALOUS FRICTION, AND MEASURE STRAIN DEPENDENT THERMAL CONDUCTIVITY}
+\newcommand{\thesistitlelower}{Manipulating graphene's lattice to create pseudovector potentials, discover anomalous friction, and measure strain dependent thermal conductivity}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%     Format             %%
@@ -44,7 +44,7 @@
 \usepackage{layout}							% If you use the \layout command in the body of the text the formatting will be shown nicely
 
 % Links are clickable with no border and the pdf in bookmarked with sections--keep as last in preamble
-\usepackage[bookmarks,bookmarksnumbered,bookmarksopen=false,hidelinks]{hyperref}  
+% \usepackage[bookmarks,bookmarksnumbered,bookmarksopen=false,hidelinks]{hyperref}  
 
 % Formatting still to do:
 % No journal abbreviations in the bibliography (will have to manually edit :( )
@@ -57,10 +57,10 @@
 		\renewcommand{\headrulewidth}{0pt}		% gets rid of lines that fancyhdr always sticks in
 		\renewcommand{\footrulewidth}{0pt}}
 	\pagestyle{plain}
-	\hypersetup{pageanchor=false}				% First two pages have same label (none) so hypref gets confused
+	% \hypersetup{pageanchor=false}				% First two pages have same label (none) so hypref gets confused
 	\include{form_1_title}
 	\include{form_copyright}
-	\hypersetup{pageanchor=true}				% Have to ignore anchors here
+	% \hypersetup{pageanchor=true}				% Have to ignore anchors here
 	\include{form_2_approval}
 	\setcounter{page}{4}					% Sets the page number to 4
 	\include{form_4_acknowledge}
@@ -93,6 +93,7 @@
 	\include{Appendix_PVP_strainedBZ}
 	\include{Appendix_PVP_idependence}
 	\include{Appendix_Fri_Fit}
+	\include{Appendix_HeatModel}
 	\include{Appendix_kek_hopps}
 	\include{Appendix_kek_electronics}
 

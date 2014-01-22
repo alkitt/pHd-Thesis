@@ -1,23 +1,32 @@
 \chapter{The thermal conductivity of strained graphene\label{chap:therm}}
 If the out of plane acoustic (ZA) phonons in graphene were a person, they might be characterized as productive egomaniacs.
 They are believed to enable graphene's very high thermal conductivity by contributing more than 70\% of the thermal conductivity of suspended graphene \cite{Lindsay2010}.
-However, they are also believed to suppress the potentially divergent thermal conductivity contributions from the other phonon modes in the system \cite{Pereira2013,Bonini2012}.
+These same phonons are thought to suppress the potentially divergent thermal conductivity contributions from the in plane acoustic phonons \cite{Pereira2013,Bonini2012}.
 Both of these conflicting contributions are linked to the atypical quadratic dispersion of the ZA phonons.
-Straining graphene is expected to linearize the ZA phonon modes and liberate the divergent contribution to the thermal conductivity \cite{Pereira2013,Bonini2012}.
+Using strain and pressure we modify the ZA phonons while measuring the thermal conductivity.
+This should help isolate the importance of the ZA phonnos and further test our understanding of graphene's high thermal conductivity.
 
-\section{Past measurements of graphene's thermal conductivity}
-The first measurement of graphene's thermal conductivity was on suspended graphene and was reported to have the highest thermal conductivity ever measured \cite{Balandin2008}.
-Shortly thereafter a more modest value with a thermal conductivity roughly one six of the original value was measured for supported graphene \cite{Seol2010}.
+\section{Experimental background \label{sect:therm:Exp}}
+Balandin and coworkers were the first to measure the thermal conductivity of gra\-phene.
+They reported that suspended graphene had a record high thermal conducitivity of roughly 5000 W/m-K \cite{Balandin2008}.
+Shortly thereafter measurements of supported graphene showed a more modest thermal conductivity of roughly one six of the original \cite{Seol2010}.
 This discrepancy has been the source of heavy study in the years since.
 
 The original measurements were performed on suspended graphene samples using an optical technique.
-This creative technique uses a laser excitation to heat the sample and the temperature induced energy shift of the Raman scattered light to measure temperature.
-In this way a simple Raman measurement serves a dual role as both a heat source and a thermometer.
+This creative technique uses a laser excitation to heat the sample and the temperature induced energy shift of the Raman scattered light to measure temperature; the Raman measurement provides both a heat source and a thermometer.
 When used in conjunction with a heat transfer model, this is enough to determine the thermal conductivity.
 This technique has advantages and disadvantages.
-Uncertainties in the optical absorption and the laser spot size effect the measured thermal conductivity, good results depend on an accurate thermal transport model, and these models are limited by their inability to include ballistic thermal transport.
-Nonetheless, the required samples are very simple and the measurement is fairly standard.
-This simplicity has resulted in a variety of publications using this technique to study different aspects of thermal transport in suspended graphene \cite{Balandin2008,Faugeras2010,Cai2010,Ghosh2010,Lee2011,Chen2011a,Chen2012}.
+The required samples are very simple to fabricate and the measurement is fairly standard.
+However, the measured thermal conductivity depends on a variety of parameters that are hard to measure including the optical absorption of the graphene, the laser spot size, and the temperature dependence of the phonon modes.
+What's more, the results depend on the accuracy of the thermal transport model which inherently cannot account for ballistic thermal transport.
+Nonetheless, the simplicity of this technique has resulted in a variety of publications studying aspects of thermal transport in suspended graphene \cite{Balandin2008,Faugeras2010,Cai2010,Ghosh2010,Lee2011,Chen2011a,Chen2012}.
+
+The Raman measurement technique has since been advanced in a series of publications.
+Faugeras \textit{et al.} was first to study graphene suspended over a circular aperture.
+This circular symmetry of this geometry simplifies the heat transfer model.
+Additionally, they used the Raman Stokes to anti-Stokes ratio as an independent temperature measurement validating the use of phonon energy shifts to measure temperature \cite{Faugeras2010}.
+Cai \textit{et al.} advanced the thermal transport model by including the thermal transport to the substrate instead of treating supported graphene as a heat sync.
+Chen \textit{et al.} further advanced the thermal transport model to include thermal conductivity to the surrounding gas \cite{Chen2011a}.
 
 The measurement which yielded the more modest values of thermal conductivity were direct measurements of supported graphene.
 In these more traditional measurements resistive heaters are used to create a temperature gradient and solid state thermometers are used to measure the temperature.
@@ -27,195 +36,102 @@ This is a result of the more difficult measurement and much more difficult sampl
 
 Figure \ref{fig:therm:lit} summarizes all of the reported room temperature thermal conductivity measurements of single layer graphene.
 The thermal conductivity decrease from a value of roughly 2000 W/m-K for suspended graphene, to a value close to 500 W/m-K for graphene supported on one side, to a value of less than 160 W/m-K for graphene encased in SiO$_2$ \cite{Jang2010}.
-The general observation is that graphene's thermal conductivity is negatively effected by the presence of a supporting or encasing bulk material.
-This difference in thermal conductivity is not an artifact of the measurement techniques, a nanoscale thermal conductivity measurement also observed an increase in thermal conductivity for suspended few layer graphene \cite{Pumarol2012}.
+It is clear that graphene's thermal conductivity is negatively effected by the presence of a supporting or encasing bulk material.
+The different thermal conductivities cannot be attributed to the different measurement techniques, a nanoscale thermal conductivity measurement also observed an increase in thermal conductivity for suspended few layer graphene \cite{Pumarol2012}.
 
 \begin{figure}
 	\begin{center}
 	\includegraphics{Figs_Thermal/Thermal_lit.pdf}
 	\end{center}
-	\caption[Summary of the reported values of the room temperature thermal conductivity of monolayer graphene]{
+	\caption[Environmental dependence of graphene's thermal conductivity]{
 	\label{fig:therm:lit}
-		Summary of the reported values of the room temperature thermal conductivity of monolayer graphene grouped by the environment of the graphene: Suspended, supported on a bulk substrate, and encased in amorphous SiO$_2$ above and below.
+		Summary of the reported values of the room temperature thermal conductivity of monolayer graphene grouped by the environment of the graphene: Suspended, supported on a bulk substrate, and encased in amorphous SiO$_2$.
 		The color code indicates whether the measurements were performed using the Raman technique or a direct technique.
-		The number on the right indicates the source: [1] is \cite{Balandin2008}, [2] is \cite{Cai2010}, [3] is \cite{Chen2011a}, [4] is \cite{Lee2011}, [5] is \cite{Seol2010}, [6] is \cite{Jang2010}.
+		The numbers on the right indicate the source: [1] is \cite{Balandin2008}, [2] is \cite{Cai2010}, [3] is \cite{Chen2011a}, [4] is \cite{Lee2011}, [5] is \cite{Seol2010}, [6] is \cite{Jang2010}.
 		Error bars are taken from the literature.
 	}
 \end{figure}
 
-The Raman measurement technique has been advanced in a series of publications.
-Faugeras \textit{et al} was first to study graphene suspended over a circular aperture.
-This circular symmetry of this geometry simplifies the heat transfer model.
-Additionally, they used the Raman Stokes to anti-Stokes ratio as an independent temperature measurement to validate the previously used temperature induced phonon energy shift \cite{Faugeras2010}.
-Cai \textit{et al} advanced the thermal transport model by including the thermal transport to the substrate instead of treating supported graphene as a heat sync.
-Additionally, they brought up concerns about ballistic thermal transport \cite{Cai2010}.
-Chen \textit{et al} showed that if not accounted for, the thermal conductivity to the gas could inflate the measured value of graphene's thermal conductivity \cite{Chen2011a}.
-
-
 \subsection{Theoretical background}
-Lindsay and coworkers have argued that the ZA phonons contribute more than 70\% of the very high thermal conductivity of suspended graphene \cite{Seol2010}.
-This is for two reasons.
+In response to the environmental dependence of the thermal conductivity, Lindsay and coworkers argued that the ZA phonons contribute more than 70\% of the very high thermal conductivity of suspended graphene \cite{Seol2010}.
+This comes about for two reasons.
 First, the quadratic dispersion gives a high density of states throughout the BZ.
 Second, the in plane reflection symmetry provides a selection rule that limits the scattering phase space \cite{Lindsay2010}.
-ZA phonon dominated thermal transport is consistent with observations that the thermal conductivity of supported graphene \cite{Seol2010,Cai2010} is a factor of four smaller than suspended graphene \cite{Balandin2008,Cai2010,Chen2011a,Lee2011} and that encased graphene is a factor of two smaller yet \cite{Jang2010}.
-The ZA phonons either leak into the surrounding media, are scattered by it, or are dampened by it, lowering the thermal conductivity.
+When the graphene is in contact with bulk materials the ZA phonons either leak into the surrounding media, are scattered by it, or are dampened by it, lowering the thermal conductivity.
 
-On the other hand the ZA phonons are believed to limit the potentially divergent thermal conductivity contribution of the in plane phonons.
+The ZA phonons are also believed to limit the potentially divergent thermal conductivity contribution of the in plane phonons.
 Klemens showed that the linear in plane acoustic phonons should contribute a logarithmically divergent thermal conductivity in graphene \cite{Klemens2001}.
 This divergence follows from the frequency dependence of the terms which make up the thermal conductivity, $\kappa=\frac{1}{3} \int C v_G l(\omega) \rho(\omega) \ d\omega $, where $\kappa$ is the thermal conductivity, $C$ is the specific heat, $v_G$ is the group velocity of the acoustic phonons, $l(\omega)$ is the scattering length, and $\rho(\omega)$ is the density of states.
 For a two dimensional phonon gas with linear dispersion $\rho(\omega) \propto \omega$ while for anharmonic scattering between linear acoustic phonons $l(\omega) \propto 1/\omega^2$.
 Hence, in the absence of extrinsic scatterers, the integrand scales as $1/\omega$ and $\kappa$ diverges logarithmically.
-The logarithmic divergence in $\omega$ should translate to a logarithmic divergence device size \cite{Klemens2001}.
+The logarithmic divergence in $\omega$ should translate to a logarithmic divergence in device size \cite{Klemens2001}.
 Larger devices should exhibit larger thermal conductivities because they support more of the long wavelength phonons that contribute strongly to the thermal conductivity.
 To date this logarithmic divergence has not been observed \cite{Chen2011a}.
-Pereira and coworkers believe that the ZA phonons suppress this divergence \cite{Pereira2013}.
-Close to the center of the BZ there is a divergent population of zero group velocity ZA phonons.
-With near zero group velocity these phonons cannot contribute much to to the thermal conductivity, but, with a large population they can effectively scatter other phonons.
-When the ZA phonons are neglected in equilibrium molecular dynamics the thermal conductivity diverges, but when they are included the thermal conductivity converges.
+
+Pereira and coworkers believe that the ZA phonons suppress this divergence.
+When these ZA phonons are neglected in equilibrium molecular dynamics the thermal conductivity diverges in agreement with Klemens, but when they are included the thermal conductivity converges to a large but finite value \cite{Pereira2013}.
+It is believed that this is due to the ZA phonons near the center of the BZ.
+With near zero group velocity these phonons cannot enhance thermal conductivity, but, with a large population, they can effectively scatter the in-plane phonons and eliminate the divergence.
 Thus, the ZA phonons are the main contributor to graphene's thermal conductivity only because the low energy ZA phonons suppress the divergent thermal conductivity of the in plane phonons.
 
-\section{Heat transport model}
-An accurate heat transport model is necessary for the determination of the thermal conductivity using the Raman measurement technique.
-In this section the heat transfer model first proposed by Cai \textit{et al} is summarized.
-It predicts the temperature profile which develops in a circular graphene sealed microchamber due to central laser heating \cite{Cai2010}.
-The temperature profile is then used to predict the anti-Stokes to Stokes ratio following Herman \textit{et al} \cite{Herman2011}.
-Finally, by predicting how the anti-Stokes to Stokes ratio depends on unknown parameters, the importance of the various experimental unknowns is investigated.
+Simulations by both Pereira \cite{Pereira2013} and coworkers and Bonini and coworkers \cite{Bonini2012} show that strain could act to liberate the divergent thermal conductivity contribution of the in plane phonons.
+By linearizing the ZA phonon modes near the $\Gamma$ point, strain decreases the density of states of the zero group velocity ZA phonons which scatter with the in plane phonons.
+Uniaxial strain of 2 \% should reduce this scattering enough to realize the divergent thermal conductivity of the in plane phonons \cite{Pereira2013} while for biaxial strain any amount of strain should be enough \cite{Bonini2012}.
 
-The heat transfer model is simplified by the concentric circular symmetry of the laser heating source and the circular microchamber.
-The solution is determined by solving the steady state heat equation,
+\section{Tuning the ZA phonon}
+Although the theory discussed to this point is convincing, it deserves further testing.
+It was built around only two data points: The high thermal conductivity of suspended graphene and the lower thermal conductivity of supported graphene.
+Further, the resulting theory relies on the exotic, quadratically dispersed, ZA phonons which have only been measured directly in graphene mechanical resonators.
+The thermal transport can be more deeply understood by altering the ZA phonon and measuring the change in thermal conductivity.
+
+The ZA phonons can be continuously tuned while the thermal conductivity is measured \textit{in situ} using the device geometry from Chapter \ref{chap:fri}.
+The phonons are altered in two ways.
+First, the strain induced in pressurized graphene sealed microchambers linearizes the ZA phonon dispersion.
+As discussed in the previous section, this might increase the thermal conductivity by liberating the divergent thermal conductivity of the in plane phonons \cite{Pereira2013,Bonini2012}.
+Second, the gas surrounding the suspended graphene should lower the lifetime of the ZA phonons.
+This has been observed in graphene mechanical resonators which exhibit decreased quality factors in ambient pressure compared to vacuum \cite{Bunch2007}.
+Lowering the phonon lifetime should lower their contribution to the thermal conductivity.
+Tuning the ZA phonon in these ways and measuring thermal conductivity should provide deeper insight into the mechanism behind the high thermal conductivity of suspended graphene.
+
+\subsection{Measurement}
+The experimental geometry described in Section \ref{sect:fri:Exp} enables the thermal conductivity to be measured while the ZA phonons are tuned.
+The phonons are tuned by setting the external pressure, $P$, to gauge pressures which range from -0.1 MPa of vacuum to 0.69 MPa of overpressure.
+Measuring with the external pressure both greater than and less than the internal pressure $P_0$ enables us to decouple strain and pressure effects.
+Pressure effects should increase monotonically with pressure while strain effects should initially lesson as $P$ approaches $P_0$ and the graphene flattens out but then increase when $P$ surpasses $P_0$.
+
+The Raman technique described in Section \ref{sect:therm:Exp} is used to measure the thermal conductivity.
+Linearly polarized, 514.5 nm laser light from an Argon Ion laser is focused on the center of the microchamber.
+The focused beam waist, measured the same way as in Section \ref{sect:fri:Raman}, is $0.66 \pm 0.04$ nm.
+The power which reaches the sample is tuned by changing the laser power and not by changing ND filters.
+This ensures that the centering of the beam is not power dependent.
+The power which reaches the sample is calculated from the power measured at the exit port of the Renishaw using the system throughput of $0.67 \pm 0.01$.
+The laser stability over the measurement period is 2 \%.
+
+The temperature is measured using the heating induced shifts of the measured G and 2D energies $\Delta \omega=\chi \Delta T$, where $\Delta T$ is the change in temperature and $\chi$ represents the temperature dependence of the phonon energy arising due to anharmonicities \cite{Bonini2007}.
+As starting points we use the values measured by Chen \textit{et al.} on suspended CVD graphene: $\chi_G=-(4.4 \pm 0.3) \times 10^{-2} \ cm^{-1}/K$, $\chi_{2D}=-(7.2 \pm 0.2) \times 10^{-2} \ cm^{-1}/K$ \cite{Chen2011a}.
+Other measurements report lower values \cite{Calizo2007}, and hence, higher thermal conductivities \cite{Balandin2008}, but these values were measured on supported graphene where the different thermal expansion coefficients of graphene and the substrate could be more of an issue.
+Since these temperature related shifts happen because of phonon anharmonicities, they may have some strain dependence.
+The Anti-Stokes to Stokes ratio could be used as an alternative, anharmonicicty independent temperature measurement.
+However, we found that these measurements were not useful; they took too long and were too hard to interpret.
+
+The temperature can be calculated from the frequency shift which results from raising the power from $P_{lo}$ to $P_{hi}$ 
+Assuming that the thermal resistance, $R=\frac{\Delta T}{P}$ where P is the absorbed power, is constant gives
 \begin{equation*}
-	\vec{\nabla} \cdot \left(\kappa(r) \ \vec{\nabla} T(r) \right) + \dot{Q}=0 \ ,
-	\label{eq:therm:heateq}
+	T_M=T_{hi}-T_0=\frac{\Delta \omega}{\chi} \frac{P_{hi}}{P_{hi}-P_{lo}} \ ,
 \end{equation*}
-where $T(r)$ is the temperature distribution, $\kappa$ is the thermal conductivity, and $\dot{Q}$ is the generated heat flux per unit time.
-The general solution is found by matching the solution for inside, $r<R$, and outside, $r>R$, the edge of the microchamber with boundary conditions at $r=R$.
+where $T_0$ is ambient temperature and $T_M$ is referred to as the measured temperature.
+The corresponding measured thermal resistance is $T_M/P_{hi}$.
+These values are referred to as measured temperatures because they represent a weighted average over the finite spot of the laser beam.
 
-Isolating the suspended and supported graphene, the generated heat flux includes the laser heating, the energy lost to the gas, and the energy lost to the supporting substrate.
-The laser heating is described by,
-\begin{align}
-	\dot{Q}_{L}=\frac{\alpha P}{t} \frac{1}{2 \pi \sigma^2} e^{-r^2/\sigma^2} \ ,
-\end{align}
-where $\dot{Q}_L$ is the energy from the incident laser, $P$ is the laser power at the graphene surface, $\alpha$ is the factor of this power which is absorbed by the graphene, $t$ is the thickness of the graphene, $\sigma$ is half the beam waist measured to be 0.81 $\mu$m as shown in Section \ref{sec:fri:Raman}, and $\frac{1}{2 \pi \sigma^2}$ is the normalization factor.
-The energy lost to the substrate and gas is modeled using Newton's law of cooling,
-\begin{align*}
-	\dot{Q}_{S}&=-g_S \frac{1}{t} \left(T(r)-T_0 \right) \\
-	\dot{Q}_{g}&=-g_g \frac{1}{t} \left(T(r)-T_0 \right) \ ,
-\end{align*}
-where $\dot{Q}_{S}$ and $\dot{Q}_g$ are the energy lost to the substrate and to the gas respectively, $g_S$ and $g_g$ are the heat transfer coefficients per unit area, and $T_0$ is ambient temperature.
-In the case of the suspended graphene, heat can be lost to both the gas above and below the graphene.
-This will be differentiated using $g_g^{\uparrow}$ and $g_g^{\downarrow}$.
-
-When applying Newton's law of cooling for the heat conduction to the silicon dioxide we implicity assume that the temperature of the silicon dioxide remains unchanged.
-To test this assumption the thermal oxide is treated as a cylindrical thermal wire connected to a heat sync on one side and with 0.03 mW of power (matching a 1.5 mW laser with 2.3 \% absorption) heating the other side.
-The cylinders width was taken to be 200 nm to match the width of the supported graphene that is expected to have elevated temperatures.
-An inner radius of 5 $\mu$m, a thickness of 300 nm, and a thermal conductivity of 1.4 W/m-K \cite{} gives a temperature rise of 1.5 K in the thermal oxide.
-In the physical system the transport in the silicon dioxide would flare outward resulting in a larger conduction cross section.
-Thus, this 1.5 K temperature rise should be treated as an upper bound.
-This validates the assumption that the thermal oxide is not significantly heated in our measurements.
-
-Assuming a piecewise uniform thermal conductivity,
-\begin{equation*}
-	\kappa (\vec{r})=\left \{ \begin{array}{ll} \kappa_{SS} & , r<R \\ \kappa_{SP} & , r \geq R \end{array} \right. \ ,
-\end{equation*}
-eliminates the spatial dependence of $\kappa$ in the two regions, simplifying the heat equation in Equation \ref{eq:therm:heateq} while still allowing for the disparate suspended and supported thermal conductivities observed in the literature.
-While needed to simplify the problem, this simple form for the thermal conductivity may not be entirely accurate. 
-A strain dependent thermal conductivity would inherit the spatial dependence of the strain field.
-The measurement described here can not provide the spatial information which would inform this more detailed model.
-Instead the discussion will be limited to the effective suspended thermal conductivity of the suspended graphene $\kappa_{SS}$.
-This factor is a metric which represents the departure of the system from the unstrained case.
-
-Including the generated heat fluxes and the piecewise thermal conductivity in the heat equation, Equation \ref{eq:therm:heateq}, results in two differential equations, 
-\begin{equation*}
-	\left\{
-	\begin{array}{r l}
-	\kappa_{SS} \nabla^2 T+\dot{Q}_L + \dot{Q}_g^{\uparrow} + \dot{Q}_g^{\downarrow}=0 & , \textrm{for } r<R \\
-	\kappa_{SP} \nabla^2 T+\dot{Q}_S + \dot{Q}_g^{\uparrow}=0 & , \textrm{for } r \geq R
-	\end{array}
-	\right. \ .
-\end{equation*}
-In the dimensionless variables
-\begin{align*}
-	\theta&= \frac{1}{T_a} (T(r)-T_a) \\
-	\rho&=\frac{r}{\sqrt{2} \sigma}
-\end{align*}
-the differential equations become
-\begin{equation*}
-	\left\{
-	\begin{array}{r l}
-	\nabla^2 \theta + \beta e^{-\rho^2} - \gamma \theta =0 & , \ \textrm{for } \rho < \frac{R}{\sqrt{2} \sigma} \\
-	\nabla^2 \theta - \Gamma \theta =0 & , \ \textrm{for } \rho \geq \frac{R}{\sqrt{2} \sigma}
-	\end{array}
-	\right. \ , \\
-\end{equation*}
-where
-\begin{align*}
-	\beta &=\frac{1}{\pi T_0} \frac{\alpha P}{t \kappa_{SS}}\\
-	\gamma&=2 \sigma^2 \frac{g_g^{\uparrow}+g_g^{\downarrow}}{t \kappa_{SS}} \\
-	\Gamma&=2 \sigma^2 \frac{g_g^{\uparrow}+g_S             }{t \kappa_{SP}} \ .
-\end{align*}
-
-The boundary conditions, 
-\begin{align}
-	\theta(\infty) &= 0 \label{eq:therm:BC1} \\
-	|\theta(0)| &< \infty \label{eq:therm:BC2} \\
-	\theta\left(\frac{R}{\sqrt{2} \sigma}\right)^- &= \theta\left(\frac{R}{\sqrt{2} \sigma}\right)^+ 
-		\label{eq:therm:BC3} \\
-	-\kappa_{SS} \left. \frac{d}{d\rho} \theta^- \right)_{r=\frac{R}{\sqrt{2} \sigma}}&=
-	-\kappa_{SP} \left. \frac{d}{d\rho} \theta^+ \right)_{r=\frac{R}{\sqrt{2} \sigma}} \ , \label{eq:therm:BC4}
-\end{align}
-are written by assuming that the temperature profiles are finite, decay asymptotically to ambient temperature, are continuous at the edge of the microchamber, and have continuous heat flux at the edge of the microchamber respectively.
-The heat flux, $\vec{\phi}$, is found using Fourier's law of heat conduction, $\vec{\phi}=-\kappa \vec{\nabla} T(\vec{r})$.
-
-The heat equation for $r \geq R$ has a relatively simple solution.
-It can be recast in the form of the modified Bessel's equation and after applying the boundary condition in Equation \ref{eq:therm:BC1} it has the solution,
-\begin{equation}
-	\theta(\rho)=c_2 K_0 (\sqrt{\gamma} \rho) , \ \textrm{for } \rho \geq \frac{R}{\sqrt{2} \sigma} \ ,
-\end{equation}
-where $c_2$ is a integration constant and $K_0 (\sqrt{\gamma} \rho)$ is the modified Bessel function of the second kind.
-
-The solution for the suspended graphene is complicated by the incident laser.
-Using the substitution $x=\sqrt{\gamma} \rho$ the heat equation can again be cast in the form of a modiffed Bessel function, but this time it is inhomogeneous
-\begin{equation*}
-	\rho^2 \frac{d^2 \theta}{d x^2}+x \frac{d \theta}{dx}-x^2 \theta = -\frac{\beta}{\gamma}x^2 \ e^{-x^2/\gamma} \ .
-\end{equation*}
-This differential equation has the general solution
-\begin{equation*}
-	\theta(\rho)=c_3 I_0(\sqrt{\gamma}\rho) + c_4 K_0(\sqrt{\gamma}\rho) + \theta_P(\sqrt{\gamma} \rho) , \ \textrm{for } \rho \geq \frac{R}{\sqrt{2} \sigma} \ ,
-\end{equation*}
-where $I_0 (\sqrt{\gamma} \rho)$ is the modified Bessel function of the first kind and $\theta_P (\rho)$ is the particular solution to the inhomogeneous differential equation.
-Using the variation of parameters technique, the particular solution can be written as an integral function, 
-\begin{align*}
-	\theta_P (x)=&\frac{\beta}{\gamma} \left \{
-	I_0 (x) \int_0^{x} 
-		\frac{K_0(x') \ e^{-x'^2/\gamma} }{-I_0(x') K_1 (x')-K_0(x') I_1 (x')} dx' \right. \\
-	&\left.-K_0 (x) \int_0^{x}
-		\frac{I_0(x') \ e^{-x'^2/\gamma} }{-I_0(x') K_1 (x')-K_0(x') I_1 (x')} dx'
-	\right \} \ .
-\end{align*}
-Since the particular solution is finite at the origin, the boundary condition in Equation \ref{eq:therm:BC2} requires that $c_4=0$ leaving two integration constants.
-
-These two remaining integration constants are fully determined by the boundary conditions in Equations \ref{eq:therm:BC3} and \ref{eq:therm:BC4}.
-This results in two equations with two unknowns,
-\begin{align*}
-	c_2 K_0(\sqrt{\Gamma/2} R/\sigma)=&c_3 I_0(\sqrt{\gamma/2} R/\sigma)+\theta_P (\sqrt{\Gamma/2} R/\sigma) \\
-	c_2 \kappa_{SP} \sqrt{\Gamma} K_1 (\sqrt{\Gamma/2} R/\sigma) =&
-		-\kappa_{SS} \sqrt{\gamma} \left \{c_3 I_1(\sqrt{\gamma/2} ) \right. \\
-		&+I_1(x) \frac{\beta}{\gamma} \int_0^{x} 
-			\frac{K_0(x') \ e^{-x'^2/\gamma} }{-I_0(x') K_1 (x')-K_0(x') I_1 (x')} dx' \\
-		&\left.-K_1(x) \frac{\beta}{\gamma} \int_0^{x}
-			\frac{I_0(x') \ e^{-x'^2/\gamma} }{-I_0(x') K_1 (x')-K_0(x') I_1 (x')} dx' 	
-		\right \}_{x=\sqrt{\frac{\gamma}{2}} \frac{R}{\sigma}} \ ,
-\end{align*}
-which can be solved for numerically for given $\kappa_{SS}$, $\kappa_{SP}$, $g_g$, and $g_S$.
-
-An example predicted temperature distribution is shown in figure \ref{fig:therm:HTPlot}.
+The heat transfer model described in Appendix \ref{chap:HTM} is used to extract the thermal parameters from the measured temperature.
+The model depends on the thermal conductivities of the suspended graphene, $\kappa_{SS}$, and the supported graphene, $\kappa_{SP}=(579 \pm 34) \ W/m-K$ \cite{Seol2010}, as well as the interface thermal conductivities to the gas, $g_G$, and to the substrate $g_S=(50 \pm 13) \ MW/m^2-K$ \cite{Mak2010}.
+An example temperature distribution predicted by this model is shown in figure \ref{fig:therm:HTPlot}.
 As one might expect, the temperature rise is the greatest where the laser is heating, near the center of the microchamber.
 At the edge of the microchamber the slope is discontinuous due to the change in thermal conductivity.
 Where the thermal conductivity is lower it takes a larger temperature gradient to conduct the same heat energy.
-While the qualitative features of the temperature distribution are simple, the quantitative dependence on the free parameters are non trivial.
-The functional dependencies of $\kappa_{SS}$, $\kappa_{SP}$, $g_G$, and $g_S$ are made indecipherable by the form of the particular solution.
-The exception is the absorbed power which acts as a linear scaling factor.
-Doubling the power simply scales the temperature distribution by a factor of two. 
+The green shaded region represents the radial envelope of the excitation profile.
+It illustrates that $T_M$ is not the temperature rise at the center of the hole but is rather an average over a radial window.
+Appendix \ref{chap:HTM} describes how $T_M$ can be used to find the thermal parameters.
 
 \begin{figure}
 	\begin{center}
@@ -224,8 +140,54 @@ Doubling the power simply scales the temperature distribution by a factor of two
 	\caption[Expected temperature distribution in a graphene sealed microchamber heated by a centered laser]
 	{\label{fig:therm:HTPlot}
 		Theoretical temperature distribution in a graphene sealed microchamber heated by a centered laser.
-		The black curve shows the temperature increase for a 5 $\mu$m diameter microchamber assuming that $\kappa_{SS}=2000 \ W/m-K$, $\kappa_{SP}=370 \ W/m-K$, $g_{G}=.03 \ MW/m^2-K$, and $g_{S}=50 \ MW/m^2-K$.
+		The black curve shows the temperature increase for a 5 $\mu$m diameter microchamber assuming that $\kappa_{SS}=2000 \ W/m-K$ and  $g_{G}=0.03 \ MW/m^2-K$ \cite{Chen2011a}.
 		The radial profile of the 1.5 mW laser heat source with a 0.81 $\mu$m waste is overlaid in green.
-		Also shown are the differential equations which govern the heat transfer in the two regions.
 	}
 \end{figure}
+
+The samples described in Table \ref{tab:therm:samples} were measured by taking Raman spectra with multiple excitation powers across a range of pressures.
+The number of layers was found using Raman spectroscopy and optical interference, the radius and hole depths were measured using low force contact mode AFM, and the maximum strain was calculated using Hencky's model \cite{Hencky1915}.
+Device fabrication was either done using the standard mechanical exfoliation technique or by using a polymer based align transfer technique \cite{Goossens2013T}.
+Pressures were decreased in increments from 0.69 MPa to -0.1 MPa and then increased back to 0.69 in interspaced increments to monitor for any hysteretic response.
+These measurements allowed for the extraction of the pressure dependent measured thermal resistance.
+
+\begin{table}
+	\begin{center}
+	\begin{tabular}{l c c c c c c}
+		\hline
+		\hline
+		Samples & NL 	& Radius 					& Depth 		& $\epsilon_{max}$ & Fabrication 		& Sealed? \\
+		\hline
+		FFF		& 1 	& $(3.09 \pm 0.04)$ $\mu$m 	& $>$ 5 $\mu$m 	& 1.2 \%	& Transferred 	 	& no \\
+		SB07-1	& 1 	& $(2.74 \pm 0.08)$ $\mu$m 	& $\simeq$ 230 nm & 1.1 \%	& Exfoliated 		& yes \\
+		SB08-2	& 2 	& $(1.52 \pm 0.07)$ $\mu$m 	& $>$ 3 $\mu$m 	& 0.46 \%	& Exfoliated 		& yes \\
+		SB03-2	& 3 	& $(4.99 \pm 0.01)$ $\mu$m 	& $>$ 5 $\mu$m 	& 0.77 \%	& Exfoliated 		& yes \\
+		\hline
+		\hline
+	\end{tabular}
+	\end{center}
+	\caption[Samples used in thermal conductivity measurements]{\label{tab:therm:samples} Details of the samples used in thermal conductivity measurements. NL refers to the number of layers and $\epsilon_{max}$ is the maximum strain.}
+\end{table}
+
+\subsection{Data analysis}
+Fitting the peak positions
+-2D peak fits for bilayer and monolayer
+
+Extracting P0--one figure here
+
+Altered chiG and chi2D for FFF
+
+Optical interference--one figure here with all of the data sets int curves
+
+Averaging over multiple data sets
+
+\subsection{Measured thermal resistances}
+Plots as a function of pressure and strain
+
+\subsection{Extracted thermal properties}
+Description of thermal model
+
+Method to extract parameters
+
+\subsection{Conclusions}
+How to eliminate optical interference
