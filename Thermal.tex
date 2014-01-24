@@ -6,7 +6,7 @@ Both of these conflicting contributions are linked to the atypical quadratic dis
 Using strain and pressure we modify the ZA phonons while measuring the thermal conductivity.
 This should help isolate the importance of the ZA phonnos and further test our understanding of graphene's high thermal conductivity.
 
-\section{Experimental background \label{sect:therm:Exp}}
+\section{Experimental background \label{sec:therm:Exp}}
 Balandin and coworkers were the first to measure the thermal conductivity of gra\-phene.
 They reported that suspended graphene had a record high thermal conducitivity of roughly 5000 W/m-K \cite{Balandin2008}.
 Shortly thereafter measurements of supported graphene showed a more modest thermal conductivity of roughly one six of the original \cite{Seol2010}.
@@ -94,14 +94,14 @@ Lowering the phonon lifetime should lower their contribution to the thermal cond
 Tuning the ZA phonon in these ways and measuring thermal conductivity should provide deeper insight into the mechanism behind the high thermal conductivity of suspended graphene.
 
 \subsection{Measurement}
-The experimental geometry described in Section \ref{sect:fri:Exp} enables the thermal conductivity to be measured while the ZA phonons are tuned.
+The experimental geometry described in Section \ref{sec:fri:Exp} enables the thermal conductivity to be measured while the ZA phonons are tuned.
 The phonons are tuned by setting the external pressure, $P$, to gauge pressures which range from -0.1 MPa of vacuum to 0.69 MPa of overpressure.
 Measuring with the external pressure both greater than and less than the internal pressure $P_0$ enables us to decouple strain and pressure effects.
 Pressure effects should increase monotonically with pressure while strain effects should initially lesson as $P$ approaches $P_0$ and the graphene flattens out but then increase when $P$ surpasses $P_0$.
 
-The Raman technique described in Section \ref{sect:therm:Exp} is used to measure the thermal conductivity.
+The Raman technique described in Section \ref{sec:therm:Exp} is used to measure the thermal conductivity.
 Linearly polarized, 514.5 nm laser light from an Argon Ion laser is focused on the center of the microchamber.
-The focused beam waist, measured the same way as in Section \ref{sect:fri:Raman}, is $0.66 \pm 0.04$ nm.
+The focused beam waist, measured the same way as in Section \ref{sec:fri:Raman}, is $0.66 \pm 0.04$ nm.
 The power which reaches the sample is tuned by changing the laser power and not by changing ND filters.
 This ensures that the centering of the beam is not power dependent.
 The power which reaches the sample is calculated from the power measured at the exit port of the Renishaw using the system throughput of $0.67 \pm 0.01$.
@@ -116,9 +116,9 @@ However, we found that these measurements were not useful; they took too long an
 
 The temperature can be calculated from the frequency shift which results from raising the power from $P_{lo}$ to $P_{hi}$ 
 Assuming that the thermal resistance, $R=\frac{\Delta T}{P}$ where P is the absorbed power, is constant gives
-\begin{equation*}
-	T_M=T_{hi}-T_0=\frac{\Delta \omega}{\chi} \frac{P_{hi}}{P_{hi}-P_{lo}} \ ,
-\end{equation*}
+\begin{equation}
+	T_M=T_{hi}-T_0=\frac{\Delta \omega}{\chi} \frac{P_{hi}}{P_{hi}-P_{lo}} \ , \label{eq:therm:TM}
+\end{equation}
 where $T_0$ is ambient temperature and $T_M$ is referred to as the measured temperature.
 The corresponding measured thermal resistance is $T_M/P_{hi}$.
 These values are referred to as measured temperatures because they represent a weighted average over the finite spot of the laser beam.
@@ -166,20 +166,116 @@ These measurements allowed for the extraction of the pressure dependent measured
 		\hline
 	\end{tabular}
 	\end{center}
-	\caption[Samples used in thermal conductivity measurements]{\label{tab:therm:samples} Details of the samples used in thermal conductivity measurements. NL refers to the number of layers and $\epsilon_{max}$ is the maximum strain.}
+	\caption[Samples used in thermal conductivity measurements]{\label{tab:therm:samples} 
+	Details of the samples used in thermal conductivity measurements. NL refers to the number of layers and $\epsilon_{max}$ is the maximum strain.}
 \end{table}
 
 \subsection{Data analysis}
-Fitting the peak positions
--2D peak fits for bilayer and monolayer
+Peak positions were found by fitting the measured spectra to representative spectral shapes.
+The G peak was fit to a single Lorentzian for all four samples.
+The best fit to the 2D peak depends on the number of layers.
+For monolayer, suspended graphene the 2D peak is best fit by two Lorentzians with equal widths separated by 14 wavenumbers \cite{Berciaud2013}.
+To limit the number of fitting parameters, the ratio of the peak amplitudes was taken as the average of the best fits: 3.44.
+For bilayer graphene the 2D peak is best fit by 4 Lorentzians with equal widths \cite{Ferrari2006,Malard2007}.
+The fitting parameters were restricted to an amplitude, a width, and a position by setting the separation between peaks and the relative amplitudes between peaks based on the average best fits.
+An example of the best fit to a bilayer spectra is shown in Figure \ref{fig:therm:spec}
+Since there is no well excepted form for the trilayer 2D band, the temperatures were only determined from the G band data for sample SB03-2.
 
-Extracting P0--one figure here
+\begin{figure}
+	\begin{center}
+	\includegraphics[scale=0.6]{Figs_Thermal/0_3mW.pdf}
+	\end{center}
+	\caption[Representative fit to Raman spectra for thermal conductivity measurements]{\label{fig:therm:spec}
+		A representative best fit to the Raman spectra taken at the center of bilayer sample SB08-2 using 2 mW of incident power at 0.69 MPa of gauge pressure.
+		The restricted four Lorentzian fit to the 2D spectra matches the data well.
+	}
+\end{figure}
 
-Altered chiG and chi2D for FFF
+Figure \ref{fig:therm:PeakPressure} shows the best fit positions of the G and 2D bands as a function of pressure for bilayer sample SB08-2.
+As discussed in detail in Chapter \ref{chap:fri}, the Raman bands depend linearly on strain which in turn scales as $(P-P_0)^{2/3}$.
+This describes the overarching trend in the pressure response and can be used to determine $P_0$.
+The data in the figure is fit by the expected pressure dependence and the extracted value of $P_0$ is indicated by the black vertical line.
+The effects of laser heating is hidden in the fine structure.
+As laser heating increases, the peaks slightly red shift as shown by the systematically lower peak positions measured with the higher excitation powers.
+Samples SB07-1, SB08-2, and SB03-2 exhibit this type of pressure dependent response, FFF, on the other hand, exhibits no pressure response indicating that the membrane is leaky.
+This leaky sample is useful as it decouples the pressure and strain response.
 
-Optical interference--one figure here with all of the data sets int curves
+\begin{figure}
+	\begin{center}
+	\includegraphics[scale=0.6]{Figs_Thermal/PeakPressure.pdf}
+	\end{center}
+	\caption[Pressure dependent peak positions]{\label{fig:therm:PeakPressure}
+		The peak positions measured as a function of applied pressure using three different laser excitation powers for bilayer sample SB08-2.
+		The peak positions are fit to the expected $(P-P_0)^{2/3}$ behavior and the best fit value for $P_0$ is indicated by the black vertical line.
+		Increasing laser excitation power downshifts the peaks.
+	}
+\end{figure}
 
-Averaging over multiple data sets
+The calculation of $T_M$ using Equation \ref{eq:therm:TM} is complicated by optical interference.
+In sample SB07-1 the measured temperatures exhibit an oscillatory behavior in pressure.
+As shown in Figure \ref{fig:therm:Inter}, these oscillations are correlated with similar oscillations in the measured G and 2D areas.
+This suggests that the observed behavior is driven by optical interference in the excitation beam.
+As overpressure is applied to the graphene it is pushed into the microchamber moving it from a point where the excitation undergoes destructive interference, to a point of constructive interference, and then back to a point of destructive interference.
+As the interference changes, the amount of power heating the graphene changes, and thus, so does the temperature.
+The interference interpretation is supported by the agreement between the number of interference minimum and the expected displacement at the center of the graphene.
+Minimum are expected every half wavelength and from -0.1 MPa to 0.69 MPa the graphene displaces by 508 nm or roughly one wavelength consistent with the two minimum in Figure \ref{fig:therm:Inter}.
+The interference in SB07-1 is the strongest, but all of the other devices exhibit similar interference phenomena.
+The Rayleigh range of the focused beam is $\sim 2.7$ $\mu$m indicating that even microchambers with depths of 8 $\mu$m might be expected to exhibit weak interference effect.
+Interestingly, even leaky sample FFF shows very slight signs of interference.
+This is probably due to the nonlinearity of the pressure deflection curve.
+In the low pressure regime small pressure changes cause relatively large deflections; for FFF a differential pressure of 0.001 MPa would cause a deflection of 40 nm.
+
+\begin{figure}
+	\begin{center}
+	\includegraphics{Figs_Thermal/inter.pdf}
+	\end{center}
+	\caption[Issues with optical interference in thermal conductivity measurements]{\label{fig:therm:Inter}
+		A comparison of the temperatures calculated from the shifts of the G peak (top, left) and the shifts of the 2D peak (top, right) with the measured areas of the G peak (bottom, left) and 2D peak (bottom, right).
+		Measurements were taken on monolayer sealed sample SB07-1.
+		The oscillatory behavior in all four plots suggests that the observed behavior is a result of optical interference.
+	}
+\end{figure}
+
+The optical interference of the excitation beam can be estimated from the oscillatory behavior of the Raman signal.
+The oscillations in the Raman signal are driven by the product of the optical interference of both the incident beam and the outgoing beam.
+Treating the system as a plane wave incident on a perfect mirror, the product of these two terms is $4 \sin^2(k z) \sin^2(k_R z)$ where $z$ is the distance of the graphene above the mirror, $k$ is the spatial frequency of the laser excitation, and $k_R$ is the spatial frequency of the inelastically scattered light.
+A more rigorous calculations using transfer matrices and optical constants from Palik \cite{Palik1991} shows the expected behavior with a negligible 2 \% constant offset that originates because silicon is not a perfect mirror.
+The oscillations in the measured temperature, however, are only due to the interference in the incident beam: the $2 \sin^2(k z)$ component.
+The fact that the exact depths of the microchambers are not known and the interference we observe in the interference in a Gaussian beam, a direct calculation of the incident power from the oscillations in the Raman areas is not possible.
+Instead, we approximate $4 \sin^2(k z) \sin^2(k_R z) \simeq 4 \sin^2(k z) = (int(z))^2$.
+This allows an estimation of the interference in the excitation beam.
+
+The observed oscillations in the G and 2D areas are on top of a constant offset.
+The constant offset is believed to be signal not driven by interference.
+Thus, the interference function is calculated as
+\begin{equation*}
+	Area=P_i \ A+P_i \ B\ int(z)^2/4 \rightarrow  int(z)=2\sqrt{\frac{Area/P_i-A}{B}}
+\end{equation*}
+where $P_i$ is the power of the incident beam, and $A$ and $A+B$ are the minimum and the maximum of the $P_i$ normalized areas, respectively.
+The intensity of the incident beam at the sample is then given by $P_i(A+ B \ int(z))$
+
+Also--redo the corrected spectra
+
+The pressure dependence of the measured thermal resistance is measured in several different ways.
+For samples FFF, SB07-1, and SB08-2 both the G and 2D shifts can be used to calculate $R_M$.
+The values of $\chi$ reported by Chen \textit{et al.} \cite{Chen2011a} provided good agreement between G and 2D data for samples SB07-1 and SB08-2.
+However, for sample FFF a slight offset was required to achieve good agreement.
+The values of $\chi$ for the G and 2D peaks needed to be increased and decreased by $0.6 \times 10^{-2}$ respectively.
+Samples SB07-1, SB08-2, and SB03-2 were measured at three different powers providing two additional measurements of $R_M$.
+Averaging all of the redundant measurements gives smaller uncertainties.
+Figure \ref{fig:therm:R_average} shows an example of the averaged $R_M$ data.
+The individual $R_M$ measurements are in good agreement justifying the averaging.
+
+\begin{figure}
+	\begin{center}
+	\includegraphics[scale=0.8]{Figs_Thermal/R_average.pdf}
+	\end{center}
+	\caption[Average pressure dependence of the measured thermal resistance]{\label{fig:therm:R_average}
+		The average measured thermal resistance corrected for interference of bilayer sample SB03-2.
+		The four different measurements used to calculate the average are in good agreement.
+		The black vertical line is positioned at $P_0$.
+	}
+\end{figure}
 
 \subsection{Measured thermal resistances}
 Plots as a function of pressure and strain
