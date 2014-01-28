@@ -36,7 +36,7 @@ This will be differentiated using $g_g^{\uparrow}$ and $g_g^{\downarrow}$.
 When applying Newton's law of cooling for the heat conduction to the silicon dioxide, we assume the temperature of the SiO$_2$ is fixed at $T_0$.
 To test this assumption the thermal oxide is treated as a cylindrical shell connected on one side to a heat sync and heated on the other side by a 0.03 mW source.
 This heating matches a 1.5 mW laser excitation with graphene's 2.3 \% absorption.
-The width of the shell is taken as 200 nm to match the width of the supported graphene expected to have elevated temperatures.
+The width of the shell is taken as 200 nm to match the width of the supported graphene that is expected to have elevated temperatures.
 With an inner radius of 5 $\mu$m, a thickness of 300 nm, and a thermal conductivity of 1 W/m-K \cite{Resnick2002} the temperature is expected to rise by 1.5 K on the top surface of the thermal oxide.
 This should be treated as an upper bound; the transport in the silicon dioxide would flare outward resulting in a larger conduction cross section.
 This validates the assumption that the thermal oxide is not significantly heated in our measurements.
@@ -49,7 +49,7 @@ This eliminates the spatial dependence of $\kappa$ in the two regions and simpli
 While needed to simplify the problem, this simple form for the thermal conductivity may not be entirely accurate. 
 A strain dependent thermal conductivity would inherit the spatial dependence of the strain field.
 Since the measurement described here can not provide spatial information to inform a more detailed model, we will assume a uniform $\kappa_{SS}$ and refer to it as the effective thermal conductivity of the suspended graphene.
-It acts a metric which represents the departure of the system from the unstrained case.
+It acts as a metric which represents the departure of the system from the unstrained case.
 
 Including the generated heat fluxes and the piecewise thermal conductivity in the heat equation, Equation \ref{eq:HTM:heateq}, results in two differential equations that in the dimensionless variables
 \begin{align*}
@@ -81,7 +81,7 @@ Together with the boundary conditions
 	-\kappa_{SP} \left. \frac{d}{d\rho} \theta^+ \right)_{r=\frac{R}{\sqrt{2} \sigma}} \  \label{eq:therm:BC4}
 \end{align}
 this fully defines the problem.
-The boundary conditions are written by assuming that the temperature profiles are finite, decay asymptotically to ambient temperature, are continuous at the edge of the microchamber, and have continuous heat flux at the edge of the microchamber respectively.
+The boundary conditions are written by assuming that the temperature profiles are finite, decay asymptotically to ambient temperature, are continuous at the edge of the microchamber, and have continuous heat flux at the edge of the microchamber, respectively.
 The heat flux, $\vec{\phi}$, is found using Fourier's law of heat conduction, $\vec{\phi}=-\kappa \vec{\nabla} T(\vec{r})$.
 
 The heat equation for $r \geq R$ has a relatively simple solution.
@@ -152,11 +152,11 @@ This can be shown by starting with Equation \ref{eq:HTM:DE} and using separation
 		\gamma \int_0^{\rho}\rho' \left[\int_{0}^{\rho'}\rho'' \Delta \theta(\rho'') \ d \rho''\right] \ d \rho' \ ,
 \end{align*}
 where $\theta_0$ is the temperature at the center of the microchamber and $\Delta \theta(\rho)=\theta(\rho)-\theta_0$.
-The first two terms have the form of the temperature profile ignoring thermal transport to the gas \cite{Faugeras2010}, the second term is the first order correction for the gas, and the last term is the higher order correction that will be neglected.
+The first two terms have the form of the temperature profile calculated if thermal transport to the gas is ignored\cite{Faugeras2010}, the second term is the first order correction for the gas, and the last term is the higher order correction that will be neglected.
 The temperature at the center of the microchamber is determined by the full heat transfer model described in the previous section.
 
 This approximation temperature profile has a simpler radial dependence which can be averaged over in closed form.
-The integral in Equation \ref{eq:HTM:average} has the simple form
+The integral in Equation \ref{eq:HTM:average} now has the simple solution
 \begin{equation}
 	\theta_M \approx \theta_0(1+\frac{\gamma}{4})-\frac{ln(2)}{4} \beta \ .
 \end{equation}
