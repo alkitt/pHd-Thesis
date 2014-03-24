@@ -1,11 +1,10 @@
 \chapter{Unmodified band structure\label{chap:TB}}
-
-Graphene's linear electronic dispersion was first investigated by Wallace \cite{Wallace1947} 57 years before Geim, Novoselov and co-workers spurred graphene research forward with their method of mechanical exfoliation \cite{Novoselov2004}.
+Graphene's linear electronic dispersion was first investigated by Wallace \cite{Wallace1947}, fifty seven years before Geim, Novoselov and co-workers spurred graphene research forward with their method of mechanical exfoliation \cite{Novoselov2004}.
 Thirty seven years later Semenoff formalized the equivalence between the low energy electrons in graphene and relativistic Dirac-Weyl electrons \cite{Semenoff1984}.
 Remarkably, the fairly simple nearest neighbor tight binding approach used by these authors has accurately described the majority of the low energy physics in graphene.
 This chapter will follow in the spirit of these derivations but include additional emphasis to guide the discussions of the strain induced pseudovector potentials and the phonon induced Kekul\'e transition.
 
-\section{Graphene's lattice and Brillouin zone}
+\section{Graphene's lattice and Brillouin zone \label{sec:TB:geom}}
 \begin{figure}
 	\begin{center}
 	\input{Figs_TightBinding/geometry}
@@ -90,8 +89,7 @@ In graphene, it is around 2.8 eV \cite{CastroNeto2009}.
 By using real space creation and annihilation operators the reciprocal space Hamiltonian has been recast into real space.
 As will be shown for graphene, this proves to be a powerful starting point.
 
-\section{Tight binding in graphene}
-
+\section{Tight binding in graphene \label{sec:TB:TB}}
 \subsection{Nearest neighbor tight binding}
 The physics relevant for this work is captured by the nearest neighbor tight binding formalism.
 In graphene, when an electron hops between nearest neighbor it changes sub-lattice.
@@ -149,8 +147,8 @@ A straightforward calculation provides the electron dispersion,
 which is plotted in Figure \ref{fig:TB:Dispersion}.
 As shown, the two energy bands touch at the corners of the Brillouin zone.
 For pristine graphene there is one electron per carbon atom leaving the low energy band completely filled and the high energy band empty.
-The points that the bands meeting are referred to as the Dirac points or as the charge neutrality points.
-The Fermi energy can be shifted by charge transfer from contaminates or it can be purposely modified by adding adding or removing charges through capacitive coupling.
+The points where the bands meet are referred to as the Dirac points or as the charge neutrality points.
+The Fermi energy can be shifted by charge transfer from contaminates or it can be purposely modified by adding or removing charges through capacitive coupling.
 The resulting shifts in Fermi energy are relatively small and, thus, the low energy excitations happen in a narrow energy window around these points.
 This happens to be the energy window for which the nearest neighbor tight binding approach is most accurate.
 A higher order model is required to account for things such as trigonal warping which alter the dispersion at higher energies.
@@ -194,7 +192,12 @@ The approximate low energy Hamiltonians near the $\bm{K}$ and $\bm{K'}$ points c
 		\psi \ ,
 	\label{eq:TB:FullH}
 \end{align}
-where $\psi^{\dagger}=(a^{\dagger}_{\vec{q}}, b^{\dagger}_{\vec{q}},  b^{\dagger}_{\vec{q}}, a^{\dagger}_{\vec{q}})$, $\vec{\sigma}= \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array} \right) \hat{x}+\left( \begin{array}{cc} 0 & -i \\ i & 0 \end{array} \right) \hat{y}$ is the vector of Pauli matrices, and $v_f$ is the Fermi velocity given by $\frac{3}{2}\frac{at}{\hbar} \sim .9 \times 10^6 \ m/s$.
+where 
+\begin{equation}
+\psi^{\dagger}=(a^{\dagger}_{\vec{q}}, b^{\dagger}_{\vec{q}},  b^{\dagger}_{\vec{q}}, a^{\dagger}_{\vec{q}})
+\label{eq:TB:spinor}
+\end{equation}
+is the combined wave function, $\vec{\sigma}= \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array} \right) \hat{x}+\left( \begin{array}{cc} 0 & -i \\ i & 0 \end{array} \right) \hat{y}$ is the vector of Pauli matrices, and $v_f$ is the Fermi velocity given by $\frac{3}{2}\frac{at}{\hbar} \sim .9 \times 10^6 \ m/s$.
 In order to express the Hamiltonian near the $\bm{K'}$ point in terms of Pauli matrices, the order of the second pair of raising and lowering operators in $\psi$ had to be switched.
 The approximate low energy Hamiltonian will be central for the discussion of electron physics in manipulated graphene.
 
@@ -202,7 +205,7 @@ At both $\bm{K}$ and $\bm{K'}$ the low energy electronic dispersion is identical
 \begin{equation*}
 	E=\pm \hbar v_f |\vec{q}| \ .
 \end{equation*}
-This canonical energy dispersion in which the high and low energy bands meet at a single point is reminiscent of the light cone.
+This linear canonical energy dispersion is reminiscent of the linear dispersion exhibited by photons.
 
 The density of electronic states can be calculated from the low energy dispersion.
 Taking account the two fold spin and two fold valley degeneracy, the density of states is 
@@ -215,33 +218,34 @@ The density of states at a given energy goes as the circumference of the Dirac c
 
 \section{Dirac-Weyl electrons}
 Graphene's linear electrical dispersion is peculiar.
-According to the usual expression for the effective mass of an electron in an electric field, $m^*=\frac{\hbar^2}{\left(\frac{d^2 E}{d k^2}\right)}$, \cite{Kittel2005} the electrons in graphene have infinite mass.
-This is because the electron's group velocity, $d \omega/d k$, is independent of momentum. 
-It cannot be changed by applying a force.
-In a classical sense this corresponds to an infinite mass which cannot be accelerated.
-A more enlightening interpretation is as massless, relativistic, spin 1/2, fermions.
-In this scenario the group velocity cannot be changed because the electrons are moving at the systems effective light speed.
-Like a photon, graphene's electrons cannot be accelerated.
+According to the usual, non-relativistic expression for the effective mass of an electron in an electric field, $m^*=\frac{\hbar^2}{\left(\frac{d^2 E}{d k^2}\right)}$ \cite{Kittel2005}, the electrons in graphene have an infinite effective mass.
+In a classical sense, this interpretation makes sense.
+The electron's group velocity, $d \omega/d k$, is independent of momentum, and thus, as if it had an infinite mass, an electron's velocity cannot be changed by applying a force.
+However, a relativistic interpretation is more enlightening.
+In this scenario, the electrons are treated as massless relativist particles moving at the systems-effective light speed.
+Like a photon, these electrons cannot be accelerated.
+This analogy is deeper than the classical analogy.
 In 1984 Semenoff demonstrated the exact correspondence between the low energy nearest neighbor tight binding Hamiltonian of graphene and the two dimensional Dirac-Weyl Hamiltonian which governs massless, relativistic, spin 1/2, Fermions \cite{Semenoff1984}.
 In this section we will briefly discuss this correspondence.
 
 The Hamiltonian of relativistic, spin 1/2, fermions is known as the Dirac equation.
-It is a matrix equation which is covariant, obeys the relativistic energy expression, and is first order in time.
+This matrix equation is covariant, obeys the relativistic energy expression, and is first order in time.
 The only difference between the Dirac equation for massless particles in two spatial dimensions,
-\begin{equation*}
+\begin{equation}
 	H=\left( \begin{array}{cc}
 			c \vec{p} \cdot \vec{\sigma}              & 0\\
 			0              & -c \vec{p} \cdot \vec{\sigma}			   	            			\end{array} \right) \ ,
-\end{equation*}
+	\label{eq:TB:RelH}
+\end{equation}
 and the Hamiltonian governing graphene (Equation \ref{eq:TB:FullH}) is the speed of light for the system.
 Thus, even though the Fermi velocity of the electrons in graphene is a factor of 300 slower than the speed of light, the electrons behave as relativistic massless particles.
 
 The decoupled nature of both the Dirac equation and graphene's Hamiltonian can be interpreted from a high energy point of view.
-The wave function for these Hamiltonians can be written as the combination of two, two element spinors
+The wave function for these Hamiltonians can be written as the combination of two, two-element spinors
 \begin{equation*}
 	\psi=\left( \begin{array}{c} \chi_{+} \\ \chi_{-} \end{array} \right) \ .
 \end{equation*}
-Using these spinors and the relativistic dispersion, $E=\pm p c$, in the Hamiltonians gives Weyl's equations,
+Using these spinors and the relativistic dispersion, $E=\pm p c$, in Equation \ref{eq:TB:RelH} gives Weyl's equations,
 \begin{align*}
 	(1 \mp \vec{\sigma} \cdot \hat{p}) \chi_{+}&=0 \\
 	(1 \pm \vec{\sigma} \cdot \hat{p}) \chi_{-}&=0 \ ,
@@ -253,15 +257,17 @@ The $\chi_-$ spinor then is left handed.
 Since the helicity operator commutes with the Hamiltonian, helicity is conserved in this system.
 Gottfried and Yan provide a more detailed discussion of the Dirac equation and its consequences \cite{Gottfried2003}.
 
-In graphene, the elements of the spinors have an additional geometric interpretation.
-Identifying these components with the relativistic components yields the pseudo spinners: $\psi_+ \equiv \left(\begin{array}{c} \psi_A^{\bm{K}} \\ \psi_B^{\bm{K}} \end{array} \right)$ and $\psi_- \equiv \left(\begin{array}{c} \psi_B^{\bm{K'}} \\ \psi_A^{\bm{K'}} \end{array} \right)$.
-The components of graphene's pseudo spin correspond to the sub-lattice.
-Additionally, the wave function for electrons at the $\bm{K}$ point are right handed and the electrons at the $\bm{K'}$ are left handed.
+In graphene, the elements of the spinors have additional geometric interpretations.
+Identifying graphene's wave function in Equation \ref{eq:TB:spinor} with the relativistic spinors yields $\chi_+ \equiv \left(\begin{array}{c} \psi_A^{\bm{K}} \\ \psi_B^{\bm{K}} \end{array} \right)$ and $\chi_- \equiv \left(\begin{array}{c} \psi_B^{\bm{K'}} \\ \psi_A^{\bm{K'}} \end{array} \right)$.
+This indicates that the wave function for electrons at the $\bm{K}$ point are right handed and the electrons at the $\bm{K'}$ point are left handed.
+Further, the components of the spinnors represent the probability amplitudes that an electron occupies the A or B sub-lattice.
+This connection between geometry and abstract spinnors motivates the identification of sub-lattice with pseudospin.
 
 Since graphene's Hamiltonian is identical to that of massless, relativistic, spin 1/2 Fermions, the electrons should exhibit the same odd properties that have been predicted by high energy physicists.
-These unique properties include the Klein paradox \cite{Young2009}, Zitterbewegung \cite{CastroNeto2009}, and the anomalous quantum Hall effect \cite{Novoselov2005a,Zhang2005}.
+These unique properties include the Klein paradox, which is the unimpeded penetration of relativistic particles through potential barriers \cite{Young2009}; Zitterbewegung, which is the jittery motion of relativistic particles \cite{CastroNeto2009}; and the anomalous quantum Hall effect, with a zero energy Landau level and square root magnetic field dependence \cite{Novoselov2005a,Zhang2005}.
 
 \section{Summary}
-This section focused on the geometry of graphene and the tight binding formalism.
-These are two themes that are ubiquitis in this thesis.
-Additionally, the analogy between graphene physics and relativistic physics was briefly described.
+In this chapter we laid the theoretical framework for how we will treat the geometric alterations of graphene's lattice in Chapters \ref{chap:PVP} and \ref{chap:kek}.
+In each case we will first consider how the lattice described in Section \ref{sec:TB:geom} is altered by the perturbation.
+Then, following the calculation in Section \ref{sec:TB:TB}, we will determine how graphene's electrical properties are effected.
+This framework is extremely powerful and will reveal exciting physics.

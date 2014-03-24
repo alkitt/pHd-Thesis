@@ -1,8 +1,8 @@
 \BOOKMARK [0][-]{chapter.1}{1 Introduction}{}% 1
 \BOOKMARK [0][-]{chapter.2}{2 Unmodified band structure}{}% 2
-\BOOKMARK [1][-]{section.2.1}{2.1 Graphene's lattice and Brillouin zone}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.1}{2.1 Graphene's lattice and Brillouin zone }{chapter.2}% 3
 \BOOKMARK [1][-]{section.2.2}{2.2 Tight binding motivation}{chapter.2}% 4
-\BOOKMARK [1][-]{section.2.3}{2.3 Tight binding in graphene}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.3}{2.3 Tight binding in graphene }{chapter.2}% 5
 \BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Nearest neighbor tight binding}{section.2.3}% 6
 \BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 Low energy approximation}{section.2.3}% 7
 \BOOKMARK [1][-]{section.2.4}{2.4 Dirac-Weyl electrons}{chapter.2}% 8
@@ -10,8 +10,8 @@
 \BOOKMARK [0][-]{chapter.3}{3 Strain-induced vector potentials: Lattice-corrections and engineered pseudomagnetic fields}{}% 10
 \BOOKMARK [1][-]{section.3.1}{3.1 Derivation of the pseudovector potentials}{chapter.3}% 11
 \BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Qualitative argument}{section.3.1}% 12
-\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Strain altered lattice vectors }{section.3.1}% 13
-\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Strain altered hopping energies}{section.3.1}% 14
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Strain-altered lattice vectors }{section.3.1}% 13
+\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Strain-altered hopping energies}{section.3.1}% 14
 \BOOKMARK [2][-]{subsection.3.1.4}{3.1.4 Hamiltonian of strained graphene}{section.3.1}% 15
 \BOOKMARK [2][-]{subsection.3.1.5}{3.1.5 Pseudovector potentials}{section.3.1}% 16
 \BOOKMARK [1][-]{section.3.2}{3.2 Pseudovector potential discussion}{chapter.3}% 17
