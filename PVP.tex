@@ -264,32 +264,34 @@ First, unlike a magnetic field, a spatial deformation can not break time reversa
 This limitation manifests itself in Equation \ref{eq:PVP:PVP} through the sign difference between pseudovector potentials at time reversed points: $\vec{\mathcal{A}}_{\bm{K_i}} = - \vec{\mathcal{A}}_{\bm{K_i'}}$.
 Second, strictly speaking the pseudovector potential does not have gauge freedom.
 It is true that there are a class of pseudovector potentials which all have the same curl.
-However, each member of this class corresponds to a measurably different physical realization of the system.
-Each member has a different strain distribution and correspondingly different strain-induced shifts in the momentum.
+However, each element of this class corresponds to a measurably different physical realization of the system.
+Each element has a different strain distribution and correspondingly different strain-induced shifts in the momentum.
 A real vector potential is determined only by its curl whereas a pseudovector potential has a concrete interpretation beyond its curl.
-Finally, in the minimal substitution formalism the gauge independent momentum is replaced with the gauge dependent canonical momentum. 
+Finally, in the minimal substitution formalism the gauge independent momentum is replaced with the gauge-dependent canonical momentum. 
 This does not occur for strain-induced pseudovector potentials.
-The definition of the crystal momentum is not change by strain.
+The definition of the crystal momentum is not changed by strain.
 To recognize these differences, the strain-induced momentum shifts are referred to as pseudovector potentials.
 
-It should be noted that the pseudovector potential depends on the crystallographic orientation relative to the strain.
+Another important subtlety is the dependence of the pseudovector potential on the orientation of the strain relative to the crystal.
 Uniaxial strain of the same macroscopic value but at a different crystallographic orientation will result in different pseudovector potentials.
-The form for the pseudovector potentials in Equations \ref{eq:PVP:PVP} assume that the tensors are written with the x axis aligned with a zig zag direction.
+The form for the pseudovector potentials in Equations \ref{eq:PVP:PVP} assume that the tensors are written with the x axis aligned with a zigzag direction.
 They can be rewritten for different orientations by rotating the tensors so that their x axis is aligned with the zig zag direction, calculating the pseudovector potential using Equations \ref{eq:PVP:PVP}, and then rotate the resulting pseudovector potential back into the original reference frame.
 
-Calculations preceding Kitt \textit{et al.} \cite{Kitt2012} considered only the term arising from hopping alterations, $\vec{\mathcal{A}}_p$ in Equation \ref{eq:PVP:PVP}.
-Since $\beta \approx 3$, the deformation to the lattice contributes equally to hopping alterations.
-The terms are not only the same order in strain, but they have similar numerical coefficients.
+Calculations preceding Kitt \textit{et al.} \cite{Kitt2012} included only the term arising from hopping alterations ($\vec{\mathcal{A}}_p$ in Equation \ref{eq:PVP:PVP}) in the pseudovector potential.
+In this so called brick-wall model, strain only modified hopping energies.
+The positions of the atoms were left fixed like bricks.
+Since $\beta \approx 3$, the new terms resulting from the deformation of the lattice contributes equally to hopping alterations.
+These terms are not only the same order in strain, but they have similar numerical coefficients.
 It is also worth emphasizing that taking explicit consideration of the lattice deformations leads to a vector potential that is different for all the corners of the BZ.
-This is of course expected because under an arbitrary deformation the equivalence among the three $\bm{K}$ and $\bm{K'}$ points is lost.
+This is expected because under an arbitrary deformation the equivalence among the three $\bm{K}$ and $\bm{K'}$ points is lost.
 
 When the lattice terms are neglected, the pseudovector potential does not properly account for the shift in the Dirac points.
 Consider, for example, the seemingly trivial case of tensile isotropic strain.
-The traditional form of the pseudovector potential, $\vec{\mathcal{A}}_p$, predicts that there should be no shift in the Dirac points ($\epsilon_{xx}=\epsilon_{yy}$ and $\epsilon_{xy}=0$ in equation \ref{eq:PVP:PVP}).
-Physically however, the BZ must shrink isotropically under tensile isotropic strain, and, by symmetry, the Dirac points should follow the corners of the shrinking BZ.
+The brick-wall form of the pseudovector potential, $\vec{\mathcal{A}}_p$, predicts that there should be no shift in the Dirac points ($\epsilon_{xx}=\epsilon_{yy}$ and $\epsilon_{xy}=0$ in equation \ref{eq:PVP:PVP}).
+Physically however, the BZ must shrink isotropically under tensile isotropic strain, and, because the lattice symmetry is unchanged, the Dirac points should follow the corners of the shrinking BZ.
 The pseudovector potential should correspond to a shift of each Dirac point toward the $\Gamma$ point.
 Further, the direction of this shift is different for $\bm{K}_1$ then it is for $\bm{K}_2$ then it is for $\bm{K}_3$. 
-This illustrate two points: Preceding calculations were incomplete and the pseudovector potential is not necessarily the same for each $\bm{K}$ point.
+This illustrate two points: Prior calculations were incomplete and the pseudovector potential is not necessarily the same for each $\bm{K}$ point.
 
 \begin{figure*}
   \begin{center}
@@ -298,39 +300,40 @@ This illustrate two points: Preceding calculations were incomplete and the pseud
   \caption[Lattice-corrected strain-induced pseudovector potentials]{\label{fig:PVP:PVPshifts}
   A geometric depiction of the importance of the lattice-corrections to the strain-induced pseudovector potentials.
   Contours of the band structure of graphene under tensile isotropic strain, shear strain, armchair uniaxial strain, and zig-zag uniaxial strain (rows), for $\epsilon=1\%$ near the three $\bm{K}$ points (columns) are overlaid with the BZ of unstrained (solid, black) and strained (dashed, red) graphene.
-  Vectors mark the displacement of the Dirac points predicted by the traditional ($\vec{\mathcal{A}}_p$, dashed, yellow arrow) and the lattice-corrected ($\vec{\mathcal{A}}_{\bm{K}_{i}}$, solid, green arrow), with the white dots marking the positions of the Dirac points for strained graphene.
+  Vectors mark the displacement of the Dirac points predicted by the brick-wall ($\vec{\mathcal{A}}_p$, dashed, yellow arrow) and the lattice-corrected ($\vec{\mathcal{A}}_{\bm{K}_{i}}$, solid, green arrow) models, with the white dots marking the positions of the Dirac points for strained graphene.
   The lattice-corrected vectors appropriately predict the shift in the Dirac point.
-  The yellow vectors appears as a dot for isotropic strain because the traditional form of the vector potential does not predict a shift in the Dirac points.
+  The yellow vectors appears as a dot for isotropic strain because the brick-wall model of the vector potential does not predict a shift in the Dirac points.
   Each plot is square with an area of $0.12^2$.
   }
 \end{figure*}
 
-In Figure \ref{fig:PVP:PVPshifts}, the reciprocal space shifts of the Dirac points predicted by the traditional and the corrected forms of the pseudovector potential are compared.
+In Figure \ref{fig:PVP:PVPshifts}, the reciprocal space shifts of the Dirac points predicted by the brick-wall and the lattice-corrected forms of the pseudovector potential are compared.
 The contours represent the dispersion of strained graphene calculated using a nearest neighbor tight binding model which accounts for both the strain-induced changes in hopping amplitudes and the lattice deformation \cite{Pereira2009}.
 The calculation of the shape of the strained BZ is described in Appendix \ref{chap:sBZ}.
 For isotropic tensile strain, the lattice-corrected pseudovector potential in Equation \ref{eq:PVP:PVP} properly predicts the displacement of each Dirac point due to strain.
 The less trivial cases of uniaxial or shear strain are also shown in Figure \ref{fig:PVP:PVPshifts}.
-The differences between the red (traditional) and orange (corrected) arrows make it clear that the lattice-corrections are needed to determine the absolute position of the Dirac points in reciprocal space.
+The differences between the red (brick-wall) and orange (lattice-corrected) arrows make it clear that the lattice-corrections are needed to determine the absolute position of the Dirac points in reciprocal space.
 
 \section{Pseudomagnetic fields}
 Having discussed the strain-induced analog of a real vector potential, the so called pseudovector potential, it is natural to extend the analogy to pseudomagnetic fields.
-Although Landau level quantization is usually associated with an out of plane magnetic field, it turns out that this field is not required in graphene.
-In fact, Landau level quantization requires only the criterion used in deriving the pseudovector potential: That there is a momentum shift which can be expressed as $\vec{p}-e\vec{A}$ where $\vec{p}$ is the momentum operator which obeys the canonical commutation relationship with the position operator $x$, $[x,p_x]=i \hbar$ \cite{Goerbig2011}.
+In graphene, Landau level quantization can occur without the application of a magnetic field.
+This is because Landau level quantization requires only that there is a momentum shift which can be expressed as $\vec{p}-e\vec{A}$ where $\vec{p}$ is the momentum operator which obeys the canonical commutation relationship with the position operator $x$, $[x,p_x]=i \hbar$ \cite{Goerbig2011}.
 It does not require a specific origin of $\vec{A}$.
-Thus, strain alone can trick the electrons into quantizing into Landau levels as if they were in a magnetic field given by $\vec{B}=\vec{\nabla}\times\vec{\mathcal{A}}$.
+Thus, strain alone can quantize electrons into Landau levels as if they were in a magnetic field given by $\vec{B}=\vec{\nabla}\times\vec{\mathcal{A}}$.
 This effect has recently been observed using scanning tunneling microscopy of accidentally strained graphene \cite{Levy2010,Yan2012,Yeh2011} and of engineered graphene analogs \cite{Gomes2012}.
 
 This phenomenology is very powerful but has several subtleties.
-First, it should be reiterated that despite the fact that the electrons act as if there were a real magnetic field, there is not one.
+First, it should be reiterated that despite the fact that the electrons quantize into Landau levels, there is no magnetic field.
 Strain does not somehow generate a magnetic field in a region near the graphene.
 Second, strain can not break time reversal symmetry.
 This symmetry is preserved via the relationship $\vec{\mathcal{A}}_{\bm{K_i}} = - \vec{\mathcal{A}}_{\bm{K_i'}}$ in Equation \ref{eq:PVP:PVP} which causes the pseudomagnetic field to point in opposite direction at time reversed $\bm{K}_i$ points.
-An additional subtlety is the lacks of spatial dependence in the pseudovector potential derived here.
+As a result, pseudomagnetic fields cannot be used to create fractional quantum Hall states or to differentiate between right and left circularly polarized light.
+An additional subtlety is the lack of spatial dependence in the pseudovector potential derived here.
 If these calculations are treated as a local computation in the vicinity of position $\vec{r}$ then the spatial dependence of $\bm{\epsilon}$ and $\bm{\nabla u}$ provide the spatial dependence for $\vec{\mathcal{A}}(\vec{r})$ as long as this pseudomagnetic field is relatively constant on the scale of the magnetic length \cite{CastroNeto2009}.
 
 The discussion of the pseudomagnetic field in the following sections begins with a discussion of the unimportance of the lattice-corrections when calculating pseudomagnetic fields.
 Next, a pressurized triangular graphene sealed microchamber \cite{Guinea2009} is used as an example to illustrate how pseudomagnetic fields might be engineered and measured.
-This is followed by the prediction of a particularly interesting device, the hourglass shaped graphene sealed microchamber.
+This is followed by the prediction of a particularly interesting device, the hourglass-shaped graphene sealed microchamber.
 This device should have large localized pseudomagnetic fields which can be accessed using plasmonic field enhancement.
 Finally, the importance of proper continuum modeling will be demonstrated by considering circular graphene sealed microchambers.
 
@@ -351,33 +354,32 @@ The lattice-corrections are still needed to correctly describe the shift in the 
 This includes the momentum-sensitive electronic tunneling to/from strained graphene from/to another system, probe, or contact \cite{Fogler2008}.
 
 \subsection{Pressurized graphene sealed microchambers: pseudomagnetic field test bed}
-The potential of continuously replicating physics which usually only occurs at large magnetic fields is tantalizing.
-Experimental measurements of pseudomagnetic fields \cite{Levy2010,Yan2012,Yeh2011,Gomes2012} have validated the theory and energized the idea of strain engineering.
+It is tantalizing to consider the possibility of replicating very high magnetic field physics without resorting to expensive and destructive pulsed field techniques.
+Experimental measurements of pseudomagnetic fields \cite{Levy2010,Yan2012,Yeh2011,Gomes2012} have validated the theory and generated excitement in the possibility of strain engineering.
 However, to date no strain device has been predicted, fabricated, and then shown to have the desired properties.
-The challenge now is to design and build devices which use this new science to enable unique device functionality.
+The challenge now is to design and build devices which use this new science to enable unique device functionality such as devices which use the Quantum Hall effect at room temperature with no magnetic field.
 
-This process of strain engineering pseudomagnetic field devices is non trivial from almost any stand point.
-There are no established techniques for generating spatially varying strains in atomically thin materials.
-In the past, graphene has deliberate been put under spatially uniform strain using strain transferred from an abutting polymer \cite{Yu2008,Ni2008,Tsoukleri2009,Huang2009,Mohiuddin2009,Frank2010,Yoon2011}, exfoliating graphene onto a piezoelectric substrate \cite{Ding2010,Jie2013}, or through the application of hydrostatic pressure \cite{Proctor2009,Clark2012}.
+This process of strain engineering pseudomagnetic field devices is non-trivial from almost any standpoint.
+There are no established techniques for generating spatially varying strains in atomically thin materials, and thus, no there are no constrains for the theorists who model these systems.
+Strain engineering to date has been limited to spatially uniform strains created using strain transfer from an underlying polymer \cite{Yu2008,Ni2008,Tsoukleri2009,Huang2009,Mohiuddin2009,Frank2010,Yoon2011}, an underlying piezoelectric material, \cite{Ding2010,Jie2013} or through the application of hydrostatic pressure \cite{Proctor2009,Clark2012}.
 Generating specifically designed spatially varying strains, however, is a whole other ball game.
-Since there are no predefined techniques for the device design, there are also no constraints provided to theorists to dictate what systems might be experimentally reasonable.
-Identifying and specifying new methods of generating designed spatially varying strain is thus a major priority.
 Beyond this challenge is the theoretical difficulty of the inverse problem.
 The desired property, the pseudomagnetic field, is a function of the curl of the strain which is itself a function of the surrounding environment through continuum mechanics.
 To complicate these non trivial mathematics is a general lack of understanding in how an atomically thin material, like graphene, responds to its surroundings.
-All in all, there are several challenges which must be overcome before the Quantum Hall effect might be measured at room temperature with no magnetic field.
+All in all, there are several challenges which must be overcome before new strain engineered devices can be designed and realized.
 
 One early, experimentally accessible design which is predicted to yield fairly uniform pseudomagnetic fields is a pressurized triangular graphene sealed microchamber \cite{Guinea2009}.
 To make the Landau levels as narrow and well defined as possible Guinea \textit{et al.} proposed a variety of designs for nearly uniform pseudomagnetic fields.
-They noticed that strain profiles with an overall trigonal symmetry tend to generate smooth effective pseudomagnetic fields.
-The pressurized graphene sealed microchamber represents the most experimentally realizable of their designs.
+They noticed that strain profiles with symmetries similar to graphene's lattice tend to generate smooth effective pseudomagnetic fields.
+The triangular pressurized graphene sealed microchamber represents the most experimentally realizable of their designs.
 In this system equilateral triangle microchambers are etched into the underlying substrate and graphene is put across the top, sealing the gas inside.
 When external pressure is applied the graphene is pushed into the microchamber generating a spatially varying strain which yields fairly uniform pseudomagnetic fields.
 
 Shown in Figure \ref{fig:PVP:triangle} is the spatial distribution of the pseudomagnetic field for a graphene sealed equilateral triangle microchamber with 50 nm legs oriented along the zigzag direction pressurized to 14 MPa.
 The pictured pseudomagnetic field is for the $\bm{K}$ points, the pseudomagnetic field for $\bm{K'}$ points would have the same magnitude but the opposite sign.
-At this pressure the graphene sheet is under less than 0.26\% strain.
-The pseudomagnetic fields are relatively large because the strains very quickly over the relatively small length scale of the device.
+However, Landau level quantization is insensitive to this sign difference.
+At the pressure shown, the graphene sheet is under less than 0.26\% strain.
+Such small strains can generate such large pseudomagnetic fields because the small spatial extent of the device yields large curls and correspondingly large pseudomagnetic fields.
 
 \begin{figure}
   \begin{center}
@@ -392,7 +394,7 @@ The pseudomagnetic fields are relatively large because the strains very quickly 
 \end{figure}
 
 To generate this figure, the strain fields calculated using finite element analysis were used to calculate the spatial distribution of the pseudovector potential from $\vec{\mathcal{A}}_p$ in Equation \ref{eq:PVP:PVP}.
-Although $\vec{\mathcal{A}}_p$ was derived for the special case of in plane strains, it applies to out of plane strains as well.
+Although $\vec{\mathcal{A}}_p$ was derived for the special case of in-plane strains, it applies to out of plane strains as well.
 This is because it is a function of the full Lagrangian strain tensor which properly references the deformation back to the undeformed coordinates.
 Finally, the curl of $\vec{\mathcal{A}}_p$ is taken numerically to get the pseudomagnetic field.
 
@@ -424,18 +426,18 @@ Since different orientations can result in such different physics one should con
   }
 \end{figure}
 
-Graphene sealed microchambers define a class of strain engineered devices which could provide a test bed for strain engineering.
-Even though graphene sealed microchambers do not possess the well defined electrical current path needed for electronic devices, they should still be useful as a strain engineering test bed.
+Graphene sealed microchambers define a class of strain engineered devices which could provide a test-bed for strain engineering.
+Even though graphene sealed microchambers do not possess the well-defined electrical current path needed for electronic devices, they should still be useful as a strain engineering test-bed.
 They represent an experimentally realizable method of generating measurable pseudomagnetic fields.
-Since similar devices have been made in the past, it is believable that they can be fabricated.
-In fact, micron sized graphene sealed microchambers are used in the study of how graphene slides presented in Chapter \ref{chap:fri}.
-Additionally the Landau levels should be measurable using optical probes or local probes such as scanning tunneling spectroscopy.
-In particular, due to electron phonon coupling the phonon energy measured by Raman spectroscopy is renormalized when this energy matches specific Landau level transitions \cite{Goerbig2011}.
-These magneto phonon resonances have been observed on multilayer epitaxial graphene \cite{Faugeras2009}, on single layer graphene like regions on the surface of graphite crystals \cite{Faugeras2011}, and for CVD graphene on SiO$_2$ \cite{Kim2013}.
+Such devices have been made in the past.
+Micron sized graphene sealed microchambers are used in the study of how graphene slides presented in Chapter \ref{chap:fri}.
+Additionally, the Landau levels should be measurable using optical probes or local probes such as scanning tunneling spectroscopy.
+In particular, due to electron-phonon coupling the phonon energy measured by Raman spectroscopy is renormalized when this energy matches specific Landau level transitions \cite{Goerbig2011}.
+These magneto-phonon resonances have been observed on multilayer epitaxial graphene \cite{Faugeras2009}, on single layer graphene like regions on the surface of graphite crystals \cite{Faugeras2011}, and for CVD graphene on SiO$_2$ \cite{Kim2013}.
 Thus, it is easy to envision an experiment where a graphene sealed microchamber is pressurized while the Raman spectrum is measured \emph{in situ}.
 Monitoring these energy fluctuations as the pseudomagnetic field is tuned by changing the applied pressure would provide an experimental test of the predicted pseudomagnetic fields.
 
-In summary, pressurized graphene sealed microchambers represent a unique test bed for studying pseudomagnetic field effects.
+In summary, pressurized graphene sealed microchambers represent a unique test-bed for studying pseudomagnetic field effects.
 The strain distributions can be easily treated theoretically using finite element analysis, the predicted devices are experimentally realizable, and the resulting pseudomagnetic fields could be measured with optical techniques such as Raman spectroscopy.
 
 \subsection{Large, localized, plasmonically enhanced pseudomagnetic fields}
@@ -444,7 +446,7 @@ The predicted pseudomagnetic field distributions for simple convex shapes includ
 Concave devices, however, proved much more interesting.
 When the graphene bends around a tip, the strain fields change rapidly causing large but localized pseudomagnetic fields.
 Usually such a localized effect would be difficult to measure optically.
-However, the tip has a second function.
+However, the tip has a second, special function.
 It can enhance an optical field making the local effects measurable.
 If the optical field enhancement region and the region of large pseudomagnetic field were to overlap, Raman spectroscopy could be used to directly probe the high field regions. 
 
@@ -456,7 +458,7 @@ In this way, any graphene sheet would cover multiple devices, increasing the sig
 The unwanted signal from the supported graphene between hourglasses is minimized by destructive interference of the incident and emitted light upon reflection off the gold substrate.
 Device geometry, detailed in (a) and (b), was chosen so that the plasmon resonance wavelength, shown in (c), was in an experimentally accessible region.
 The dielectric function of the metallic layers are obtained from Palik \cite{Palik1985}.
-The predicted reflectivity in (c) was found using a power reflection monitor located 1 $\mu m$ from the structure.
+The predicted reflectivity in (c) was found using a power monitor located 1 $\mu m$ from the structure.
 In (d) the field enhancement of the device for light polarized in the x direction is shown.
 It is calculated using a field monitor located at the top surface of the top gold layer.
 The Raman enhancement goes as the square of the intensity enhancement since the intensity of the incident light and the intensity of the inelastically scattered light are both enhanced.
@@ -497,7 +499,7 @@ This should allow for the measurement of pressure tunable, very large pseudomagn
 The first step toward modeling pseudomagnetic fields is the difficult task of determining the expected strains.
 This is complicated for several reasons.
 First, the large deflection of thin plates is often a difficult nonlinear problem.
-Second, many well accepted approximate continuum models are not valid for pseudomagnetic fields.
+Second, many well-accepted approximate continuum models are not valid for pseudomagnetic fields.
 Historically, most works sought approximations that accurately determined aspects of the deflection profile, sacrificing the accuracy of the strain profile in the process.
 Models that do not correctly predict the strain distribution can not be used to predict pseudomagnetic fields.
 Finally, the form of the interactions between atomically thin sheets and their surrounding environment is not yet completely understood.
