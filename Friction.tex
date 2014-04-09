@@ -71,7 +71,7 @@ The beam waist of the focused laser was measured to be $0.81 \pm 0.01 \ \mathrm{
 	\begin{center}
 	\includegraphics[scale=1]{Figs_Friction/SpotSize.pdf}
 	\end{center}
-	\caption[Beam waste determination]{\label{fig:fri:waist}
+	\caption[Beam waist determination]{\label{fig:fri:waist}
 	Determination of the beam waist of the focused laser in the pressure chamber by scanning a sample with a gold pad under the focused beam while measuring the Si Raman line intensity.
 	As the sharp edge of the gold pad moves under the laser, the Si line is blocked giving a measure of the beam size.
 	Fitting the signal to an error function gives a beam waist of $0.81 \pm 0.01 \ \mu m$.}
@@ -442,10 +442,10 @@ The atomistic data plotted in the paper was obtained from the MD simulation resu
 \section{Fitting Raman spectra to the continuum model}
 In conjunction with the measured Raman spectra, the extended continuum model can be used to determine the sliding friction, the Gr\"{u}neisen parameter, and the shear deformation potential.
 A simple comparison of the strains predicted by the extended Hencky model to strains found by directly inverting the positions of the $G^+$ and $G^-$ peaks is not possible because of the finite size of the focused laser beam.
-Instead, spectra are predicted by integrating against the system point spread function.
-A set of spectra predicted for each point in the line scan can then be compared to the measured line scan spectra.
-The best fit is found by predicting spectra for a series of different fitting parameters and choosing the one that best matches the measured spectra.
-This is done quantitatively by choosing the spectra with the smallest $\chi^2$.
+Instead, model spectra are predicted by integrating against the system point spread function.
+A set of model spectra created for each point in the line scan can then be compared to the measured line scan spectra.
+The best fit is found by creating model spectra for a series of different fitting parameters and choosing the one that best matches the measured spectra.
+This is done quantitatively by choosing the modeled spectra with the smallest $\chi^2$.
 A detailed description of the fitting algorithm used as well as the determination of fitting error is presented in Appendix \ref{chap:Fit}.
 
 Unlike the sliding friction, the Gr\"{u}neisen parameter and shear deformation potential should be the same for every line scan.
@@ -469,11 +469,14 @@ The averages of the monolayer and the trilayer, $\gamma=1.89 \pm 0.01$ and $\bet
 \end{figure}
 
 Table \ref{tab:fri:gb} compares the measurements of the Gr\"{u}neisen parameter and shear deformation potentials to previous measurements.
-The substrate on which the parameters were measured in also included.
+The substrate on which the parameters were measured is also included.
 Our measured $\gamma$ is commensurate with most of the other measured values and agrees particularly well with the \textit{ab initio} calculations of Cheng \textit{et al.} \cite{Cheng2011}.
 On the other hand, the measured shear deformation potential is lower than most other measurements.
-Buckling out-of-plane cannot explain this result since the mono and trilayers would buckle differently for a microchamber with the same pressure and radius.
-These are the first measurements of $\gamma$ and $\beta$ for which the sliding of FLG over its substrate was included.
+These other measurements may have been influenced by unaccounted for transverse-sliding of the FLG over the substrate.
+Out-of-plane buckling in our measurements would cause inaccurate shear deformation potential, but this explanation is inconsistent with our measurements.
+Monolayer and trilayer graphene would buckle differently for a microchamber with the same pressure and radius yielding different measured shear deformation potentials.
+As shown in Figure \ref{fig:fri:gammabeta}(b), this difference is not observed.
+Thus, we believe our measurements of the Gr\"{u}neisen parameter and shear deformation potentials to be the most accurate yet.
 
 \begin{table}
 	\begin{center}
@@ -521,9 +524,10 @@ The data for trilayer graphene (black dots) shows a linearly dependent sliding f
 For reference, Teflon on Teflon has $\mu=0.04$ while clean steel on clean steel has $\mu=0.6$ \cite{Resnick2002}.
 A zoom in of the trilayer data is shown in Figure \ref{fig:fri:trimu}.
 The sliding friction for monolayer and bilayer graphene behave much differently.
-They decrease generally with applied pressure and the wide scatter of the points for different radii and layer number clearly indicate that the sliding friction is dependent on the geometry of the microchamber.
-Our theoretical analysis shows that the radial strain at the edge due to the pressure pushing the graphene into the microchamber has the same radii and layer number dependence as the friction, so the sliding friction is replotted as a function of the radial strain in Figure \ref{fig:fri:FvsP}b (right).
-The monolayer and bilayer data for all different radii microchambers now \emph{collapse} to a single curve versus radial strain, well described by $1/\epsilon_{r,edge}$ behavior (dashed line).
+They decrease generally with applied pressure and the wide scatter of the points for different radii and layer number suggesting that the sliding friction is dependent on the geometry of the microchamber and, therefore, does not depend on pressure like a material property should.
+However, as shown in Figure \ref{fig:fri:FvsP}b (right) when the sliding friction is replotted as a function of the radial strain at the edge of the microchamber, the monolayer and bilayer data for all different radii microchambers \emph{collapse} to a single curve versus radial strain, well described by $1/\epsilon_{r,edge}$ behavior (dashed line).
+In effect, the data in Figure \ref{fig:fri:FvsP}a (right) is scattered because the dependence of friction is not properly isolated.
+When the correct dependent variable is chosen, the geometric dependencies are eliminated revealing the underlying material property.
 The best fit to the strain dependence is $0.002 MPa/\epsilon_{r,edge}$.
 
 \begin{figure}
@@ -552,7 +556,7 @@ The gross difference in behavior between trilayer on one hand, and mono-and bila
 The pressure load pushes the graphene more firmly onto the substrate so that sliding friction should increase (Amontons' law), yielding a positive coefficient of friction.
 This is the case for the trilayer graphene.
 On the other hand, as the pressure pushes the graphene into the microchamber, it creates a radial tension in the supported graphene outside the microchamber.
-The data collapse in Figure \ref{fig:fri:FvsP}b for monolayer and bilayer graphene demonstrate that the pressure dependence of the sliding friction is not due to loading the supported graphene but is instead due to the graphene being pulled and stretched by the applied pressure.
+The data collapse to a single $1/\epsilon_{r,edge}$ dependence in Figure \ref{fig:fri:FvsP}b for monolayer and bilayer graphene demonstrate that the pressure dependence of the sliding friction is not due to loading the supported graphene but is instead dominated by the graphene being pulled and stretched by the applied pressure.
 This is the only mechanism that would depend on the geometric parameters of the microchamber while also being consistent with the data.
 It is not surprising that the sliding friction for mono- and bilayer graphene is dependent on the strain and not the load because thin graphene conforms nearly perfectly to a $\mathrm{SiO_2}$ substrate \cite{Stolyarova2007,Lui2009,Cullen2010}.
 Increasing the load cannot further increase the contact area, but increasing the radial strain beyond the edge of the microchamber may act to smooth out the graphene sheet, decreasing the contact between the graphene and the substrate, and thus decreasing the sliding friction.

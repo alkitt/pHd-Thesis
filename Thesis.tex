@@ -43,6 +43,7 @@
 \allsectionsfont{\normalsize}				% Sets all section headers to 12 pt
 \usepackage{layout}							% If you use the \layout command in the body of the text the formatting will be shown nicely
 \hyphenation{graph-ene}						% Sets the hyphenation of graphene
+\usepackage{pdfpages}						% Used to insert signed signature page
 
 % Links are clickable with no border and the pdf in bookmarked with sections--keep as last in preamble
 \usepackage[bookmarks,bookmarksnumbered,bookmarksopen=false,hidelinks]{hyperref}  
@@ -62,7 +63,7 @@
 	\include{form_1_title}
 	\include{form_copyright}
 	\hypersetup{pageanchor=true}				% Have to ignore anchors here
-	\include{form_2_approval}
+	\include{form_2_approval_signed}
 	\setcounter{page}{4}					% Sets the page number to 4
 	\include{form_4_acknowledge}
 	\include{form_5_abstract} 

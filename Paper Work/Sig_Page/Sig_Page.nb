@@ -1,0 +1,128 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3446,        119]
+NotebookOptionsPosition[      2833,         93]
+NotebookOutlinePosition[      3225,        109]
+CellTagsIndexPosition[      3182,        106]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.6058949321568394`*^9, 3.605894932822878*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sigpage", "=", 
+   RowBox[{"Import", "[", "\"\<003.png\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"ImageDimensions", "[", "sigpage", "]"}], "/", "300"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.60589493513601*^9, 3.6058949826667285`*^9}, 
+   3.6058956937063975`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"8.5`", ",", "11.69`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6058949508109064`*^9, 3.6058949833317666`*^9, 3.6058955196744432`*^9, 
+   3.6058955839431195`*^9, 3.605895628086644*^9, {3.6058956890891333`*^9, 
+   3.6058956963475485`*^9}, 3.6058971431873035`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"ImageTrim", "[", 
+    RowBox[{"sigpage", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"8.5", "*", "300"}], ",", 
+         RowBox[{"11", "*", "300"}]}], "}"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{"ImageDimensions", "[", "t", "]"}], "/", "300"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.605895706057104*^9, 3.605895730095479*^9}, {
+  3.605895859773896*^9, 3.6058958699364777`*^9}, {3.605895903949423*^9, 
+  3.605895904041428*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"8.5`", ",", "11.003333333333334`"}], "}"}]], "Output",
+ CellChangeTimes->{3.6058959044424515`*^9, 3.605897144950404*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<g.png\>\"", ",", "t", ",", 
+   RowBox[{"ImageResolution", "\[Rule]", "300"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.605897263165166*^9, 3.6058972792670865`*^9}, {
+  3.6058973886893454`*^9, 3.605897388862355*^9}}],
+
+Cell[BoxData["\<\"g.png\"\>"], "Output",
+ CellChangeTimes->{{3.605897273694768*^9, 3.6058972871325364`*^9}, 
+   3.6058973916465144`*^9}]
+}, Open  ]]
+},
+WindowSize->{1366, 706},
+WindowMargins->{{-1374, Automatic}, {Automatic, -57}},
+PrintingPageRange->{Automatic, Automatic},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 267, 5, 52, "Input"],
+Cell[CellGroupData[{
+Cell[849, 29, 353, 10, 52, "Input"],
+Cell[1205, 41, 304, 6, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1546, 52, 663, 19, 52, "Input"],
+Cell[2212, 73, 160, 3, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2409, 81, 269, 5, 31, "Input"],
+Cell[2681, 88, 136, 2, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
